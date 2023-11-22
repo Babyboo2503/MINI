@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Class1.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
