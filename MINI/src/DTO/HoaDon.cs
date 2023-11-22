@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MINI.src.DTO
+{
+    internal class HoaDon
+    {
+        public int idHoaDon { get; set; }
+        public int idNhanVien { get; set; }
+        public int idKhachHang { get; set; }
+        public DateTime ngayLap { get; set; }
+        public int idKhuyenMai { get; set; }
+        public float tongHoaDon { get; set; }
+    }
+}

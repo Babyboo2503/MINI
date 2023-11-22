@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MINI.GUI
+namespace MINI.src.BUS
 {
-    internal class Class1
+    internal class NhanVienBUS
     {
     }
 }

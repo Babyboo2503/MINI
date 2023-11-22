@@ -46,35 +46,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\Class1.cs" />
-    <Compile Include="GUI\DangNhap.cs">
+    <Compile Include="src\BUS\HoaDonBUS.cs" />
+    <Compile Include="src\BUS\KhachHangBUS.cs" />
+    <Compile Include="src\BUS\NhanVienBUS.cs" />
+    <Compile Include="src\BUS\PhieuNhapBUS.cs" />
+    <Compile Include="src\BUS\SanPhamBUS.cs" />
+    <Compile Include="src\BUS\TaiKhoanBUS.cs" />
+    <Compile Include="src\BUS\ThongKeBUS.cs" />
+    <Compile Include="src\DAO\ChiTietHoaDonDAO.cs" />
+    <Compile Include="src\DAO\ChiTietPhieuNhapDAO.cs" />
+    <Compile Include="src\DAO\ChucVuDAO.cs" />
+    <Compile Include="src\DAO\HoaDonDAO.cs" />
+    <Compile Include="src\DAO\KhachHangDAO.cs" />
+    <Compile Include="src\DAO\KhuyenMaiDAO.cs" />
+    <Compile Include="src\DAO\LoaiSanPhamDAO.cs" />
+    <Compile Include="src\DAO\NhaCungCapDAO.cs" />
+    <Compile Include="src\DAO\NhanVienDAO.cs" />
+    <Compile Include="src\DAO\PhieuNhapDAO.cs" />
+    <Compile Include="src\DAO\SanPhamDAO.cs" />
+    <Compile Include="src\DAO\TaiKhoanDAO.cs" />
+    <Compile Include="src\DTO\ChiTietHoaDon.cs" />
+    <Compile Include="src\DTO\ChiTietPhieuNhap.cs" />
+    <Compile Include="src\DTO\ChucVu.cs" />
+    <Compile Include="src\DTO\HoaDon.cs" />
+    <Compile Include="src\DTO\KhachHang.cs" />
+    <Compile Include="src\DTO\KhuyenMai.cs" />
+    <Compile Include="src\DTO\LoaiSanPham.cs" />
+    <Compile Include="src\DTO\NhaCungCap.cs" />
+    <Compile Include="src\DTO\NhanVien.cs" />
+    <Compile Include="src\DTO\PhieuNhap.cs" />
+    <Compile Include="src\DTO\SanPham.cs" />
+    <Compile Include="src\DTO\TaiKhoan.cs" />
+    <Compile Include="src\GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DangNhap.Designer.cs">
+    <Compile Include="src\GUI\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NhanVien.cs">
+    <Compile Include="src\GUI\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NhanVien.Designer.cs">
+    <Compile Include="src\GUI\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Product.cs">
+    <Compile Include="src\GUI\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Product.Designer.cs">
+    <Compile Include="src\GUI\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SanPham.cs">
+    <Compile Include="src\GUI\SanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\SanPham.Designer.cs">
+    <Compile Include="src\GUI\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\trangChu.cs">
+    <Compile Include="src\GUI\trangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\trangChu.Designer.cs">
+    <Compile Include="src\GUI\trangChu.Designer.cs">
       <DependentUpon>trangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="MiniMarketDataSet.Designer.cs">
@@ -84,19 +114,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\DangNhap.resx">
+    <EmbeddedResource Include="src\GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NhanVien.resx">
+    <EmbeddedResource Include="src\GUI\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Product.resx">
+    <EmbeddedResource Include="src\GUI\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SanPham.resx">
+    <EmbeddedResource Include="src\GUI\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\trangChu.resx">
+    <EmbeddedResource Include="src\GUI\trangChu.resx">
       <DependentUpon>trangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,6 +161,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="image\product\" />
+    <Folder Include="src\GUI\HoaDon\" />
+    <Folder Include="src\GUI\KhachHang\" />
+    <Folder Include="src\GUI\NhanVien\" />
+    <Folder Include="src\GUI\PhieuNhap\" />
+    <Folder Include="src\GUI\SanPham\" />
+    <Folder Include="src\GUI\TaiKhoan\" />
+    <Folder Include="src\GUI\ThongKe\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
