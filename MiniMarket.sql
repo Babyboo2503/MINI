@@ -218,6 +218,9 @@ GO
 ALTER TABLE [dbo].[ChiTietPhieuNhap]  WITH CHECK ADD FOREIGN KEY([idSanPham])
 REFERENCES [dbo].[SanPham] ([idSanPham])
 GO
+ALTER TABLE [dbo].[HoaDon] WITH CHECK ADD FOREIGN KEY([idKhuyenMai])
+REFERENCES [dbo].[KhuyenMai] ([idKhuyenMai])
+GO
 ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD FOREIGN KEY([idKhachHang])
 REFERENCES [dbo].[KhachHang] ([idKhachHang])
 GO
