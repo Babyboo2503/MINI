@@ -84,7 +84,7 @@ CREATE TABLE [dbo].[KhachHang](
 	[diaChi] [nvarchar](50) NULL,
 	[soDienThoai] [varchar](10) NULL,
 	[gioiTinh] [nvarchar](10) NULL,
-	[email] [varchar](10) NULL,
+	[email] [varchar](50) NULL,
 	[deletedAt] [datetime] NULL,
 PRIMARY KEY CLUSTERED 
 (
