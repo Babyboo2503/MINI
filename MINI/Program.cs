@@ -18,6 +18,7 @@ namespace MINI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmThongKe());
+            //sdadasd
         }
     }
 }
