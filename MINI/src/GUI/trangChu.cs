@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MINI.src.GUI.ThongKe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,29 @@ namespace MINI.GUI
             InitializeComponent();
             customizeDesign();
         }
+
+        //
+
+        //
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(childForm);
+            panelContent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
         //Design left menu
         private void DisableHorizontalScroll()
         {
@@ -186,6 +210,7 @@ namespace MINI.GUI
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             showSubmenu(panelThongKe);
+            openChildForm(new frmThongKe());
             //..
         }
 
@@ -199,5 +224,7 @@ namespace MINI.GUI
         {
             this.Close();
         }
+
+       
     }
 }

@@ -111,6 +111,9 @@
             // 
             // panelContent
             // 
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContent.Location = new System.Drawing.Point(230, 4);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(543, 534);
@@ -178,11 +181,12 @@
             this.flowPanelMenuLeft.Controls.Add(this.panelKhuyenMai);
             this.flowPanelMenuLeft.Controls.Add(this.btnKhachHang);
             this.flowPanelMenuLeft.Controls.Add(this.panelKhachHang);
+            this.flowPanelMenuLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowPanelMenuLeft.Font = new System.Drawing.Font("Arial", 8.25F);
             this.flowPanelMenuLeft.Location = new System.Drawing.Point(0, 0);
             this.flowPanelMenuLeft.Margin = new System.Windows.Forms.Padding(0);
             this.flowPanelMenuLeft.Name = "flowPanelMenuLeft";
-            this.flowPanelMenuLeft.Size = new System.Drawing.Size(227, 494);
+            this.flowPanelMenuLeft.Size = new System.Drawing.Size(227, 538);
             this.flowPanelMenuLeft.TabIndex = 8;
             // 
             // pictureBox1
