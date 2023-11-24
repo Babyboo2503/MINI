@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tcThongKe = new System.Windows.Forms.TabControl();
             this.tpAll = new System.Windows.Forms.TabPage();
@@ -65,6 +66,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblTotalProduct = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tcThongKe.SuspendLayout();
             this.tpAll.SuspendLayout();
@@ -343,6 +348,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lblTotalProduct);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.lblProduct);
             this.panel4.Location = new System.Drawing.Point(7, 6);
@@ -352,6 +358,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(273, 6);
@@ -361,6 +368,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Location = new System.Drawing.Point(538, 6);
@@ -370,6 +378,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.pictureBox4);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Location = new System.Drawing.Point(807, 6);
@@ -419,6 +428,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(19, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
@@ -427,6 +437,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(25, 47);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
@@ -435,6 +446,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(11, 47);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
@@ -443,11 +455,56 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(8, 47);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            // 
+            // lblTotalProduct
+            // 
+            this.lblTotalProduct.AutoSize = true;
+            this.lblTotalProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProduct.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblTotalProduct.Location = new System.Drawing.Point(165, 68);
+            this.lblTotalProduct.Name = "lblTotalProduct";
+            this.lblTotalProduct.Size = new System.Drawing.Size(32, 37);
+            this.lblTotalProduct.TabIndex = 2;
+            this.lblTotalProduct.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label6.Location = new System.Drawing.Point(168, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 37);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label7.Location = new System.Drawing.Point(164, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 37);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label8.Location = new System.Drawing.Point(159, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 37);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "0";
             // 
             // frmThongKe
             // 
@@ -524,5 +581,9 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalProduct;
     }
 }
