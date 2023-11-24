@@ -101,6 +101,12 @@
     <Compile Include="src\GUI\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\GUI\ThongKe\frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\ThongKe\frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\trangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\ThongKe\frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\trangChu.resx">
       <DependentUpon>trangChu.cs</DependentUpon>
@@ -170,7 +179,6 @@
     <Folder Include="src\GUI\PhieuNhap\" />
     <Folder Include="src\GUI\SanPham\" />
     <Folder Include="src\GUI\TaiKhoan\" />
-    <Folder Include="src\GUI\ThongKe\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
