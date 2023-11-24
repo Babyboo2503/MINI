@@ -77,30 +77,36 @@
     <Compile Include="src\DTO\PhieuNhap.cs" />
     <Compile Include="src\DTO\SanPham.cs" />
     <Compile Include="src\DTO\TaiKhoan.cs" />
-    <Compile Include="src\GUI\DangNhap.cs">
+    <Compile Include="src\GUI\Login\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\DangNhap.Designer.cs">
+    <Compile Include="src\GUI\Login\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\NhanVien.cs">
+    <Compile Include="src\GUI\HoaDon\Class1.cs" />
+    <Compile Include="src\GUI\KhachHang\Class1.cs" />
+    <Compile Include="src\GUI\NhanVien\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\NhanVien.Designer.cs">
+    <Compile Include="src\GUI\NhanVien\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\Product.cs">
+    <Compile Include="src\GUI\NhanVien\Class1.cs" />
+    <Compile Include="src\GUI\PhieuNhap\Class1.cs" />
+    <Compile Include="src\GUI\SanPham\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\GUI\Product.Designer.cs">
+    <Compile Include="src\GUI\SanPham\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\SanPham.cs">
+    <Compile Include="src\GUI\SanPham\SanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\SanPham.Designer.cs">
+    <Compile Include="src\GUI\SanPham\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\GUI\SanPham\Class1.cs" />
+    <Compile Include="src\GUI\TaiKhoan\Class1.cs" />
     <Compile Include="src\GUI\ThongKe\frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,16 +126,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="src\GUI\DangNhap.resx">
+    <EmbeddedResource Include="src\GUI\Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\NhanVien.resx">
+    <EmbeddedResource Include="src\GUI\NhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\Product.resx">
+    <EmbeddedResource Include="src\GUI\SanPham\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\SanPham.resx">
+    <EmbeddedResource Include="src\GUI\SanPham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\ThongKe\frmThongKe.resx">
@@ -173,12 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\product\" />
-    <Folder Include="src\GUI\HoaDon\" />
-    <Folder Include="src\GUI\KhachHang\" />
-    <Folder Include="src\GUI\NhanVien\" />
-    <Folder Include="src\GUI\PhieuNhap\" />
-    <Folder Include="src\GUI\SanPham\" />
-    <Folder Include="src\GUI\TaiKhoan\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
