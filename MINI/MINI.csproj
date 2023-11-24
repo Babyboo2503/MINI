@@ -113,10 +113,10 @@
     <Compile Include="src\GUI\ThongKe\frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\trangChu.cs">
+    <Compile Include="src\GUI\TrangChu\trangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\trangChu.Designer.cs">
+    <Compile Include="src\GUI\TrangChu\trangChu.Designer.cs">
       <DependentUpon>trangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="MiniMarketDataSet.Designer.cs">
@@ -141,7 +141,7 @@
     <EmbeddedResource Include="src\GUI\ThongKe\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\trangChu.resx">
+    <EmbeddedResource Include="src\GUI\TrangChu\trangChu.resx">
       <DependentUpon>trangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
