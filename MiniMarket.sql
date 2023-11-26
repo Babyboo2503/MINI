@@ -301,9 +301,9 @@ VALUES
 INSERT INTO ChucVu(idChucVu, tenChucVu, moTaChucVu)
 VALUES
 	(1, N'Admin', N'Nhân viên admin có khả năng quản lý tài khoản và quản lý chức vụ cho các tài khoản khác.'),
-	(2, N'Quản Lý', N'Nhân viên quản lý có khả năng quản lý nhân viên, quản lý sản phẩm, quản lý khuyến mãi, quản lý nhà cung cấp, quản lý loại sản phẩm, quản lý phiếu nhập và quản lý hóa đơn.'),
+	(2, N'Quản Lý', N'Nhân viên quản lý có khả năng quản lý nhân viên, quản lý sản phẩm, quản lý khuyến mãi, quản lý nhà cung cấp, quản lý loại sản phẩm, quản lý phiếu nhập, quản lý hóa đơn, quản lý bán hàng, quản lý khách hàng, quản lý nhập hàng và quản lý báo cáo.'),
 	(3, N'Bán Hàng', N'Nhân viên bán hàng có khả năng quản lý bán hàng, quản lý hóa đơn, quản lý khách hàng và quản lý báo cáo.'),
-	(4, N'Thủ Kho', N'Nhân viên thủ kho có khả năng xem.');
+	(4, N'Thủ Kho', N'Nhân viên thủ kho có khả năng quản lý phiếu nhập và quản lý nhập hàng.');
 
 --
 -- insert bảng NhanVien
