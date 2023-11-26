@@ -194,6 +194,7 @@ CREATE TABLE [dbo].[SanPham](
 	[hinhAnh] [varchar](50) NULL,
 	[trangThai] [varchar](20) NULL,
 	[deletedAt] [datetime] NULL,
+	[chietKhau] [int],
 PRIMARY KEY CLUSTERED 
 (
 	[idSanPham] ASC
