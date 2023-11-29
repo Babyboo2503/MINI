@@ -269,7 +269,7 @@ CREATE TABLE [dbo].[SanPham](
 	[idLoaiSanPham] [int] NULL,
 	[donGia] [decimal](10, 3) NULL,
 	[soLuong] [int] NULL,
-	[trangThai] [varchar](20) NULL,
+	[trangThai] [nvarchar](20) NULL,
 	[chietKhau] [int] NULL,
 	[tenSanPham] [nvarchar](150) NULL,
 	[hinhAnh] [varchar](500) NULL,
@@ -288,7 +288,8 @@ CREATE TABLE [dbo].[TaiKhoan](
 	[idTaiKhoan] [int] IDENTITY(1,1) NOT NULL,
 	[username] [char](500) NULL,
 	[password] [char](10) NULL,
-	[idNhanVien] [int] NULL
+	[idNhanVien] [int] NULL,
+	[quyen] [varchar](MAX) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[idTaiKhoan] ASC
