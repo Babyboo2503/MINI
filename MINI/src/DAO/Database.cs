@@ -15,21 +15,24 @@ namespace MINI.src.DAO
         DataSet ds;
         public Database()
         {
-            string strCnn = "Data Source=.; Database=QLthuvien;Integrated Security = True"; 
+            string strCnn = "Data Source= localhost; Database=MiniMarket;Integrated Security = True";
             sqlConn = new SqlConnection(strCnn);
         }
+
         public DataTable Execute(string sqlStr)
         {
-            da = new SqlDataAdapter(sqlStr, sqlConn); ds = new DataSet();
+            da = new SqlDataAdapter(sqlStr, sqlConn);
+            ds = new DataSet();
             da.Fill(ds);
             return ds.Tables[0];
         }
+
         public void ExecuteNonQuery(string strSQL)
         {
-            SqlCommand sqlcmd = new SqlCommand(strSQL, sqlConn); sqlConn.Open();
+            SqlCommand sqlcmd = new SqlCommand(strSQL, sqlConn);
+            sqlConn.Open();
             sqlcmd.ExecuteNonQuery();
             sqlConn.Close();
         }
-
     }
 }
