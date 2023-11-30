@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tcThongKe = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tpAll = new System.Windows.Forms.TabPage();
             this.tbcManager = new System.Windows.Forms.TabControl();
             this.tabSum = new System.Windows.Forms.TabPage();
@@ -74,9 +74,27 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsvProduct = new System.Windows.Forms.ListView();
+            this.idProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.productImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.stok = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.availability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpNhanVien = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lsvEmpolyee = new System.Windows.Forms.ListView();
+            this.idNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.phonenumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.salary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.employeeOff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel9 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -85,7 +103,7 @@
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tpKhachHang = new System.Windows.Forms.TabPage();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.lsvCustomer = new System.Windows.Forms.ListView();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -94,7 +112,7 @@
             this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tpNhaCungCap = new System.Windows.Forms.TabPage();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.lsvVendor = new System.Windows.Forms.ListView();
             this.panel11 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -103,8 +121,20 @@
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nameCustomer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
-            this.tcThongKe.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
             this.tbcManager.SuspendLayout();
             this.tabSum.SuspendLayout();
@@ -140,25 +170,25 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tcThongKe);
+            this.panel1.Controls.Add(this.tabControl);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 613);
             this.panel1.TabIndex = 0;
             // 
-            // tcThongKe
+            // tabControl
             // 
-            this.tcThongKe.Controls.Add(this.tpAll);
-            this.tcThongKe.Controls.Add(this.tpTKSanPham);
-            this.tcThongKe.Controls.Add(this.tpNhanVien);
-            this.tcThongKe.Controls.Add(this.tpKhachHang);
-            this.tcThongKe.Controls.Add(this.tpNhaCungCap);
-            this.tcThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcThongKe.Location = new System.Drawing.Point(0, 0);
-            this.tcThongKe.Name = "tcThongKe";
-            this.tcThongKe.SelectedIndex = 0;
-            this.tcThongKe.Size = new System.Drawing.Size(1095, 613);
-            this.tcThongKe.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tpAll);
+            this.tabControl.Controls.Add(this.tpTKSanPham);
+            this.tabControl.Controls.Add(this.tpNhanVien);
+            this.tabControl.Controls.Add(this.tpKhachHang);
+            this.tabControl.Controls.Add(this.tpNhaCungCap);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1095, 613);
+            this.tabControl.TabIndex = 0;
             // 
             // tpAll
             // 
@@ -518,7 +548,7 @@
             // tpTKSanPham
             // 
             this.tpTKSanPham.Controls.Add(this.panel8);
-            this.tpTKSanPham.Controls.Add(this.listView1);
+            this.tpTKSanPham.Controls.Add(this.lsvProduct);
             this.tpTKSanPham.Location = new System.Drawing.Point(4, 25);
             this.tpTKSanPham.Name = "tpTKSanPham";
             this.tpTKSanPham.Padding = new System.Windows.Forms.Padding(3);
@@ -590,18 +620,68 @@
             this.comboBox4.Size = new System.Drawing.Size(111, 24);
             this.comboBox4.TabIndex = 1;
             // 
-            // listView1
+            // lsvProduct
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 71);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1075, 505);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lsvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idProduct,
+            this.productName,
+            this.productImage,
+            this.price,
+            this.stok,
+            this.availability,
+            this.sale,
+            this.type});
+            this.lsvProduct.HideSelection = false;
+            this.lsvProduct.Location = new System.Drawing.Point(6, 73);
+            this.lsvProduct.Name = "lsvProduct";
+            this.lsvProduct.Size = new System.Drawing.Size(1075, 505);
+            this.lsvProduct.TabIndex = 1;
+            this.lsvProduct.UseCompatibleStateImageBehavior = false;
+            this.lsvProduct.View = System.Windows.Forms.View.Details;
+            // 
+            // idProduct
+            // 
+            this.idProduct.Text = "Id Sản Phẩm";
+            this.idProduct.Width = 100;
+            // 
+            // productName
+            // 
+            this.productName.Text = "Tên Sản Phẩm";
+            this.productName.Width = 255;
+            // 
+            // productImage
+            // 
+            this.productImage.Text = "Hình Ảnh";
+            this.productImage.Width = 100;
+            // 
+            // price
+            // 
+            this.price.Text = "Đơn Giá";
+            this.price.Width = 80;
+            // 
+            // stok
+            // 
+            this.stok.Text = "Số Lượng";
+            this.stok.Width = 100;
+            // 
+            // availability
+            // 
+            this.availability.Text = "Trạng Thái";
+            this.availability.Width = 140;
+            // 
+            // sale
+            // 
+            this.sale.Text = "Chiết Khấu";
+            this.sale.Width = 130;
+            // 
+            // type
+            // 
+            this.type.Text = "Loại Sản Phẩm";
+            this.type.Width = 170;
             // 
             // tpNhanVien
             // 
-            this.tpNhanVien.Controls.Add(this.listView2);
+            this.tpNhanVien.Controls.Add(this.lsvEmpolyee);
             this.tpNhanVien.Controls.Add(this.panel9);
             this.tpNhanVien.Location = new System.Drawing.Point(4, 25);
             this.tpNhanVien.Name = "tpNhanVien";
@@ -611,14 +691,76 @@
             this.tpNhanVien.Text = "Nhân Viên";
             this.tpNhanVien.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // lsvEmpolyee
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(9, 74);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1070, 502);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.lsvEmpolyee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idNhanVien,
+            this.name,
+            this.phonenumber,
+            this.gender,
+            this.salary,
+            this.status,
+            this.dateOfBirth,
+            this.employeeOff,
+            this.address,
+            this.role});
+            this.lsvEmpolyee.HideSelection = false;
+            this.lsvEmpolyee.Location = new System.Drawing.Point(9, 74);
+            this.lsvEmpolyee.Name = "lsvEmpolyee";
+            this.lsvEmpolyee.Size = new System.Drawing.Size(1070, 502);
+            this.lsvEmpolyee.TabIndex = 1;
+            this.lsvEmpolyee.UseCompatibleStateImageBehavior = false;
+            this.lsvEmpolyee.View = System.Windows.Forms.View.Details;
+            // 
+            // idNhanVien
+            // 
+            this.idNhanVien.Text = "Id Nhân Viên";
+            this.idNhanVien.Width = 90;
+            // 
+            // name
+            // 
+            this.name.Text = "Họ và Tên";
+            this.name.Width = 195;
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.Text = "Số Điện Thoại";
+            this.phonenumber.Width = 120;
+            // 
+            // gender
+            // 
+            this.gender.Text = "Giới Tính";
+            this.gender.Width = 80;
+            // 
+            // salary
+            // 
+            this.salary.Text = "Lương";
+            this.salary.Width = 85;
+            // 
+            // status
+            // 
+            this.status.Text = "Trạng Thái";
+            this.status.Width = 100;
+            // 
+            // dateOfBirth
+            // 
+            this.dateOfBirth.Text = "Ngày Sinh";
+            this.dateOfBirth.Width = 85;
+            // 
+            // employeeOff
+            // 
+            this.employeeOff.Text = "Ngày Nghỉ";
+            this.employeeOff.Width = 85;
+            // 
+            // address
+            // 
+            this.address.Text = "Địa Chỉ";
+            this.address.Width = 168;
+            // 
+            // role
+            // 
+            this.role.Text = "Chức Vụ";
+            this.role.Width = 75;
             // 
             // panel9
             // 
@@ -685,7 +827,7 @@
             // 
             // tpKhachHang
             // 
-            this.tpKhachHang.Controls.Add(this.listView3);
+            this.tpKhachHang.Controls.Add(this.lsvCustomer);
             this.tpKhachHang.Controls.Add(this.panel10);
             this.tpKhachHang.Location = new System.Drawing.Point(4, 25);
             this.tpKhachHang.Name = "tpKhachHang";
@@ -695,14 +837,24 @@
             this.tpKhachHang.Text = "Khách Hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // lsvCustomer
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(6, 73);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1070, 502);
-            this.listView3.TabIndex = 2;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.lsvCustomer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
+            this.nameCustomer,
+            this.phone,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lsvCustomer.HideSelection = false;
+            this.lsvCustomer.Location = new System.Drawing.Point(6, 73);
+            this.lsvCustomer.Name = "lsvCustomer";
+            this.lsvCustomer.Size = new System.Drawing.Size(1070, 502);
+            this.lsvCustomer.TabIndex = 2;
+            this.lsvCustomer.UseCompatibleStateImageBehavior = false;
+            this.lsvCustomer.View = System.Windows.Forms.View.Details;
             // 
             // panel10
             // 
@@ -769,7 +921,7 @@
             // 
             // tpNhaCungCap
             // 
-            this.tpNhaCungCap.Controls.Add(this.listView4);
+            this.tpNhaCungCap.Controls.Add(this.lsvVendor);
             this.tpNhaCungCap.Controls.Add(this.panel11);
             this.tpNhaCungCap.Location = new System.Drawing.Point(4, 25);
             this.tpNhaCungCap.Name = "tpNhaCungCap";
@@ -779,14 +931,20 @@
             this.tpNhaCungCap.Text = "Nhà Cung Cấp";
             this.tpNhaCungCap.UseVisualStyleBackColor = true;
             // 
-            // listView4
+            // lsvVendor
             // 
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(7, 74);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(1072, 502);
-            this.listView4.TabIndex = 3;
-            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.lsvVendor.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.lsvVendor.HideSelection = false;
+            this.lsvVendor.Location = new System.Drawing.Point(7, 74);
+            this.lsvVendor.Name = "lsvVendor";
+            this.lsvVendor.Size = new System.Drawing.Size(1072, 502);
+            this.lsvVendor.TabIndex = 3;
+            this.lsvVendor.UseCompatibleStateImageBehavior = false;
+            this.lsvVendor.View = System.Windows.Forms.View.Details;
             // 
             // panel11
             // 
@@ -855,6 +1013,66 @@
             // 
             this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
+            // id
+            // 
+            this.id.Text = "Id Khách Hàng";
+            this.id.Width = 100;
+            // 
+            // nameCustomer
+            // 
+            this.nameCustomer.Text = "Tên Khách Hàng";
+            this.nameCustomer.Width = 180;
+            // 
+            // phone
+            // 
+            this.phone.Text = "Số Điện Thoại";
+            this.phone.Width = 120;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Giới Tính";
+            this.columnHeader1.Width = 80;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Email";
+            this.columnHeader2.Width = 170;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày Sinh";
+            this.columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Điểm";
+            this.columnHeader4.Width = 80;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Địa Chỉ";
+            this.columnHeader5.Width = 180;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Id Nhà Cung Cấp";
+            this.columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tên Nhà Cung Cấp";
+            this.columnHeader7.Width = 350;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Số Điện Thoại";
+            this.columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Địa Chỉ";
+            this.columnHeader9.Width = 300;
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,7 +1083,7 @@
             this.Text = "frmThongKe";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panel1.ResumeLayout(false);
-            this.tcThongKe.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tpAll.ResumeLayout(false);
             this.tbcManager.ResumeLayout(false);
             this.tabSum.ResumeLayout(false);
@@ -911,7 +1129,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tcThongKe;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tpAll;
         private System.Windows.Forms.TabPage tpTKSanPham;
         private System.Windows.Forms.TabPage tpNhanVien;
@@ -952,7 +1170,7 @@
         private System.Windows.Forms.Label lblTotalEmployee;
         private System.Windows.Forms.Label lblTotalProduct;
         private MiniMarketDataSetTableAdapters.BaoCaoTableAdapter baoCaoTableAdapter1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsvProduct;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -960,7 +1178,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lsvEmpolyee;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -968,7 +1186,7 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView lsvCustomer;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -983,6 +1201,36 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ListView lsvVendor;
+        private System.Windows.Forms.ColumnHeader idNhanVien;
+        private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader phonenumber;
+        private System.Windows.Forms.ColumnHeader gender;
+        private System.Windows.Forms.ColumnHeader salary;
+        private System.Windows.Forms.ColumnHeader status;
+        private System.Windows.Forms.ColumnHeader dateOfBirth;
+        private System.Windows.Forms.ColumnHeader employeeOff;
+        private System.Windows.Forms.ColumnHeader address;
+        private System.Windows.Forms.ColumnHeader role;
+        private System.Windows.Forms.ColumnHeader idProduct;
+        private System.Windows.Forms.ColumnHeader productName;
+        private System.Windows.Forms.ColumnHeader productImage;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ColumnHeader stok;
+        private System.Windows.Forms.ColumnHeader availability;
+        private System.Windows.Forms.ColumnHeader sale;
+        private System.Windows.Forms.ColumnHeader type;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader nameCustomer;
+        private System.Windows.Forms.ColumnHeader phone;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

@@ -23,7 +23,7 @@ namespace MINI.src.BUS
         }
         public DataTable layDanhSachNhanVien()
         {
-            string strSQL = "SELECT * FROM NhanVien";
+            string strSQL = "SELECT idNhanVien, hoVaTen, soDienThoai, gioiTinh, luong, trangThai, ngaySinh, ngayNghi, diaChi, tenChucVu FROM NhanVien nv, ChucVu cv WHERE nv.idChucVu = cv.idChucVu";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -56,7 +56,7 @@ namespace MINI.src.BUS
 
         public DataTable layDanhSachSanPham()
         {
-            string strSQL = "SELECT * FROM SanPham";
+            string strSQL = "SELECT idSanPham, tenSanPham, hinhAnh, donGia, soLuong, trangThai, chietKhau, tenLoaiSanPham FROM SanPham sp, LoaiSanPham lsp WHERE sp.idLoaiSanPham = lsp.idLoaiSanPham";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -106,7 +106,6 @@ namespace MINI.src.BUS
                 kh.diem = Convert.ToInt32(dr["diem"]);
                 kh.diaChi = dr["diaChi"].ToString();
                 dsKhachHang.Add(kh);
-                Console.WriteLine(kh.hoTenKhachHang);
             }
             return dsKhachHang;
         }
@@ -130,7 +129,6 @@ namespace MINI.src.BUS
                 ncc.tenNhaCungCap = dr["tenNhaCungCap"].ToString();
                 ncc.soDienThoai = dr["soDienThoai"].ToString();
                 ncc.diaChi = dr["diaChi"].ToString();
-                Console.WriteLine(ncc.tenNhaCungCap);
                 dsNhaCungCap.Add(ncc);
             }
             return dsNhaCungCap;
