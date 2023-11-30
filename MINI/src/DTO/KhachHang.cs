@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MINI.src.DTO
 {
-    internal class KhachHang
+    public class KhachHang
     {
         public int idKhachHang { get; set; }
         public string hoTenKhachHang { get; set; }
@@ -15,5 +15,6 @@ namespace MINI.src.DTO
         public string gioiTinh { get; set; }
         public string email { get; set; }
         public DateTime ngaySinh { get; set; }
+        public int diem {  get; set; }
     }
 }
