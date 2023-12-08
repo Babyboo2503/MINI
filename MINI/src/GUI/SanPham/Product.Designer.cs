@@ -32,8 +32,9 @@
             this.lblIDProduct = new System.Windows.Forms.Label();
             this.lblNumProduct = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtImgPro = new System.Windows.Forms.TextBox();
+            this.pbImgProduct = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImgProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNameProduct
@@ -75,20 +76,22 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtImgPro);
+            this.panel1.Controls.Add(this.pbImgProduct);
             this.panel1.Controls.Add(this.lblIDProduct);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 133);
             this.panel1.TabIndex = 3;
             // 
-            // txtImgPro
+            // pbImgProduct
             // 
-            this.txtImgPro.Location = new System.Drawing.Point(32, 19);
-            this.txtImgPro.Multiline = true;
-            this.txtImgPro.Name = "txtImgPro";
-            this.txtImgPro.Size = new System.Drawing.Size(114, 99);
-            this.txtImgPro.TabIndex = 2;
+            this.pbImgProduct.ImageLocation = "";
+            this.pbImgProduct.Location = new System.Drawing.Point(29, 23);
+            this.pbImgProduct.Name = "pbImgProduct";
+            this.pbImgProduct.Size = new System.Drawing.Size(123, 107);
+            this.pbImgProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImgProduct.TabIndex = 2;
+            this.pbImgProduct.TabStop = false;
             // 
             // Product
             // 
@@ -101,6 +104,7 @@
             this.Size = new System.Drawing.Size(177, 215);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImgProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +116,6 @@
         private System.Windows.Forms.Label lblIDProduct;
         private System.Windows.Forms.Label lblNumProduct;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtImgPro;
+        private System.Windows.Forms.PictureBox pbImgProduct;
     }
 }
