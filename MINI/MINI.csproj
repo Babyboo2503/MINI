@@ -46,11 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\KhachHang.cs" />
+    <Compile Include="BUS\KhuyenMai.cs" />
+    <Compile Include="BUS\SanPham.cs" />
+    <Compile Include="DAO\Database.cs" />
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhuyenMai.Designer.cs">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhanVien.cs">
       <SubType>Form</SubType>
@@ -86,6 +102,12 @@
     <EmbeddedResource Include="GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhuyenMai.resx">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +128,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MiniMarketDataSet.xsc">
       <DependentUpon>MiniMarketDataSet.xsd</DependentUpon>
@@ -130,6 +153,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-add-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-add-product-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-cancel-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-customer-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-save-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-sort-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-edit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-image-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-promotion-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,14 +29,14 @@ namespace MINI.GUI
             panelNhanVien.Visible=false;
             panelKhachHang.Visible=false;
             panelHoaDon.Visible=false;
-            btnSanPham.Visible=false;
+            //btnSanPham.Visible=false;
         }
         private void hideSubmenu()
         {
             if(panelHoaDon.Visible==true)
                 panelHoaDon.Visible=false;
-            if(btnSanPham.Visible==true)
-                btnSanPham.Visible=false;
+            /*if(btnSanPham.Visible==true)
+                btnSanPham.Visible=false;*/
             if(panelKhachHang.Visible==true)
                 panelKhachHang.Visible = false;
             if(panelNhanVien.Visible==true)
@@ -85,6 +85,90 @@ namespace MINI.GUI
                 nv.BringToFront();
             }
         }
+        private KhachHang kh;
+        private void loadFormKH()
+        {
+            if (kh == null || kh.IsDisposed)
+            {
+                // Nếu chưa, tạo một instance mới
+               kh = new GUI.KhachHang();
+
+                // Đặt MainForm làm cha của ChildForm
+                kh.TopLevel = false;
+
+                // Đặt thuộc tính Dock của ChildForm thành Fill để lấp đầy toàn bộ Panel
+                kh.Dock = DockStyle.Fill;
+
+                // Thêm ChildForm vào Panel
+                panelContent.Controls.Add(kh);
+                kh.Dock = DockStyle.Fill;
+
+
+                // Hiển thị ChildForm
+                kh.Show();
+            }
+            else
+            {
+                // Nếu đã mở, đưa ChildForm lên trước cùng
+                kh.BringToFront();
+            }
+        }
+        private SanPham sp;
+        private void loadFormSP()
+        {
+            if (sp == null || sp.IsDisposed)
+            {
+                // Nếu chưa, tạo một instance mới
+                sp = new GUI.SanPham();
+
+                // Đặt MainForm làm cha của ChildForm
+                sp.TopLevel = false;
+
+                // Đặt thuộc tính Dock của ChildForm thành Fill để lấp đầy toàn bộ Panel
+                sp.Dock = DockStyle.Fill;
+
+                // Thêm ChildForm vào Panel
+                panelContent.Controls.Add(sp);
+                sp.Dock = DockStyle.Fill;
+
+
+                // Hiển thị ChildForm
+                sp.Show();
+            }
+            else
+            {
+                // Nếu đã mở, đưa ChildForm lên trước cùng
+                sp.BringToFront();
+            }
+        }
+        private KhuyenMai km;
+        private void loadFormKM()
+        {
+            if (km == null || km.IsDisposed)
+            {
+                // Nếu chưa, tạo một instance mới
+                km = new GUI.KhuyenMai();
+
+                // Đặt MainForm làm cha của ChildForm
+                km.TopLevel = false;
+
+                // Đặt thuộc tính Dock của ChildForm thành Fill để lấp đầy toàn bộ Panel
+                km.Dock = DockStyle.Fill;
+
+                // Thêm ChildForm vào Panel
+                panelContent.Controls.Add(km);
+                km.Dock = DockStyle.Fill;
+
+
+                // Hiển thị ChildForm
+                km.Show();
+            }
+            else
+            {
+                // Nếu đã mở, đưa ChildForm lên trước cùng
+                km.BringToFront();
+            }
+        }
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             showSubmenu(panelNhanVien);
@@ -98,7 +182,7 @@ namespace MINI.GUI
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             showSubmenu(panelSanPham);
-            loadFormNV();
+            loadFormSP();
         }
 
         private void btnSanPhamThem_Click(object sender, EventArgs e)
@@ -146,6 +230,7 @@ namespace MINI.GUI
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             showSubmenu(panelKhachHang);
+            loadFormKH();
             //..
         }
 
@@ -180,7 +265,7 @@ namespace MINI.GUI
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             showSubmenu(panelKhuyenMai);
-            //..
+            loadFormKM();
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)

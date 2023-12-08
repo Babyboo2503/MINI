@@ -68,6 +68,7 @@
             this.tabNhanVien.SelectedIndex = 0;
             this.tabNhanVien.Size = new System.Drawing.Size(1158, 553);
             this.tabNhanVien.TabIndex = 1;
+            this.tabNhanVien.Click += new System.EventHandler(this.NhanVien_Load);
             // 
             // tabDSNV
             // 
