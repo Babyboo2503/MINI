@@ -67,6 +67,12 @@
     <Compile Include="src\DTO\PhieuNhapDTO.cs" />
     <Compile Include="src\DTO\SanPhamDTO.cs" />
     <Compile Include="src\DTO\TaiKhoanDTO.cs" />
+    <Compile Include="src\GUI\KhuyenMai\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\KhuyenMai\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\Login\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\product\" />
-    <Folder Include="src\GUI\KhuyenMai\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
