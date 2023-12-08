@@ -140,7 +140,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(478, 473);
+            this.groupBox4.Size = new System.Drawing.Size(451, 630);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin chung";
@@ -155,7 +155,7 @@
             this.lsvLoaiSanPham.Location = new System.Drawing.Point(3, 24);
             this.lsvLoaiSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsvLoaiSanPham.Name = "lsvLoaiSanPham";
-            this.lsvLoaiSanPham.Size = new System.Drawing.Size(472, 445);
+            this.lsvLoaiSanPham.Size = new System.Drawing.Size(445, 602);
             this.lsvLoaiSanPham.TabIndex = 0;
             this.lsvLoaiSanPham.UseCompatibleStateImageBehavior = false;
             this.lsvLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.lsvLoaiSanPham_SelectedIndexChanged);
@@ -620,34 +620,37 @@
             // idSanPham
             // 
             this.idSanPham.Text = "Id Sản phẩm";
-            this.idSanPham.Width = 80;
+            this.idSanPham.Width = 150;
             // 
             // loaiSanPham
             // 
             this.loaiSanPham.Text = "Loại Sản Phẩm";
-            this.loaiSanPham.Width = 100;
+            this.loaiSanPham.Width = 150;
             // 
             // tenSanPham
             // 
             this.tenSanPham.Text = "Tên Sản Phẩm";
-            this.tenSanPham.Width = 90;
+            this.tenSanPham.Width = 150;
             // 
             // donGia
             // 
             this.donGia.Text = "Đơn Giá";
+            this.donGia.Width = 150;
             // 
             // soLuong
             // 
             this.soLuong.Text = "Số Lượng";
+            this.soLuong.Width = 150;
             // 
             // hinhAnh
             // 
             this.hinhAnh.Text = "Hình Ảnh";
+            this.hinhAnh.Width = 150;
             // 
             // trangThai
             // 
             this.trangThai.Text = "Trạng Thái";
-            this.trangThai.Width = 90;
+            this.trangThai.Width = 150;
             // 
             // groupBox6
             // 
