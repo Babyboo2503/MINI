@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="src\BUS\HoaDonBUS.cs" />
     <Compile Include="src\BUS\KhachHangBUS.cs" />
+    <Compile Include="src\BUS\KhuyenMaiBUS.cs" />
     <Compile Include="src\BUS\NhanVienBUS.cs" />
     <Compile Include="src\BUS\PhieuNhapBUS.cs" />
     <Compile Include="src\BUS\SanPhamBUS.cs" />
