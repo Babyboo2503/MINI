@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="src\BUS\HoaDonBUS.cs" />
     <Compile Include="src\BUS\KhachHangBUS.cs" />
+    <Compile Include="src\BUS\KhuyenMaiBUS.cs" />
     <Compile Include="src\BUS\NhanVienBUS.cs" />
     <Compile Include="src\BUS\PhieuNhapBUS.cs" />
     <Compile Include="src\BUS\SanPhamBUS.cs" />
@@ -186,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\product\" />
+    <Folder Include="src\GUI\KhuyenMai\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
