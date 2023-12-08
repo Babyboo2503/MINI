@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\product\" />
+    <Folder Include="src\GUI\KhuyenMai\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
