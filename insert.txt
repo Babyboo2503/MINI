@@ -344,6 +344,7 @@ VALUES
 
 INSERT INTO KhuyenMai (tenKhuyenMai, ngayBatDau, ngayKetThuc, noiDung, phanTram, dieuKien)
 VALUES
+	(N'Giảm giá 0% cho đơn hàng.','2023-11-15','2024-11-20', N'Đơn hàng không giảm giá.', 0, 'Không có điều kiện.'),
 	(N'Giảm giá 5% cho tổng giá trị của đơn hàng.', '2023-11-15', '2023-11-20', N'Giảm giá 5% cho tổng giá trị của đơn hàng với những đơn hàng có giá trị >= 1000000đ .', 0.05, '>= 1000000đ'),
 	(N'Giảm giá 3% cho sản phẩm', '2023-11-22', '2023-11-25', N'Giảm giá 5% cho các giá trị sản phẩm của mẹ và bé.', 0.05, 'điểm của khách hàng >= 1000'),
 	(N'Giảm giá 20% cho tổng giá trị của đơn hàng', '2023-11-30', '2023-12-2', N'Giảm giá 20% cho tổng giá trị của đơn hàng đối với khách hàng có điểm >= 2000.', 0.05, 'điểm của khách hàng >= 2000'),
@@ -356,11 +357,11 @@ VALUES
 
 INSERT INTO HoaDon (idNhanVien, idKhachHang, ngayLap, idKhuyenMai, tongHoaDon)
 VALUES
-	(7, 1, '2023-11-22', null, 2111000),
-	(7, 2, '2023-11-22', null, 119800),
-	(7, 3, '2023-11-22', null, 1051500),
-	(7, 6, '2023-11-22', null, 1260000),
-	(7, 5, '2023-11-22', null, 1085000);
+	(7, 1, '2023-11-22', 1, 2111000),
+	(7, 2, '2023-11-22', 1, 119800),
+	(7, 3, '2023-11-22', 1, 1051500),
+	(7, 6, '2023-11-22', 1, 1260000),
+	(7, 5, '2023-11-22', 1, 1085000);
 
 --
 -- insert bảng ChiTietHoaDon

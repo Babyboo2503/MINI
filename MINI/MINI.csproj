@@ -54,18 +54,18 @@
     <Compile Include="src\BUS\TaiKhoanBUS.cs" />
     <Compile Include="src\BUS\ThongKeBUS.cs" />
     <Compile Include="src\DAO\Database.cs" />
-    <Compile Include="src\DTO\ChiTietHoaDon.cs" />
-    <Compile Include="src\DTO\ChiTietPhieuNhap.cs" />
-    <Compile Include="src\DTO\ChucVu.cs" />
-    <Compile Include="src\DTO\HoaDon.cs" />
-    <Compile Include="src\DTO\KhachHang.cs" />
-    <Compile Include="src\DTO\KhuyenMai.cs" />
-    <Compile Include="src\DTO\LoaiSanPham.cs" />
-    <Compile Include="src\DTO\NhaCungCap.cs" />
-    <Compile Include="src\DTO\NhanVien.cs" />
-    <Compile Include="src\DTO\PhieuNhap.cs" />
-    <Compile Include="src\DTO\SanPham.cs" />
-    <Compile Include="src\DTO\TaiKhoan.cs" />
+    <Compile Include="src\DTO\ChiTietHoaDonDTO.cs" />
+    <Compile Include="src\DTO\ChiTietPhieuNhapDTO.cs" />
+    <Compile Include="src\DTO\ChucVuDTO.cs" />
+    <Compile Include="src\DTO\HoaDonDTO.cs" />
+    <Compile Include="src\DTO\KhachHangDTO.cs" />
+    <Compile Include="src\DTO\KhuyenMaiDTO.cs" />
+    <Compile Include="src\DTO\LoaiSanPhamDTO.cs" />
+    <Compile Include="src\DTO\NhaCungCapDTO.cs" />
+    <Compile Include="src\DTO\NhanVienDTO.cs" />
+    <Compile Include="src\DTO\PhieuNhapDTO.cs" />
+    <Compile Include="src\DTO\SanPhamDTO.cs" />
+    <Compile Include="src\DTO\TaiKhoanDTO.cs" />
     <Compile Include="src\GUI\Login\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +96,18 @@
     </Compile>
     <Compile Include="src\GUI\SanPham\Class1.cs" />
     <Compile Include="src\GUI\TaiKhoan\Class1.cs" />
+    <Compile Include="src\GUI\ThongKe\frmChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\ThongKe\frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\ThongKe\frmChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\ThongKe\frmChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>frmChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\ThongKe\frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\SanPham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\ThongKe\frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\ThongKe\frmChiTietPhieuNhap.resx">
+      <DependentUpon>frmChiTietPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\ThongKe\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>

@@ -34,24 +34,33 @@
             this.tpAll = new System.Windows.Forms.TabPage();
             this.tbcManager = new System.Windows.Forms.TabControl();
             this.tabSum = new System.Windows.Forms.TabPage();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.lblTotalVendor = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.lblTotalCustomer = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotalEmployee = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.tpSell = new System.Windows.Forms.TabPage();
+            this.lsvInvoice = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpNhanHang = new System.Windows.Forms.TabPage();
+            this.lsvReceipt = new System.Windows.Forms.ListView();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
@@ -104,6 +113,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tpKhachHang = new System.Windows.Forms.TabPage();
             this.lsvCustomer = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nameCustomer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel10 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -113,6 +130,10 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tpNhaCungCap = new System.Windows.Forms.TabPage();
             this.lsvVendor = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel11 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -121,31 +142,25 @@
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nameCustomer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalInvoice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalReceipt = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
             this.tbcManager.SuspendLayout();
             this.tabSum.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tpSell.SuspendLayout();
+            this.tpNhanHang.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -166,6 +181,10 @@
             this.panel11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -218,10 +237,10 @@
             // 
             // tabSum
             // 
-            this.tabSum.Controls.Add(this.panel7);
-            this.tabSum.Controls.Add(this.panel6);
-            this.tabSum.Controls.Add(this.panel5);
-            this.tabSum.Controls.Add(this.panel4);
+            this.tabSum.Controls.Add(this.groupBox15);
+            this.tabSum.Controls.Add(this.groupBox14);
+            this.tabSum.Controls.Add(this.groupBox13);
+            this.tabSum.Controls.Add(this.groupBox12);
             this.tabSum.Location = new System.Drawing.Point(4, 25);
             this.tabSum.Name = "tabSum";
             this.tabSum.Padding = new System.Windows.Forms.Padding(3);
@@ -230,22 +249,12 @@
             this.tabSum.Text = "Tổng";
             this.tabSum.UseVisualStyleBackColor = true;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lblTotalVendor);
-            this.panel7.Controls.Add(this.pictureBox4);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(807, 6);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(250, 181);
-            this.panel7.TabIndex = 3;
-            // 
             // lblTotalVendor
             // 
             this.lblTotalVendor.AutoSize = true;
             this.lblTotalVendor.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalVendor.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTotalVendor.Location = new System.Drawing.Point(159, 68);
+            this.lblTotalVendor.Location = new System.Drawing.Point(167, 73);
             this.lblTotalVendor.Name = "lblTotalVendor";
             this.lblTotalVendor.Size = new System.Drawing.Size(32, 37);
             this.lblTotalVendor.TabIndex = 4;
@@ -254,7 +263,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(8, 47);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 34);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
             this.pictureBox4.TabIndex = 3;
@@ -264,28 +273,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(111, 32);
+            this.label5.Location = new System.Drawing.Point(114, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Nhà Cung Cấp";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lblTotalCustomer);
-            this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(538, 6);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 181);
-            this.panel6.TabIndex = 2;
             // 
             // lblTotalCustomer
             // 
             this.lblTotalCustomer.AutoSize = true;
             this.lblTotalCustomer.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCustomer.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTotalCustomer.Location = new System.Drawing.Point(164, 68);
+            this.lblTotalCustomer.Location = new System.Drawing.Point(163, 73);
             this.lblTotalCustomer.Name = "lblTotalCustomer";
             this.lblTotalCustomer.Size = new System.Drawing.Size(32, 37);
             this.lblTotalCustomer.TabIndex = 3;
@@ -294,7 +293,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(11, 47);
+            this.pictureBox3.Location = new System.Drawing.Point(6, 34);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
             this.pictureBox3.TabIndex = 2;
@@ -304,28 +303,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(117, 32);
+            this.label4.Location = new System.Drawing.Point(116, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "Khách Hàng";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lblTotalEmployee);
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(273, 6);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(250, 181);
-            this.panel5.TabIndex = 1;
             // 
             // lblTotalEmployee
             // 
             this.lblTotalEmployee.AutoSize = true;
             this.lblTotalEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalEmployee.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTotalEmployee.Location = new System.Drawing.Point(168, 68);
+            this.lblTotalEmployee.Location = new System.Drawing.Point(162, 73);
             this.lblTotalEmployee.Name = "lblTotalEmployee";
             this.lblTotalEmployee.Size = new System.Drawing.Size(32, 37);
             this.lblTotalEmployee.TabIndex = 3;
@@ -334,7 +323,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(25, 47);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 34);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.TabIndex = 2;
@@ -344,28 +333,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(131, 32);
+            this.label3.Location = new System.Drawing.Point(127, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nhân Viên";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblTotalProduct);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.lblProduct);
-            this.panel4.Location = new System.Drawing.Point(7, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 181);
-            this.panel4.TabIndex = 0;
             // 
             // lblTotalProduct
             // 
             this.lblTotalProduct.AutoSize = true;
             this.lblTotalProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProduct.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTotalProduct.Location = new System.Drawing.Point(165, 68);
+            this.lblTotalProduct.Location = new System.Drawing.Point(168, 73);
             this.lblTotalProduct.Name = "lblTotalProduct";
             this.lblTotalProduct.Size = new System.Drawing.Size(32, 37);
             this.lblTotalProduct.TabIndex = 2;
@@ -374,7 +353,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 1;
@@ -384,7 +363,7 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(138, 32);
+            this.lblProduct.Location = new System.Drawing.Point(138, 34);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(97, 25);
             this.lblProduct.TabIndex = 0;
@@ -392,6 +371,9 @@
             // 
             // tpSell
             // 
+            this.tpSell.Controls.Add(this.lblTotalInvoice);
+            this.tpSell.Controls.Add(this.label6);
+            this.tpSell.Controls.Add(this.lsvInvoice);
             this.tpSell.Location = new System.Drawing.Point(4, 25);
             this.tpSell.Name = "tpSell";
             this.tpSell.Padding = new System.Windows.Forms.Padding(3);
@@ -400,8 +382,59 @@
             this.tpSell.Text = "Bán Hàng";
             this.tpSell.UseVisualStyleBackColor = true;
             // 
+            // lsvInvoice
+            // 
+            this.lsvInvoice.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
+            this.lsvInvoice.HideSelection = false;
+            this.lsvInvoice.Location = new System.Drawing.Point(7, 6);
+            this.lsvInvoice.Name = "lsvInvoice";
+            this.lsvInvoice.Size = new System.Drawing.Size(1050, 408);
+            this.lsvInvoice.TabIndex = 0;
+            this.lsvInvoice.UseCompatibleStateImageBehavior = false;
+            this.lsvInvoice.View = System.Windows.Forms.View.Details;
+            this.lsvInvoice.SelectedIndexChanged += new System.EventHandler(this.lsvInvoice_SelectedIndexChanged);
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Mã Hóa Đơn";
+            this.columnHeader10.Width = 90;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Tên Nhân Viên";
+            this.columnHeader11.Width = 250;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Tên Khách Hàng";
+            this.columnHeader12.Width = 250;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Ngày Lập";
+            this.columnHeader13.Width = 120;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Tên Khuyến Mãi";
+            this.columnHeader14.Width = 180;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Tổng Hóa Đơn";
+            this.columnHeader15.Width = 150;
+            // 
             // tpNhanHang
             // 
+            this.tpNhanHang.Controls.Add(this.lblTotalReceipt);
+            this.tpNhanHang.Controls.Add(this.label7);
+            this.tpNhanHang.Controls.Add(this.lsvReceipt);
             this.tpNhanHang.Location = new System.Drawing.Point(4, 25);
             this.tpNhanHang.Name = "tpNhanHang";
             this.tpNhanHang.Padding = new System.Windows.Forms.Padding(3);
@@ -409,6 +442,48 @@
             this.tpNhanHang.TabIndex = 2;
             this.tpNhanHang.Text = "Nhập Hàng";
             this.tpNhanHang.UseVisualStyleBackColor = true;
+            // 
+            // lsvReceipt
+            // 
+            this.lsvReceipt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20});
+            this.lsvReceipt.HideSelection = false;
+            this.lsvReceipt.Location = new System.Drawing.Point(7, 7);
+            this.lsvReceipt.Name = "lsvReceipt";
+            this.lsvReceipt.Size = new System.Drawing.Size(1050, 404);
+            this.lsvReceipt.TabIndex = 0;
+            this.lsvReceipt.UseCompatibleStateImageBehavior = false;
+            this.lsvReceipt.View = System.Windows.Forms.View.Details;
+            this.lsvReceipt.SelectedIndexChanged += new System.EventHandler(this.lsvReceipt_SelectedIndexChanged);
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Mã Hóa Đơn";
+            this.columnHeader16.Width = 100;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Tên Nhân Viên";
+            this.columnHeader17.Width = 250;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Tên Nhà Cung Cấp";
+            this.columnHeader18.Width = 300;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Ngày Nhập";
+            this.columnHeader19.Width = 180;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Tổng Tiền";
+            this.columnHeader20.Width = 180;
             // 
             // panel2
             // 
@@ -641,7 +716,7 @@
             // 
             // idProduct
             // 
-            this.idProduct.Text = "Id Sản Phẩm";
+            this.idProduct.Text = "Mã Sản Phẩm";
             this.idProduct.Width = 100;
             // 
             // productName
@@ -714,8 +789,8 @@
             // 
             // idNhanVien
             // 
-            this.idNhanVien.Text = "Id Nhân Viên";
-            this.idNhanVien.Width = 90;
+            this.idNhanVien.Text = "Mã Nhân Viên";
+            this.idNhanVien.Width = 105;
             // 
             // name
             // 
@@ -856,6 +931,46 @@
             this.lsvCustomer.UseCompatibleStateImageBehavior = false;
             this.lsvCustomer.View = System.Windows.Forms.View.Details;
             // 
+            // id
+            // 
+            this.id.Text = "Mã Khách Hàng";
+            this.id.Width = 110;
+            // 
+            // nameCustomer
+            // 
+            this.nameCustomer.Text = "Tên Khách Hàng";
+            this.nameCustomer.Width = 180;
+            // 
+            // phone
+            // 
+            this.phone.Text = "Số Điện Thoại";
+            this.phone.Width = 120;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Giới Tính";
+            this.columnHeader1.Width = 80;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Email";
+            this.columnHeader2.Width = 170;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày Sinh";
+            this.columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Điểm";
+            this.columnHeader4.Width = 80;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Địa Chỉ";
+            this.columnHeader5.Width = 180;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.button3);
@@ -946,6 +1061,26 @@
             this.lsvVendor.UseCompatibleStateImageBehavior = false;
             this.lsvVendor.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mã Nhà Cung Cấp";
+            this.columnHeader6.Width = 130;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tên Nhà Cung Cấp";
+            this.columnHeader7.Width = 350;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Số Điện Thoại";
+            this.columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Địa Chỉ";
+            this.columnHeader9.Width = 300;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.button4);
@@ -1013,65 +1148,88 @@
             // 
             this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
-            // id
+            // label6
             // 
-            this.id.Text = "Id Khách Hàng";
-            this.id.Width = 100;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(726, 417);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 30);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Tổng Bán Ra:";
             // 
-            // nameCustomer
+            // lblTotalInvoice
             // 
-            this.nameCustomer.Text = "Tên Khách Hàng";
-            this.nameCustomer.Width = 180;
+            this.lblTotalInvoice.AutoSize = true;
+            this.lblTotalInvoice.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInvoice.Location = new System.Drawing.Point(870, 417);
+            this.lblTotalInvoice.Name = "lblTotalInvoice";
+            this.lblTotalInvoice.Size = new System.Drawing.Size(0, 30);
+            this.lblTotalInvoice.TabIndex = 2;
             // 
-            // phone
+            // label7
             // 
-            this.phone.Text = "Số Điện Thoại";
-            this.phone.Width = 120;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(685, 417);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(189, 30);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Tổng Nhập Hàng:";
             // 
-            // columnHeader1
+            // lblTotalReceipt
             // 
-            this.columnHeader1.Text = "Giới Tính";
-            this.columnHeader1.Width = 80;
+            this.lblTotalReceipt.AutoSize = true;
+            this.lblTotalReceipt.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalReceipt.Location = new System.Drawing.Point(880, 417);
+            this.lblTotalReceipt.Name = "lblTotalReceipt";
+            this.lblTotalReceipt.Size = new System.Drawing.Size(46, 30);
+            this.lblTotalReceipt.TabIndex = 3;
+            this.lblTotalReceipt.Text = "abc";
             // 
-            // columnHeader2
+            // groupBox12
             // 
-            this.columnHeader2.Text = "Email";
-            this.columnHeader2.Width = 170;
+            this.groupBox12.Controls.Add(this.lblTotalProduct);
+            this.groupBox12.Controls.Add(this.pictureBox1);
+            this.groupBox12.Controls.Add(this.lblProduct);
+            this.groupBox12.Location = new System.Drawing.Point(6, 6);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(250, 181);
+            this.groupBox12.TabIndex = 4;
+            this.groupBox12.TabStop = false;
             // 
-            // columnHeader3
+            // groupBox13
             // 
-            this.columnHeader3.Text = "Ngày Sinh";
-            this.columnHeader3.Width = 150;
+            this.groupBox13.Controls.Add(this.lblTotalEmployee);
+            this.groupBox13.Controls.Add(this.pictureBox2);
+            this.groupBox13.Controls.Add(this.label3);
+            this.groupBox13.Location = new System.Drawing.Point(273, 6);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(250, 181);
+            this.groupBox13.TabIndex = 5;
+            this.groupBox13.TabStop = false;
             // 
-            // columnHeader4
+            // groupBox14
             // 
-            this.columnHeader4.Text = "Điểm";
-            this.columnHeader4.Width = 80;
+            this.groupBox14.Controls.Add(this.lblTotalCustomer);
+            this.groupBox14.Controls.Add(this.pictureBox3);
+            this.groupBox14.Controls.Add(this.label4);
+            this.groupBox14.Location = new System.Drawing.Point(538, 6);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(250, 181);
+            this.groupBox14.TabIndex = 6;
+            this.groupBox14.TabStop = false;
             // 
-            // columnHeader5
+            // groupBox15
             // 
-            this.columnHeader5.Text = "Địa Chỉ";
-            this.columnHeader5.Width = 180;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Id Nhà Cung Cấp";
-            this.columnHeader6.Width = 120;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Tên Nhà Cung Cấp";
-            this.columnHeader7.Width = 350;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Số Điện Thoại";
-            this.columnHeader8.Width = 200;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Địa Chỉ";
-            this.columnHeader9.Width = 300;
+            this.groupBox15.Controls.Add(this.lblTotalVendor);
+            this.groupBox15.Controls.Add(this.pictureBox4);
+            this.groupBox15.Controls.Add(this.label5);
+            this.groupBox15.Location = new System.Drawing.Point(807, 6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(250, 181);
+            this.groupBox15.TabIndex = 7;
+            this.groupBox15.TabStop = false;
             // 
             // frmThongKe
             // 
@@ -1087,18 +1245,14 @@
             this.tpAll.ResumeLayout(false);
             this.tbcManager.ResumeLayout(false);
             this.tabSum.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tpSell.ResumeLayout(false);
+            this.tpSell.PerformLayout();
+            this.tpNhanHang.ResumeLayout(false);
+            this.tpNhanHang.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1122,6 +1276,14 @@
             this.panel11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1153,10 +1315,6 @@
         private System.Windows.Forms.TabPage tpSell;
         private System.Windows.Forms.TabPage tpNhanHang;
         private System.Windows.Forms.TabPage tpNhaCungCap;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1232,5 +1390,26 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ListView lsvInvoice;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ListView lsvReceipt;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalInvoice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTotalReceipt;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox14;
     }
 }

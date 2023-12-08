@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MINI.src.DTO
 {
-    public class ChiTietPhieuNhap
+    public class PhieuNhapDTO
     {
         public int idPhieuNhap { get; set; }
-        public int idSanPham { get; set; }
-        public int soLuong { get; set; }
-        public float donGia { get; set; }
+        public int idNhanVien { get; set; }
+        public int idNhaCungCap { get; set; }
         public float tongTien { get; set; }
+        public DateTime ngayNhap { get; set; }
     }
 }

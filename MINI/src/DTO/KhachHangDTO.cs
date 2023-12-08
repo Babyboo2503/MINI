@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MINI.src.DTO
 {
-    public class KhachHang
+    public class KhachHangDTO
     {
         public int idKhachHang { get; set; }
         public string hoTenKhachHang { get; set; }
