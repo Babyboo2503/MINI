@@ -12,8 +12,8 @@ namespace MINI.GUI
 {
     public partial class KhuyenMai : Form
     {
-        BUS.KhuyenMai km = new BUS.KhuyenMai();
-        BUS.SanPham sp = new BUS.SanPham();
+        BUS.KhuyenMaiBUS km = new BUS.KhuyenMaiBUS();
+        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
         public bool themmoi = false;
         public KhuyenMai()
         {
@@ -248,11 +248,19 @@ namespace MINI.GUI
 
         private void btnHuyKhuyenMai_Click(object sender, EventArgs e)
         {
+
             if (lsvKMSanPham.SelectedIndices.Count > 0)
             {
-                km.HuyKhuyenMai(lsvKMSanPham.SelectedItems[0].SubItems[0].Text);
-                MessageBox.Show("Hủy khuyến mãi thành công", "Hủy khuyến mãi");
-                HienthiKMSanPham();
+                if(lsvKMSanPham.SelectedItems[0].SubItems[2].Text == "0")
+                {
+                    MessageBox.Show("Sản phẩm chưa có khuyến mãi", "Hủy khuyến mãi");
+                }
+                else
+                {
+                    km.HuyKhuyenMai(lsvKMSanPham.SelectedItems[0].SubItems[0].Text);
+                    MessageBox.Show("Hủy khuyến mãi thành công", "Hủy khuyến mãi");
+                    HienthiKMSanPham();
+                }
             }
             else
                 MessageBox.Show("Bạn phải chọn sản phẩm để hủy", "Hủy khuyến mãi");

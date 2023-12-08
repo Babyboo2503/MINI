@@ -17,7 +17,7 @@ namespace MINI.GUI
 {
     public partial class KhachHang : Form
     {
-        BUS.KhachHang kh = new BUS.KhachHang();
+        BUS.KhachHangBUS kh = new BUS.KhachHangBUS();
         public KhachHang()
         {
             InitializeComponent();
