@@ -252,7 +252,7 @@ CREATE TABLE [dbo].[PhieuNhap](
 	[idNhanVien] [int] NULL,
 	[idNhaCungCap] [int] NULL,
 	[ngayNhap] [datetime] NULL,
-	tongTien [decimal](10, 2) NULL
+	[tongTien] [decimal](10, 2) NULL
 PRIMARY KEY CLUSTERED 
 (
 	[idPhieuNhap] ASC
