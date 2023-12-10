@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MINI.src.DAO;
+using MINI.DAO;
 
 namespace MINI.BUS
 {
@@ -32,7 +32,7 @@ namespace MINI.BUS
         {
             string sql = string.Format("Insert Into SanPham " +
                 "Values('{0}', '{1}', '{2}', N'{3}', {4}, N'{5}', '{6}')",
-                loaisanpham, dongia, soluong, trangthai, 0, ten, hinhanh);
+                loaisanpham, 0, 0, trangthai, 0, ten, hinhanh);
             db.ExecuteNonQuery(sql);
         }
         public void CapNhatSanPham(string loaisanpham, string ten, string dongia, string soluong, string hinhanh, string trangthai, string id)
@@ -161,7 +161,7 @@ namespace MINI.BUS
                     return "ten";
                 }
             }
-            if (dongia == "")
+       /*     if (dongia == "")
             {
                 MessageBox.Show("Hãy nhập đơn giá", "Báo lỗi");
                 return "dongia";
@@ -180,8 +180,8 @@ namespace MINI.BUS
             {
                 MessageBox.Show("Số lượng phải là số", "Báo lỗi");
                 return "soluong";
-            }
-            else if(hinhanh == "")
+            }*/
+            if(hinhanh == "")
             {
                 MessageBox.Show("Hãy chọn hình ảnh", "Báo lỗi");
                 return "hinhanh";
