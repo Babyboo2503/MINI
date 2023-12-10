@@ -13,14 +13,30 @@ namespace MINI.GUI
 {
     public partial class trangChu : Form
     {
-        public trangChu()
+        private bool[] quyen;
+        public trangChu(bool[] quyen)
         {
             InitializeComponent();
-            customizeDesign();
+            this.quyen = quyen;
+            show();
         }
 
         //
-
+        private void show()
+        {
+            btnBanHang.Visible = quyen[0];
+            btnNhapHang.Visible = quyen[1];
+            btnNhanVien.Visible = quyen[2];
+            btnSanPham.Visible = quyen[3];
+            btnHoaDon.Visible = quyen[4];
+            btnPhieuNhap.Visible = quyen[5];
+            btnKhachHang.Visible = quyen[6];
+            btnBaoCao.Visible = quyen[7];
+            btnNhaCungCap.Visible = quyen[8];
+            btnKhuyenMai.Visible = quyen[9];
+            btnTaiKhoan.Visible = quyen[10];
+            btnThongKe.Visible = quyen[11];
+        }
         //
 
         private Form activeForm = null;
@@ -48,37 +64,8 @@ namespace MINI.GUI
             flowPanelMenuLeft.HorizontalScroll.Enabled = false;
 /*            panelLeftMenu.AutoScroll = true;*/
         }
-        public void customizeDesign()
-        {
-            panelNhanVien.Visible=false;
-            panelKhachHang.Visible=false;
-            panelHoaDon.Visible=false;
-            btnSanPham.Visible=false;
-        }
-        private void hideSubmenu()
-        {
-            if(panelHoaDon.Visible==true)
-                panelHoaDon.Visible=false;
-            if(btnSanPham.Visible==true)
-                btnSanPham.Visible=false;
-            if(panelKhachHang.Visible==true)
-                panelKhachHang.Visible = false;
-            if(panelNhanVien.Visible==true)
-                panelNhanVien.Visible = false;
-        }
-        private void showSubmenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                hideSubmenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-        }
-        //      Tạo chức năng cho button nhân viên
+
+
 
         private NhanVien nv;
         //      Load form NhanVien
@@ -111,113 +98,49 @@ namespace MINI.GUI
         }
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelNhanVien);
             loadFormNV();
         }
-        private void btnNhanVienThem_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
+       
         private void btnSanPham_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelSanPham);
-            loadFormNV();
+            
         }
 
-        private void btnSanPhamThem_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnNhanVienDanhSach_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnSanPhamDanhSach_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnHoaDonLichSu_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnHoaDonThem_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnKhachHangDanhSach_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
-
-        private void btnKhachHangThem_Click(object sender, EventArgs e)
-        {
-            //...
-            hideSubmenu();
-        }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelKhachHang);
-            //..
+
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelHoaDon);
-            //..
+
         }
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelBaoCao);
-            //..
+
         }
 
         private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelPhieuNhap);
-            //..
-        }
-
-        private void btnPhieuNhapThem_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void btnPhieuNhapLichSu_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelKhuyenMai);
-            //..
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelThongKe);
             openChildForm(new frmThongKe());
             //..
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelNhaCungCap);
-            //..
+
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -225,6 +148,9 @@ namespace MINI.GUI
             this.Close();
         }
 
-       
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
