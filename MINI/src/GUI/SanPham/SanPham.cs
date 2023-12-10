@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MINI.GUI
 {
@@ -103,14 +104,15 @@ namespace MINI.GUI
             txtSoLuong.Text = "";
             txtHinhAnh.Text = "";
             txtTimKiemSanPham.Text = "";
+            cbbPhanLoai.SelectedItem = null;
         }
         
         private void tabSanPham_Load(object sender, EventArgs e)
         {
-            HienthiSanPham();
-            HienthiLoaiSanPham();
             setNull();
             setNull_LoaiSanPham();
+            HienthiSanPham();
+            HienthiLoaiSanPham();
         }
 
         bool checkValue_SanPham()
@@ -146,7 +148,7 @@ namespace MINI.GUI
                     return false;
                 }
                 string check = sp.checkValue_SanPham("id", cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text, txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString());
-                if(check.Equals("loaisp"))
+                if (check.Equals("loaisp"))
                 {
                     cbbLoaiSanPham.Focus();
                     return false;
@@ -449,6 +451,80 @@ namespace MINI.GUI
             else
             {
                 MessageBox.Show("Hãy chọn sản phẩm", "Báo lỗi");
+            }
+        }
+
+        private void cbbPhanLoai_DropDown(object sender, EventArgs e)
+        {
+            cbbPhanLoai.SelectedIndexChanged -= cbbPhanLoai_SelectedIndexChanged;
+            // Đổ dữ liệu vào ComboBox
+            cbbPhanLoai.DataSource = sp.LayDSLoaiSanPham();
+            cbbPhanLoai.DisplayMember = "tenLoaiSanPham";
+            cbbPhanLoai.ValueMember = "idLoaiSanPham";
+            cbbPhanLoai.SelectedIndexChanged += cbbPhanLoai_SelectedIndexChanged;
+        }
+
+        private void cbbPhanLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbPhanLoai.SelectedItem != null)
+            {
+                DataTable dttk = sp.LayDSSanPham();
+                if (rdPic.Checked)
+                {
+                    panel1.Visible = false;
+                    flowLayoutPanel1.Visible = true;
+                    flowLayoutPanel1.Controls.Clear();
+
+                    for (int i = 0; i < dttk.Rows.Count; i++)
+                    {
+                        if (dttk.Rows[i][1].ToString().ToLower().Contains(cbbPhanLoai.SelectedValue.ToString().ToLower()))
+                        {
+                            Product pro = new Product();
+                            try
+                            {
+                                pro.BorderStyle = BorderStyle.FixedSingle;
+                                pro.Id_Pro = dttk.Rows[i][0].ToString();
+                                pro.Name_Pro = dttk.Rows[i][6].ToString();
+                                pro.Num_Pro = dttk.Rows[i][3].ToString();
+                                pro.Img_Pro = dttk.Rows[i][7].ToString();
+                            }
+                            catch (Exception)
+                            {
+                            }
+                            flowLayoutPanel1.Controls.Add(pro);
+                        }
+                    }
+                    if (flowLayoutPanel1.Controls.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                    }
+                }
+                else
+                {
+                    panel1.Visible = true;
+                    flowLayoutPanel1.Visible = false;
+                    lsvSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                    lsvSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                    lsvSanPham.Items.Clear();
+                    for (int i = 0; i < dttk.Rows.Count; i++)
+                    {
+                        if (dttk.Rows[i][1].ToString().ToLower().Contains(cbbPhanLoai.SelectedValue.ToString().ToLower()))
+                        {
+                            ListViewItem lvi = lsvSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][6].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][2].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][3].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][7].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][4].ToString());
+                        }
+                    }
+                    if (lsvSanPham.Items.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                    }
+                }
+                setNull();
             }
         }
     }
