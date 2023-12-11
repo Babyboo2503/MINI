@@ -135,7 +135,7 @@ namespace MINI.src.GUI.ThongKe
             dsHoaDon = thongKeBus.layDanhSachHoaDon();
             for (int i = 0; i < dsHoaDon.Count;i++)
             {
-                total += dsHoaDon[i].tongHoaDon;
+                total += (float)dsHoaDon[i].tongHoaDon;
             }
             return total;
         }

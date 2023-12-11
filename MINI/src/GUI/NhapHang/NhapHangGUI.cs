@@ -1,4 +1,4 @@
-﻿using MINI.src.BUS;
+﻿using MINI.BUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +26,7 @@ namespace MINI.src.GUI.PhieuNhap
         void HienThiSanPham()
         {
             lsvdssp.Items.Clear();
-            DataTable dt = sp.layDSSP();
+            DataTable dt = sp.LayDSSanPham();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ListViewItem lvi =

@@ -52,6 +52,7 @@
     <Compile Include="src\BUS\KhachHangBUS.cs" />
     <Compile Include="src\BUS\KhuyenMaiBUS.cs" />
     <Compile Include="src\BUS\NhanVienBUS.cs" />
+    <Compile Include="src\BUS\PhanQuyenBUS.cs" />
     <Compile Include="src\GUI\NhapHang\NhapHangGUIHelpers.cs" />
     <Compile Include="src\BUS\PhieuNhapBUS.cs" />
     <Compile Include="src\BUS\SanPhamBUS.cs" />
@@ -150,7 +151,6 @@
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\SanPham\Class1.cs" />
-    <Compile Include="src\GUI\TaiKhoan\Class1.cs" />
     <Compile Include="src\GUI\ThongKe\frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,9 +259,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="image\product\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="image\icons8-add-32.png" />
   </ItemGroup>
@@ -291,6 +289,151 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icons8-sort-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\1486564407-plus-green_81521.png" />
+    <Content Include="image\3706872-control-music-play-play-music-play-sound-start_108717.png" />
+    <Content Include="image\3706885-control-music-next-skip_108701.png" />
+    <Content Include="image\background.png" />
+    <Content Include="image\Easily To Be.png" />
+    <Content Include="image\product\2-goi-bot-ngot-hat-lon-ajinomoto-400g.png" />
+    <Content Include="image\product\2-hop-sua-tuoi-tiet-trung-co-duong-vinamilk-100-sua-tuoi-1-lit-202310240931215665.png" />
+    <Content Include="image\product\2-hop-sua-tuoi-tiet-trung-khong-duong-vinamilk-100-sua-tuoi-1-lit-202310301028485472.png" />
+    <Content Include="image\product\2-loc-sua-chua-it-duong-vinamilk-love-yogurt-green-farm-hop-100g.png" />
+    <Content Include="image\product\2-loc-sua-chua-vinamilk-nha-dam-hop-100g.png" />
+    <Content Include="image\product\6-lon-bia-budweiser-330ml-202110111020026125.png" />
+    <Content Include="image\product\6-lon-nuoc-ngot-coca-cola-320ml-202304131108497884.png" />
+    <Content Include="image\product\6-lon-nuoc-ngot-coca-cola-light-330ml-202209111902227891.png" />
+    <Content Include="image\product\6-lon-nuoc-ngot-coca-cola-zero-320ml-202201271536306113.png" />
+    <Content Include="image\product\6-lon-nuoc-ngot-pepsi-cola-320ml-202303151109096736.png" />
+    <Content Include="image\product\banh-cracker-hai-lop-kem-bo-magic-twin-hop-300g-201912151715090527.png" />
+    <Content Include="image\product\banh-cracker-vi-com-non-afc-dinh-duong-hop-109g-202302170839310749.png" />
+    <Content Include="image\product\banh-cracker-vi-rau-afc-dinh-duong-hop-100g-202309261434004885.png" />
+    <Content Include="image\product\banh-quy-caramel-flan-afc-hop-125g-202203290805310008.png" />
+    <Content Include="image\product\banh-quy-vi-ca-phe-coffee-joy-hop-156g-202303130955311274.png" />
+    <Content Include="image\product\banh-trung-tipo-goi-220g-202212021644387800.png" />
+    <Content Include="image\product\banh-xop-phu-socola-kitkat-chunky-cookies-cream-thanh-38g-201907291251442370.png" />
+    <Content Include="image\product\bap_bo_uc_fohla_250g.png" />
+    <Content Include="image\product\ba_chi_bo_my_fohla_250g.png" />
+    <Content Include="image\product\ba_roi_heo_300g.png" />
+    <Content Include="image\product\bi-do-ho-lo-1-trai-700g-900g.png" />
+    <Content Include="image\product\bo-xay-fohla-250g.png" />
+    <Content Include="image\product\bot-canh-natafoods-goi-250g.png" />
+    <Content Include="image\product\bot-canh-vifont-230gam-2-org.png" />
+    <Content Include="image\product\bot-chien-gion-meizan-goi-150g-202006201551249041.png" />
+    <Content Include="image\product\bot-ngot-vedan-goi-1kg.png" />
+    <Content Include="image\product\bot-rau-cau-gion-ba-bay-goi-10g-202105140829175776.png" />
+    <Content Include="image\product\buoi-da-xanh-trai-tu-17kg-tro-len.png" />
+    <Content Include="image\product\ca-basa-cat-khuc-dong-lanh-500g.png" />
+    <Content Include="image\product\ca-basa-phi-le-250g.png" />
+    <Content Include="image\product\ca-hoi-phi-le-sg-food-khay-200g.png" />
+    <Content Include="image\product\ca-nuc-dong-lanh-500g.png" />
+    <Content Include="image\product\cat-ve-sinh-cho-meo-catsan-bao-5-lit-202105111913384718.png" />
+    <Content Include="image\product\cat-ve-sinh-cho-meo-me-o-huong-chanh-bao-5-lit-202205310911523965.png" />
+    <Content Include="image\product\chao-ga-gau-do-goi-50g-202209282327437027.png" />
+    <Content Include="image\product\chao-nhom-chong-dinh-day-tu-sau-rainy-rnts2825tt-28cm-202308210909284954.png" />
+    <Content Include="image\product\chao-nhom-chong-dinh-rainy-diamond-rndt24tt-24cm-202308210834426142.png" />
+    <Content Include="image\product\chao-nhom-chong-dinh-rainy-veinstone-rnt2025tt-20cm-202308210918374552.png" />
+    <Content Include="image\product\chao-thit-bam-gau-do-goi-50g-202307121014338847.png" />
+    <Content Include="image\product\chao-vifon-vi-thit-bam-goi-50g.png" />
+    <Content Include="image\product\cot_let_heo_300g.png" />
+    <Content Include="image\product\dau-dau-nanh-nguyen-chat-simply-chai-1-lit.png" />
+    <Content Include="image\product\dau-gao-nguyen-chat-simply-chai-1-lit.png" />
+    <Content Include="image\product\dau-goi-sach-gau-clear-huong-hoa-anh-dao-618ml-202308120938162654.png" />
+    <Content Include="image\product\dau-goi-sach-gau-head-shoulders-bac-ha-mat-ruoi-625ml-202003201039420386.png" />
+    <Content Include="image\product\dau-goi-x-men-water-thom-lau-sach-sau-750g-202110301527563873.png" />
+    <Content Include="image\product\dau-hat-cai-nguyen-chat-simply-chai-1-lit.png" />
+    <Content Include="image\product\dau-huong-duong-nguyen-chat-simply-chai-1-lit.png" />
+    <Content Include="image\product\dau-massage-cho-be-johnsons-200ml-201910011409015090.png" />
+    <Content Include="image\product\dau_goi_clear.png" />
+    <Content Include="image\product\duong-lam-banh-bien-hoa-pro-goi-1kg.png" />
+    <Content Include="image\product\duong-vang-thien-nhien-bien-hoa-gold-goi-1kg.png" />
+    <Content Include="image\product\du_du.png" />
+    <Content Include="image\product\gao-dac-san-trang-nguyen-vinh-hien-st25-tui-5kg.png" />
+    <Content Include="image\product\gao-giong-nhat-ban-vinh-hien-taiyo-tui-5kg-202007211001455095.png" />
+    <Content Include="image\product\hat-nem-ajinomoto-tom-thit-goi-900g.png" />
+    <Content Include="image\product\hat-nem-thit-heo-vedan-goi-1kg.png" />
+    <Content Include="image\product\hat-nem-thit-than-xuong-ong-tuy-knorr-goi-900g.png" />
+    <Content Include="image\product\kem-chocolate-walls-ly-90ml-46g.png" />
+    <Content Include="image\product\kem-danh-rang-cho-be-tren-2-tuoi-colgate-minions-huong-dau-80g-202211300949412089.png" />
+    <Content Include="image\product\kem-danh-rang-cho-be-tu-2-6-tuoi-p-s-huong-dau-ngua-sau-rang-cho-men-rang-chac-khoe-45g-202205121009089157.png" />
+    <Content Include="image\product\kem-que-topten-vanila-walls-cay-55g.png" />
+    <Content Include="image\product\kem-topten-socola-walls-cay-60g.png" />
+    <Content Include="image\product\kho-muc-200g.png" />
+    <Content Include="image\product\khoai-lang-tim-1kg.png" />
+    <Content Include="image\product\kiwi-xanh-zespri-new-zealand-hop-2-trai.png" />
+    <Content Include="image\product\loc-3-cuon-tui-rac-den-tu-huy-sinh-hoc-bach-hoa-xanh-55x65cm-1kg-202007291030342603.png" />
+    <Content Include="image\product\loc-3-cuon-tui-rac-den-tu-huy-sinh-hoc-bach-hoa-xanh-64x78cm-1kg-202007291029365115.png" />
+    <Content Include="image\product\loc-4-hop-sua-dau-nanh-hat-oc-cho-vinamilk-super-nut-180ml-202308011522015728.png" />
+    <Content Include="image\product\loc-6-hop-sua-dau-nanh-it-duong-fami-canxi-200ml-202308181455366933.png" />
+    <Content Include="image\product\loc-6-hop-sua-dau-nanh-vi-ca-phe-fami-canxi-200ml-202110071444531639.png" />
+    <Content Include="image\product\loc-6-lon-nuoc-ngot-pepsi-khong-calo-330ml-202103162336336531.png" />
+    <Content Include="image\product\mi-hao-hao-huong-vi-lau-kim-chi-han-quoc-goi-75g.png" />
+    <Content Include="image\product\mi-hao-hao-vi-tom-chua-cay-goi-75g.png" />
+    <Content Include="image\product\mi-kho-samyang-ga-cay-140gr-2-org.png" />
+    <Content Include="image\product\mien-phu-huong-lau-thai-tom-goi-60g.png" />
+    <Content Include="image\product\mien-phu-huong-suon-heo-goi-58g.png" />
+    <Content Include="image\product\muc-mot-nang-200g.png" />
+    <Content Include="image\product\muoi-hat-thien-nhien-vinh-hao-sosal-group-goi-1kg.png" />
+    <Content Include="image\product\muoi-tinh-say-bo-sung-i-ot-sosal-group-goi-1kg.png" />
+    <Content Include="image\product\nam-bo-fohla-250g.png" />
+    <Content Include="image\product\nam-dui-ga-baby-200g.png" />
+    <Content Include="image\product\nam-kim-cham-thai-lan-150g.png" />
+    <Content Include="image\product\nuoc-cham-nam-ngu-de-nhi-2-chai-900ml.png" />
+    <Content Include="image\product\nuoc-hoa-johnsons-huong-nang-mai-125ml-202105310948548997.png" />
+    <Content Include="image\product\nuoc-lau-kinh-gift-sac-bien-tuoi-mat-chai-580ml-202212280818260328.png" />
+    <Content Include="image\product\nuoc-lau-kinh-izi-home-huong-bac-ha-chai-650ml-202101161756059600.png" />
+    <Content Include="image\product\nuoc-lau-nha-sunlight-huong-hoa-dien-vy-tui-36kg-202203282017088496.png" />
+    <Content Include="image\product\nuoc-lau-nha-sunlight-tinh-dau-thao-moc-huong-hoa-lily-va-huong-thao-tui-358-lit-202208151037274779.png" />
+    <Content Include="image\product\nuoc-mam-cao-cap-cot-nhi-tom-dau-bep-tom-18-do-dam-chai-500ml.png" />
+    <Content Include="image\product\nuoc-mam-nam-ngu-ca-com-tuoi-10-do-dam-chai-750ml.png" />
+    <Content Include="image\product\nuoc-mam-nhi-ca-com-584-nha-trang-25-do-dam-chai-1-lit.png" />
+    <Content Include="image\product\nuoc-rua-chen-sunlight-chiet-xuat-chanh-danh-bay-dau-mo-voi-suc-manh-nhu-100-trai-chanh-chai-725ml-202308231430517568.png" />
+    <Content Include="image\product\nuoc-rua-chen-sunlight-thien-nhien-muoi-khoang-va-lo-hoi-an-toan-cho-chen-dia-tre-em-chai-725ml-202308121528493643.png" />
+    <Content Include="image\product\nuoc-tuong-chinsu-nam-shiitake-chai-330ml.png" />
+    <Content Include="image\product\nuoc-tuong-chinsu-toi-ot-chai-330ml.png" />
+    <Content Include="image\product\nuoc-tuong-dau-nanh-dam-dac-maggi-chai-300ml.png" />
+    <Content Include="image\product\nuoc-tuong-dau-nanh-maggi-giam-muoi-chai-300ml.png" />
+    <Content Include="image\product\nuoc-tuong-dau-nanh-thanh-diu-maggi-chai-700ml.png" />
+    <Content Include="image\product\phan-pigeon-chong-ham-diu-nhe-100g-201812051000292878.png" />
+    <Content Include="image\product\phan-thom-babi-mild-white-sakura-180g-201905270819366454.png" />
+    <Content Include="image\product\pho-ga-vifon-goi-65g-201911051624561949.png" />
+    <Content Include="image\product\pho-vi-bo-vifon-goi-65g-201911270930039500.png" />
+    <Content Include="image\product\rau-den-baby-goi-300g.png" />
+    <Content Include="image\product\rau-hung-cay-goi-100g.png" />
+    <Content Include="image\product\romano-classic-650g-2-org.png" />
+    <Content Include="image\product\socola-kem-sua-nhan-hanh-nhan-hersheys-nuggets-goi-28g-201908211311473092.png" />
+    <Content Include="image\product\socola-kit-kat-thanh-chunky-cocoa-38g-2-org.png" />
+    <Content Include="image\product\socola-sua-hersheys-thanh-15g-201909271604299845.png" />
+    <Content Include="image\product\socola-trang-nhan-banh-quy-hersheys-goi-15g-201908161329561479.png" />
+    <Content Include="image\product\st-enchantuer-magic-650g-2-org.png" />
+    <Content Include="image\product\st-enchantuer-sentation-650g-2-org.png" />
+    <Content Include="image\product\sua-dau-den-oc-cho-hanh-nhan-sahmyook-190ml-202308231102264831.png" />
+    <Content Include="image\product\sua-tam-bao-ve-khoi-vi-khuan-lifebuoy-bao-ve-vuot-troi-980ml-202304110938232209.png" />
+    <Content Include="image\product\sua-tam-bao-ve-khoi-vi-khuan-lifebuoy-sua-duong-am-980ml-202303130934283530.png" />
+    <Content Include="image\product\sua-tam-enchanteur-huong-nuoc-hoa-charming-900g-2-org.png" />
+    <Content Include="image\product\sua-tuoi-tiet-trung-khong-duong-dutch-lady-hop-965ml-202307271504090009.png" />
+    <Content Include="image\product\tao-gala-nhap-khau-new-zealand-hop-1kg.png" />
+    <Content Include="image\product\thit_bap_gio_300g.png" />
+    <Content Include="image\product\thit_dui_heo_500g.png" />
+    <Content Include="image\product\thit_heo_xay_500g.png" />
+    <Content Include="image\product\thuc-an-cho-cho-lon-pedigree-vi-bo-va-rau-cu-tui-3kg-202105111903437646.png" />
+    <Content Include="image\product\thuc-an-cho-meo-lon-whiskas-vi-ca-bien-tui-3kg-202105121515410083.png" />
+    <Content Include="image\product\thuc-an-cho-meo-truong-thanh-me-o-vi-hai-san-tui-3kg-202203200118480042.png" />
+    <Content Include="image\product\thuc-an-cho-truong-thanh-ganador-vi-ca-hoi-va-gao-goi-3kg-202210141130005784.png" />
+    <Content Include="image\product\thuc-an-cho-truong-thanh-ganador-vi-ga-nuong-goi-3kg-202210141141515385.png" />
+    <Content Include="image\product\thuc-an-giong-cho-nho-truong-thanh-smartheart-vi-thit-bo-nuong-tui-3kg-202203200125489102.png" />
+    <Content Include="image\product\thuc-an-kho-cho-cho-con-smartheart-vi-thit-bo-va-sua-tui-3kg-202203261555037628.png" />
+    <Content Include="image\product\thung-20-lon-bia-budweiser-330ml-202212271500437513.png" />
+    <Content Include="image\product\thung-24-lon-bia-tiger-lon-cao-330ml-202311041013335193.png" />
+    <Content Include="image\product\tom-su-non-tu-nhien-hdc-200g.png" />
+    <Content Include="image\product\tom-the-non-tu-nhien-hdc-200g.png" />
+    <Content Include="image\product\trung-cut-nguyen-ho-hop-30-qua.png" />
+    <Content Include="image\product\trung-ga-happy-egg-hop-10-qua.png" />
+    <Content Include="image\product\trung-ga-so-happy-egg-hop-10-tang-2.png" />
+    <Content Include="image\product\trung-vit-bac-thao-nguyen-ho-hop-4-qua.png" />
+    <Content Include="image\product\trung-vit-muoi-nguyen-ho-hop-4-qua.png" />
+    <Content Include="image\product\xa-lach-thuy-tinh-thuy-canh-cay-tu-230g.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using MINI.src.GUI.ThongKe;
+﻿using MINI.GUI;
+using MINI.src.GUI.ThongKe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MINI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThongKe());
+            Application.Run(new DangNhap());
             //sdadasd
         }
     }

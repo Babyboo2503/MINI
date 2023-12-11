@@ -31,6 +31,19 @@ namespace MINI.src.BUS
             }
             return result;
         }
+        public DataTable LayDSTaiKhoan()
+        {
+            string strSQL = "Select * From TaiKhoan";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+        public DataTable LayThongTinTaiKhoan(string idNhanVien)
+        {
+            string account = $"Select * from TaiKhoan where idNhanVien={idNhanVien}";
+            DataTable dt = db.Execute(account);
+            return dt;
+        }
+
 
     }
 }

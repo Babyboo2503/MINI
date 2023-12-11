@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idNhanVienLabel;
             System.Windows.Forms.Label hoVaTenLabel;
             System.Windows.Forms.Label soDienThoaiLabel;
@@ -39,10 +38,10 @@
             System.Windows.Forms.Label ngayNghiLabel;
             System.Windows.Forms.Label ngaySinhLabel;
             System.Windows.Forms.Label diaChiLabel;
-            System.Windows.Forms.Label idNhanVienLabel2;
-            System.Windows.Forms.Label hoVaTenLabel1;
-            System.Windows.Forms.Label soDienThoaiLabel1;
-            System.Windows.Forms.Label gioiTinhLabel1;
+            System.Windows.Forms.Label lbl1;
+            System.Windows.Forms.Label lbl2;
+            System.Windows.Forms.Label lbl3;
+            System.Windows.Forms.Label lbl4;
             System.Windows.Forms.Label luongLabel1;
             System.Windows.Forms.Label ngayNghiLabel1;
             System.Windows.Forms.Label ngaySinhLabel1;
@@ -60,67 +59,55 @@
             System.Windows.Forms.Label passwordLabel2;
             System.Windows.Forms.Label quyenLabel2;
             System.Windows.Forms.Label label5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             System.Windows.Forms.Label idTaiKhoanLabel1;
             System.Windows.Forms.Label idNhanVienLabel4;
             System.Windows.Forms.Label usernameLabel1;
             System.Windows.Forms.Label passwordLabel1;
             System.Windows.Forms.Label quyenLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.tabNhanVien = new System.Windows.Forms.TabControl();
             this.tabThongTinNhanVien = new System.Windows.Forms.TabPage();
             this.panelTaiKhoan = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtHoTenTaiKhoan = new System.Windows.Forms.TextBox();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.miniMarketDataSet = new MINI.MiniMarketDataSet();
-            this.lblCV = new System.Windows.Forms.Label();
+            this.txtHoVaTenNVTK = new System.Windows.Forms.TextBox();
+            this.lblChucVuNVTK = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.idTaiKhoanTextBox2 = new System.Windows.Forms.TextBox();
-            this.taiKhoanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idNhanVienTextBox2 = new System.Windows.Forms.TextBox();
-            this.usernameTextBox2 = new System.Windows.Forms.TextBox();
-            this.passwordTextBox2 = new System.Windows.Forms.TextBox();
-            this.quyenTextBox1 = new System.Windows.Forms.TextBox();
-            this.nhanVienBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.txtIDTaiKhoanNV = new System.Windows.Forms.TextBox();
+            this.txtIDNhanVienNVTK = new System.Windows.Forms.TextBox();
+            this.txtUsernameNV = new System.Windows.Forms.TextBox();
+            this.txtPasswordNV = new System.Windows.Forms.TextBox();
+            this.txtQuyenNV = new System.Windows.Forms.TextBox();
+            this.listViewNhanVien = new System.Windows.Forms.ListView();
+            this.IDNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HoVaTenNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DiaChiNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SDTNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GioiTinhNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IDChucVuNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LuongNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TrangThaiNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NgaySinhNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NgayNghiNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.nhanVienDataGridView = new System.Windows.Forms.DataGridView();
-            this.ColIDNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNgayNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReloadNV = new System.Windows.Forms.Button();
+            this.btnThemNV = new System.Windows.Forms.Button();
             this.lblTittleDanhSachNhanVien = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.btnTaiKhoanNV = new System.Windows.Forms.Button();
             this.labelChucVu = new System.Windows.Forms.Label();
             this.lblNull = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.hoVaTenTextBox = new System.Windows.Forms.TextBox();
-            this.soDienThoaiTextBox = new System.Windows.Forms.TextBox();
-            this.gioiTinhTextBox = new System.Windows.Forms.TextBox();
-            this.idChucVuTextBox = new System.Windows.Forms.TextBox();
-            this.luongTextBox = new System.Windows.Forms.TextBox();
-            this.trangThaiTextBox = new System.Windows.Forms.TextBox();
-            this.ngayNghiDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ngaySinhDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.diaChiTextBox = new System.Windows.Forms.TextBox();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.txtIDNhanVienNV = new System.Windows.Forms.TextBox();
+            this.txtHoVaTenNV = new System.Windows.Forms.TextBox();
+            this.txtSDTNV = new System.Windows.Forms.TextBox();
+            this.txtGioiTinhNV = new System.Windows.Forms.TextBox();
+            this.txtIDChucVuNV = new System.Windows.Forms.TextBox();
+            this.txtLuongNV = new System.Windows.Forms.TextBox();
+            this.txtTrangThaiNV = new System.Windows.Forms.TextBox();
+            this.DTPNgayNghiNV = new System.Windows.Forms.DateTimePicker();
+            this.DTPNgaySinhNV = new System.Windows.Forms.DateTimePicker();
+            this.txtDiaChiNV = new System.Windows.Forms.TextBox();
+            this.btnSuaNV = new System.Windows.Forms.Button();
             this.tabSuaThemNhanVien = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -136,27 +123,34 @@
             this.lblTittleDemo1 = new System.Windows.Forms.Label();
             this.lblTittleThemNhanVien = new System.Windows.Forms.Label();
             this.panelThemThongTinNhanVien = new System.Windows.Forms.Panel();
-            this.idChucVuComboBox = new System.Windows.Forms.ComboBox();
-            this.trangThaiComboBox = new System.Windows.Forms.ComboBox();
-            this.txtChiTietIDNhanVien = new System.Windows.Forms.TextBox();
-            this.hoVaTenTextBox1 = new System.Windows.Forms.TextBox();
-            this.soDienThoaiTextBox1 = new System.Windows.Forms.TextBox();
-            this.gioiTinhTextBox1 = new System.Windows.Forms.TextBox();
-            this.luongTextBox1 = new System.Windows.Forms.TextBox();
-            this.ngayNghiDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.ngaySinhDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.diaChiTextBox1 = new System.Windows.Forms.TextBox();
+            this.cbbIDChucVuCTNV = new System.Windows.Forms.ComboBox();
+            this.cbbTrangThaiCTNV = new System.Windows.Forms.ComboBox();
+            this.txtIDNhanVienCTNV = new System.Windows.Forms.TextBox();
+            this.txtHoVaTenCTNV = new System.Windows.Forms.TextBox();
+            this.txtSDTCTNV = new System.Windows.Forms.TextBox();
+            this.txtGioiTinhCTNV = new System.Windows.Forms.TextBox();
+            this.txtLuongCTNV = new System.Windows.Forms.TextBox();
+            this.DTPNgayNghiCTNV = new System.Windows.Forms.DateTimePicker();
+            this.DTPNgaySinhCTNV = new System.Windows.Forms.DateTimePicker();
+            this.txtDiaChiCTNV = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.lblNote = new System.Windows.Forms.Label();
             this.tabThongTinTaiKhoan = new System.Windows.Forms.TabPage();
-            this.taiKhoanDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listViewTaiKhoan = new System.Windows.Forms.ListView();
+            this.idTaiKhoanCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idNhanVienCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UsernameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PasswordCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.QuyenCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panelSuaTaiKhoan = new System.Windows.Forms.Panel();
+            this.idTaiKhoanTextBox1 = new System.Windows.Forms.TextBox();
+            this.idNhanVienTextBox1 = new System.Windows.Forms.TextBox();
+            this.usernameTextBox1 = new System.Windows.Forms.TextBox();
+            this.passwordTextBox1 = new System.Windows.Forms.TextBox();
+            this.quyenTextBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.idTaiKhoanTextBox = new System.Windows.Forms.TextBox();
@@ -167,18 +161,7 @@
             this.lblChucVu2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSuaTaiKhoan = new System.Windows.Forms.Button();
-            this.tableAdapterManager = new MINI.MiniMarketDataSetTableAdapters.TableAdapterManager();
-            this.nhanVienTableAdapter = new MINI.MiniMarketDataSetTableAdapters.NhanVienTableAdapter();
-            this.taiKhoanTableAdapter = new MINI.MiniMarketDataSetTableAdapters.TaiKhoanTableAdapter();
-            this.nhanVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panelSuaTaiKhoan = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.idTaiKhoanTextBox1 = new System.Windows.Forms.TextBox();
-            this.idNhanVienTextBox1 = new System.Windows.Forms.TextBox();
-            this.usernameTextBox1 = new System.Windows.Forms.TextBox();
-            this.passwordTextBox1 = new System.Windows.Forms.TextBox();
-            this.quyenTextBox2 = new System.Windows.Forms.TextBox();
+            this.miniMarketDataSet = new MINI.MiniMarketDataSet();
             idNhanVienLabel = new System.Windows.Forms.Label();
             hoVaTenLabel = new System.Windows.Forms.Label();
             soDienThoaiLabel = new System.Windows.Forms.Label();
@@ -189,10 +172,10 @@
             ngayNghiLabel = new System.Windows.Forms.Label();
             ngaySinhLabel = new System.Windows.Forms.Label();
             diaChiLabel = new System.Windows.Forms.Label();
-            idNhanVienLabel2 = new System.Windows.Forms.Label();
-            hoVaTenLabel1 = new System.Windows.Forms.Label();
-            soDienThoaiLabel1 = new System.Windows.Forms.Label();
-            gioiTinhLabel1 = new System.Windows.Forms.Label();
+            lbl1 = new System.Windows.Forms.Label();
+            lbl2 = new System.Windows.Forms.Label();
+            lbl3 = new System.Windows.Forms.Label();
+            lbl4 = new System.Windows.Forms.Label();
             luongLabel1 = new System.Windows.Forms.Label();
             ngayNghiLabel1 = new System.Windows.Forms.Label();
             ngaySinhLabel1 = new System.Windows.Forms.Label();
@@ -218,26 +201,18 @@
             this.tabNhanVien.SuspendLayout();
             this.tabThongTinNhanVien.SuspendLayout();
             this.panelTaiKhoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingNavigator)).BeginInit();
-            this.nhanVienBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDataGridView)).BeginInit();
             this.panelInfo.SuspendLayout();
             this.tabSuaThemNhanVien.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelThemThongTinNhanVien.SuspendLayout();
             this.tabThongTinTaiKhoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).BeginInit();
+            this.panelSuaTaiKhoan.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource1)).BeginInit();
-            this.panelSuaTaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idNhanVienLabel
@@ -281,45 +256,45 @@
             idChucVuLabel.AutoSize = true;
             idChucVuLabel.Location = new System.Drawing.Point(70, 220);
             idChucVuLabel.Name = "idChucVuLabel";
-            idChucVuLabel.Size = new System.Drawing.Size(105, 22);
+            idChucVuLabel.Size = new System.Drawing.Size(101, 22);
             idChucVuLabel.TabIndex = 11;
-            idChucVuLabel.Text = "Mã chức vụ:";
+            idChucVuLabel.Text = "ID Chức vụ:";
             // 
             // luongLabel
             // 
             luongLabel.AutoSize = true;
             luongLabel.Location = new System.Drawing.Point(421, 78);
             luongLabel.Name = "luongLabel";
-            luongLabel.Size = new System.Drawing.Size(62, 22);
+            luongLabel.Size = new System.Drawing.Size(65, 22);
             luongLabel.TabIndex = 13;
-            luongLabel.Text = "luong:";
+            luongLabel.Text = "Lương:";
             // 
             // trangThaiLabel
             // 
             trangThaiLabel.AutoSize = true;
             trangThaiLabel.Location = new System.Drawing.Point(421, 150);
             trangThaiLabel.Name = "trangThaiLabel";
-            trangThaiLabel.Size = new System.Drawing.Size(98, 22);
+            trangThaiLabel.Size = new System.Drawing.Size(99, 22);
             trangThaiLabel.TabIndex = 15;
-            trangThaiLabel.Text = "trang Thai:";
+            trangThaiLabel.Text = "Trạng thái:";
             // 
             // ngayNghiLabel
             // 
             ngayNghiLabel.AutoSize = true;
             ngayNghiLabel.Location = new System.Drawing.Point(421, 189);
             ngayNghiLabel.Name = "ngayNghiLabel";
-            ngayNghiLabel.Size = new System.Drawing.Size(99, 22);
+            ngayNghiLabel.Size = new System.Drawing.Size(98, 22);
             ngayNghiLabel.TabIndex = 17;
-            ngayNghiLabel.Text = "ngay Nghi:";
+            ngayNghiLabel.Text = "Ngày nghỉ:";
             // 
             // ngaySinhLabel
             // 
             ngaySinhLabel.AutoSize = true;
             ngaySinhLabel.Location = new System.Drawing.Point(421, 114);
             ngaySinhLabel.Name = "ngaySinhLabel";
-            ngaySinhLabel.Size = new System.Drawing.Size(94, 22);
+            ngaySinhLabel.Size = new System.Drawing.Size(96, 22);
             ngaySinhLabel.TabIndex = 19;
-            ngaySinhLabel.Text = "ngay Sinh:";
+            ngaySinhLabel.Text = "Ngày sinh:";
             // 
             // diaChiLabel
             // 
@@ -330,50 +305,50 @@
             diaChiLabel.TabIndex = 21;
             diaChiLabel.Text = "Địa chỉ:";
             // 
-            // idNhanVienLabel2
+            // lbl1
             // 
-            idNhanVienLabel2.AutoSize = true;
-            idNhanVienLabel2.Location = new System.Drawing.Point(72, 50);
-            idNhanVienLabel2.Name = "idNhanVienLabel2";
-            idNhanVienLabel2.Size = new System.Drawing.Size(94, 18);
-            idNhanVienLabel2.TabIndex = 14;
-            idNhanVienLabel2.Text = "id Nhan Vien:";
+            lbl1.AutoSize = true;
+            lbl1.Location = new System.Drawing.Point(72, 50);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new System.Drawing.Size(95, 18);
+            lbl1.TabIndex = 14;
+            lbl1.Text = "ID Nhân viên:";
             // 
-            // hoVaTenLabel1
+            // lbl2
             // 
-            hoVaTenLabel1.AutoSize = true;
-            hoVaTenLabel1.Location = new System.Drawing.Point(72, 80);
-            hoVaTenLabel1.Name = "hoVaTenLabel1";
-            hoVaTenLabel1.Size = new System.Drawing.Size(79, 18);
-            hoVaTenLabel1.TabIndex = 16;
-            hoVaTenLabel1.Text = "ho Va Ten:";
+            lbl2.AutoSize = true;
+            lbl2.Location = new System.Drawing.Point(72, 80);
+            lbl2.Name = "lbl2";
+            lbl2.Size = new System.Drawing.Size(75, 18);
+            lbl2.TabIndex = 16;
+            lbl2.Text = "Họ và tên:";
             // 
-            // soDienThoaiLabel1
+            // lbl3
             // 
-            soDienThoaiLabel1.AutoSize = true;
-            soDienThoaiLabel1.Location = new System.Drawing.Point(72, 110);
-            soDienThoaiLabel1.Name = "soDienThoaiLabel1";
-            soDienThoaiLabel1.Size = new System.Drawing.Size(104, 18);
-            soDienThoaiLabel1.TabIndex = 18;
-            soDienThoaiLabel1.Text = "so Dien Thoai:";
+            lbl3.AutoSize = true;
+            lbl3.Location = new System.Drawing.Point(72, 110);
+            lbl3.Name = "lbl3";
+            lbl3.Size = new System.Drawing.Size(98, 18);
+            lbl3.TabIndex = 18;
+            lbl3.Text = "Số điện thoại:";
             // 
-            // gioiTinhLabel1
+            // lbl4
             // 
-            gioiTinhLabel1.AutoSize = true;
-            gioiTinhLabel1.Location = new System.Drawing.Point(72, 140);
-            gioiTinhLabel1.Name = "gioiTinhLabel1";
-            gioiTinhLabel1.Size = new System.Drawing.Size(67, 18);
-            gioiTinhLabel1.TabIndex = 20;
-            gioiTinhLabel1.Text = "gioi Tinh:";
+            lbl4.AutoSize = true;
+            lbl4.Location = new System.Drawing.Point(72, 140);
+            lbl4.Name = "lbl4";
+            lbl4.Size = new System.Drawing.Size(66, 18);
+            lbl4.TabIndex = 20;
+            lbl4.Text = "Giới tính:";
             // 
             // luongLabel1
             // 
             luongLabel1.AutoSize = true;
             luongLabel1.Location = new System.Drawing.Point(72, 200);
             luongLabel1.Name = "luongLabel1";
-            luongLabel1.Size = new System.Drawing.Size(48, 18);
+            luongLabel1.Size = new System.Drawing.Size(53, 18);
             luongLabel1.TabIndex = 24;
-            luongLabel1.Text = "luong:";
+            luongLabel1.Text = "Lương:";
             // 
             // ngayNghiLabel1
             // 
@@ -382,16 +357,16 @@
             ngayNghiLabel1.Name = "ngayNghiLabel1";
             ngayNghiLabel1.Size = new System.Drawing.Size(77, 18);
             ngayNghiLabel1.TabIndex = 28;
-            ngayNghiLabel1.Text = "ngay Nghi:";
+            ngayNghiLabel1.Text = "Ngày nghỉ:";
             // 
             // ngaySinhLabel1
             // 
             ngaySinhLabel1.AutoSize = true;
             ngaySinhLabel1.Location = new System.Drawing.Point(72, 291);
             ngaySinhLabel1.Name = "ngaySinhLabel1";
-            ngaySinhLabel1.Size = new System.Drawing.Size(76, 18);
+            ngaySinhLabel1.Size = new System.Drawing.Size(77, 18);
             ngaySinhLabel1.TabIndex = 30;
-            ngaySinhLabel1.Text = "ngay Sinh:";
+            ngaySinhLabel1.Text = "Ngày sinh:";
             // 
             // diaChiLabel1
             // 
@@ -400,7 +375,7 @@
             diaChiLabel1.Name = "diaChiLabel1";
             diaChiLabel1.Size = new System.Drawing.Size(57, 18);
             diaChiLabel1.TabIndex = 32;
-            diaChiLabel1.Text = "dia Chi:";
+            diaChiLabel1.Text = "Địa chỉ:";
             // 
             // trangThaiLabel1
             // 
@@ -409,16 +384,16 @@
             trangThaiLabel1.Name = "trangThaiLabel1";
             trangThaiLabel1.Size = new System.Drawing.Size(77, 18);
             trangThaiLabel1.TabIndex = 42;
-            trangThaiLabel1.Text = "trang Thai:";
+            trangThaiLabel1.Text = "Trạng thái:";
             // 
             // idChucVuLabel1
             // 
             idChucVuLabel1.AutoSize = true;
             idChucVuLabel1.Location = new System.Drawing.Point(72, 170);
             idChucVuLabel1.Name = "idChucVuLabel1";
-            idChucVuLabel1.Size = new System.Drawing.Size(83, 18);
+            idChucVuLabel1.Size = new System.Drawing.Size(84, 18);
             idChucVuLabel1.TabIndex = 43;
-            idChucVuLabel1.Text = "id Chuc Vu:";
+            idChucVuLabel1.Text = "ID Chức vụ:";
             // 
             // idTaiKhoanLabel
             // 
@@ -470,9 +445,9 @@
             idTaiKhoanLabel2.AutoSize = true;
             idTaiKhoanLabel2.Location = new System.Drawing.Point(139, 50);
             idTaiKhoanLabel2.Name = "idTaiKhoanLabel2";
-            idTaiKhoanLabel2.Size = new System.Drawing.Size(116, 22);
+            idTaiKhoanLabel2.Size = new System.Drawing.Size(118, 22);
             idTaiKhoanLabel2.TabIndex = 0;
-            idTaiKhoanLabel2.Text = "id Tai Khoan:";
+            idTaiKhoanLabel2.Text = "ID Tài khoản:";
             // 
             // idNhanVienLabel3
             // 
@@ -481,16 +456,16 @@
             idNhanVienLabel3.Name = "idNhanVienLabel3";
             idNhanVienLabel3.Size = new System.Drawing.Size(119, 22);
             idNhanVienLabel3.TabIndex = 2;
-            idNhanVienLabel3.Text = "id Nhan Vien:";
+            idNhanVienLabel3.Text = "ID Nhân viên:";
             // 
             // usernameLabel2
             // 
             usernameLabel2.AutoSize = true;
             usernameLabel2.Location = new System.Drawing.Point(139, 155);
             usernameLabel2.Name = "usernameLabel2";
-            usernameLabel2.Size = new System.Drawing.Size(93, 22);
+            usernameLabel2.Size = new System.Drawing.Size(95, 22);
             usernameLabel2.TabIndex = 4;
-            usernameLabel2.Text = "username:";
+            usernameLabel2.Text = "Username:";
             // 
             // passwordLabel2
             // 
@@ -499,16 +474,16 @@
             passwordLabel2.Name = "passwordLabel2";
             passwordLabel2.Size = new System.Drawing.Size(94, 22);
             passwordLabel2.TabIndex = 6;
-            passwordLabel2.Text = "password:";
+            passwordLabel2.Text = "Password:";
             // 
             // quyenLabel2
             // 
             quyenLabel2.AutoSize = true;
             quyenLabel2.Location = new System.Drawing.Point(139, 225);
             quyenLabel2.Name = "quyenLabel2";
-            quyenLabel2.Size = new System.Drawing.Size(64, 22);
+            quyenLabel2.Size = new System.Drawing.Size(67, 22);
             quyenLabel2.TabIndex = 8;
-            quyenLabel2.Text = "quyen:";
+            quyenLabel2.Text = "Quyền:";
             // 
             // label5
             // 
@@ -518,6 +493,51 @@
             label5.Size = new System.Drawing.Size(92, 22);
             label5.TabIndex = 29;
             label5.Text = "Họ và tên:";
+            // 
+            // idTaiKhoanLabel1
+            // 
+            idTaiKhoanLabel1.AutoSize = true;
+            idTaiKhoanLabel1.Location = new System.Drawing.Point(30, 20);
+            idTaiKhoanLabel1.Name = "idTaiKhoanLabel1";
+            idTaiKhoanLabel1.Size = new System.Drawing.Size(116, 22);
+            idTaiKhoanLabel1.TabIndex = 10;
+            idTaiKhoanLabel1.Text = "id Tai Khoan:";
+            // 
+            // idNhanVienLabel4
+            // 
+            idNhanVienLabel4.AutoSize = true;
+            idNhanVienLabel4.Location = new System.Drawing.Point(30, 55);
+            idNhanVienLabel4.Name = "idNhanVienLabel4";
+            idNhanVienLabel4.Size = new System.Drawing.Size(119, 22);
+            idNhanVienLabel4.TabIndex = 12;
+            idNhanVienLabel4.Text = "id Nhan Vien:";
+            // 
+            // usernameLabel1
+            // 
+            usernameLabel1.AutoSize = true;
+            usernameLabel1.Location = new System.Drawing.Point(30, 90);
+            usernameLabel1.Name = "usernameLabel1";
+            usernameLabel1.Size = new System.Drawing.Size(93, 22);
+            usernameLabel1.TabIndex = 14;
+            usernameLabel1.Text = "username:";
+            // 
+            // passwordLabel1
+            // 
+            passwordLabel1.AutoSize = true;
+            passwordLabel1.Location = new System.Drawing.Point(30, 125);
+            passwordLabel1.Name = "passwordLabel1";
+            passwordLabel1.Size = new System.Drawing.Size(94, 22);
+            passwordLabel1.TabIndex = 16;
+            passwordLabel1.Text = "password:";
+            // 
+            // quyenLabel1
+            // 
+            quyenLabel1.AutoSize = true;
+            quyenLabel1.Location = new System.Drawing.Point(30, 160);
+            quyenLabel1.Name = "quyenLabel1";
+            quyenLabel1.Size = new System.Drawing.Size(64, 22);
+            quyenLabel1.TabIndex = 18;
+            quyenLabel1.Text = "quyen:";
             // 
             // tabNhanVien
             // 
@@ -537,14 +557,13 @@
             // tabThongTinNhanVien
             // 
             this.tabThongTinNhanVien.AutoScroll = true;
-            this.tabThongTinNhanVien.BackgroundImage = global::MINI.Properties.Resources.background;
+            this.tabThongTinNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabThongTinNhanVien.BackgroundImage")));
             this.tabThongTinNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabThongTinNhanVien.Controls.Add(this.panelTaiKhoan);
-            this.tabThongTinNhanVien.Controls.Add(this.nhanVienBindingNavigator);
+            this.tabThongTinNhanVien.Controls.Add(this.listViewNhanVien);
             this.tabThongTinNhanVien.Controls.Add(this.pictureBoxInfo);
-            this.tabThongTinNhanVien.Controls.Add(this.btnReload);
-            this.tabThongTinNhanVien.Controls.Add(this.btnAdd);
-            this.tabThongTinNhanVien.Controls.Add(this.nhanVienDataGridView);
+            this.tabThongTinNhanVien.Controls.Add(this.btnReloadNV);
+            this.tabThongTinNhanVien.Controls.Add(this.btnThemNV);
             this.tabThongTinNhanVien.Controls.Add(this.lblTittleDanhSachNhanVien);
             this.tabThongTinNhanVien.Controls.Add(this.panelInfo);
             this.tabThongTinNhanVien.Location = new System.Drawing.Point(4, 54);
@@ -560,25 +579,25 @@
             this.panelTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTaiKhoan.BackColor = System.Drawing.Color.Honeydew;
+            this.panelTaiKhoan.BackColor = System.Drawing.Color.Beige;
             this.panelTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTaiKhoan.Controls.Add(this.button2);
             this.panelTaiKhoan.Controls.Add(label5);
-            this.panelTaiKhoan.Controls.Add(this.txtHoTenTaiKhoan);
-            this.panelTaiKhoan.Controls.Add(this.lblCV);
+            this.panelTaiKhoan.Controls.Add(this.txtHoVaTenNVTK);
+            this.panelTaiKhoan.Controls.Add(this.lblChucVuNVTK);
             this.panelTaiKhoan.Controls.Add(this.pictureBox3);
             this.panelTaiKhoan.Controls.Add(this.button1);
             this.panelTaiKhoan.Controls.Add(idTaiKhoanLabel2);
-            this.panelTaiKhoan.Controls.Add(this.idTaiKhoanTextBox2);
+            this.panelTaiKhoan.Controls.Add(this.txtIDTaiKhoanNV);
             this.panelTaiKhoan.Controls.Add(idNhanVienLabel3);
-            this.panelTaiKhoan.Controls.Add(this.idNhanVienTextBox2);
+            this.panelTaiKhoan.Controls.Add(this.txtIDNhanVienNVTK);
             this.panelTaiKhoan.Controls.Add(usernameLabel2);
-            this.panelTaiKhoan.Controls.Add(this.usernameTextBox2);
+            this.panelTaiKhoan.Controls.Add(this.txtUsernameNV);
             this.panelTaiKhoan.Controls.Add(passwordLabel2);
-            this.panelTaiKhoan.Controls.Add(this.passwordTextBox2);
+            this.panelTaiKhoan.Controls.Add(this.txtPasswordNV);
             this.panelTaiKhoan.Controls.Add(quyenLabel2);
-            this.panelTaiKhoan.Controls.Add(this.quyenTextBox1);
-            this.panelTaiKhoan.Location = new System.Drawing.Point(354, 32);
+            this.panelTaiKhoan.Controls.Add(this.txtQuyenNV);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(327, 42);
             this.panelTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.panelTaiKhoan.Name = "panelTaiKhoan";
             this.panelTaiKhoan.Size = new System.Drawing.Size(508, 276);
@@ -602,35 +621,24 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtHoTenTaiKhoan
+            // txtHoVaTenNVTK
             // 
-            this.txtHoTenTaiKhoan.BackColor = System.Drawing.SystemColors.Window;
-            this.txtHoTenTaiKhoan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "hoVaTen", true));
-            this.txtHoTenTaiKhoan.Location = new System.Drawing.Point(264, 117);
-            this.txtHoTenTaiKhoan.Name = "txtHoTenTaiKhoan";
-            this.txtHoTenTaiKhoan.ReadOnly = true;
-            this.txtHoTenTaiKhoan.Size = new System.Drawing.Size(185, 29);
-            this.txtHoTenTaiKhoan.TabIndex = 30;
+            this.txtHoVaTenNVTK.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoVaTenNVTK.Location = new System.Drawing.Point(264, 117);
+            this.txtHoVaTenNVTK.Name = "txtHoVaTenNVTK";
+            this.txtHoVaTenNVTK.ReadOnly = true;
+            this.txtHoVaTenNVTK.Size = new System.Drawing.Size(185, 29);
+            this.txtHoVaTenNVTK.TabIndex = 30;
             // 
-            // nhanVienBindingSource
+            // lblChucVuNVTK
             // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.miniMarketDataSet;
-            // 
-            // miniMarketDataSet
-            // 
-            this.miniMarketDataSet.DataSetName = "MiniMarketDataSet";
-            this.miniMarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblCV
-            // 
-            this.lblCV.AutoSize = true;
-            this.lblCV.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCV.Location = new System.Drawing.Point(23, 187);
-            this.lblCV.Name = "lblCV";
-            this.lblCV.Size = new System.Drawing.Size(22, 21);
-            this.lblCV.TabIndex = 28;
-            this.lblCV.Text = "...";
+            this.lblChucVuNVTK.AutoSize = true;
+            this.lblChucVuNVTK.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVuNVTK.Location = new System.Drawing.Point(23, 187);
+            this.lblChucVuNVTK.Name = "lblChucVuNVTK";
+            this.lblChucVuNVTK.Size = new System.Drawing.Size(22, 21);
+            this.lblChucVuNVTK.TabIndex = 28;
+            this.lblChucVuNVTK.Text = "...";
             // 
             // pictureBox3
             // 
@@ -653,294 +661,180 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // idTaiKhoanTextBox2
+            // txtIDTaiKhoanNV
             // 
-            this.idTaiKhoanTextBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.idTaiKhoanTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource1, "idTaiKhoan", true));
-            this.idTaiKhoanTextBox2.Location = new System.Drawing.Point(264, 47);
-            this.idTaiKhoanTextBox2.Name = "idTaiKhoanTextBox2";
-            this.idTaiKhoanTextBox2.ReadOnly = true;
-            this.idTaiKhoanTextBox2.Size = new System.Drawing.Size(185, 29);
-            this.idTaiKhoanTextBox2.TabIndex = 1;
+            this.txtIDTaiKhoanNV.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDTaiKhoanNV.Location = new System.Drawing.Point(264, 47);
+            this.txtIDTaiKhoanNV.Name = "txtIDTaiKhoanNV";
+            this.txtIDTaiKhoanNV.ReadOnly = true;
+            this.txtIDTaiKhoanNV.Size = new System.Drawing.Size(185, 29);
+            this.txtIDTaiKhoanNV.TabIndex = 1;
             // 
-            // taiKhoanBindingSource1
+            // txtIDNhanVienNVTK
             // 
-            this.taiKhoanBindingSource1.DataMember = "FK__TaiKhoan__idNhan__4D94879B";
-            this.taiKhoanBindingSource1.DataSource = this.nhanVienBindingSource;
+            this.txtIDNhanVienNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDNhanVienNVTK.Location = new System.Drawing.Point(264, 82);
+            this.txtIDNhanVienNVTK.Name = "txtIDNhanVienNVTK";
+            this.txtIDNhanVienNVTK.ReadOnly = true;
+            this.txtIDNhanVienNVTK.Size = new System.Drawing.Size(185, 29);
+            this.txtIDNhanVienNVTK.TabIndex = 3;
             // 
-            // idNhanVienTextBox2
+            // txtUsernameNV
             // 
-            this.idNhanVienTextBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.idNhanVienTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource1, "idNhanVien", true));
-            this.idNhanVienTextBox2.Location = new System.Drawing.Point(264, 82);
-            this.idNhanVienTextBox2.Name = "idNhanVienTextBox2";
-            this.idNhanVienTextBox2.ReadOnly = true;
-            this.idNhanVienTextBox2.Size = new System.Drawing.Size(185, 29);
-            this.idNhanVienTextBox2.TabIndex = 3;
+            this.txtUsernameNV.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtUsernameNV.Location = new System.Drawing.Point(264, 152);
+            this.txtUsernameNV.Name = "txtUsernameNV";
+            this.txtUsernameNV.ReadOnly = true;
+            this.txtUsernameNV.Size = new System.Drawing.Size(185, 29);
+            this.txtUsernameNV.TabIndex = 5;
             // 
-            // usernameTextBox2
+            // txtPasswordNV
             // 
-            this.usernameTextBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.usernameTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource1, "username", true));
-            this.usernameTextBox2.Location = new System.Drawing.Point(264, 152);
-            this.usernameTextBox2.Name = "usernameTextBox2";
-            this.usernameTextBox2.ReadOnly = true;
-            this.usernameTextBox2.Size = new System.Drawing.Size(185, 29);
-            this.usernameTextBox2.TabIndex = 5;
+            this.txtPasswordNV.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtPasswordNV.Location = new System.Drawing.Point(264, 187);
+            this.txtPasswordNV.Name = "txtPasswordNV";
+            this.txtPasswordNV.ReadOnly = true;
+            this.txtPasswordNV.Size = new System.Drawing.Size(185, 29);
+            this.txtPasswordNV.TabIndex = 7;
             // 
-            // passwordTextBox2
+            // txtQuyenNV
             // 
-            this.passwordTextBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.passwordTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource1, "password", true));
-            this.passwordTextBox2.Location = new System.Drawing.Point(264, 187);
-            this.passwordTextBox2.Name = "passwordTextBox2";
-            this.passwordTextBox2.ReadOnly = true;
-            this.passwordTextBox2.Size = new System.Drawing.Size(185, 29);
-            this.passwordTextBox2.TabIndex = 7;
+            this.txtQuyenNV.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtQuyenNV.Location = new System.Drawing.Point(264, 222);
+            this.txtQuyenNV.Name = "txtQuyenNV";
+            this.txtQuyenNV.ReadOnly = true;
+            this.txtQuyenNV.Size = new System.Drawing.Size(185, 29);
+            this.txtQuyenNV.TabIndex = 9;
             // 
-            // quyenTextBox1
+            // listViewNhanVien
             // 
-            this.quyenTextBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.quyenTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource1, "quyen", true));
-            this.quyenTextBox1.Location = new System.Drawing.Point(264, 222);
-            this.quyenTextBox1.Name = "quyenTextBox1";
-            this.quyenTextBox1.ReadOnly = true;
-            this.quyenTextBox1.Size = new System.Drawing.Size(185, 29);
-            this.quyenTextBox1.TabIndex = 9;
+            this.listViewNhanVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IDNhanVien,
+            this.HoVaTenNVCol,
+            this.SDTNVCol,
+            this.GioiTinhNVCol,
+            this.IDChucVuNVCol,
+            this.LuongNVCol,
+            this.TrangThaiNVCol,
+            this.NgayNghiNVCol,
+            this.NgaySinhNVCol,
+            this.DiaChiNVCol});
+            this.listViewNhanVien.HideSelection = false;
+            this.listViewNhanVien.Location = new System.Drawing.Point(8, 462);
+            this.listViewNhanVien.Name = "listViewNhanVien";
+            this.listViewNhanVien.Size = new System.Drawing.Size(1150, 218);
+            this.listViewNhanVien.TabIndex = 27;
+            this.listViewNhanVien.UseCompatibleStateImageBehavior = false;
+            this.listViewNhanVien.View = System.Windows.Forms.View.Details;
+            this.listViewNhanVien.SelectedIndexChanged += new System.EventHandler(this.listViewNhanVien_SelectedIndexChanged);
             // 
-            // nhanVienBindingNavigator
+            // IDNhanVien
             // 
-            this.nhanVienBindingNavigator.AddNewItem = null;
-            this.nhanVienBindingNavigator.AutoSize = false;
-            this.nhanVienBindingNavigator.BindingSource = this.nhanVienBindingSource;
-            this.nhanVienBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.nhanVienBindingNavigator.DeleteItem = null;
-            this.nhanVienBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
-            this.nhanVienBindingNavigator.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.nhanVienBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem});
-            this.nhanVienBindingNavigator.Location = new System.Drawing.Point(499, 366);
-            this.nhanVienBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.nhanVienBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.nhanVienBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.nhanVienBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.nhanVienBindingNavigator.Name = "nhanVienBindingNavigator";
-            this.nhanVienBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.nhanVienBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.nhanVienBindingNavigator.Size = new System.Drawing.Size(247, 34);
-            this.nhanVienBindingNavigator.TabIndex = 25;
-            this.nhanVienBindingNavigator.Text = "bindingNavigator1";
+            this.IDNhanVien.Text = "ID Nhân viên";
+            this.IDNhanVien.Width = 107;
             // 
-            // bindingNavigatorCountItem
+            // HoVaTenNVCol
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 31);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.HoVaTenNVCol.Text = "Họ và tên";
+            this.HoVaTenNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.HoVaTenNVCol.Width = 205;
             // 
-            // bindingNavigatorMoveFirstItem
+            // DiaChiNVCol
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = global::MINI.Properties.Resources._3706885_control_music_next_skip_108701;
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 31);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.DiaChiNVCol.DisplayIndex = 2;
+            this.DiaChiNVCol.Text = "Địa chỉ";
+            this.DiaChiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DiaChiNVCol.Width = 93;
             // 
-            // bindingNavigatorMovePreviousItem
+            // SDTNVCol
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = global::MINI.Properties.Resources._3706872_control_music_play_play_music_play_sound_start_108717;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 31);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.SDTNVCol.DisplayIndex = 3;
+            this.SDTNVCol.Text = "Số điện thoại";
+            this.SDTNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SDTNVCol.Width = 131;
             // 
-            // bindingNavigatorSeparator
+            // GioiTinhNVCol
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 34);
+            this.GioiTinhNVCol.DisplayIndex = 4;
+            this.GioiTinhNVCol.Text = "Giới tính";
+            this.GioiTinhNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GioiTinhNVCol.Width = 92;
             // 
-            // bindingNavigatorPositionItem
+            // IDChucVuNVCol
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.IDChucVuNVCol.DisplayIndex = 5;
+            this.IDChucVuNVCol.Text = "ID Chức vụ";
+            this.IDChucVuNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IDChucVuNVCol.Width = 109;
             // 
-            // bindingNavigatorSeparator1
+            // LuongNVCol
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 34);
+            this.LuongNVCol.DisplayIndex = 6;
+            this.LuongNVCol.Text = "Lương";
+            this.LuongNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LuongNVCol.Width = 75;
             // 
-            // bindingNavigatorMoveNextItem
+            // TrangThaiNVCol
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = global::MINI.Properties.Resources._3706872_control_music_play_play_music_play_sound_start_108717;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 31);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.TrangThaiNVCol.DisplayIndex = 7;
+            this.TrangThaiNVCol.Text = "Trạng thái";
+            this.TrangThaiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TrangThaiNVCol.Width = 104;
             // 
-            // bindingNavigatorMoveLastItem
+            // NgaySinhNVCol
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = global::MINI.Properties.Resources._3706885_control_music_next_skip_108701;
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 31);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.NgaySinhNVCol.Text = "Ngày sinh";
+            this.NgaySinhNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NgaySinhNVCol.Width = 106;
+            // 
+            // NgayNghiNVCol
+            // 
+            this.NgayNghiNVCol.DisplayIndex = 9;
+            this.NgayNghiNVCol.Text = "Ngày nghỉ";
+            this.NgayNghiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NgayNghiNVCol.Width = 110;
             // 
             // pictureBoxInfo
             // 
             this.pictureBoxInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.BackgroundImage")));
             this.pictureBoxInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.Image")));
-            this.pictureBoxInfo.Location = new System.Drawing.Point(246, 20);
+            this.pictureBoxInfo.Location = new System.Drawing.Point(243, 66);
             this.pictureBoxInfo.Name = "pictureBoxInfo";
             this.pictureBoxInfo.Size = new System.Drawing.Size(79, 91);
             this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxInfo.TabIndex = 24;
             this.pictureBoxInfo.TabStop = false;
             // 
-            // btnReload
+            // btnReloadNV
             // 
-            this.btnReload.BackColor = System.Drawing.Color.White;
-            this.btnReload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReload.BackgroundImage")));
-            this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReload.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.btnReload.FlatAppearance.BorderSize = 3;
-            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReload.Location = new System.Drawing.Point(887, 425);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(84, 31);
-            this.btnReload.TabIndex = 10;
-            this.btnReload.UseVisualStyleBackColor = false;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            this.btnReloadNV.BackColor = System.Drawing.Color.White;
+            this.btnReloadNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReloadNV.BackgroundImage")));
+            this.btnReloadNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReloadNV.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnReloadNV.FlatAppearance.BorderSize = 3;
+            this.btnReloadNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReloadNV.Location = new System.Drawing.Point(887, 425);
+            this.btnReloadNV.Name = "btnReloadNV";
+            this.btnReloadNV.Size = new System.Drawing.Size(84, 31);
+            this.btnReloadNV.TabIndex = 10;
+            this.btnReloadNV.UseVisualStyleBackColor = false;
             // 
-            // btnAdd
+            // btnThemNV
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.BackgroundImage = global::MINI.Properties.Resources._1486564407_plus_green_81521;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.FlatAppearance.BorderSize = 3;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAdd.Location = new System.Drawing.Point(987, 425);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(88, 31);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // nhanVienDataGridView
-            // 
-            this.nhanVienDataGridView.AllowUserToAddRows = false;
-            this.nhanVienDataGridView.AllowUserToDeleteRows = false;
-            this.nhanVienDataGridView.AutoGenerateColumns = false;
-            this.nhanVienDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nhanVienDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColIDNhanVien,
-            this.ColHoVaTen,
-            this.ColSDT,
-            this.ColGioiTinh,
-            this.ColNgaySinh,
-            this.ColDiaChi,
-            this.ColChucVu,
-            this.ColLuong,
-            this.ColTrangThai,
-            this.ColNgayNghi});
-            this.nhanVienDataGridView.DataSource = this.nhanVienBindingSource;
-            this.nhanVienDataGridView.Location = new System.Drawing.Point(64, 462);
-            this.nhanVienDataGridView.Name = "nhanVienDataGridView";
-            this.nhanVienDataGridView.ReadOnly = true;
-            this.nhanVienDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nhanVienDataGridView.Size = new System.Drawing.Size(1049, 220);
-            this.nhanVienDataGridView.TabIndex = 7;
-            this.nhanVienDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGridView_CellClick);
-            // 
-            // ColIDNhanVien
-            // 
-            this.ColIDNhanVien.DataPropertyName = "idNhanVien";
-            this.ColIDNhanVien.HeaderText = "ID";
-            this.ColIDNhanVien.Name = "ColIDNhanVien";
-            this.ColIDNhanVien.ReadOnly = true;
-            // 
-            // ColHoVaTen
-            // 
-            this.ColHoVaTen.DataPropertyName = "hoVaTen";
-            this.ColHoVaTen.HeaderText = "Họ và tên";
-            this.ColHoVaTen.Name = "ColHoVaTen";
-            this.ColHoVaTen.ReadOnly = true;
-            // 
-            // ColSDT
-            // 
-            this.ColSDT.DataPropertyName = "soDienThoai";
-            this.ColSDT.HeaderText = "SĐT";
-            this.ColSDT.Name = "ColSDT";
-            this.ColSDT.ReadOnly = true;
-            // 
-            // ColGioiTinh
-            // 
-            this.ColGioiTinh.DataPropertyName = "gioiTinh";
-            this.ColGioiTinh.HeaderText = "Giới tính";
-            this.ColGioiTinh.Name = "ColGioiTinh";
-            this.ColGioiTinh.ReadOnly = true;
-            // 
-            // ColNgaySinh
-            // 
-            this.ColNgaySinh.DataPropertyName = "ngaySinh";
-            this.ColNgaySinh.HeaderText = "Ngày sinh";
-            this.ColNgaySinh.Name = "ColNgaySinh";
-            this.ColNgaySinh.ReadOnly = true;
-            // 
-            // ColDiaChi
-            // 
-            this.ColDiaChi.DataPropertyName = "diaChi";
-            this.ColDiaChi.HeaderText = "Địa chỉ";
-            this.ColDiaChi.Name = "ColDiaChi";
-            this.ColDiaChi.ReadOnly = true;
-            // 
-            // ColChucVu
-            // 
-            this.ColChucVu.DataPropertyName = "idChucVu";
-            this.ColChucVu.HeaderText = "Chức vụ";
-            this.ColChucVu.Name = "ColChucVu";
-            this.ColChucVu.ReadOnly = true;
-            // 
-            // ColLuong
-            // 
-            this.ColLuong.DataPropertyName = "luong";
-            this.ColLuong.HeaderText = "Lương";
-            this.ColLuong.Name = "ColLuong";
-            this.ColLuong.ReadOnly = true;
-            // 
-            // ColTrangThai
-            // 
-            this.ColTrangThai.DataPropertyName = "trangThai";
-            this.ColTrangThai.HeaderText = "Trạng thái";
-            this.ColTrangThai.Name = "ColTrangThai";
-            this.ColTrangThai.ReadOnly = true;
-            // 
-            // ColNgayNghi
-            // 
-            this.ColNgayNghi.DataPropertyName = "ngayNghi";
-            this.ColNgayNghi.HeaderText = "Ngày nghỉ";
-            this.ColNgayNghi.Name = "ColNgayNghi";
-            this.ColNgayNghi.ReadOnly = true;
+            this.btnThemNV.BackColor = System.Drawing.Color.White;
+            this.btnThemNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThemNV.BackgroundImage")));
+            this.btnThemNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnThemNV.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnThemNV.FlatAppearance.BorderSize = 3;
+            this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemNV.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnThemNV.Location = new System.Drawing.Point(987, 425);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(88, 31);
+            this.btnThemNV.TabIndex = 8;
+            this.btnThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThemNV.UseVisualStyleBackColor = false;
+            this.btnThemNV.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblTittleDanhSachNhanVien
             // 
@@ -957,45 +851,45 @@
             // 
             this.panelInfo.BackColor = System.Drawing.Color.Honeydew;
             this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelInfo.Controls.Add(this.btnTaiKhoan);
+            this.panelInfo.Controls.Add(this.btnTaiKhoanNV);
             this.panelInfo.Controls.Add(this.labelChucVu);
             this.panelInfo.Controls.Add(this.lblNull);
             this.panelInfo.Controls.Add(idNhanVienLabel);
-            this.panelInfo.Controls.Add(this.txtID);
+            this.panelInfo.Controls.Add(this.txtIDNhanVienNV);
             this.panelInfo.Controls.Add(hoVaTenLabel);
-            this.panelInfo.Controls.Add(this.hoVaTenTextBox);
+            this.panelInfo.Controls.Add(this.txtHoVaTenNV);
             this.panelInfo.Controls.Add(soDienThoaiLabel);
-            this.panelInfo.Controls.Add(this.soDienThoaiTextBox);
+            this.panelInfo.Controls.Add(this.txtSDTNV);
             this.panelInfo.Controls.Add(gioiTinhLabel);
-            this.panelInfo.Controls.Add(this.gioiTinhTextBox);
+            this.panelInfo.Controls.Add(this.txtGioiTinhNV);
             this.panelInfo.Controls.Add(idChucVuLabel);
-            this.panelInfo.Controls.Add(this.idChucVuTextBox);
+            this.panelInfo.Controls.Add(this.txtIDChucVuNV);
             this.panelInfo.Controls.Add(luongLabel);
-            this.panelInfo.Controls.Add(this.luongTextBox);
+            this.panelInfo.Controls.Add(this.txtLuongNV);
             this.panelInfo.Controls.Add(trangThaiLabel);
-            this.panelInfo.Controls.Add(this.trangThaiTextBox);
+            this.panelInfo.Controls.Add(this.txtTrangThaiNV);
             this.panelInfo.Controls.Add(ngayNghiLabel);
-            this.panelInfo.Controls.Add(this.ngayNghiDateTimePicker);
+            this.panelInfo.Controls.Add(this.DTPNgayNghiNV);
             this.panelInfo.Controls.Add(ngaySinhLabel);
-            this.panelInfo.Controls.Add(this.ngaySinhDateTimePicker);
+            this.panelInfo.Controls.Add(this.DTPNgaySinhNV);
             this.panelInfo.Controls.Add(diaChiLabel);
-            this.panelInfo.Controls.Add(this.diaChiTextBox);
-            this.panelInfo.Controls.Add(this.btnSua);
-            this.panelInfo.Location = new System.Drawing.Point(210, 49);
+            this.panelInfo.Controls.Add(this.txtDiaChiNV);
+            this.panelInfo.Controls.Add(this.btnSuaNV);
+            this.panelInfo.Location = new System.Drawing.Point(207, 95);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(772, 315);
             this.panelInfo.TabIndex = 2;
             // 
-            // btnTaiKhoan
+            // btnTaiKhoanNV
             // 
-            this.btnTaiKhoan.Location = new System.Drawing.Point(632, 243);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(121, 38);
-            this.btnTaiKhoan.TabIndex = 25;
-            this.btnTaiKhoan.Text = "Tài khoản";
-            this.btnTaiKhoan.UseVisualStyleBackColor = true;
-            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            this.btnTaiKhoanNV.Location = new System.Drawing.Point(617, 248);
+            this.btnTaiKhoanNV.Name = "btnTaiKhoanNV";
+            this.btnTaiKhoanNV.Size = new System.Drawing.Size(121, 38);
+            this.btnTaiKhoanNV.TabIndex = 25;
+            this.btnTaiKhoanNV.Text = "Tài khoản";
+            this.btnTaiKhoanNV.UseVisualStyleBackColor = true;
+            this.btnTaiKhoanNV.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // labelChucVu
             // 
@@ -1013,122 +907,113 @@
             this.lblNull.Enabled = false;
             this.lblNull.Location = new System.Drawing.Point(549, 189);
             this.lblNull.Name = "lblNull";
-            this.lblNull.Size = new System.Drawing.Size(44, 22);
+            this.lblNull.Size = new System.Drawing.Size(34, 22);
             this.lblNull.TabIndex = 23;
-            this.lblNull.Text = "Null";
+            this.lblNull.Text = "///";
+            this.lblNull.Visible = false;
             // 
-            // txtID
+            // txtIDNhanVienNV
             // 
-            this.txtID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "idNhanVien", true));
-            this.txtID.Location = new System.Drawing.Point(202, 77);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(200, 29);
-            this.txtID.TabIndex = 4;
+            this.txtIDNhanVienNV.Location = new System.Drawing.Point(202, 77);
+            this.txtIDNhanVienNV.Name = "txtIDNhanVienNV";
+            this.txtIDNhanVienNV.ReadOnly = true;
+            this.txtIDNhanVienNV.Size = new System.Drawing.Size(200, 29);
+            this.txtIDNhanVienNV.TabIndex = 4;
             // 
-            // hoVaTenTextBox
+            // txtHoVaTenNV
             // 
-            this.hoVaTenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "hoVaTen", true));
-            this.hoVaTenTextBox.Location = new System.Drawing.Point(202, 112);
-            this.hoVaTenTextBox.Name = "hoVaTenTextBox";
-            this.hoVaTenTextBox.ReadOnly = true;
-            this.hoVaTenTextBox.Size = new System.Drawing.Size(200, 29);
-            this.hoVaTenTextBox.TabIndex = 6;
+            this.txtHoVaTenNV.Location = new System.Drawing.Point(202, 112);
+            this.txtHoVaTenNV.Name = "txtHoVaTenNV";
+            this.txtHoVaTenNV.ReadOnly = true;
+            this.txtHoVaTenNV.Size = new System.Drawing.Size(200, 29);
+            this.txtHoVaTenNV.TabIndex = 6;
             // 
-            // soDienThoaiTextBox
+            // txtSDTNV
             // 
-            this.soDienThoaiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "soDienThoai", true));
-            this.soDienThoaiTextBox.Location = new System.Drawing.Point(202, 147);
-            this.soDienThoaiTextBox.Name = "soDienThoaiTextBox";
-            this.soDienThoaiTextBox.ReadOnly = true;
-            this.soDienThoaiTextBox.Size = new System.Drawing.Size(200, 29);
-            this.soDienThoaiTextBox.TabIndex = 8;
+            this.txtSDTNV.Location = new System.Drawing.Point(202, 147);
+            this.txtSDTNV.Name = "txtSDTNV";
+            this.txtSDTNV.ReadOnly = true;
+            this.txtSDTNV.Size = new System.Drawing.Size(200, 29);
+            this.txtSDTNV.TabIndex = 8;
             // 
-            // gioiTinhTextBox
+            // txtGioiTinhNV
             // 
-            this.gioiTinhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "gioiTinh", true));
-            this.gioiTinhTextBox.Location = new System.Drawing.Point(202, 182);
-            this.gioiTinhTextBox.Name = "gioiTinhTextBox";
-            this.gioiTinhTextBox.ReadOnly = true;
-            this.gioiTinhTextBox.Size = new System.Drawing.Size(200, 29);
-            this.gioiTinhTextBox.TabIndex = 10;
+            this.txtGioiTinhNV.Location = new System.Drawing.Point(202, 182);
+            this.txtGioiTinhNV.Name = "txtGioiTinhNV";
+            this.txtGioiTinhNV.ReadOnly = true;
+            this.txtGioiTinhNV.Size = new System.Drawing.Size(200, 29);
+            this.txtGioiTinhNV.TabIndex = 10;
             // 
-            // idChucVuTextBox
+            // txtIDChucVuNV
             // 
-            this.idChucVuTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "idChucVu", true));
-            this.idChucVuTextBox.Location = new System.Drawing.Point(202, 217);
-            this.idChucVuTextBox.Name = "idChucVuTextBox";
-            this.idChucVuTextBox.ReadOnly = true;
-            this.idChucVuTextBox.Size = new System.Drawing.Size(200, 29);
-            this.idChucVuTextBox.TabIndex = 12;
+            this.txtIDChucVuNV.Location = new System.Drawing.Point(202, 217);
+            this.txtIDChucVuNV.Name = "txtIDChucVuNV";
+            this.txtIDChucVuNV.ReadOnly = true;
+            this.txtIDChucVuNV.Size = new System.Drawing.Size(200, 29);
+            this.txtIDChucVuNV.TabIndex = 12;
             // 
-            // luongTextBox
+            // txtLuongNV
             // 
-            this.luongTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "luong", true));
-            this.luongTextBox.Location = new System.Drawing.Point(553, 75);
-            this.luongTextBox.Name = "luongTextBox";
-            this.luongTextBox.ReadOnly = true;
-            this.luongTextBox.Size = new System.Drawing.Size(200, 29);
-            this.luongTextBox.TabIndex = 14;
+            this.txtLuongNV.Location = new System.Drawing.Point(553, 75);
+            this.txtLuongNV.Name = "txtLuongNV";
+            this.txtLuongNV.ReadOnly = true;
+            this.txtLuongNV.Size = new System.Drawing.Size(200, 29);
+            this.txtLuongNV.TabIndex = 14;
             // 
-            // trangThaiTextBox
+            // txtTrangThaiNV
             // 
-            this.trangThaiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "trangThai", true));
-            this.trangThaiTextBox.Location = new System.Drawing.Point(553, 147);
-            this.trangThaiTextBox.Name = "trangThaiTextBox";
-            this.trangThaiTextBox.ReadOnly = true;
-            this.trangThaiTextBox.Size = new System.Drawing.Size(200, 29);
-            this.trangThaiTextBox.TabIndex = 16;
+            this.txtTrangThaiNV.Location = new System.Drawing.Point(553, 147);
+            this.txtTrangThaiNV.Name = "txtTrangThaiNV";
+            this.txtTrangThaiNV.ReadOnly = true;
+            this.txtTrangThaiNV.Size = new System.Drawing.Size(200, 29);
+            this.txtTrangThaiNV.TabIndex = 16;
             // 
-            // ngayNghiDateTimePicker
+            // DTPNgayNghiNV
             // 
-            this.ngayNghiDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "ngayNghi", true));
-            this.ngayNghiDateTimePicker.Enabled = false;
-            this.ngayNghiDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayNghiDateTimePicker.Location = new System.Drawing.Point(553, 185);
-            this.ngayNghiDateTimePicker.Name = "ngayNghiDateTimePicker";
-            this.ngayNghiDateTimePicker.Size = new System.Drawing.Size(200, 29);
-            this.ngayNghiDateTimePicker.TabIndex = 18;
+            this.DTPNgayNghiNV.Enabled = false;
+            this.DTPNgayNghiNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPNgayNghiNV.Location = new System.Drawing.Point(553, 185);
+            this.DTPNgayNghiNV.Name = "DTPNgayNghiNV";
+            this.DTPNgayNghiNV.Size = new System.Drawing.Size(200, 29);
+            this.DTPNgayNghiNV.TabIndex = 18;
             // 
-            // ngaySinhDateTimePicker
+            // DTPNgaySinhNV
             // 
-            this.ngaySinhDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "ngaySinh", true));
-            this.ngaySinhDateTimePicker.Enabled = false;
-            this.ngaySinhDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaySinhDateTimePicker.Location = new System.Drawing.Point(553, 110);
-            this.ngaySinhDateTimePicker.Name = "ngaySinhDateTimePicker";
-            this.ngaySinhDateTimePicker.Size = new System.Drawing.Size(200, 29);
-            this.ngaySinhDateTimePicker.TabIndex = 20;
+            this.DTPNgaySinhNV.Enabled = false;
+            this.DTPNgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPNgaySinhNV.Location = new System.Drawing.Point(553, 110);
+            this.DTPNgaySinhNV.Name = "DTPNgaySinhNV";
+            this.DTPNgaySinhNV.Size = new System.Drawing.Size(200, 29);
+            this.DTPNgaySinhNV.TabIndex = 20;
             // 
-            // diaChiTextBox
+            // txtDiaChiNV
             // 
-            this.diaChiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "diaChi", true));
-            this.diaChiTextBox.Location = new System.Drawing.Point(202, 252);
-            this.diaChiTextBox.Name = "diaChiTextBox";
-            this.diaChiTextBox.ReadOnly = true;
-            this.diaChiTextBox.Size = new System.Drawing.Size(354, 29);
-            this.diaChiTextBox.TabIndex = 22;
+            this.txtDiaChiNV.Location = new System.Drawing.Point(202, 252);
+            this.txtDiaChiNV.Name = "txtDiaChiNV";
+            this.txtDiaChiNV.ReadOnly = true;
+            this.txtDiaChiNV.Size = new System.Drawing.Size(354, 29);
+            this.txtDiaChiNV.TabIndex = 22;
             // 
-            // btnSua
+            // btnSuaNV
             // 
-            this.btnSua.BackColor = System.Drawing.Color.White;
-            this.btnSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSua.BackgroundImage")));
-            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(50)))), ((int)(((byte)(31)))));
-            this.btnSua.FlatAppearance.BorderSize = 3;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(713, 4);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(47, 42);
-            this.btnSua.TabIndex = 3;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuaNV.BackColor = System.Drawing.Color.White;
+            this.btnSuaNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSuaNV.BackgroundImage")));
+            this.btnSuaNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSuaNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(50)))), ((int)(((byte)(31)))));
+            this.btnSuaNV.FlatAppearance.BorderSize = 3;
+            this.btnSuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaNV.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaNV.Location = new System.Drawing.Point(713, 4);
+            this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuaNV.Name = "btnSuaNV";
+            this.btnSuaNV.Size = new System.Drawing.Size(47, 42);
+            this.btnSuaNV.TabIndex = 3;
+            this.btnSuaNV.UseVisualStyleBackColor = false;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // tabSuaThemNhanVien
             // 
-            this.tabSuaThemNhanVien.BackgroundImage = global::MINI.Properties.Resources.background;
+            this.tabSuaThemNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSuaThemNhanVien.BackgroundImage")));
             this.tabSuaThemNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabSuaThemNhanVien.Controls.Add(this.panel3);
             this.tabSuaThemNhanVien.Controls.Add(this.lblTittleThemNhanVien);
@@ -1288,25 +1173,25 @@
             // 
             this.panelThemThongTinNhanVien.BackColor = System.Drawing.Color.Honeydew;
             this.panelThemThongTinNhanVien.Controls.Add(idChucVuLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.idChucVuComboBox);
+            this.panelThemThongTinNhanVien.Controls.Add(this.cbbIDChucVuCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(trangThaiLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.trangThaiComboBox);
-            this.panelThemThongTinNhanVien.Controls.Add(idNhanVienLabel2);
-            this.panelThemThongTinNhanVien.Controls.Add(this.txtChiTietIDNhanVien);
-            this.panelThemThongTinNhanVien.Controls.Add(hoVaTenLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.hoVaTenTextBox1);
-            this.panelThemThongTinNhanVien.Controls.Add(soDienThoaiLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.soDienThoaiTextBox1);
-            this.panelThemThongTinNhanVien.Controls.Add(gioiTinhLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.gioiTinhTextBox1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.cbbTrangThaiCTNV);
+            this.panelThemThongTinNhanVien.Controls.Add(lbl1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtIDNhanVienCTNV);
+            this.panelThemThongTinNhanVien.Controls.Add(lbl2);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtHoVaTenCTNV);
+            this.panelThemThongTinNhanVien.Controls.Add(lbl3);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtSDTCTNV);
+            this.panelThemThongTinNhanVien.Controls.Add(lbl4);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtGioiTinhCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(luongLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.luongTextBox1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtLuongCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(ngayNghiLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.ngayNghiDateTimePicker1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.DTPNgayNghiCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(ngaySinhLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.ngaySinhDateTimePicker1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.DTPNgaySinhCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(diaChiLabel1);
-            this.panelThemThongTinNhanVien.Controls.Add(this.diaChiTextBox1);
+            this.panelThemThongTinNhanVien.Controls.Add(this.txtDiaChiCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(this.btnXoa);
             this.panelThemThongTinNhanVien.Controls.Add(this.btnLuu);
             this.panelThemThongTinNhanVien.Controls.Add(this.lblNote);
@@ -1315,94 +1200,83 @@
             this.panelThemThongTinNhanVien.Size = new System.Drawing.Size(474, 509);
             this.panelThemThongTinNhanVien.TabIndex = 5;
             // 
-            // idChucVuComboBox
+            // cbbIDChucVuCTNV
             // 
-            this.idChucVuComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "idChucVu", true));
-            this.idChucVuComboBox.FormattingEnabled = true;
-            this.idChucVuComboBox.Location = new System.Drawing.Point(182, 167);
-            this.idChucVuComboBox.Name = "idChucVuComboBox";
-            this.idChucVuComboBox.Size = new System.Drawing.Size(200, 25);
-            this.idChucVuComboBox.TabIndex = 44;
+            this.cbbIDChucVuCTNV.FormattingEnabled = true;
+            this.cbbIDChucVuCTNV.Location = new System.Drawing.Point(182, 167);
+            this.cbbIDChucVuCTNV.Name = "cbbIDChucVuCTNV";
+            this.cbbIDChucVuCTNV.Size = new System.Drawing.Size(200, 25);
+            this.cbbIDChucVuCTNV.TabIndex = 44;
             // 
-            // trangThaiComboBox
+            // cbbTrangThaiCTNV
             // 
-            this.trangThaiComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "trangThai", true));
-            this.trangThaiComboBox.FormattingEnabled = true;
-            this.trangThaiComboBox.Items.AddRange(new object[] {
+            this.cbbTrangThaiCTNV.FormattingEnabled = true;
+            this.cbbTrangThaiCTNV.Items.AddRange(new object[] {
             "Đang Làm",
             "Thôi Việc"});
-            this.trangThaiComboBox.Location = new System.Drawing.Point(182, 226);
-            this.trangThaiComboBox.Name = "trangThaiComboBox";
-            this.trangThaiComboBox.Size = new System.Drawing.Size(200, 25);
-            this.trangThaiComboBox.TabIndex = 43;
+            this.cbbTrangThaiCTNV.Location = new System.Drawing.Point(182, 226);
+            this.cbbTrangThaiCTNV.Name = "cbbTrangThaiCTNV";
+            this.cbbTrangThaiCTNV.Size = new System.Drawing.Size(200, 25);
+            this.cbbTrangThaiCTNV.TabIndex = 43;
             // 
-            // txtChiTietIDNhanVien
+            // txtIDNhanVienCTNV
             // 
-            this.txtChiTietIDNhanVien.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtChiTietIDNhanVien.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "idNhanVien", true));
-            this.txtChiTietIDNhanVien.Location = new System.Drawing.Point(182, 47);
-            this.txtChiTietIDNhanVien.Name = "txtChiTietIDNhanVien";
-            this.txtChiTietIDNhanVien.ReadOnly = true;
-            this.txtChiTietIDNhanVien.Size = new System.Drawing.Size(200, 24);
-            this.txtChiTietIDNhanVien.TabIndex = 15;
+            this.txtIDNhanVienCTNV.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtIDNhanVienCTNV.Location = new System.Drawing.Point(182, 47);
+            this.txtIDNhanVienCTNV.Name = "txtIDNhanVienCTNV";
+            this.txtIDNhanVienCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtIDNhanVienCTNV.TabIndex = 15;
             // 
-            // hoVaTenTextBox1
+            // txtHoVaTenCTNV
             // 
-            this.hoVaTenTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "hoVaTen", true));
-            this.hoVaTenTextBox1.Location = new System.Drawing.Point(182, 77);
-            this.hoVaTenTextBox1.Name = "hoVaTenTextBox1";
-            this.hoVaTenTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.hoVaTenTextBox1.TabIndex = 17;
+            this.txtHoVaTenCTNV.Location = new System.Drawing.Point(182, 77);
+            this.txtHoVaTenCTNV.Name = "txtHoVaTenCTNV";
+            this.txtHoVaTenCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtHoVaTenCTNV.TabIndex = 17;
             // 
-            // soDienThoaiTextBox1
+            // txtSDTCTNV
             // 
-            this.soDienThoaiTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "soDienThoai", true));
-            this.soDienThoaiTextBox1.Location = new System.Drawing.Point(182, 107);
-            this.soDienThoaiTextBox1.Name = "soDienThoaiTextBox1";
-            this.soDienThoaiTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.soDienThoaiTextBox1.TabIndex = 19;
+            this.txtSDTCTNV.Location = new System.Drawing.Point(182, 107);
+            this.txtSDTCTNV.Name = "txtSDTCTNV";
+            this.txtSDTCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtSDTCTNV.TabIndex = 19;
             // 
-            // gioiTinhTextBox1
+            // txtGioiTinhCTNV
             // 
-            this.gioiTinhTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "gioiTinh", true));
-            this.gioiTinhTextBox1.Location = new System.Drawing.Point(182, 137);
-            this.gioiTinhTextBox1.Name = "gioiTinhTextBox1";
-            this.gioiTinhTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.gioiTinhTextBox1.TabIndex = 21;
+            this.txtGioiTinhCTNV.Location = new System.Drawing.Point(182, 137);
+            this.txtGioiTinhCTNV.Name = "txtGioiTinhCTNV";
+            this.txtGioiTinhCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtGioiTinhCTNV.TabIndex = 21;
             // 
-            // luongTextBox1
+            // txtLuongCTNV
             // 
-            this.luongTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "luong", true));
-            this.luongTextBox1.Location = new System.Drawing.Point(182, 197);
-            this.luongTextBox1.Name = "luongTextBox1";
-            this.luongTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.luongTextBox1.TabIndex = 25;
+            this.txtLuongCTNV.Location = new System.Drawing.Point(182, 197);
+            this.txtLuongCTNV.Name = "txtLuongCTNV";
+            this.txtLuongCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtLuongCTNV.TabIndex = 25;
             // 
-            // ngayNghiDateTimePicker1
+            // DTPNgayNghiCTNV
             // 
-            this.ngayNghiDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "ngayNghi", true));
-            this.ngayNghiDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayNghiDateTimePicker1.Location = new System.Drawing.Point(182, 257);
-            this.ngayNghiDateTimePicker1.Name = "ngayNghiDateTimePicker1";
-            this.ngayNghiDateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.ngayNghiDateTimePicker1.TabIndex = 29;
+            this.DTPNgayNghiCTNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPNgayNghiCTNV.Location = new System.Drawing.Point(182, 257);
+            this.DTPNgayNghiCTNV.Name = "DTPNgayNghiCTNV";
+            this.DTPNgayNghiCTNV.Size = new System.Drawing.Size(200, 24);
+            this.DTPNgayNghiCTNV.TabIndex = 29;
             // 
-            // ngaySinhDateTimePicker1
+            // DTPNgaySinhCTNV
             // 
-            this.ngaySinhDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "ngaySinh", true));
-            this.ngaySinhDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaySinhDateTimePicker1.Location = new System.Drawing.Point(182, 287);
-            this.ngaySinhDateTimePicker1.Name = "ngaySinhDateTimePicker1";
-            this.ngaySinhDateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.ngaySinhDateTimePicker1.TabIndex = 31;
+            this.DTPNgaySinhCTNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPNgaySinhCTNV.Location = new System.Drawing.Point(182, 287);
+            this.DTPNgaySinhCTNV.Name = "DTPNgaySinhCTNV";
+            this.DTPNgaySinhCTNV.Size = new System.Drawing.Size(200, 24);
+            this.DTPNgaySinhCTNV.TabIndex = 31;
             // 
-            // diaChiTextBox1
+            // txtDiaChiCTNV
             // 
-            this.diaChiTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "diaChi", true));
-            this.diaChiTextBox1.Location = new System.Drawing.Point(182, 317);
-            this.diaChiTextBox1.Name = "diaChiTextBox1";
-            this.diaChiTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.diaChiTextBox1.TabIndex = 33;
+            this.txtDiaChiCTNV.Location = new System.Drawing.Point(182, 317);
+            this.txtDiaChiCTNV.Name = "txtDiaChiCTNV";
+            this.txtDiaChiCTNV.Size = new System.Drawing.Size(200, 24);
+            this.txtDiaChiCTNV.TabIndex = 33;
             // 
             // btnXoa
             // 
@@ -1437,7 +1311,7 @@
             // 
             this.lblNote.AutoSize = true;
             this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNote.Location = new System.Drawing.Point(277, 473);
+            this.lblNote.Location = new System.Drawing.Point(144, 479);
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(217, 16);
             this.lblNote.TabIndex = 14;
@@ -1446,9 +1320,9 @@
             // tabThongTinTaiKhoan
             // 
             this.tabThongTinTaiKhoan.AutoScroll = true;
-            this.tabThongTinTaiKhoan.BackgroundImage = global::MINI.Properties.Resources.background;
+            this.tabThongTinTaiKhoan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabThongTinTaiKhoan.BackgroundImage")));
+            this.tabThongTinTaiKhoan.Controls.Add(this.listViewTaiKhoan);
             this.tabThongTinTaiKhoan.Controls.Add(this.panelSuaTaiKhoan);
-            this.tabThongTinTaiKhoan.Controls.Add(this.taiKhoanDataGridView);
             this.tabThongTinTaiKhoan.Controls.Add(this.label23);
             this.tabThongTinTaiKhoan.Controls.Add(this.panel1);
             this.tabThongTinTaiKhoan.Controls.Add(this.btnSuaTaiKhoan);
@@ -1460,64 +1334,134 @@
             this.tabThongTinTaiKhoan.Text = "Thông tin tài khoản";
             this.tabThongTinTaiKhoan.UseVisualStyleBackColor = true;
             // 
-            // taiKhoanDataGridView
+            // listViewTaiKhoan
             // 
-            this.taiKhoanDataGridView.AllowUserToAddRows = false;
-            this.taiKhoanDataGridView.AllowUserToDeleteRows = false;
-            this.taiKhoanDataGridView.AutoGenerateColumns = false;
-            this.taiKhoanDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.taiKhoanDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.taiKhoanDataGridView.DataSource = this.taiKhoanBindingSource;
-            this.taiKhoanDataGridView.Location = new System.Drawing.Point(81, 434);
-            this.taiKhoanDataGridView.Name = "taiKhoanDataGridView";
-            this.taiKhoanDataGridView.ReadOnly = true;
-            this.taiKhoanDataGridView.Size = new System.Drawing.Size(547, 220);
-            this.taiKhoanDataGridView.TabIndex = 9;
+            this.listViewTaiKhoan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idTaiKhoanCol,
+            this.idNhanVienCol,
+            this.UsernameCol,
+            this.PasswordCol,
+            this.QuyenCol});
+            this.listViewTaiKhoan.HideSelection = false;
+            this.listViewTaiKhoan.Location = new System.Drawing.Point(24, 484);
+            this.listViewTaiKhoan.Name = "listViewTaiKhoan";
+            this.listViewTaiKhoan.Size = new System.Drawing.Size(623, 188);
+            this.listViewTaiKhoan.TabIndex = 11;
+            this.listViewTaiKhoan.UseCompatibleStateImageBehavior = false;
+            this.listViewTaiKhoan.View = System.Windows.Forms.View.Details;
             // 
-            // dataGridViewTextBoxColumn1
+            // idTaiKhoanCol
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idTaiKhoan";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idTaiKhoan";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idTaiKhoanCol.Text = "ID Tài khoản";
+            this.idTaiKhoanCol.Width = 117;
             // 
-            // dataGridViewTextBoxColumn2
+            // idNhanVienCol
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "idNhanVien";
-            this.dataGridViewTextBoxColumn2.HeaderText = "idNhanVien";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idNhanVienCol.Text = "ID Nhân viên";
+            this.idNhanVienCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idNhanVienCol.Width = 134;
             // 
-            // dataGridViewTextBoxColumn3
+            // UsernameCol
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "username";
-            this.dataGridViewTextBoxColumn3.HeaderText = "username";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.UsernameCol.Text = "Username";
+            this.UsernameCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UsernameCol.Width = 101;
             // 
-            // dataGridViewTextBoxColumn4
+            // PasswordCol
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "password";
-            this.dataGridViewTextBoxColumn4.HeaderText = "password";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.PasswordCol.Text = "Password";
+            this.PasswordCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PasswordCol.Width = 99;
             // 
-            // dataGridViewTextBoxColumn5
+            // QuyenCol
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "quyen";
-            this.dataGridViewTextBoxColumn5.HeaderText = "quyen";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.QuyenCol.Text = "Quyền";
+            this.QuyenCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.QuyenCol.Width = 126;
             // 
-            // taiKhoanBindingSource
+            // panelSuaTaiKhoan
             // 
-            this.taiKhoanBindingSource.DataMember = "TaiKhoan";
-            this.taiKhoanBindingSource.DataSource = this.miniMarketDataSet;
+            this.panelSuaTaiKhoan.BackColor = System.Drawing.Color.Honeydew;
+            this.panelSuaTaiKhoan.Controls.Add(idTaiKhoanLabel1);
+            this.panelSuaTaiKhoan.Controls.Add(this.idTaiKhoanTextBox1);
+            this.panelSuaTaiKhoan.Controls.Add(idNhanVienLabel4);
+            this.panelSuaTaiKhoan.Controls.Add(this.idNhanVienTextBox1);
+            this.panelSuaTaiKhoan.Controls.Add(usernameLabel1);
+            this.panelSuaTaiKhoan.Controls.Add(this.usernameTextBox1);
+            this.panelSuaTaiKhoan.Controls.Add(passwordLabel1);
+            this.panelSuaTaiKhoan.Controls.Add(this.passwordTextBox1);
+            this.panelSuaTaiKhoan.Controls.Add(quyenLabel1);
+            this.panelSuaTaiKhoan.Controls.Add(this.quyenTextBox2);
+            this.panelSuaTaiKhoan.Controls.Add(this.button3);
+            this.panelSuaTaiKhoan.Controls.Add(this.button4);
+            this.panelSuaTaiKhoan.Location = new System.Drawing.Point(716, 434);
+            this.panelSuaTaiKhoan.Name = "panelSuaTaiKhoan";
+            this.panelSuaTaiKhoan.Size = new System.Drawing.Size(423, 225);
+            this.panelSuaTaiKhoan.TabIndex = 10;
+            this.panelSuaTaiKhoan.Visible = false;
+            // 
+            // idTaiKhoanTextBox1
+            // 
+            this.idTaiKhoanTextBox1.Location = new System.Drawing.Point(155, 17);
+            this.idTaiKhoanTextBox1.Name = "idTaiKhoanTextBox1";
+            this.idTaiKhoanTextBox1.Size = new System.Drawing.Size(159, 29);
+            this.idTaiKhoanTextBox1.TabIndex = 11;
+            // 
+            // idNhanVienTextBox1
+            // 
+            this.idNhanVienTextBox1.Location = new System.Drawing.Point(155, 52);
+            this.idNhanVienTextBox1.Name = "idNhanVienTextBox1";
+            this.idNhanVienTextBox1.Size = new System.Drawing.Size(159, 29);
+            this.idNhanVienTextBox1.TabIndex = 13;
+            // 
+            // usernameTextBox1
+            // 
+            this.usernameTextBox1.Location = new System.Drawing.Point(155, 87);
+            this.usernameTextBox1.Name = "usernameTextBox1";
+            this.usernameTextBox1.Size = new System.Drawing.Size(159, 29);
+            this.usernameTextBox1.TabIndex = 15;
+            // 
+            // passwordTextBox1
+            // 
+            this.passwordTextBox1.Location = new System.Drawing.Point(155, 122);
+            this.passwordTextBox1.Name = "passwordTextBox1";
+            this.passwordTextBox1.Size = new System.Drawing.Size(159, 29);
+            this.passwordTextBox1.TabIndex = 17;
+            // 
+            // quyenTextBox2
+            // 
+            this.quyenTextBox2.Location = new System.Drawing.Point(155, 157);
+            this.quyenTextBox2.Name = "quyenTextBox2";
+            this.quyenTextBox2.Size = new System.Drawing.Size(159, 29);
+            this.quyenTextBox2.TabIndex = 19;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.button3.FlatAppearance.BorderSize = 3;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(342, 32);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 45);
+            this.button3.TabIndex = 10;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.button4.FlatAppearance.BorderSize = 3;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(342, 137);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(45, 45);
+            this.button4.TabIndex = 9;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // label23
             // 
@@ -1554,7 +1498,6 @@
             // 
             // idTaiKhoanTextBox
             // 
-            this.idTaiKhoanTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "idTaiKhoan", true));
             this.idTaiKhoanTextBox.Location = new System.Drawing.Point(327, 73);
             this.idTaiKhoanTextBox.Name = "idTaiKhoanTextBox";
             this.idTaiKhoanTextBox.Size = new System.Drawing.Size(186, 29);
@@ -1562,7 +1505,6 @@
             // 
             // idNhanVienTextBox
             // 
-            this.idNhanVienTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "idNhanVien", true));
             this.idNhanVienTextBox.Location = new System.Drawing.Point(327, 108);
             this.idNhanVienTextBox.Name = "idNhanVienTextBox";
             this.idNhanVienTextBox.Size = new System.Drawing.Size(186, 29);
@@ -1570,7 +1512,6 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "username", true));
             this.usernameTextBox.Location = new System.Drawing.Point(327, 143);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(186, 29);
@@ -1578,7 +1519,6 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "password", true));
             this.passwordTextBox.Location = new System.Drawing.Point(327, 178);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(186, 29);
@@ -1586,7 +1526,6 @@
             // 
             // quyenTextBox
             // 
-            this.quyenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "quyen", true));
             this.quyenTextBox.Location = new System.Drawing.Point(327, 213);
             this.quyenTextBox.Name = "quyenTextBox";
             this.quyenTextBox.Size = new System.Drawing.Size(186, 29);
@@ -1630,170 +1569,10 @@
             this.btnSuaTaiKhoan.UseVisualStyleBackColor = false;
             this.btnSuaTaiKhoan.Click += new System.EventHandler(this.btnSuaTaiKhoan_Click);
             // 
-            // tableAdapterManager
+            // miniMarketDataSet
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BaoCaoTableAdapter = null;
-            this.tableAdapterManager.ChiTietHoaDonTableAdapter = null;
-            this.tableAdapterManager.ChiTietPhieuNhapTableAdapter = null;
-            this.tableAdapterManager.ChucVuTableAdapter = null;
-            this.tableAdapterManager.HoaDonTableAdapter = null;
-            this.tableAdapterManager.KhachHangTableAdapter = null;
-            this.tableAdapterManager.KhuyenMaiTableAdapter = null;
-            this.tableAdapterManager.LoaiSanPhamTableAdapter = null;
-            this.tableAdapterManager.NhaCungCapTableAdapter = null;
-            this.tableAdapterManager.NhanVienTableAdapter = this.nhanVienTableAdapter;
-            this.tableAdapterManager.PhieuNhapTableAdapter = null;
-            this.tableAdapterManager.SanPhamTableAdapter = null;
-            this.tableAdapterManager.TaiKhoanTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MINI.MiniMarketDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // nhanVienTableAdapter
-            // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
-            // 
-            // taiKhoanTableAdapter
-            // 
-            this.taiKhoanTableAdapter.ClearBeforeFill = true;
-            // 
-            // nhanVienBindingSource1
-            // 
-            this.nhanVienBindingSource1.DataMember = "NhanVien";
-            this.nhanVienBindingSource1.DataSource = this.miniMarketDataSet;
-            // 
-            // panelSuaTaiKhoan
-            // 
-            this.panelSuaTaiKhoan.BackColor = System.Drawing.Color.Honeydew;
-            this.panelSuaTaiKhoan.Controls.Add(idTaiKhoanLabel1);
-            this.panelSuaTaiKhoan.Controls.Add(this.idTaiKhoanTextBox1);
-            this.panelSuaTaiKhoan.Controls.Add(idNhanVienLabel4);
-            this.panelSuaTaiKhoan.Controls.Add(this.idNhanVienTextBox1);
-            this.panelSuaTaiKhoan.Controls.Add(usernameLabel1);
-            this.panelSuaTaiKhoan.Controls.Add(this.usernameTextBox1);
-            this.panelSuaTaiKhoan.Controls.Add(passwordLabel1);
-            this.panelSuaTaiKhoan.Controls.Add(this.passwordTextBox1);
-            this.panelSuaTaiKhoan.Controls.Add(quyenLabel1);
-            this.panelSuaTaiKhoan.Controls.Add(this.quyenTextBox2);
-            this.panelSuaTaiKhoan.Controls.Add(this.button3);
-            this.panelSuaTaiKhoan.Controls.Add(this.button4);
-            this.panelSuaTaiKhoan.Location = new System.Drawing.Point(716, 434);
-            this.panelSuaTaiKhoan.Name = "panelSuaTaiKhoan";
-            this.panelSuaTaiKhoan.Size = new System.Drawing.Size(423, 225);
-            this.panelSuaTaiKhoan.TabIndex = 10;
-            this.panelSuaTaiKhoan.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.button3.FlatAppearance.BorderSize = 3;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(342, 32);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 45);
-            this.button3.TabIndex = 10;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(342, 137);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 45);
-            this.button4.TabIndex = 9;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // idTaiKhoanLabel1
-            // 
-            idTaiKhoanLabel1.AutoSize = true;
-            idTaiKhoanLabel1.Location = new System.Drawing.Point(30, 20);
-            idTaiKhoanLabel1.Name = "idTaiKhoanLabel1";
-            idTaiKhoanLabel1.Size = new System.Drawing.Size(116, 22);
-            idTaiKhoanLabel1.TabIndex = 10;
-            idTaiKhoanLabel1.Text = "id Tai Khoan:";
-            // 
-            // idTaiKhoanTextBox1
-            // 
-            this.idTaiKhoanTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "idTaiKhoan", true));
-            this.idTaiKhoanTextBox1.Location = new System.Drawing.Point(155, 17);
-            this.idTaiKhoanTextBox1.Name = "idTaiKhoanTextBox1";
-            this.idTaiKhoanTextBox1.Size = new System.Drawing.Size(159, 29);
-            this.idTaiKhoanTextBox1.TabIndex = 11;
-            // 
-            // idNhanVienLabel4
-            // 
-            idNhanVienLabel4.AutoSize = true;
-            idNhanVienLabel4.Location = new System.Drawing.Point(30, 55);
-            idNhanVienLabel4.Name = "idNhanVienLabel4";
-            idNhanVienLabel4.Size = new System.Drawing.Size(119, 22);
-            idNhanVienLabel4.TabIndex = 12;
-            idNhanVienLabel4.Text = "id Nhan Vien:";
-            // 
-            // idNhanVienTextBox1
-            // 
-            this.idNhanVienTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "idNhanVien", true));
-            this.idNhanVienTextBox1.Location = new System.Drawing.Point(155, 52);
-            this.idNhanVienTextBox1.Name = "idNhanVienTextBox1";
-            this.idNhanVienTextBox1.Size = new System.Drawing.Size(159, 29);
-            this.idNhanVienTextBox1.TabIndex = 13;
-            // 
-            // usernameLabel1
-            // 
-            usernameLabel1.AutoSize = true;
-            usernameLabel1.Location = new System.Drawing.Point(30, 90);
-            usernameLabel1.Name = "usernameLabel1";
-            usernameLabel1.Size = new System.Drawing.Size(93, 22);
-            usernameLabel1.TabIndex = 14;
-            usernameLabel1.Text = "username:";
-            // 
-            // usernameTextBox1
-            // 
-            this.usernameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "username", true));
-            this.usernameTextBox1.Location = new System.Drawing.Point(155, 87);
-            this.usernameTextBox1.Name = "usernameTextBox1";
-            this.usernameTextBox1.Size = new System.Drawing.Size(159, 29);
-            this.usernameTextBox1.TabIndex = 15;
-            // 
-            // passwordLabel1
-            // 
-            passwordLabel1.AutoSize = true;
-            passwordLabel1.Location = new System.Drawing.Point(30, 125);
-            passwordLabel1.Name = "passwordLabel1";
-            passwordLabel1.Size = new System.Drawing.Size(94, 22);
-            passwordLabel1.TabIndex = 16;
-            passwordLabel1.Text = "password:";
-            // 
-            // passwordTextBox1
-            // 
-            this.passwordTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "password", true));
-            this.passwordTextBox1.Location = new System.Drawing.Point(155, 122);
-            this.passwordTextBox1.Name = "passwordTextBox1";
-            this.passwordTextBox1.Size = new System.Drawing.Size(159, 29);
-            this.passwordTextBox1.TabIndex = 17;
-            // 
-            // quyenLabel1
-            // 
-            quyenLabel1.AutoSize = true;
-            quyenLabel1.Location = new System.Drawing.Point(30, 160);
-            quyenLabel1.Name = "quyenLabel1";
-            quyenLabel1.Size = new System.Drawing.Size(64, 22);
-            quyenLabel1.TabIndex = 18;
-            quyenLabel1.Text = "quyen:";
-            // 
-            // quyenTextBox2
-            // 
-            this.quyenTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taiKhoanBindingSource, "quyen", true));
-            this.quyenTextBox2.Location = new System.Drawing.Point(155, 157);
-            this.quyenTextBox2.Name = "quyenTextBox2";
-            this.quyenTextBox2.Size = new System.Drawing.Size(159, 29);
-            this.quyenTextBox2.TabIndex = 19;
+            this.miniMarketDataSet.DataSetName = "MiniMarketDataSet";
+            this.miniMarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NhanVien
             // 
@@ -1811,15 +1590,8 @@
             this.tabThongTinNhanVien.PerformLayout();
             this.panelTaiKhoan.ResumeLayout(false);
             this.panelTaiKhoan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingNavigator)).EndInit();
-            this.nhanVienBindingNavigator.ResumeLayout(false);
-            this.nhanVienBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDataGridView)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.tabSuaThemNhanVien.ResumeLayout(false);
@@ -1831,14 +1603,12 @@
             this.panelThemThongTinNhanVien.PerformLayout();
             this.tabThongTinTaiKhoan.ResumeLayout(false);
             this.tabThongTinTaiKhoan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).EndInit();
+            this.panelSuaTaiKhoan.ResumeLayout(false);
+            this.panelSuaTaiKhoan.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource1)).EndInit();
-            this.panelSuaTaiKhoan.ResumeLayout(false);
-            this.panelSuaTaiKhoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1866,89 +1636,56 @@
         private System.Windows.Forms.TabPage tabThongTinNhanVien;
         private System.Windows.Forms.Label lblTittleDanhSachNhanVien;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnSuaNV;
         private System.Windows.Forms.TabControl tabNhanVien;
         private System.Windows.Forms.TabPage tabThongTinTaiKhoan;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSuaTaiKhoan;
-        private System.Windows.Forms.BindingSource nhanVienBindingSource;
-        private MiniMarketDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView nhanVienDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIDNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColHoVaTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColChucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTrangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNgayNghi;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox hoVaTenTextBox;
-        private System.Windows.Forms.TextBox soDienThoaiTextBox;
-        private System.Windows.Forms.TextBox gioiTinhTextBox;
-        private System.Windows.Forms.TextBox idChucVuTextBox;
-        private System.Windows.Forms.TextBox luongTextBox;
-        private System.Windows.Forms.TextBox trangThaiTextBox;
-        private System.Windows.Forms.DateTimePicker ngayNghiDateTimePicker;
-        private System.Windows.Forms.DateTimePicker ngaySinhDateTimePicker;
-        private System.Windows.Forms.TextBox diaChiTextBox;
+        private System.Windows.Forms.TextBox txtIDNhanVienNV;
+        private System.Windows.Forms.TextBox txtHoVaTenNV;
+        private System.Windows.Forms.TextBox txtSDTNV;
+        private System.Windows.Forms.TextBox txtGioiTinhNV;
+        private System.Windows.Forms.TextBox txtIDChucVuNV;
+        private System.Windows.Forms.TextBox txtLuongNV;
+        private System.Windows.Forms.TextBox txtTrangThaiNV;
+        private System.Windows.Forms.DateTimePicker DTPNgayNghiNV;
+        private System.Windows.Forms.DateTimePicker DTPNgaySinhNV;
+        private System.Windows.Forms.TextBox txtDiaChiNV;
         private System.Windows.Forms.Label lblNull;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnThemNV;
+        private System.Windows.Forms.Button btnReloadNV;
         private System.Windows.Forms.PictureBox pictureBoxInfo;
         private System.Windows.Forms.Label labelChucVu;
-        private System.Windows.Forms.BindingNavigator nhanVienBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.Label lblChucVu2;
-        private System.Windows.Forms.TextBox txtChiTietIDNhanVien;
-        private System.Windows.Forms.TextBox hoVaTenTextBox1;
-        private System.Windows.Forms.TextBox soDienThoaiTextBox1;
-        private System.Windows.Forms.TextBox gioiTinhTextBox1;
-        private System.Windows.Forms.TextBox luongTextBox1;
-        private System.Windows.Forms.DateTimePicker ngayNghiDateTimePicker1;
-        private System.Windows.Forms.DateTimePicker ngaySinhDateTimePicker1;
-        private System.Windows.Forms.TextBox diaChiTextBox1;
-        private MiniMarketDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
-        private System.Windows.Forms.ComboBox idChucVuComboBox;
-        private System.Windows.Forms.ComboBox trangThaiComboBox;
-        private System.Windows.Forms.BindingSource taiKhoanBindingSource;
-        private MiniMarketDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
-        private System.Windows.Forms.DataGridView taiKhoanDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.TextBox txtIDNhanVienCTNV;
+        private System.Windows.Forms.TextBox txtHoVaTenCTNV;
+        private System.Windows.Forms.TextBox txtSDTCTNV;
+        private System.Windows.Forms.TextBox txtGioiTinhCTNV;
+        private System.Windows.Forms.TextBox txtLuongCTNV;
+        private System.Windows.Forms.DateTimePicker DTPNgayNghiCTNV;
+        private System.Windows.Forms.DateTimePicker DTPNgaySinhCTNV;
+        private System.Windows.Forms.TextBox txtDiaChiCTNV;
+        private System.Windows.Forms.ComboBox cbbIDChucVuCTNV;
+        private System.Windows.Forms.ComboBox cbbTrangThaiCTNV;
         private System.Windows.Forms.TextBox idTaiKhoanTextBox;
         private System.Windows.Forms.TextBox idNhanVienTextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox quyenTextBox;
         private System.Windows.Forms.Panel panelTaiKhoan;
-        private System.Windows.Forms.TextBox idTaiKhoanTextBox2;
-        private System.Windows.Forms.BindingSource taiKhoanBindingSource1;
-        private System.Windows.Forms.TextBox idNhanVienTextBox2;
-        private System.Windows.Forms.TextBox usernameTextBox2;
-        private System.Windows.Forms.TextBox passwordTextBox2;
-        private System.Windows.Forms.TextBox quyenTextBox1;
-        private System.Windows.Forms.Button btnTaiKhoan;
+        private System.Windows.Forms.TextBox txtIDTaiKhoanNV;
+        private System.Windows.Forms.TextBox txtIDNhanVienNVTK;
+        private System.Windows.Forms.TextBox txtUsernameNV;
+        private System.Windows.Forms.TextBox txtPasswordNV;
+        private System.Windows.Forms.TextBox txtQuyenNV;
+        private System.Windows.Forms.Button btnTaiKhoanNV;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblCV;
+        private System.Windows.Forms.Label lblChucVuNVTK;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox txtHoTenTaiKhoan;
+        private System.Windows.Forms.TextBox txtHoVaTenNVTK;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.BindingSource nhanVienBindingSource1;
         private System.Windows.Forms.Panel panelSuaTaiKhoan;
         private System.Windows.Forms.TextBox idTaiKhoanTextBox1;
         private System.Windows.Forms.TextBox idNhanVienTextBox1;
@@ -1957,5 +1694,22 @@
         private System.Windows.Forms.TextBox quyenTextBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListView listViewTaiKhoan;
+        private System.Windows.Forms.ColumnHeader idTaiKhoanCol;
+        private System.Windows.Forms.ColumnHeader idNhanVienCol;
+        private System.Windows.Forms.ColumnHeader UsernameCol;
+        private System.Windows.Forms.ColumnHeader PasswordCol;
+        private System.Windows.Forms.ColumnHeader QuyenCol;
+        private System.Windows.Forms.ListView listViewNhanVien;
+        private System.Windows.Forms.ColumnHeader IDNhanVien;
+        private System.Windows.Forms.ColumnHeader HoVaTenNVCol;
+        private System.Windows.Forms.ColumnHeader DiaChiNVCol;
+        private System.Windows.Forms.ColumnHeader SDTNVCol;
+        private System.Windows.Forms.ColumnHeader GioiTinhNVCol;
+        private System.Windows.Forms.ColumnHeader IDChucVuNVCol;
+        private System.Windows.Forms.ColumnHeader LuongNVCol;
+        private System.Windows.Forms.ColumnHeader TrangThaiNVCol;
+        private System.Windows.Forms.ColumnHeader NgaySinhNVCol;
+        private System.Windows.Forms.ColumnHeader NgayNghiNVCol;
     }
 }
