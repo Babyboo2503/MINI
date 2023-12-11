@@ -52,6 +52,7 @@
     <Compile Include="src\BUS\KhachHangBUS.cs" />
     <Compile Include="src\BUS\KhuyenMaiBUS.cs" />
     <Compile Include="src\BUS\NhanVienBUS.cs" />
+    <Compile Include="src\GUI\NhapHang\NhapHangGUIHelpers.cs" />
     <Compile Include="src\BUS\PhieuNhapBUS.cs" />
     <Compile Include="src\BUS\SanPhamBUS.cs" />
     <Compile Include="src\BUS\TaiKhoanBUS.cs" />
@@ -82,6 +83,14 @@
     <Compile Include="src\GUI\BaoCao\BaoCao.designer.cs">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.Designer.cs" />
+    <Compile Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.Designer.cs" />
     <Compile Include="src\GUI\HoaDon\HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,8 +129,14 @@
     <Compile Include="src\GUI\NhanVien\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\NhanVien\Class1.cs" />
-    <Compile Include="src\GUI\PhieuNhap\Class1.cs" />
+    <Compile Include="src\GUI\NhapHang\NhapHangGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\NhapHang\NhapHangGUI.Designer.cs" />
+    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.Designer.cs" />
     <Compile Include="src\GUI\SanPham\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +188,8 @@
     <EmbeddedResource Include="src\GUI\BaoCao\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.resx" />
+    <EmbeddedResource Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.resx" />
     <EmbeddedResource Include="src\GUI\HoaDon\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +205,8 @@
     <EmbeddedResource Include="src\GUI\NhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\NhapHang\NhapHangGUI.resx" />
+    <EmbeddedResource Include="src\GUI\PhieuNhap\PhieuNhapGUI.resx" />
     <EmbeddedResource Include="src\GUI\SanPham\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
