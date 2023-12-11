@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -83,13 +83,13 @@ namespace MINI.BUS
                 DataTable dttk = LayDSLoaiSanPham();
                 for (int i = 0; i < dttk.Rows.Count; i++)
                 {
-                    if(id == "id")
+                    if (id == "id")
                     {
                         if (dttk.Rows[i][1].ToString().ToLower().Equals(ten.ToLower()))
                         {
                             flag = false;
                         }
-                    } 
+                    }
                     else
                     {
                         if (dttk.Rows[i][0].ToString().Equals(id) && dttk.Rows[i][1].ToString().ToLower().Equals(ten.ToLower()))
@@ -182,7 +182,7 @@ namespace MINI.BUS
                 MessageBox.Show("Số lượng phải là số", "Báo lỗi");
                 return "soluong";
             }
-            else if(hinhanh == "")
+            else if (hinhanh == "")
             {
                 MessageBox.Show("Hãy chọn hình ảnh", "Báo lỗi");
                 return "hinhanh";
@@ -206,11 +206,51 @@ namespace MINI.BUS
 {
     public class SanPhamBUS
     {
-        Database db;
-        public SanPhamBUS()
-        {
-            db = new Database();
-        }
+        public DataTable layDSSP()
+ {
+     string strSQL = "Select * from SanPham";
+     DataTable dt = db.Execute(strSQL);
+     return dt;
+ }
+
+ public DataTable LayDSCTPNTheoTenSP(string tenSanPham)
+ {
+     DataTable dt = new DataTable();
+     using (SqlConnection connection = new SqlConnection("Data Source=.; Database=MiniMarket;Integrated Security = True"))
+     {
+         string query = "SELECT * FROM SanPham WHERE tenSanPham LIKE '%' + @tensp + '%' ";
+         using (SqlCommand command = new SqlCommand(query, connection))
+         {
+             command.Parameters.AddWithValue("@tensp", tenSanPham);
+             connection.Open();
+             using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+             {
+                 adapter.Fill(dt);
+             }
+             connection.Close();
+         }
+     }
+     return dt;
+ }
+
+ public string GetImagePathForSelectedProduct(string productID)
+ {
+     string imagePath = null;
+     // Kết nối đến cơ sở dữ liệu và thực hiện truy vấn để lấy đường dẫn ảnh sản phẩm
+     // Ví dụ với SQL Server:
+     string connectionString = "YourConnectionString";
+     using (SqlConnection connection = new SqlConnection("Data Source=.; Database=MiniMarket;Integrated Security = True"))
+     {
+         string query = "SELECT hinhAnh FROM SanPham WHERE idSanPham = @ProductID";
+         using (SqlCommand command = new SqlCommand(query, connection))
+         {
+             command.Parameters.Add(new SqlParameter("@ProductID", productID));
+             connection.Open();
+             imagePath = (string)command.ExecuteScalar(); // Giả sử đường dẫn ảnh được lưu trong cột 'ImagePath' của bảng 'Products'
+         }
+     }
+     return imagePath;
+ }
         public DataTable LayDSSanPham()
         {
             string strSQL = "Select * from SanPham";
@@ -383,5 +423,6 @@ namespace MINI.BUS
             return "true";
         }
     }
+
 }
 >>>>>>> master
