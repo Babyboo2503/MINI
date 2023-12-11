@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MINI.src.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace MINI.GUI
 {
     public partial class DangNhap : Form
     {
+        TaiKhoanBUS taikhoan_bus = new TaiKhoanBUS();
         public DangNhap()
         {
             InitializeComponent();
@@ -20,6 +22,33 @@ namespace MINI.GUI
         private void DangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Length == 0 || txtUsername.Text.Length == 0)
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu đang để trống");
+            }
+            else
+            {
+                if (taikhoan_bus.findAccount(txtUsername.Text, txtPassword.Text))
+                {
+                    MessageBox.Show("Đăng nhập thành công");
+                    trangChu trangchu = new trangChu(PhanQuyenBUS.DangNhap(txtUsername.Text,txtPassword.Text));
+                    trangchu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
+                }
+            }
+        }
+        
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

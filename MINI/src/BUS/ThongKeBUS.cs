@@ -220,8 +220,8 @@ namespace MINI.src.BUS
                 cthd.idHoaDon = Convert.ToInt32(dr["idHoaDon"]);
                 cthd.idSanPham = Convert.ToInt32(dr["idSanPham"]);
                 cthd.soLuong = Convert.ToInt32(dr["soLuong"]);
-                cthd.donGia = float.Parse(dr["donGia"].ToString());
-                cthd.tongTien = float.Parse(dr["tongTien"].ToString());
+                cthd.donGia = decimal.Parse(dr["donGia"].ToString());
+                cthd.tongTien = decimal.Parse(dr["tongTien"].ToString());
                 dsChiTietHoaDon.Add(cthd); 
             }
             return dsChiTietHoaDon;

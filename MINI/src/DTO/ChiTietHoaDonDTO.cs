@@ -11,7 +11,7 @@ namespace MINI.src.DTO
         public int idHoaDon { get; set; }
         public int idSanPham { get; set; }
         public int soLuong { get; set; }
-        public float donGia { get; set; }
-        public float tongTien { get; set; }
+        public decimal donGia { get; set; }
+        public decimal tongTien { get; set; }
     }
 }

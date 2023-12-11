@@ -34,19 +34,25 @@
             this.tpAll = new System.Windows.Forms.TabPage();
             this.tbcManager = new System.Windows.Forms.TabControl();
             this.tabSum = new System.Windows.Forms.TabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.lblTotalVendor = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.lblTotalCustomer = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.lblTotalEmployee = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.tpSell = new System.Windows.Forms.TabPage();
+            this.lblTotalInvoice = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lsvInvoice = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,6 +61,8 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpNhanHang = new System.Windows.Forms.TabPage();
+            this.lblTotalReceipt = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lsvReceipt = new System.Windows.Forms.ListView();
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -142,22 +150,19 @@
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalInvoice = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalReceipt = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
             this.tbcManager.SuspendLayout();
             this.tabSum.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tpSell.SuspendLayout();
             this.tpNhanHang.SuspendLayout();
@@ -181,10 +186,6 @@
             this.panel11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -249,6 +250,17 @@
             this.tabSum.Text = "Tổng";
             this.tabSum.UseVisualStyleBackColor = true;
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.lblTotalVendor);
+            this.groupBox15.Controls.Add(this.pictureBox4);
+            this.groupBox15.Controls.Add(this.label5);
+            this.groupBox15.Location = new System.Drawing.Point(807, 6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(250, 181);
+            this.groupBox15.TabIndex = 7;
+            this.groupBox15.TabStop = false;
+            // 
             // lblTotalVendor
             // 
             this.lblTotalVendor.AutoSize = true;
@@ -278,6 +290,17 @@
             this.label5.Size = new System.Drawing.Size(136, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Nhà Cung Cấp";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.lblTotalCustomer);
+            this.groupBox14.Controls.Add(this.pictureBox3);
+            this.groupBox14.Controls.Add(this.label4);
+            this.groupBox14.Location = new System.Drawing.Point(538, 6);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(250, 181);
+            this.groupBox14.TabIndex = 6;
+            this.groupBox14.TabStop = false;
             // 
             // lblTotalCustomer
             // 
@@ -309,6 +332,17 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Khách Hàng";
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.lblTotalEmployee);
+            this.groupBox13.Controls.Add(this.pictureBox2);
+            this.groupBox13.Controls.Add(this.label3);
+            this.groupBox13.Location = new System.Drawing.Point(273, 6);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(250, 181);
+            this.groupBox13.TabIndex = 5;
+            this.groupBox13.TabStop = false;
+            // 
             // lblTotalEmployee
             // 
             this.lblTotalEmployee.AutoSize = true;
@@ -338,6 +372,17 @@
             this.label3.Size = new System.Drawing.Size(102, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nhân Viên";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.lblTotalProduct);
+            this.groupBox12.Controls.Add(this.pictureBox1);
+            this.groupBox12.Controls.Add(this.lblProduct);
+            this.groupBox12.Location = new System.Drawing.Point(6, 6);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(250, 181);
+            this.groupBox12.TabIndex = 4;
+            this.groupBox12.TabStop = false;
             // 
             // lblTotalProduct
             // 
@@ -381,6 +426,25 @@
             this.tpSell.TabIndex = 1;
             this.tpSell.Text = "Bán Hàng";
             this.tpSell.UseVisualStyleBackColor = true;
+            // 
+            // lblTotalInvoice
+            // 
+            this.lblTotalInvoice.AutoSize = true;
+            this.lblTotalInvoice.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInvoice.Location = new System.Drawing.Point(870, 417);
+            this.lblTotalInvoice.Name = "lblTotalInvoice";
+            this.lblTotalInvoice.Size = new System.Drawing.Size(0, 30);
+            this.lblTotalInvoice.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(726, 417);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 30);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Tổng Bán Ra:";
             // 
             // lsvInvoice
             // 
@@ -442,6 +506,25 @@
             this.tpNhanHang.TabIndex = 2;
             this.tpNhanHang.Text = "Nhập Hàng";
             this.tpNhanHang.UseVisualStyleBackColor = true;
+            // 
+            // lblTotalReceipt
+            // 
+            this.lblTotalReceipt.AutoSize = true;
+            this.lblTotalReceipt.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalReceipt.Location = new System.Drawing.Point(880, 417);
+            this.lblTotalReceipt.Name = "lblTotalReceipt";
+            this.lblTotalReceipt.Size = new System.Drawing.Size(0, 30);
+            this.lblTotalReceipt.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(685, 417);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(189, 30);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Tổng Nhập Hàng:";
             // 
             // lsvReceipt
             // 
@@ -1148,89 +1231,6 @@
             // 
             this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(726, 417);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 30);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tổng Bán Ra:";
-            // 
-            // lblTotalInvoice
-            // 
-            this.lblTotalInvoice.AutoSize = true;
-            this.lblTotalInvoice.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInvoice.Location = new System.Drawing.Point(870, 417);
-            this.lblTotalInvoice.Name = "lblTotalInvoice";
-            this.lblTotalInvoice.Size = new System.Drawing.Size(0, 30);
-            this.lblTotalInvoice.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(685, 417);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 30);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Tổng Nhập Hàng:";
-            // 
-            // lblTotalReceipt
-            // 
-            this.lblTotalReceipt.AutoSize = true;
-            this.lblTotalReceipt.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalReceipt.Location = new System.Drawing.Point(880, 417);
-            this.lblTotalReceipt.Name = "lblTotalReceipt";
-            this.lblTotalReceipt.Size = new System.Drawing.Size(46, 30);
-            this.lblTotalReceipt.TabIndex = 3;
-            this.lblTotalReceipt.Text = "abc";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.lblTotalProduct);
-            this.groupBox12.Controls.Add(this.pictureBox1);
-            this.groupBox12.Controls.Add(this.lblProduct);
-            this.groupBox12.Location = new System.Drawing.Point(6, 6);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(250, 181);
-            this.groupBox12.TabIndex = 4;
-            this.groupBox12.TabStop = false;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.lblTotalEmployee);
-            this.groupBox13.Controls.Add(this.pictureBox2);
-            this.groupBox13.Controls.Add(this.label3);
-            this.groupBox13.Location = new System.Drawing.Point(273, 6);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(250, 181);
-            this.groupBox13.TabIndex = 5;
-            this.groupBox13.TabStop = false;
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.lblTotalCustomer);
-            this.groupBox14.Controls.Add(this.pictureBox3);
-            this.groupBox14.Controls.Add(this.label4);
-            this.groupBox14.Location = new System.Drawing.Point(538, 6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(250, 181);
-            this.groupBox14.TabIndex = 6;
-            this.groupBox14.TabStop = false;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.lblTotalVendor);
-            this.groupBox15.Controls.Add(this.pictureBox4);
-            this.groupBox15.Controls.Add(this.label5);
-            this.groupBox15.Location = new System.Drawing.Point(807, 6);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(250, 181);
-            this.groupBox15.TabIndex = 7;
-            this.groupBox15.TabStop = false;
-            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1245,9 +1245,17 @@
             this.tpAll.ResumeLayout(false);
             this.tbcManager.ResumeLayout(false);
             this.tabSum.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tpSell.ResumeLayout(false);
             this.tpSell.PerformLayout();
@@ -1276,14 +1284,6 @@
             this.panel11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1411,5 +1411,6 @@
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.GroupBox groupBox14;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
