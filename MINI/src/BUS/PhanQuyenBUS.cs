@@ -11,7 +11,7 @@ namespace MINI.src.BUS
 {
     internal class PhanQuyenBUS
     {
-        static Database db= new Database();
+        static Database db = new Database();
         public static bool[] DangNhap(string username, string password)
         {
             string dsQuyen = "";
@@ -35,4 +35,3 @@ namespace MINI.src.BUS
 
     }
 }
-
