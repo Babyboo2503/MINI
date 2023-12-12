@@ -225,7 +225,7 @@ namespace MINI.GUI.BanHang
             hdDTO.idKhachHang = int.Parse(comboBox2.Text);
             hdDTO.ngayLap=DateTime.Now;
             hdDTO.idKhuyenMai=int.Parse(comboBox3.Text);
-            hdDTO.tongHoaDon = decimal.Parse(textBox12.Text);
+            hdDTO.tongHoaDon = float.Parse(textBox12.Text);
             hd.ThemHoaDon(hdDTO);
             DataTable dt= hd.LayMaHDMoi();
             string a = dt.Rows[0][0].ToString();
