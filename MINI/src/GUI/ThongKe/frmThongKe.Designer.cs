@@ -70,19 +70,12 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnShowNhanVien = new System.Windows.Forms.Button();
-            this.txtNhanVien = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnShowSanPham = new System.Windows.Forms.Button();
-            this.txtSanPham = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.tpTKSanPham = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -167,8 +160,6 @@
             this.tpSell.SuspendLayout();
             this.tpNhanHang.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpTKSanPham.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -573,96 +564,30 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btnClear);
-            this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1081, 62);
             this.panel2.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1054, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(27, 62);
-            this.panel3.TabIndex = 4;
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(953, 13);
+            this.btnClear.Location = new System.Drawing.Point(807, 16);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(62, 37);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnShowNhanVien);
-            this.groupBox3.Controls.Add(this.txtNhanVien);
-            this.groupBox3.Location = new System.Drawing.Point(803, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(149, 56);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Nhân Viên";
-            // 
-            // btnShowNhanVien
-            // 
-            this.btnShowNhanVien.Location = new System.Drawing.Point(117, 21);
-            this.btnShowNhanVien.Name = "btnShowNhanVien";
-            this.btnShowNhanVien.Size = new System.Drawing.Size(27, 27);
-            this.btnShowNhanVien.TabIndex = 1;
-            this.btnShowNhanVien.Text = "...";
-            this.btnShowNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // txtNhanVien
-            // 
-            this.txtNhanVien.Location = new System.Drawing.Point(21, 20);
-            this.txtNhanVien.Multiline = true;
-            this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Size = new System.Drawing.Size(90, 27);
-            this.txtNhanVien.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnShowSanPham);
-            this.groupBox2.Controls.Add(this.txtSanPham);
-            this.groupBox2.Location = new System.Drawing.Point(648, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(149, 56);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sản Phẩm";
-            // 
-            // btnShowSanPham
-            // 
-            this.btnShowSanPham.Location = new System.Drawing.Point(117, 21);
-            this.btnShowSanPham.Name = "btnShowSanPham";
-            this.btnShowSanPham.Size = new System.Drawing.Size(27, 27);
-            this.btnShowSanPham.TabIndex = 1;
-            this.btnShowSanPham.Text = "...";
-            this.btnShowSanPham.UseVisualStyleBackColor = true;
-            // 
-            // txtSanPham
-            // 
-            this.txtSanPham.Location = new System.Drawing.Point(21, 20);
-            this.txtSanPham.Multiline = true;
-            this.txtSanPham.Name = "txtSanPham";
-            this.txtSanPham.Size = new System.Drawing.Size(90, 27);
-            this.txtSanPham.TabIndex = 0;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Location = new System.Drawing.Point(90, 3);
+            this.groupBox1.Controls.Add(this.dtpNgayBD);
+            this.groupBox1.Controls.Add(this.dtpNgayKT);
+            this.groupBox1.Location = new System.Drawing.Point(249, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(552, 56);
             this.groupBox1.TabIndex = 0;
@@ -687,21 +612,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Từ ngày";
             // 
-            // dateTimePicker1
+            // dtpNgayBD
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(69, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBD.Location = new System.Drawing.Point(69, 21);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(196, 20);
+            this.dtpNgayBD.TabIndex = 0;
             // 
-            // dateTimePicker2
+            // dtpNgayKT
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(350, 21);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpNgayKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayKT.Location = new System.Drawing.Point(350, 21);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(196, 20);
+            this.dtpNgayKT.TabIndex = 2;
             // 
             // tpTKSanPham
             // 
@@ -1262,10 +1187,6 @@
             this.tpNhanHang.ResumeLayout(false);
             this.tpNhanHang.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tpTKSanPham.ResumeLayout(false);
@@ -1299,16 +1220,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnShowSanPham;
-        private System.Windows.Forms.TextBox txtSanPham;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnShowNhanVien;
-        private System.Windows.Forms.TextBox txtNhanVien;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DateTimePicker dtpNgayKT;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TabControl tbcManager;
         private System.Windows.Forms.TabPage tabSum;
