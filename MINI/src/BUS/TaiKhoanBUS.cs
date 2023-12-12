@@ -27,7 +27,6 @@ namespace MINI.src.BUS
                 {
                     result[parsedQuyen - 1] = true;
                 }
-
             }
             return result;
         }
@@ -43,7 +42,12 @@ namespace MINI.src.BUS
             DataTable dt = db.Execute(account);
             return dt;
         }
-
+        
+        public int KTAdmin(string txtUsername, string txtPassword)
+        {
+            string id = $"Select idNhanVien from TaiKhoan where username='{txtUsername}' and password='{txtPassword}'";
+            return db.ExecuteNonQuery(id);
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using MINI.src.BUS;
+using MINI.src.BUS;
+using MINI.src.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,64 +10,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MINI.GUI
 {
     public partial class NhanVien : Form
     {
-        NhanVienBUS nv_bus=new NhanVienBUS();
-        TaiKhoanBUS tk_bus= new TaiKhoanBUS();
-        
-        public NhanVien()
+        NhanVienBUS nv_bus = new NhanVienBUS();
+        TaiKhoanBUS tk_bus = new TaiKhoanBUS();
+        ChucVuBUS cv_bus=new ChucVuBUS();
+        public string Username, Password;
+        public NhanVien(string Username, string Password)
         {
+            
+            this.Username = Username;
+            this.Password = Password;
+           
             InitializeComponent();
         }
- 
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            tabNhanVien.SelectedTab = tabSuaThemNhanVien;
-        }
-
-
-        private void nhanVienDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            labelChucVu.Text = nv_bus.findChucVu(Convert.ToInt32(txtIDChucVuNV.Text));
-            if (txtTrangThaiNV.Text == "Đang Làm")
-            {
-                DTPNgayNghiNV.Visible = false;
-                lblNull.Visible = true;
-            }
-            if(txtTrangThaiNV.Text=="Thôi Việc")
-            {
-                DTPNgayNghiNV.Visible = true;
-                lblNull.Visible = false;
-            }
-        }
-        private void btnSuaTaiKhoan_Click(object sender, EventArgs e)
-        {
-            panelSuaTaiKhoan.Visible = true;
-        }
-
-        private void tabThongTinTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panelTaiKhoan.Visible = false;
-            panelInfo.Visible = true;
-            pictureBoxInfo.Visible = true;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            tabNhanVien.SelectedTab = tabSuaThemNhanVien;
-        }
-
 
         /////////NHÂN VIÊN////////////////
         void HienthiDanhSachNhanVien()
@@ -97,6 +58,7 @@ namespace MINI.GUI
                 txtSDTNV.Text = listViewNhanVien.SelectedItems[0].SubItems[2].Text;
                 txtGioiTinhNV.Text = listViewNhanVien.SelectedItems[0].SubItems[3].Text;
                 txtIDChucVuNV.Text = listViewNhanVien.SelectedItems[0].SubItems[4].Text;
+                labelChucVu.Text = cv_bus.findChucVu(txtIDChucVuNV.Text);
                 txtLuongNV.Text = listViewNhanVien.SelectedItems[0].SubItems[5].Text;
                 txtTrangThaiNV.Text = listViewNhanVien.SelectedItems[0].SubItems[6].Text;
                 DTPNgaySinhNV.Value = DateTime.Parse(listViewNhanVien.SelectedItems[0].SubItems[8].Text);
@@ -113,7 +75,8 @@ namespace MINI.GUI
                 }
 
             }
-            if (txtIDNhanVienNV.Text == "1")
+            
+            if (txtIDNhanVienNV.Text=="1" && Username!="admin")
             {
                 btnSuaNV.Visible = false;
             }
@@ -131,9 +94,9 @@ namespace MINI.GUI
                 DTPNgayNghiCTNV.Enabled = false;
             }
             ///////////BUG
-            else if(cbbTrangThaiCTNV.SelectedText=="Thôi Việc")
+            else if (cbbTrangThaiCTNV.SelectedText == "Thôi Việc")
             {
-                DTPNgayNghiCTNV.Visible=true;
+                DTPNgayNghiCTNV.Visible = true;
             }
             //////////BUG
         }
@@ -141,41 +104,89 @@ namespace MINI.GUI
         {
             setStateEdit();
             txtIDNhanVienCTNV.Text = txtIDNhanVienNV.Text;
-            txtHoVaTenCTNV.Text=txtHoVaTenNV.Text;
+            txtHoVaTenCTNV.Text = txtHoVaTenNV.Text;
             txtSDTCTNV.Text = txtSDTNV.Text;
-            txtGioiTinhCTNV.Text=txtGioiTinhNV.Text;
+            txtGioiTinhCTNV.Text = txtGioiTinhNV.Text;
             //CBB id chức vụ
-            DataTable dt = nv_bus.LayDSChucVu();
+            setCBBChucVu(cbbIDChucVuCTNV);
+            cbbIDChucVuCTNV.SelectedItem = txtIDChucVuNV.Text;
+            txtLuongCTNV.Text = txtLuongNV.Text;
+            cbbTrangThaiCTNV.SelectedItem = txtTrangThaiNV.Text;
+            DTPNgaySinhCTNV.Value = DTPNgaySinhNV.Value;
+            txtDiaChiCTNV.Text = txtDiaChiNV.Text;
+        }
+        public void setCBBChucVu(ComboBox x)
+        {
+            DataTable dt = cv_bus.LayDSChucVu();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cbbIDChucVuCTNV.Items.Add(dt.Rows[i][0]);
+                x.Items.Add(dt.Rows[i][0]);
             }
-            cbbIDChucVuCTNV.SelectedItem=txtIDChucVuNV.Text;
-            txtLuongCTNV.Text=txtLuongNV.Text;
-            cbbTrangThaiCTNV.SelectedItem=txtTrangThaiNV.Text;
-            DTPNgaySinhCTNV.Value = DTPNgaySinhNV.Value;
-            txtDiaChiCTNV.Text=txtDiaChiNV.Text;
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             setDataSuaNV();
             tabNhanVien.SelectedTab = tabSuaThemNhanVien;
         }
-
-        /////////TÀI KHOẢN/////////////////
-        void HienthiDanhSachTaiKhoan()
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            DataTable dt = tk_bus.LayDSTaiKhoan();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (nv_bus.checkButtonSave(txtIDNhanVienCTNV.Text))
             {
-                ListViewItem lviTK =listViewTaiKhoan.Items.Add(dt.Rows[i][0].ToString());
-                lviTK.SubItems.Add(dt.Rows[i][1].ToString());
-                lviTK.SubItems.Add(dt.Rows[i][2].ToString());
-                lviTK.SubItems.Add(dt.Rows[i][3].ToString());
-                lviTK.SubItems.Add(dt.Rows[i][4].ToString());
+                try
+                {
+                    nv_bus.UpdateNV(txtIDNhanVienCTNV.Text, txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, txtGioiTinhCTNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, cbbTrangThaiCTNV.Text, DTPNgaySinhCTNV.Text, DTPNgayNghiCTNV.Text);
+                    MessageBox.Show("Lưu thành công!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lưu không thành công");
+                }
             }
+            else
+            {
+                try
+                {
+                    nv_bus.InsertNV(txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, txtGioiTinhCTNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, "Đang Làm", DTPNgaySinhCTNV.Text);
+                    MessageBox.Show("Thêm thành công!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Thêm không thành công");
+                }
+            }
+
+
         }
+        private void btnReloadNV_Click(object sender, EventArgs e)
+        {
+
+            listViewNhanVien.Items.Clear();
+            HienthiDanhSachNhanVien();
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            tabNhanVien.SelectedTab = tabSuaThemNhanVien;
+            setDataNhanVienMoi();
+        }
+        public void setDataNhanVienMoi()
+        {
+            DataTable dt = nv_bus.LayDSNhanVien();
+            txtIDNhanVienCTNV.Text = (dt.Rows.Count + 1).ToString();
+            txtHoVaTenCTNV.Text=string.Empty;
+            txtSDTCTNV.Text = string.Empty;
+            txtGioiTinhCTNV.Text= string.Empty;
+            cbbIDChucVuCTNV.Text = String.Empty;
+            setCBBChucVu(cbbIDChucVuCTNV);
+            txtLuongCTNV.Text = string.Empty;
+            cbbTrangThaiCTNV.Enabled = false;
+            cbbTrangThaiCTNV.Text = "Đang Làm";
+            DTPNgayNghiCTNV.Enabled = false;
+            DTPNgayNghiCTNV.Value=DateTime.Now;
+            DTPNgaySinhCTNV.Value = DateTime.Now;
+            //Thời gian
+            txtDiaChiCTNV.Text = string.Empty;
+        }
+
         void HienThiThongTinTaiKhoan()
         {
             try
@@ -188,9 +199,11 @@ namespace MINI.GUI
             }
             catch (Exception)
             {
-                MessageBox.Show("Nhân viên chưa có tài khoản, thêm tài khoản?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                MessageBox.Show("Nhân viên chưa có tài khoản, thêm tài khoản?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
+        /////////CHỨC VỤ//////////////////////
+
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             panelTaiKhoan.Visible = true;
@@ -201,13 +214,18 @@ namespace MINI.GUI
             pictureBoxInfo.Visible = false;
             HienThiThongTinTaiKhoan();
         }
+        private void cbbIDChucVuCTNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = cv_bus.getChucVu(cbbIDChucVuCTNV.SelectedItem.ToString());
+            lblChucVuNvThemSua.Text = dt.Rows[0][0].ToString();
+
+        }
+
 
         /////////FORM/////////////////////////
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            HienthiDanhSachTaiKhoan();
             HienthiDanhSachNhanVien();
-
             if (txtTrangThaiNV.Text == "Đang Làm")
             {
                 DTPNgayNghiNV.Visible = false;
@@ -217,23 +235,31 @@ namespace MINI.GUI
             {
                 lblNull.Enabled = false;
             }
-/*            labelChucVu.Text = nv_bus.findChucVu(Convert.ToInt32(txtIDChucVuNV.Text));*/
+            
 
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnSuaTKNV_Click(object sender, EventArgs e)
         {
-            try
-            {
-                nv_bus.UpdateNV(txtIDNhanVienCTNV.Text, txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtGioiTinhCTNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, cbbTrangThaiCTNV.Text, DTPNgaySinhCTNV.Text, DTPNgayNghiCTNV.Text);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Lưu không thành công");
-            }
             
         }
-    }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            tabNhanVien.SelectedTab = tabThongTinNhanVien;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelTaiKhoan.Visible = false;
+            panelInfo.Visible = true;
+            pictureBoxInfo.Visible = true;
+        }
+
+
+
 
     }
+
+}
 

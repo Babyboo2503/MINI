@@ -46,8 +46,8 @@
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.panelInfo = new System.Windows.Forms.Panel();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.panelInfo = new System.Windows.Forms.Panel();
             this.panelTrangChu.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -315,16 +315,6 @@
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.UseVisualStyleBackColor = false;
             // 
-            // panelInfo
-            // 
-            this.panelInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfo.BackgroundImage")));
-            this.panelInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(207, 207);
-            this.panelInfo.TabIndex = 13;
-            // 
             // btnTaiKhoan
             // 
             this.btnTaiKhoan.BackColor = System.Drawing.Color.DarkCyan;
@@ -341,6 +331,17 @@
             this.btnTaiKhoan.Text = "Tài khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfo.BackgroundImage")));
+            this.panelInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(207, 207);
+            this.panelInfo.TabIndex = 13;
             // 
             // trangChu
             // 

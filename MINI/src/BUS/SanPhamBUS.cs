@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MINI.src.DAO;
 using MINI.src.DAO;
 
 namespace MINI.BUS
@@ -33,7 +34,7 @@ namespace MINI.BUS
         {
             string sql = string.Format("Insert Into SanPham " +
                 "Values('{0}', '{1}', '{2}', N'{3}', {4}, N'{5}', '{6}')",
-                loaisanpham, 0, 0, trangthai, 0, ten, hinhanh);
+                loaisanpham, dongia, soluong, trangthai, 0, ten, hinhanh);
             db.ExecuteNonQuery(sql);
         }
         public void CapNhatSanPham(string loaisanpham, string ten, string dongia, string soluong, string hinhanh, string trangthai, string id)
@@ -83,13 +84,13 @@ namespace MINI.BUS
                 DataTable dttk = LayDSLoaiSanPham();
                 for (int i = 0; i < dttk.Rows.Count; i++)
                 {
-                    if(id == "id")
+                    if (id == "id")
                     {
                         if (dttk.Rows[i][1].ToString().ToLower().Equals(ten.ToLower()))
                         {
                             flag = false;
                         }
-                    } 
+                    }
                     else
                     {
                         if (dttk.Rows[i][0].ToString().Equals(id) && dttk.Rows[i][1].ToString().ToLower().Equals(ten.ToLower()))
@@ -162,7 +163,7 @@ namespace MINI.BUS
                     return "ten";
                 }
             }
-       /*     if (dongia == "")
+            if (dongia == "")
             {
                 MessageBox.Show("Hãy nhập đơn giá", "Báo lỗi");
                 return "dongia";
@@ -181,8 +182,8 @@ namespace MINI.BUS
             {
                 MessageBox.Show("Số lượng phải là số", "Báo lỗi");
                 return "soluong";
-            }*/
-            if(hinhanh == "")
+            }
+            else if (hinhanh == "")
             {
                 MessageBox.Show("Hãy chọn hình ảnh", "Báo lỗi");
                 return "hinhanh";
@@ -234,6 +235,5 @@ namespace MINI.BUS
             }
             return imagePath;
         }
-
     }
 }
