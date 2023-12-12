@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MINI.src.BUS;
 
 namespace MINI.GUI
 {
     public partial class KhuyenMai : Form
     {
         BUS.KhuyenMaiBUS km = new BUS.KhuyenMaiBUS();
-        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
+        SanPhamBUS sp = new SanPhamBUS();
         public bool themmoi = false;
         public KhuyenMai()
         {

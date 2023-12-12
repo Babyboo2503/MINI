@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using MINI.src.BUS;
 
 namespace MINI.GUI
 {
@@ -18,7 +19,7 @@ namespace MINI.GUI
     {
         private bool themloaisp = false;
         private bool themsp = false;
-        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
+        SanPhamBUS sp = new SanPhamBUS();
         public SanPham()
         {
             InitializeComponent();

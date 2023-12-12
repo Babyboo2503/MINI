@@ -13,6 +13,6 @@ namespace MINI.src.DTO
         public int idKhachHang { get; set; }
         public DateTime ngayLap { get; set; }
         public int idKhuyenMai { get; set; }
-        public decimal tongHoaDon { get; set; }
+        public float tongHoaDon { get; set; }
     }
 }
