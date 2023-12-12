@@ -18,12 +18,25 @@ namespace MINI.GUI
         {
             InitializeComponent();
         }
-
+        
         private void DangNhap_Load(object sender, EventArgs e)
         {
 
         }
-
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text.Length == 0 || txtUsername.Text.Length == 0)
@@ -35,7 +48,7 @@ namespace MINI.GUI
                 if (taikhoan_bus.findAccount(txtUsername.Text, txtPassword.Text))
                 {
                     MessageBox.Show("Đăng nhập thành công");
-                    trangChu trangchu = new trangChu(PhanQuyenBUS.DangNhap(txtUsername.Text,txtPassword.Text));
+                    trangChu trangchu = new trangChu(PhanQuyenBUS.DangNhap(txtUsername.Text,txtPassword.Text), txtUsername.Text,txtPassword.Text);
                     trangchu.Show();
                 }
                 else
@@ -43,6 +56,7 @@ namespace MINI.GUI
                     MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
                 }
             }
+
         }
         
 
