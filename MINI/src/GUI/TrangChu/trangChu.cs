@@ -1,4 +1,5 @@
 ﻿using MINI.src.GUI.ThongKe;
+using MINI.src.GUI.TK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,13 @@ namespace MINI.GUI
     public partial class trangChu : Form
     {
         private bool[] quyen;
-        public trangChu(bool[] quyen)
+        public string Username, Password;
+        public trangChu(bool[] quyen, string Username, string Password)
         {
             InitializeComponent();
             this.quyen = quyen;
+            this.Username=Username;
+            this.Password = Password;
             show();
         }
 
@@ -69,36 +73,10 @@ namespace MINI.GUI
 
         private NhanVien nv;
         //      Load form NhanVien
-        private void loadFormNV()
-        {
-            if (nv == null || nv.IsDisposed)
-            {
-                // Nếu chưa, tạo một instance mới
-                nv = new GUI.NhanVien();
 
-                // Đặt MainForm làm cha của ChildForm
-                nv.TopLevel = false;
-
-                // Đặt thuộc tính Dock của ChildForm thành Fill để lấp đầy toàn bộ Panel
-                nv.Dock = DockStyle.Fill;
-
-                // Thêm ChildForm vào Panel
-                panelContent.Controls.Add(nv);
-                nv.Dock = DockStyle.Fill;
-                
-
-                // Hiển thị ChildForm
-                nv.Show();
-            }
-            else
-            {
-                // Nếu đã mở, đưa ChildForm lên trước cùng
-                nv.BringToFront();
-            }
-        }
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            loadFormNV();
+            openChildForm(new NhanVien(Username,Password));
         }
        
         private void btnSanPham_Click(object sender, EventArgs e)
@@ -146,6 +124,11 @@ namespace MINI.GUI
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TaiKhoan());
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

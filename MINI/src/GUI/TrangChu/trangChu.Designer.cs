@@ -46,6 +46,7 @@
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.panelTrangChu.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -117,6 +118,7 @@
             this.flowPanelMenuLeft.Controls.Add(this.btnNhaCungCap);
             this.flowPanelMenuLeft.Controls.Add(this.btnKhuyenMai);
             this.flowPanelMenuLeft.Controls.Add(this.btnThongKe);
+            this.flowPanelMenuLeft.Controls.Add(this.btnTaiKhoan);
             this.flowPanelMenuLeft.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowPanelMenuLeft.Font = new System.Drawing.Font("Arial", 8.25F);
             this.flowPanelMenuLeft.Location = new System.Drawing.Point(0, 207);
@@ -313,6 +315,24 @@
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.UseVisualStyleBackColor = false;
             // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnTaiKhoan.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 495);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(205, 45);
+            this.btnTaiKhoan.TabIndex = 37;
+            this.btnTaiKhoan.Text = "Tài khoản";
+            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
             // panelInfo
             // 
             this.panelInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfo.BackgroundImage")));
@@ -363,5 +383,6 @@
         private System.Windows.Forms.Button btnKhuyenMai;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Button btnTaiKhoan;
     }
 }
