@@ -63,7 +63,19 @@ namespace MINI.src.BUS
 
         public DataTable layDanhSachSanPham()
         {
-            string strSQL = "SELECT idSanPham, tenSanPham, hinhAnh, donGia, soLuong, trangThai, chietKhau, tenLoaiSanPham FROM SanPham sp, LoaiSanPham lsp WHERE sp.idLoaiSanPham = lsp.idLoaiSanPham";
+            string strSQL = "SELECT " +
+                            "CHD.idSanPham, " +
+                            "SP.tenSanPham, " +
+                            "SP.donGia, " +
+                            "CHD.soLuong, " +
+                            "CHD.donGia AS donGiaChiTiet, " +
+                            "CHD.tongTien " +
+                            "FROM " +
+                            "ChiTietHoaDon CHD " +
+                            "JOIN " +
+                            "SanPham SP ON CHD.idSanPham = SP.idSanPham " +
+                            "ORDER BY " +
+                            "SP.idSanPham ASC;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -171,7 +183,7 @@ namespace MINI.src.BUS
                         JOIN NhanVien NV ON HD.idNhanVien = NV.idNhanVien
                         JOIN KhachHang KH ON HD.idKhachHang = KH.idKhachHang
                         LEFT JOIN KhuyenMai KM ON HD.idKhuyenMai = KM.idKhuyenMai
-                        WHERE HD.ngayLap <= '" + ngayBD + "' AND HD.ngayLap >= '" + ngayKT + "'";
+                        WHERE HD.ngayLap >= '" + ngayBD + "' AND HD.ngayLap <= '" + ngayKT + "'";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }

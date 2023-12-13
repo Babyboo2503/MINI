@@ -70,7 +70,7 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClear1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -144,6 +144,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSearch1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
@@ -564,22 +566,23 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnClear);
+            this.panel2.Controls.Add(this.btnSearch1);
+            this.panel2.Controls.Add(this.btnClear1);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1081, 62);
             this.panel2.TabIndex = 0;
             // 
-            // btnClear
+            // btnClear1
             // 
-            this.btnClear.Location = new System.Drawing.Point(807, 16);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(62, 37);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear1.Location = new System.Drawing.Point(902, 16);
+            this.btnClear1.Name = "btnClear1";
+            this.btnClear1.Size = new System.Drawing.Size(62, 37);
+            this.btnClear1.TabIndex = 3;
+            this.btnClear1.Text = "Clear";
+            this.btnClear1.UseVisualStyleBackColor = true;
+            this.btnClear1.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // groupBox1
             // 
@@ -642,6 +645,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.btnSearch);
             this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.groupBox4);
             this.panel8.Controls.Add(this.groupBox5);
@@ -654,7 +658,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(850, 23);
+            this.button1.Location = new System.Drawing.Point(924, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 28);
             this.button1.TabIndex = 5;
@@ -1156,6 +1160,25 @@
             // 
             this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(856, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(62, 28);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch1
+            // 
+            this.btnSearch1.Location = new System.Drawing.Point(822, 16);
+            this.btnSearch1.Name = "btnSearch1";
+            this.btnSearch1.Size = new System.Drawing.Size(62, 37);
+            this.btnSearch1.TabIndex = 4;
+            this.btnSearch1.Text = "Search";
+            this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1223,7 +1246,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpNgayKT;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnClear1;
         private System.Windows.Forms.TabControl tbcManager;
         private System.Windows.Forms.TabPage tabSum;
         private System.Windows.Forms.TabPage tpSell;
@@ -1326,5 +1349,7 @@
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnSearch1;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

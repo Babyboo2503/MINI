@@ -43,7 +43,9 @@ namespace MINI.src.BUS
 
         public DataTable LayDSCTPNTheoMaPhieuNhap(string maPhieuNhap)
         {
-            DataTable dt = new DataTable();
+            string query = "SELECT * FROM ChiTietPhieuNhap WHERE idPhieuNhap = @maPhieuNhap";
+            DataTable dt = db.Execute(query);
+            /*DataTable dt = new DataTable();
             using (SqlConnection connection = new SqlConnection("Data Source=.; Database=MiniMarket;Integrated Security = True"))
             {
                 string query = "SELECT * FROM ChiTietPhieuNhap WHERE idPhieuNhap = @maPhieuNhap";
@@ -57,13 +59,15 @@ namespace MINI.src.BUS
                     }
                     connection.Close();
                 }
-            }
+            }*/
             return dt;
         }
 
         public DataTable LayDSNCCTheoTenNCC(string tenNCC)
         {
-            DataTable dt = new DataTable();
+            string query = "SELECT * FROM NhaCungCap WHERE tenNhaCungCap LIKE '%' + @tenNCC + '%'";
+            DataTable dt = db.Execute(query);
+            /*DataTable dt = new DataTable();
             using (SqlConnection connection = new SqlConnection("Data Source=.; Database=MiniMarket;Integrated Security = True"))
             {
                 string query = "SELECT * FROM NhaCungCap WHERE tenNhaCungCap LIKE '%' + @tenNCC + '%'";
@@ -77,7 +81,7 @@ namespace MINI.src.BUS
                     }
                     connection.Close();
                 }
-            }
+            }*/
             return dt;
         }
 
