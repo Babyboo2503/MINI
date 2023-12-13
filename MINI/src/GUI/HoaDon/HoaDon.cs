@@ -171,7 +171,7 @@ namespace MINI.GUI.HoaDon
             txtTimKiem.Text = string.Empty;
             comboBox1.Text = "Tìm theo";
             setNullHoaDon();
-            lvCTHoaDon.Clear();
+            lvCTHoaDon.Items.Clear();
             HienthiHoaDon();
         }
 
