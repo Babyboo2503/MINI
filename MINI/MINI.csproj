@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\BUS\BaoCaoBUS.cs" />
+    <Compile Include="src\BUS\ChucVuBUS.cs" />
     <Compile Include="src\BUS\CTHoaDonBUS.cs" />
     <Compile Include="src\BUS\HoaDonBUS.cs" />
     <Compile Include="src\BUS\KhachHangBUS.cs" />
@@ -152,6 +153,12 @@
     </Compile>
     <Compile Include="src\GUI\SanPham\Class1.cs" />
     <Compile Include="src\GUI\TaiKhoan\Class1.cs" />
+    <Compile Include="src\GUI\TaiKhoan\TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\TaiKhoan\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\ThongKe\frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\SanPham\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\TaiKhoan\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\ThongKe\frmChiTietHoaDon.resx">
       <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>

@@ -26,7 +26,7 @@ namespace MINI.src.GUI.PhieuNhap
         void HienThiSanPham()
         {
             lsvdssp.Items.Clear();
-            DataTable dt = sp.layDSSP();
+            DataTable dt = sp.LayDSSanPham();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ListViewItem lvi =
@@ -44,8 +44,9 @@ namespace MINI.src.GUI.PhieuNhap
         void TimKiemTheoTenSanPham(string tenSP)
         {
             lsvdssp.Items.Clear();
-            DataTable dt = sp.LayDSCTPNTheoTenSP(tenSP); // Giả sử có một phương thức để lấy chi tiết nhập hàng dựa trên mã
-                                                                       // Điền dữ liệu vào ListView
+            /* DataTable dt = sp.LayDSCTPNTheoTenSP(tenSP); // Giả sử có một phương thức để lấy chi tiết nhập hàng dựa trên mã*/
+            // Điền dữ liệu vào ListView
+            DataTable dt = sp.layDanhSachSanPhamTheoTen(tenSP);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 // Thêm dữ liệu vào ListView
