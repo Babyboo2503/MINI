@@ -120,7 +120,6 @@
             this.lvSanPham.TabIndex = 5;
             this.lvSanPham.UseCompatibleStateImageBehavior = false;
             this.lvSanPham.View = System.Windows.Forms.View.Details;
-            this.lvSanPham.SelectedIndexChanged += new System.EventHandler(this.lvSanPham_SelectedIndexChanged);
             // 
             // colIdSP
             // 
@@ -482,6 +481,10 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Id sản phẩm",
+            "Id loại sản phẩm",
+            "Tên sản phẩm"});
             this.comboBox4.Location = new System.Drawing.Point(409, 20);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
@@ -498,6 +501,7 @@
             this.btnLamMoi.TabIndex = 2;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTimKiem
             // 
@@ -508,6 +512,7 @@
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // textTimKiem
             // 

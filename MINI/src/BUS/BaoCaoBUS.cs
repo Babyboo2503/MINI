@@ -63,5 +63,17 @@ namespace MINI.src.BUS
             db.ExecuteNonQuery(sql);
         }
 
+        public void CapNhatLyDo(string a, string b)
+        {
+            try
+            {
+                //Chuẩn bị câu lẹnh truy vấn
+                string str = string.Format("Update BaoCao set lyDo = N'{0}' where idBaoCao = {1}",
+                    a, b);
+                db.ExecuteNonQuery(str);
+            }
+            catch (Exception) { }
+        }
+
     }
 }

@@ -113,7 +113,8 @@ namespace MINI.GUI.HoaDon
             textBox13.Text = null;
             textBox14.Text = null;
             textBox15.Text = null;
-            
+            textBoxTK.Text = string.Empty;
+            comboBox2.Text = "Tìm theo";
         }
 
         private void setNullHoaDon()
@@ -143,15 +144,67 @@ namespace MINI.GUI.HoaDon
                     MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
+                    cthd.XoaCTHoaDon(lvHoaDon.SelectedItems[0].SubItems[0].Text);
                     hd.XoaHoaDon(lvHoaDon.SelectedItems[0].SubItems[0].Text);
                     lvHoaDon.Items.RemoveAt(
                     lvHoaDon.SelectedIndices[0]);
-                    setNullHoaDon();
+                    setNullCTHoaDon();
+                    lammoiHD();
                     MessageBox.Show("Thành Công");
+                    
                 }
             }
             else
                 MessageBox.Show("Bạn phải chọn mẩu tin cần xóa");
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            lammoiHD();
+        }
+        private void lammoiHD()
+        {
+            txtTimKiem.Text = string.Empty;
+            comboBox1.Text = "Tìm theo";
+            setNullHoaDon();
+            lvCTHoaDon.Clear();
+            HienthiHoaDon();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HienthiCTHoaDon();
+            if (comboBox2.Text == "Id sản phẩm")
+            {
+                foreach (ListViewItem item in lvCTHoaDon.Items)
+                {
+                    if (!item.SubItems[1].Text.ToLower().Equals(textBoxTK.Text.ToLower()))
+                    {
+                        lvCTHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox2.Text == "Tên sản phẩm")
+            {
+                foreach (ListViewItem item in lvCTHoaDon.Items)
+                {
+                    if (!item.SubItems[2].Text.ToLower().Contains(textBoxTK.Text.ToLower()))
+                    {
+                        lvCTHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxTK.Text = string.Empty;
+            comboBox2.Text = "Tìm theo";
+            HienthiCTHoaDon();
         }
     }
 

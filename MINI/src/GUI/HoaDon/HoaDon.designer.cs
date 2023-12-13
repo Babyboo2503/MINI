@@ -36,7 +36,6 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.lvHoaDon = new System.Windows.Forms.ListView();
             this.colHoaDon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNgayLap = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,8 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnXoa1 = new System.Windows.Forms.Button();
-            this.btnSua1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -121,7 +118,6 @@
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnXoa);
-            this.tabPage1.Controls.Add(this.btnSua);
             this.tabPage1.Controls.Add(this.lvHoaDon);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
@@ -151,7 +147,13 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(448, 21);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Id hóa đơn",
+            "Id nhân viên",
+            "Tên nhân viên",
+            "Id khách hàng",
+            "Tên khách hàng"});
+            this.comboBox1.Location = new System.Drawing.Point(448, 22);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 30);
@@ -160,23 +162,25 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(346, 22);
+            this.btnLamMoi.Location = new System.Drawing.Point(346, 20);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(94, 32);
             this.btnLamMoi.TabIndex = 2;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(245, 21);
+            this.btnTimKiem.Location = new System.Drawing.Point(244, 20);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(94, 32);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -188,7 +192,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1045, 214);
+            this.btnXoa.Location = new System.Drawing.Point(1046, 146);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(120, 76);
@@ -196,16 +200,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(1045, 76);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(120, 76);
-            this.btnSua.TabIndex = 3;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // lvHoaDon
             // 
@@ -474,8 +468,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnXoa1);
-            this.tabPage2.Controls.Add(this.btnSua1);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.lvCTHoaDon);
             this.tabPage2.Controls.Add(this.panel1);
@@ -488,33 +480,13 @@
             this.tabPage2.Text = "Chi tiết hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnXoa1
-            // 
-            this.btnXoa1.Location = new System.Drawing.Point(976, 197);
-            this.btnXoa1.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXoa1.Name = "btnXoa1";
-            this.btnXoa1.Size = new System.Drawing.Size(94, 76);
-            this.btnXoa1.TabIndex = 14;
-            this.btnXoa1.Text = "Xóa";
-            this.btnXoa1.UseVisualStyleBackColor = true;
-            // 
-            // btnSua1
-            // 
-            this.btnSua1.Location = new System.Drawing.Point(976, 81);
-            this.btnSua1.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSua1.Name = "btnSua1";
-            this.btnSua1.Size = new System.Drawing.Size(94, 76);
-            this.btnSua1.TabIndex = 13;
-            this.btnSua1.Text = "Sửa";
-            this.btnSua1.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.textBoxTK);
-            this.groupBox2.Location = new System.Drawing.Point(46, 8);
+            this.groupBox2.Location = new System.Drawing.Point(245, 4);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -526,7 +498,10 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(448, 21);
+            this.comboBox2.Items.AddRange(new object[] {
+            "Id sản phẩm",
+            "Tên sản phẩm"});
+            this.comboBox2.Location = new System.Drawing.Point(449, 22);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(186, 30);
@@ -535,13 +510,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(346, 22);
+            this.button1.Location = new System.Drawing.Point(347, 20);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 32);
             this.button1.TabIndex = 2;
             this.button1.Text = "Làm mới";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -552,6 +528,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Tìm kiếm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBoxTK
             // 
@@ -571,10 +548,10 @@
             this.colDonGia,
             this.colTongTien});
             this.lvCTHoaDon.HideSelection = false;
-            this.lvCTHoaDon.Location = new System.Drawing.Point(4, 280);
+            this.lvCTHoaDon.Location = new System.Drawing.Point(108, 280);
             this.lvCTHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.lvCTHoaDon.Name = "lvCTHoaDon";
-            this.lvCTHoaDon.Size = new System.Drawing.Size(1123, 363);
+            this.lvCTHoaDon.Size = new System.Drawing.Size(957, 363);
             this.lvCTHoaDon.TabIndex = 1;
             this.lvCTHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvCTHoaDon.View = System.Windows.Forms.View.Details;
@@ -624,10 +601,10 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(8, 81);
+            this.panel1.Location = new System.Drawing.Point(108, 82);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 190);
+            this.panel1.Size = new System.Drawing.Size(957, 190);
             this.panel1.TabIndex = 0;
             // 
             // textBox15
@@ -817,7 +794,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.ColumnHeader colIdNV;
         private System.Windows.Forms.ColumnHeader colIdKH;
         private System.Windows.Forms.ColumnHeader colIdKM;
@@ -832,8 +808,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnXoa1;
-        private System.Windows.Forms.Button btnSua1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;

@@ -15,7 +15,7 @@ namespace MINI.GUI.BaoCao
 {
     public partial class BaoCao : Form
     {
-        BaoCaoBUS bc =new BaoCaoBUS();
+        BaoCaoBUS bc = new BaoCaoBUS();
         BaoCaoDTO bcDTO;
         public BaoCao()
         {
@@ -75,6 +75,10 @@ namespace MINI.GUI.BaoCao
             comboBox2.Text = null;
             comboBox3.Text = null;
             richTextBox1.Text = null;
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            btnTimKiem.Enabled = true;
+            btnLamMoi.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -90,7 +94,7 @@ namespace MINI.GUI.BaoCao
                     lvBaoCao.SelectedIndices[0]);
                     MessageBox.Show("Thành công");
                     setNull();
-
+                    lammoi();
                 }
             }
             else
@@ -116,12 +120,12 @@ namespace MINI.GUI.BaoCao
 
         private int check_null()
         {
-            if (textBox12.Text=="")
+            if (textBox12.Text == "")
             {
                 MessageBox.Show("Phải chọn số lượng");
                 return 1;
-            }    
-            else if(richTextBox2.Text=="") 
+            }
+            else if (richTextBox2.Text == "")
             {
                 MessageBox.Show("Phải ghi lý do");
                 return 1;
@@ -131,7 +135,7 @@ namespace MINI.GUI.BaoCao
         private void setNullTao()
         {
             comboBox4.Text = null;
-            comboBox5.Text=null;
+            comboBox5.Text = null;
             textBox10.Text = null;
             textBox11.Text = null;
             textBox12.Text = null;
@@ -140,6 +144,104 @@ namespace MINI.GUI.BaoCao
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             HienthiBaoCao();
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            HienthiBaoCao();
+            if (comboBox1.Text == "Id báo cáo")
+            {
+                foreach (ListViewItem item in lvBaoCao.Items)
+                {
+                    if (!item.SubItems[0].Text.ToLower().Equals(textTimKiem.Text.ToLower()))
+                    {
+                        lvBaoCao.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Id nhân viên")
+            {
+                foreach (ListViewItem item in lvBaoCao.Items)
+                {
+                    if (!item.SubItems[2].Text.ToLower().Equals(textTimKiem.Text.ToLower()))
+                    {
+                        lvBaoCao.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên nhân viên")
+            {
+                foreach (ListViewItem item in lvBaoCao.Items)
+                {
+                    if (!item.SubItems[3].Text.ToLower().Contains(textTimKiem.Text.ToLower()))
+                    {
+                        lvBaoCao.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Id sản phẩm")
+            {
+                foreach (ListViewItem item in lvBaoCao.Items)
+                {
+                    if (!item.SubItems[4].Text.ToLower().Equals(textTimKiem.Text.ToLower()))
+                    {
+                        lvBaoCao.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên sản phẩm")
+            {
+                foreach (ListViewItem item in lvBaoCao.Items)
+                {
+                    if (!item.SubItems[5].Text.ToLower().Contains(textTimKiem.Text.ToLower()))
+                    {
+                        lvBaoCao.Items.Remove(item);
+                    }
+                }
+            }
+
+        }
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            lammoi();
+        }
+        private void lammoi()
+        {
+            textTimKiem.Text = string.Empty;
+            comboBox1.Text = "Tìm theo";
+            setNull();
+            HienthiBaoCao();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Enabled = true;
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            btnTimKiem.Enabled = false;
+            btnLamMoi.Enabled = false;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Enabled = false;
+
+            setNull();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text == "")
+            {
+                MessageBox.Show("Không được để trống");
+            }
+            else
+            {
+                bc.CapNhatLyDo(richTextBox1.Text, textBox1.Text);
+                MessageBox.Show("Thành công");
+                setNull();
+                lammoi();
+
+            }
         }
     }
 }

@@ -247,6 +247,8 @@ namespace MINI.GUI.BanHang
                 cthd.BotSanPham(lvSanPhamMua.Items[i].SubItems[0].Text, lvSanPhamMua.Items[i].SubItems[2].Text);
             }
             lvSanPhamMua.Items.Clear();
+            setNull();
+            lammoi();
         }
         public void setNull()
         {
@@ -258,9 +260,51 @@ namespace MINI.GUI.BanHang
             textBox12.Text = string.Empty;
         }
 
-        private void lvSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            HienthiSanPham();
+            if (comboBox4.Text == "Id sản phẩm")
+            {
+                foreach (ListViewItem item in lvSanPham.Items)
+                {
+                    if (!item.SubItems[0].Text.ToLower().Equals(textTimKiem.Text.ToLower()))
+                    {
+                        lvSanPham.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox4.Text == "Id loại sản phẩm")
+            {
+                foreach (ListViewItem item in lvSanPham.Items)
+                {
+                    if (!item.SubItems[1].Text.ToLower().Equals(textTimKiem.Text.ToLower()))
+                    {
+                        lvSanPham.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox4.Text == "Tên sản phẩm")
+            {
+                foreach (ListViewItem item in lvSanPham.Items)
+                {
+                    if (!item.SubItems[5].Text.ToLower().Contains(textTimKiem.Text.ToLower()))
+                    {
+                        lvSanPham.Items.Remove(item);
+                    }
+                }
+            }
 
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            lammoi();
+        }
+        private void lammoi()
+        {
+            textTimKiem.Text = string.Empty;
+            comboBox4.Text = "Tìm theo";
+            HienthiSanPham();
         }
     }
 }

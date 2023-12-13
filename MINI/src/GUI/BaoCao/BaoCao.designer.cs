@@ -32,7 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -85,6 +85,7 @@
             this.btnTao = new System.Windows.Forms.Button();
             this.nhanVienTableAdapter = new MINI.MiniMarketDataSetTableAdapters.NhanVienTableAdapter();
             this.sanPhamTableAdapter = new MINI.MiniMarketDataSetTableAdapters.SanPhamTableAdapter();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,42 +131,46 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnThem);
+            this.groupBox3.Controls.Add(this.btnHuy);
+            this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.richTextBox1);
-            this.groupBox3.Location = new System.Drawing.Point(775, 13);
+            this.groupBox3.Location = new System.Drawing.Point(749, 13);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(390, 696);
+            this.groupBox3.Size = new System.Drawing.Size(416, 696);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lý do";
             // 
-            // btnThem
+            // btnLuu
             // 
-            this.btnThem.Location = new System.Drawing.Point(8, 39);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(94, 36);
-            this.btnThem.TabIndex = 17;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnLuu.Enabled = false;
+            this.btnLuu.Location = new System.Drawing.Point(8, 39);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(94, 36);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(150, 39);
+            this.btnSua.Location = new System.Drawing.Point(212, 39);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 36);
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(288, 39);
+            this.btnXoa.Location = new System.Drawing.Point(316, 39);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 36);
@@ -180,7 +185,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(8, 83);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(374, 605);
+            this.richTextBox1.Size = new System.Drawing.Size(402, 605);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -202,6 +207,12 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Id báo cáo",
+            "Id nhân viên",
+            "Tên nhân viên",
+            "Id sản phẩm",
+            "Tên sản phẩm"});
             this.comboBox1.Location = new System.Drawing.Point(448, 19);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
@@ -218,6 +229,7 @@
             this.btnLamMoi.TabIndex = 2;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTimKiem
             // 
@@ -228,6 +240,7 @@
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // textTimKiem
             // 
@@ -252,7 +265,7 @@
             this.lvBaoCao.Location = new System.Drawing.Point(8, 276);
             this.lvBaoCao.Margin = new System.Windows.Forms.Padding(4);
             this.lvBaoCao.Name = "lvBaoCao";
-            this.lvBaoCao.Size = new System.Drawing.Size(740, 428);
+            this.lvBaoCao.Size = new System.Drawing.Size(733, 428);
             this.lvBaoCao.TabIndex = 2;
             this.lvBaoCao.UseCompatibleStateImageBehavior = false;
             this.lvBaoCao.View = System.Windows.Forms.View.Details;
@@ -317,7 +330,7 @@
             this.panel2.Location = new System.Drawing.Point(10, 66);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(738, 203);
+            this.panel2.Size = new System.Drawing.Size(731, 203);
             this.panel2.TabIndex = 1;
             // 
             // comboBox3
@@ -645,6 +658,18 @@
             // 
             this.sanPhamTableAdapter.ClearBeforeFill = true;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Enabled = false;
+            this.btnHuy.Location = new System.Drawing.Point(110, 39);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(94, 36);
+            this.btnHuy.TabIndex = 18;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // BaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -710,7 +735,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnTao;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -733,5 +758,6 @@
         private MiniMarketDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
         private MiniMarketDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
