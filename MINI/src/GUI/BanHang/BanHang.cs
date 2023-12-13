@@ -257,5 +257,10 @@ namespace MINI.GUI.BanHang
             textBox11.Text = string.Empty;
             textBox12.Text = string.Empty;
         }
+
+        private void lvSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
