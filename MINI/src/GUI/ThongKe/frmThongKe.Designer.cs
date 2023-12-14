@@ -70,6 +70,7 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch1 = new System.Windows.Forms.Button();
             this.btnClear1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,6 +79,7 @@
             this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.tpTKSanPham = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -87,12 +89,10 @@
             this.lsvProduct = new System.Windows.Forms.ListView();
             this.idProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.productImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.priceProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.soLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.stok = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.availability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.lsvEmpolyee = new System.Windows.Forms.ListView();
             this.idNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -144,8 +144,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSearch1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
@@ -574,6 +572,16 @@
             this.panel2.Size = new System.Drawing.Size(1081, 62);
             this.panel2.TabIndex = 0;
             // 
+            // btnSearch1
+            // 
+            this.btnSearch1.Location = new System.Drawing.Point(822, 16);
+            this.btnSearch1.Name = "btnSearch1";
+            this.btnSearch1.Size = new System.Drawing.Size(62, 37);
+            this.btnSearch1.TabIndex = 4;
+            this.btnSearch1.Text = "Search";
+            this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
+            // 
             // btnClear1
             // 
             this.btnClear1.Location = new System.Drawing.Point(902, 16);
@@ -656,6 +664,15 @@
             this.panel8.Size = new System.Drawing.Size(1081, 64);
             this.panel8.TabIndex = 2;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(856, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(62, 28);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(924, 22);
@@ -712,12 +729,10 @@
             this.lsvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.idProduct,
             this.productName,
-            this.productImage,
+            this.priceProduct,
+            this.soLuong,
             this.price,
-            this.stok,
-            this.availability,
-            this.sale,
-            this.type});
+            this.total});
             this.lsvProduct.HideSelection = false;
             this.lsvProduct.Location = new System.Drawing.Point(6, 73);
             this.lsvProduct.Name = "lsvProduct";
@@ -734,37 +749,27 @@
             // productName
             // 
             this.productName.Text = "Tên Sản Phẩm";
-            this.productName.Width = 255;
+            this.productName.Width = 280;
             // 
-            // productImage
+            // priceProduct
             // 
-            this.productImage.Text = "Hình Ảnh";
-            this.productImage.Width = 100;
+            this.priceProduct.Text = "Đơn giá của Sản phẩm";
+            this.priceProduct.Width = 180;
+            // 
+            // soLuong
+            // 
+            this.soLuong.Text = "Số Lượng";
+            this.soLuong.Width = 120;
             // 
             // price
             // 
             this.price.Text = "Đơn Giá";
-            this.price.Width = 80;
+            this.price.Width = 150;
             // 
-            // stok
+            // total
             // 
-            this.stok.Text = "Số Lượng";
-            this.stok.Width = 100;
-            // 
-            // availability
-            // 
-            this.availability.Text = "Trạng Thái";
-            this.availability.Width = 140;
-            // 
-            // sale
-            // 
-            this.sale.Text = "Chiết Khấu";
-            this.sale.Width = 130;
-            // 
-            // type
-            // 
-            this.type.Text = "Loại Sản Phẩm";
-            this.type.Width = 170;
+            this.total.Text = "Thành tiền";
+            this.total.Width = 170;
             // 
             // tpNhanVien
             // 
@@ -1160,25 +1165,6 @@
             // 
             this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(856, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(62, 28);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch1
-            // 
-            this.btnSearch1.Location = new System.Drawing.Point(822, 16);
-            this.btnSearch1.Name = "btnSearch1";
-            this.btnSearch1.Size = new System.Drawing.Size(62, 37);
-            this.btnSearch1.TabIndex = 4;
-            this.btnSearch1.Text = "Search";
-            this.btnSearch1.UseVisualStyleBackColor = true;
-            this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
-            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1309,12 +1295,10 @@
         private System.Windows.Forms.ColumnHeader role;
         private System.Windows.Forms.ColumnHeader idProduct;
         private System.Windows.Forms.ColumnHeader productName;
-        private System.Windows.Forms.ColumnHeader productImage;
+        private System.Windows.Forms.ColumnHeader priceProduct;
+        private System.Windows.Forms.ColumnHeader soLuong;
         private System.Windows.Forms.ColumnHeader price;
-        private System.Windows.Forms.ColumnHeader stok;
-        private System.Windows.Forms.ColumnHeader availability;
-        private System.Windows.Forms.ColumnHeader sale;
-        private System.Windows.Forms.ColumnHeader type;
+        private System.Windows.Forms.ColumnHeader total;
         private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.ColumnHeader nameCustomer;
         private System.Windows.Forms.ColumnHeader phone;
