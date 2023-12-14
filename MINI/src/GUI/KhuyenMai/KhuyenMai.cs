@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MINI.src.BUS;
 
 namespace MINI.GUI
 {
     public partial class KhuyenMai : Form
     {
         BUS.KhuyenMaiBUS km = new BUS.KhuyenMaiBUS();
-        SanPhamBUS sp = new SanPhamBUS();
+        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
         public bool themmoi = false;
         public KhuyenMai()
         {
@@ -43,8 +42,8 @@ namespace MINI.GUI
         {
             txtTenKM.Text = "";
             txtPhanTram.Text = "";
-            txtNoiDung.Text = "";
-            txtDieuKien.Text = "";
+            cbbDieuKien.SelectedIndex = 0;
+            cbbNoiDung.SelectedIndex = 0;
         }
         void setButton(bool val)
         {
@@ -68,8 +67,8 @@ namespace MINI.GUI
                 dtpNgayKetThuc.Value = DateTime.Parse(lsvKhuyenMai.SelectedItems[0].SubItems[2].Text);
                 txtTenKM.Text = lsvKhuyenMai.SelectedItems[0].SubItems[3].Text;
                 txtPhanTram.Text = lsvKhuyenMai.SelectedItems[0].SubItems[4].Text.Replace("%", string.Empty);
-                txtNoiDung.Text = lsvKhuyenMai.SelectedItems[0].SubItems[5].Text;
-                txtDieuKien.Text = lsvKhuyenMai.SelectedItems[0].SubItems[6].Text;
+                cbbNoiDung.SelectedItem = lsvKhuyenMai.SelectedItems[0].SubItems[5].Text;
+                cbbDieuKien.SelectedItem = lsvKhuyenMai.SelectedItems[0].SubItems[6].Text;
             }
         }
 
@@ -96,7 +95,7 @@ namespace MINI.GUI
         {
             if (tabKhuyenMai.SelectedTab == tabDSKM)
             {
-                string check = km.checkValue(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtTenKM.Text, txtPhanTram.Text, txtNoiDung.Text, txtDieuKien.Text);
+                string check = km.checkValue(dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtTenKM.Text, txtPhanTram.Text, cbbNoiDung.SelectedItem.ToString(), cbbDieuKien.SelectedItem.ToString());
                 if (check.Equals("ngaybatdau"))
                 {
                     dtpNgayBatDau.Focus();
@@ -119,12 +118,12 @@ namespace MINI.GUI
                 }
                 else if(check.Equals("noidung"))
                 {
-                    txtNoiDung.Focus();
+                    cbbNoiDung.Focus();
                     return false;
                 }
                 else if (check.Equals("dieukien"))
                 {
-                    txtDieuKien.Focus();
+                    cbbDieuKien.Focus();
                     return false;
                 }
             }
@@ -149,14 +148,14 @@ namespace MINI.GUI
                 string ngayketthuc = dtpNgayKetThuc.Value.ToString("MM-dd-yyyy");
                 if (themmoi)
                 {
-                    km.ThemKhuyenMai(ngaybatdau, ngayketthuc, txtTenKM.Text, txtPhanTram.Text, txtNoiDung.Text, txtDieuKien.Text); MessageBox.Show("Thêm mới thành công");
+                    km.ThemKhuyenMai(ngaybatdau, ngayketthuc, txtTenKM.Text, txtPhanTram.Text, cbbNoiDung.SelectedItem.ToString(), cbbDieuKien.SelectedItem.ToString()); MessageBox.Show("Thêm mới thành công");
                     setButton(true);
                     HienthiKhuyenMai();
                     setNull();
                 }
                 else
                 {
-                    km.CapNhatKhuyenMai(ngaybatdau, ngayketthuc, txtTenKM.Text, txtPhanTram.Text, txtNoiDung.Text, txtDieuKien.Text, lsvKhuyenMai.SelectedItems[0].SubItems[0].Text); MessageBox.Show("Cập nhật thành công");
+                    km.CapNhatKhuyenMai(ngaybatdau, ngayketthuc, txtTenKM.Text, txtPhanTram.Text, cbbNoiDung.SelectedItem.ToString(), cbbDieuKien.SelectedItem.ToString(), lsvKhuyenMai.SelectedItems[0].SubItems[0].Text); MessageBox.Show("Cập nhật thành công");
                     setButton(true);
                     HienthiKhuyenMai();
                     setNull();
@@ -232,18 +231,35 @@ namespace MINI.GUI
 
         private void btnApDung_Click(object sender, EventArgs e)
         {
+            bool flag = true;
             if(cbbKhuyenMai.SelectedItem == null)
             {
                 MessageBox.Show("Hãy chọn khuyến mãi để áp dụng", "Áp dụng khuyến mãi");
             }
-            else if(cbbSanPham.SelectedItem == null)
+            else
             {
-                MessageBox.Show("Hãy chọn sản phẩm để áp dụng", "Áp dụng khuyến mãi");
-            }
-            else {
-                km.ApDungKhuyenMai(txtKhuyenMai.Text, txtSanPham.Text);
-                MessageBox.Show("Áp dụng khuyến mãi thành công", "Áp dụng khuyến mãi");
-                HienthiKMSanPham();
+                DataTable dt = km.LayDSKhuyenMai();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (txtKhuyenMai.Text.Equals(dt.Rows[i][0].ToString()) && dt.Rows[i][5].ToString().ToLower().Contains("hóa đơn"))
+                    {
+                        flag = false; break;
+                    }
+                }
+                if (!flag)
+                {
+                    MessageBox.Show("Không thể áp dụng khuyến mãi trên tổng hóa đơn cho sản phẩm", "Áp dụng khuyến mãi");
+                }
+                else if (cbbSanPham.SelectedItem == null)
+                {
+                    MessageBox.Show("Hãy chọn sản phẩm để áp dụng", "Áp dụng khuyến mãi");
+                }
+                else
+                {
+                    km.ApDungKhuyenMai(txtKhuyenMai.Text, txtSanPham.Text);
+                    MessageBox.Show("Áp dụng khuyến mãi thành công", "Áp dụng khuyến mãi");
+                    HienthiKMSanPham();
+                }
             }
         }
 
