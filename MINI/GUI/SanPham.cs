@@ -355,63 +355,128 @@ namespace MINI.GUI
             }
             else
             {
-                DataTable dttk = sp.LayDSSanPham();
-                if (rdPic.Checked)
+                int id;
+                if(!int.TryParse(txtTimKiemSanPham.Text, out id))
                 {
-                    panel1.Visible = false;
-                    flowLayoutPanel1.Visible = true;
-                    flowLayoutPanel1.Controls.Clear();
+                    DataTable dttk = sp.LayDSSanPham();
+                    if (rdPic.Checked)
+                    {
+                        panel1.Visible = false;
+                        flowLayoutPanel1.Visible = true;
+                        flowLayoutPanel1.Controls.Clear();
 
-                    for (int i = 0; i < dttk.Rows.Count; i++)
-                    {
-                        if (dttk.Rows[i][6].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
+                        for (int i = 0; i < dttk.Rows.Count; i++)
                         {
-                            Product pro = new Product();
-                            try
+                            if (dttk.Rows[i][6].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
                             {
-                                pro.BorderStyle = BorderStyle.FixedSingle;
-                                pro.Id_Pro = dttk.Rows[i][0].ToString();
-                                pro.Name_Pro = dttk.Rows[i][6].ToString();
-                                pro.Num_Pro = dttk.Rows[i][3].ToString();
-                                pro.Img_Pro = dttk.Rows[i][7].ToString();
+                                Product pro = new Product();
+                                try
+                                {
+                                    pro.BorderStyle = BorderStyle.FixedSingle;
+                                    pro.Id_Pro = dttk.Rows[i][0].ToString();
+                                    pro.Name_Pro = dttk.Rows[i][6].ToString();
+                                    pro.Num_Pro = dttk.Rows[i][3].ToString();
+                                    pro.Img_Pro = dttk.Rows[i][7].ToString();
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                flowLayoutPanel1.Controls.Add(pro);
                             }
-                            catch (Exception)
-                            {
-                            }
-                            flowLayoutPanel1.Controls.Add(pro);
                         }
+                        if (flowLayoutPanel1.Controls.Count == 0)
+                        {
+                            MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        }
+                        setNull();
                     }
-                    if (flowLayoutPanel1.Controls.Count == 0)
+                    else
                     {
-                        MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        panel1.Visible = true;
+                        flowLayoutPanel1.Visible = false;
+                        lsvSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                        lsvSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                        lsvSanPham.Items.Clear();
+                        for (int i = 0; i < dttk.Rows.Count; i++)
+                        {
+                            if (dttk.Rows[i][6].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
+                            {
+                                ListViewItem lvi = lsvSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][6].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][2].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][3].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][7].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][4].ToString());
+                            }
+                        }
+                        if (lsvSanPham.Items.Count == 0)
+                        {
+                            MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        }
+                        setNull();
                     }
-                    setNull();
                 }
                 else
                 {
-                    panel1.Visible = true;
-                    flowLayoutPanel1.Visible = false;
-                    lsvSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
-                    lsvSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
-                    lsvSanPham.Items.Clear();
-                    for (int i = 0; i < dttk.Rows.Count; i++)
+                    DataTable dttk = sp.LayDSSanPham();
+                    if (rdPic.Checked)
                     {
-                        if (dttk.Rows[i][6].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
+                        panel1.Visible = false;
+                        flowLayoutPanel1.Visible = true;
+                        flowLayoutPanel1.Controls.Clear();
+
+                        for (int i = 0; i < dttk.Rows.Count; i++)
                         {
-                            ListViewItem lvi = lsvSanPham.Items.Add(dttk.Rows[i][0].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][6].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][2].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][3].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][7].ToString());
-                            lvi.SubItems.Add(dttk.Rows[i][4].ToString());
+                            if (dttk.Rows[i][0].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
+                            {
+                                Product pro = new Product();
+                                try
+                                {
+                                    pro.BorderStyle = BorderStyle.FixedSingle;
+                                    pro.Id_Pro = dttk.Rows[i][0].ToString();
+                                    pro.Name_Pro = dttk.Rows[i][6].ToString();
+                                    pro.Num_Pro = dttk.Rows[i][3].ToString();
+                                    pro.Img_Pro = dttk.Rows[i][7].ToString();
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                flowLayoutPanel1.Controls.Add(pro);
+                            }
                         }
+                        if (flowLayoutPanel1.Controls.Count == 0)
+                        {
+                            MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        }
+                        setNull();
                     }
-                    if (lsvSanPham.Items.Count == 0)
+                    else
                     {
-                        MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        panel1.Visible = true;
+                        flowLayoutPanel1.Visible = false;
+                        lsvSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                        lsvSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                        lsvSanPham.Items.Clear();
+                        for (int i = 0; i < dttk.Rows.Count; i++)
+                        {
+                            if (dttk.Rows[i][0].ToString().ToLower().Contains(txtTimKiemSanPham.Text.ToLower()))
+                            {
+                                ListViewItem lvi = lsvSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][6].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][2].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][3].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][7].ToString());
+                                lvi.SubItems.Add(dttk.Rows[i][4].ToString());
+                            }
+                        }
+                        if (lsvSanPham.Items.Count == 0)
+                        {
+                            MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        }
+                        setNull();
                     }
-                    setNull();
                 }
             }
         }
