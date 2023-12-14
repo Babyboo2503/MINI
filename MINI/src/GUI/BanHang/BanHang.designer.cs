@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lvSanPham = new System.Windows.Forms.ListView();
             this.colIdSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colIdLoaiSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,10 +52,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.khuyenMaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.miniMarketDataSet1 = new MINI.MiniMarketDataSet();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -68,14 +63,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.nhanVienTableAdapter = new MINI.MiniMarketDataSetTableAdapters.NhanVienTableAdapter();
-            this.khachHangTableAdapter = new MINI.MiniMarketDataSetTableAdapters.KhachHangTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.textTimKiem = new System.Windows.Forms.TextBox();
-            this.khuyenMaiTableAdapter = new MINI.MiniMarketDataSetTableAdapters.KhuyenMaiTableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -90,12 +82,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.khuyenMaiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -273,10 +264,10 @@
             // btnThanhToan
             // 
             this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(59, 88);
+            this.btnThanhToan.Location = new System.Drawing.Point(59, 116);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(120, 80);
+            this.btnThanhToan.Size = new System.Drawing.Size(120, 63);
             this.btnThanhToan.TabIndex = 3;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
@@ -284,6 +275,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnThanhToan);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.label7);
@@ -299,7 +291,7 @@
             this.textBox12.BackColor = System.Drawing.SystemColors.Window;
             this.textBox12.Enabled = false;
             this.textBox12.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox12.Location = new System.Drawing.Point(2, 48);
+            this.textBox12.Location = new System.Drawing.Point(2, 33);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(238, 24);
@@ -309,32 +301,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(56, 14);
+            this.label7.Location = new System.Drawing.Point(69, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 20);
             this.label7.TabIndex = 19;
             this.label7.Text = "Tổng hóa đơn";
-            // 
-            // khuyenMaiBindingSource
-            // 
-            this.khuyenMaiBindingSource.DataMember = "KhuyenMai";
-            this.khuyenMaiBindingSource.DataSource = this.miniMarketDataSet1;
-            // 
-            // miniMarketDataSet1
-            // 
-            this.miniMarketDataSet1.DataSetName = "MiniMarketDataSet1";
-            this.miniMarketDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khachHangBindingSource
-            // 
-            this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.miniMarketDataSet1;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.miniMarketDataSet1;
             // 
             // panel3
             // 
@@ -454,14 +426,6 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Tên sản phẩm:";
             // 
-            // nhanVienTableAdapter
-            // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
-            // 
-            // khachHangTableAdapter
-            // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox4);
@@ -469,7 +433,7 @@
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.textTimKiem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(26, 207);
+            this.groupBox2.Location = new System.Drawing.Point(22, 207);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -522,12 +486,10 @@
             this.textTimKiem.Size = new System.Drawing.Size(189, 24);
             this.textTimKiem.TabIndex = 0;
             // 
-            // khuyenMaiTableAdapter
-            // 
-            this.khuyenMaiTableAdapter.ClearBeforeFill = true;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.comboBox1);
@@ -540,50 +502,44 @@
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(26, 33);
+            this.panel2.Location = new System.Drawing.Point(30, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(621, 166);
+            this.panel2.Size = new System.Drawing.Size(621, 195);
             this.panel2.TabIndex = 10;
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.khuyenMaiBindingSource;
-            this.comboBox3.DisplayMember = "idKhuyenMai";
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(136, 124);
+            this.comboBox3.Location = new System.Drawing.Point(376, 124);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(92, 28);
+            this.comboBox3.Size = new System.Drawing.Size(211, 28);
             this.comboBox3.TabIndex = 21;
-            this.comboBox3.ValueMember = "idKhuyenMai";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.khachHangBindingSource;
-            this.comboBox2.DisplayMember = "idKhachHang";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(136, 74);
+            this.comboBox2.Location = new System.Drawing.Point(376, 74);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 28);
+            this.comboBox2.Size = new System.Drawing.Size(211, 28);
             this.comboBox2.TabIndex = 20;
-            this.comboBox2.ValueMember = "idKhachHang";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.nhanVienBindingSource;
-            this.comboBox1.DisplayMember = "idNhanVien";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 24);
+            this.comboBox1.Location = new System.Drawing.Point(376, 24);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 28);
+            this.comboBox1.Size = new System.Drawing.Size(211, 28);
             this.comboBox1.TabIndex = 19;
-            this.comboBox1.ValueMember = "idNhanVien";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -620,22 +576,20 @@
             // 
             // textBox6
             // 
-            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khuyenMaiBindingSource, "tenKhuyenMai", true));
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(372, 124);
+            this.textBox6.Location = new System.Drawing.Point(133, 124);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(235, 27);
+            this.textBox6.Size = new System.Drawing.Size(93, 27);
             this.textBox6.TabIndex = 11;
             // 
             // textBox2
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "hoVaTen", true));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(372, 24);
+            this.textBox2.Location = new System.Drawing.Point(135, 24);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 27);
+            this.textBox2.Size = new System.Drawing.Size(95, 27);
             this.textBox2.TabIndex = 9;
             // 
             // label4
@@ -651,12 +605,11 @@
             // 
             // textBox4
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "hoVaTen", true));
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(372, 74);
+            this.textBox4.Location = new System.Drawing.Point(133, 74);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(235, 27);
+            this.textBox4.Size = new System.Drawing.Size(92, 27);
             this.textBox4.TabIndex = 7;
             // 
             // label5
@@ -698,6 +651,29 @@
             this.panel4.Size = new System.Drawing.Size(1182, 761);
             this.panel4.TabIndex = 22;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(154, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 20);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Điều kiện:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(2, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(238, 24);
+            this.textBox1.TabIndex = 23;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(255, 164);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(193, 27);
+            this.textBox3.TabIndex = 20;
+            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -713,10 +689,6 @@
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.khuyenMaiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -762,11 +734,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label15;
-        private MiniMarketDataSet miniMarketDataSet1;
-        private System.Windows.Forms.BindingSource nhanVienBindingSource;
-        private MiniMarketDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
-        private System.Windows.Forms.BindingSource khachHangBindingSource;
-        private MiniMarketDataSetTableAdapters.KhachHangTableAdapter khachHangTableAdapter;
         private System.Windows.Forms.Button btnTang;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox4;
@@ -775,8 +742,6 @@
         private System.Windows.Forms.TextBox textTimKiem;
         private System.Windows.Forms.ColumnHeader colIdKM;
         private System.Windows.Forms.ColumnHeader colCKMua;
-        private System.Windows.Forms.BindingSource khuyenMaiBindingSource;
-        private MiniMarketDataSetTableAdapters.KhuyenMaiTableAdapter khuyenMaiTableAdapter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -791,5 +756,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

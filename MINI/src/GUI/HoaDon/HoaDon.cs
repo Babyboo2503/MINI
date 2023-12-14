@@ -138,28 +138,61 @@ namespace MINI.GUI.HoaDon
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (lvHoaDon.SelectedIndices.Count > 0)
-            {
-                DialogResult dr = MessageBox.Show("Bạn có chắc xóa không?", "Xóa hóa đơn", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    cthd.XoaCTHoaDon(lvHoaDon.SelectedItems[0].SubItems[0].Text);
-                    hd.XoaHoaDon(lvHoaDon.SelectedItems[0].SubItems[0].Text);
-                    lvHoaDon.Items.RemoveAt(
-                    lvHoaDon.SelectedIndices[0]);
-                    setNullCTHoaDon();
-                    lammoiHD();
-                    MessageBox.Show("Thành Công");
-                    
-                }
-            }
-            else
-                MessageBox.Show("Bạn phải chọn mẩu tin cần xóa");
+
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            HienthiHoaDon();
+            if (comboBox1.Text == "Id hóa đơn")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[0].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Id nhân viên")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[3].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên nhân viên")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[4].Text.ToLower().Contains(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Id khách hàng")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[5].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên khách hàng")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[6].Text.ToLower().Contains(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)

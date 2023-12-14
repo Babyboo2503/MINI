@@ -51,18 +51,35 @@ namespace MINI.src.BUS
             string sql = "Update SanPham set soLuong = soLuong - " + sl +" where idSanPham = " + idSanPham;
             db.ExecuteNonQuery(sql);
         }
-/*
-        public void TaoCTHD(HoaDonDTO hd,ChiTietHoaDonDTO cthd)
+        public void UpdateTTSanPham()
         {
-            string sql = string.Format("DECLARE @HDid int " +
-                "insert into HoaDon(idNhanVien, idKhachHang, ngayLap, idKhuyenMai, tongHoaDon) " +
-                "Values({0}, {1}, '{2}',{3},{4})", hd.idNhanVien.ToString(),hd.idKhachHang.ToString(),hd.ngayLap.ToString(),hd.idKhuyenMai.ToString(),hd.tongHoaDon.ToString() +
-                "SET @HDid = SCOPE_IDENTITY() " +
-                "INSERT INTO ChiTietHoaDon(idHoaDon, idSanPham, soLuong, donGia, tongTien) VALUES(@HDid, {1} , {2} ,{3} )",
-                cthd.idSanPham.ToString(), cthd.soLuong.ToString(), cthd.donGia.ToString(),cthd.tongTien.ToString());
-            
+            string sql = "Update SanPham set trangThai = N'Hết hàng' where soLuong = 0";
             db.ExecuteNonQuery(sql);
-        }*/
+        }
+
+        public void UpdateDiemKH(string diem, string id)
+        {
+            string sql = "Update KhachHang set diem = diem +" + diem + "where idKhachHang = " + id;
+            db.ExecuteNonQuery(sql);
+        }
+
+        public void UpdateDiemADKM(string diem, string id)
+        {
+            string sql = "Update KhachHang set diem = diem -" + diem + "where idKhachHang = " + id;
+            db.ExecuteNonQuery(sql);
+        }
+        /*
+                public void TaoCTHD(HoaDonDTO hd,ChiTietHoaDonDTO cthd)
+                {
+                    string sql = string.Format("DECLARE @HDid int " +
+                        "insert into HoaDon(idNhanVien, idKhachHang, ngayLap, idKhuyenMai, tongHoaDon) " +
+                        "Values({0}, {1}, '{2}',{3},{4})", hd.idNhanVien.ToString(),hd.idKhachHang.ToString(),hd.ngayLap.ToString(),hd.idKhuyenMai.ToString(),hd.tongHoaDon.ToString() +
+                        "SET @HDid = SCOPE_IDENTITY() " +
+                        "INSERT INTO ChiTietHoaDon(idHoaDon, idSanPham, soLuong, donGia, tongTien) VALUES(@HDid, {1} , {2} ,{3} )",
+                        cthd.idSanPham.ToString(), cthd.soLuong.ToString(), cthd.donGia.ToString(),cthd.tongTien.ToString());
+
+                    db.ExecuteNonQuery(sql);
+                }*/
         /*
         public void SanPhamCTHD(ChiTietHoaDonDTO cthd)
         {
@@ -70,6 +87,6 @@ namespace MINI.src.BUS
                 ,cthd.idSanPham.ToString(), cthd.soLuong.ToString(), cthd.donGia.ToString(), cthd.tongTien.ToString());
             db.ExecuteNonQuery(sql);
         }*/
-    
+
     }
 }
