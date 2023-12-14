@@ -303,21 +303,21 @@ namespace MINI.GUI
             }
             else if(rdId.Checked)
             {
-                lsvKhachHang.ListViewItemSorter = new ListViewItemComparer(0);
+                lsvKhachHang.ListViewItemSorter = new ListViewItemComparerId(0);
                 lsvKhachHang.Sort();
             }
             else
             {
-                lsvKhachHang.ListViewItemSorter = new ListViewItemComparer(1);
+                lsvKhachHang.ListViewItemSorter = new ListViewItemComparerName(1);
                 lsvKhachHang.Sort();
             }
             setNull();
         }
     }
-    class ListViewItemComparer : IComparer
+    class ListViewItemComparerName : IComparer
     {
         private int col;
-        public ListViewItemComparer(int column)
+        public ListViewItemComparerName(int column)
         {
             col = column;
         }
@@ -327,6 +327,27 @@ namespace MINI.GUI
             {
                 return String.Compare(((ListViewItem)x).SubItems[col].Text,
                       ((ListViewItem)y).SubItems[col].Text);
+            }
+            catch (Exception)
+            {
+
+            }
+            return 0;
+        }
+    }
+    class ListViewItemComparerId : IComparer
+    {
+        private int col;
+        public ListViewItemComparerId(int column)
+        {
+            col = column;
+        }
+        public int Compare(object x, object y)
+        {
+            try
+            {
+                return int.Parse(((ListViewItem)x).SubItems[0].Text).CompareTo
+                    (int.Parse(((ListViewItem)y).SubItems[0].Text));
             }
             catch (Exception)
             {

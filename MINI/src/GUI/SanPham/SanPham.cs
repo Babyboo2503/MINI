@@ -303,12 +303,12 @@ namespace MINI.GUI
             }
             else if (rdMaLoaiSanPham.Checked)
             {
-                lsvLoaiSanPham.ListViewItemSorter = new ListViewItemComparer(0);
+                lsvLoaiSanPham.ListViewItemSorter = new ListViewItemComparerId(0);
                 lsvLoaiSanPham.Sort();
             }
             else
             {
-                lsvLoaiSanPham.ListViewItemSorter = new ListViewItemComparer(1);
+                lsvLoaiSanPham.ListViewItemSorter = new ListViewItemComparerName(1);
                 lsvLoaiSanPham.Sort();
             }
             setNull_LoaiSanPham();
