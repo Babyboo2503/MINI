@@ -1,81 +1,6 @@
-
-/****** Object:  Database [MiniMarket]    Script Date: 11/27/2023 10:47:01 AM ******/
-CREATE DATABASE [MiniMarket]
-GO
-ALTER DATABASE [MiniMarket] SET COMPATIBILITY_LEVEL = 150
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [MiniMarket].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-ALTER DATABASE [MiniMarket] SET ANSI_NULL_DEFAULT OFF 
-GO
-ALTER DATABASE [MiniMarket] SET ANSI_NULLS OFF 
-GO
-ALTER DATABASE [MiniMarket] SET ANSI_PADDING OFF 
-GO
-ALTER DATABASE [MiniMarket] SET ANSI_WARNINGS OFF 
-GO
-ALTER DATABASE [MiniMarket] SET ARITHABORT OFF 
-GO
-ALTER DATABASE [MiniMarket] SET AUTO_CLOSE OFF 
-GO
-ALTER DATABASE [MiniMarket] SET AUTO_SHRINK OFF 
-GO
-ALTER DATABASE [MiniMarket] SET AUTO_UPDATE_STATISTICS ON 
-GO
-ALTER DATABASE [MiniMarket] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-ALTER DATABASE [MiniMarket] SET CURSOR_DEFAULT  GLOBAL 
-GO
-ALTER DATABASE [MiniMarket] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-ALTER DATABASE [MiniMarket] SET NUMERIC_ROUNDABORT OFF 
-GO
-ALTER DATABASE [MiniMarket] SET QUOTED_IDENTIFIER OFF 
-GO
-ALTER DATABASE [MiniMarket] SET RECURSIVE_TRIGGERS OFF 
-GO
-ALTER DATABASE [MiniMarket] SET  ENABLE_BROKER 
-GO
-ALTER DATABASE [MiniMarket] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-ALTER DATABASE [MiniMarket] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-ALTER DATABASE [MiniMarket] SET TRUSTWORTHY OFF 
-GO
-ALTER DATABASE [MiniMarket] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-ALTER DATABASE [MiniMarket] SET PARAMETERIZATION SIMPLE 
-GO
-ALTER DATABASE [MiniMarket] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-ALTER DATABASE [MiniMarket] SET HONOR_BROKER_PRIORITY OFF 
-GO
-ALTER DATABASE [MiniMarket] SET RECOVERY FULL 
-GO
-ALTER DATABASE [MiniMarket] SET  MULTI_USER 
-GO
-ALTER DATABASE [MiniMarket] SET PAGE_VERIFY CHECKSUM  
-GO
-ALTER DATABASE [MiniMarket] SET DB_CHAINING OFF 
-GO
-ALTER DATABASE [MiniMarket] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-ALTER DATABASE [MiniMarket] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-ALTER DATABASE [MiniMarket] SET DELAYED_DURABILITY = DISABLED 
-GO
-ALTER DATABASE [MiniMarket] SET ACCELERATED_DATABASE_RECOVERY = OFF  
-GO
-EXEC sys.sp_db_vardecimal_storage_format N'MiniMarket', N'ON'
-GO
-ALTER DATABASE [MiniMarket] SET QUERY_STORE = OFF
-GO
 USE [MiniMarket]
 GO
-/****** Object:  Table [dbo].[BaoCao]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[BaoCao]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -93,7 +18,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ChiTietHoaDon]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[ChiTietHoaDon]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -106,7 +31,7 @@ CREATE TABLE [dbo].[ChiTietHoaDon](
 	[tongTien] [decimal](10, 2) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ChiTietPhieuNhap]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[ChiTietPhieuNhap]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,13 +44,13 @@ CREATE TABLE [dbo].[ChiTietPhieuNhap](
 	[thanhTien] [decimal](10, 2) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ChucVu]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[ChucVu]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ChucVu](
-	[idChucVu] [varchar](10) NOT NULL,
+	[idChucVu] [int] NOT NULL,
 	[tenChucVu] [nvarchar](50) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -133,7 +58,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HoaDon]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[HoaDon]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +76,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +96,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[KhuyenMai]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[KhuyenMai]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,14 +108,14 @@ CREATE TABLE [dbo].[KhuyenMai](
 	[tenKhuyenMai] [nvarchar](50) NULL,
 	[phanTram] [float] NULL,
 	[noiDung] [nvarchar](100) NULL,
-	[dieuKien] [varchar](200) NULL,
+	[dieuKien] [nvarchar](200) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[idKhuyenMai] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoaiSanPham]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[LoaiSanPham]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -204,7 +129,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -220,7 +145,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[NhanVien]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -230,7 +155,7 @@ CREATE TABLE [dbo].[NhanVien](
 	[hoVaTen] [nvarchar](50) NULL,
 	[soDienThoai] [varchar](10) NULL,
 	[gioiTinh] [nvarchar](10) NULL,
-	[idChucVu] [varchar](10) NULL,
+	[idChucVu] [int] NULL,
 	[luong] [decimal](10, 2) NULL,
 	[trangThai] [nvarchar](50) NULL,
 	[ngayNghi] [datetime] NULL,
@@ -242,7 +167,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PhieuNhap]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[PhieuNhap]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -252,14 +177,14 @@ CREATE TABLE [dbo].[PhieuNhap](
 	[idNhanVien] [int] NULL,
 	[idNhaCungCap] [int] NULL,
 	[ngayNhap] [datetime] NULL,
-	[tongTien] [decimal](10, 2) NULL
+	[tongTien] [decimal](10, 2) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[idPhieuNhap] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SanPham]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[SanPham]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -272,29 +197,29 @@ CREATE TABLE [dbo].[SanPham](
 	[trangThai] [nvarchar](20) NULL,
 	[chietKhau] [int] NULL,
 	[tenSanPham] [nvarchar](150) NULL,
-	[hinhAnh] [varchar](500) NULL,
+	[hinhAnh] [nvarchar](500) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[idSanPham] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TaiKhoan]    Script Date: 11/27/2023 10:47:01 AM ******/
+/****** Object:  Table [dbo].[TaiKhoan]    Script Date: 12/15/2023 1:51:02 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[TaiKhoan](
 	[idTaiKhoan] [int] IDENTITY(1,1) NOT NULL,
-	[username] [char](500) NULL,
-	[password] [char](10) NULL,
 	[idNhanVien] [int] NULL,
-	[quyen] [varchar](MAX) NULL,
+	[quyen] [varchar](max) NULL,
+	[username] [varchar](15) NULL,
+	[password] [varchar](15) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[idTaiKhoan] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[BaoCao]  WITH CHECK ADD FOREIGN KEY([idNhanVien])
 REFERENCES [dbo].[NhanVien] ([idNhanVien])
@@ -323,8 +248,10 @@ GO
 ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD FOREIGN KEY([idNhanVien])
 REFERENCES [dbo].[NhanVien] ([idNhanVien])
 GO
-ALTER TABLE [dbo].[NhanVien]  WITH CHECK ADD FOREIGN KEY([idChucVu])
+ALTER TABLE [dbo].[NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_idChucVu] FOREIGN KEY([idChucVu])
 REFERENCES [dbo].[ChucVu] ([idChucVu])
+GO
+ALTER TABLE [dbo].[NhanVien] CHECK CONSTRAINT [FK_idChucVu]
 GO
 ALTER TABLE [dbo].[PhieuNhap]  WITH CHECK ADD FOREIGN KEY([idNhanVien])
 REFERENCES [dbo].[NhanVien] ([idNhanVien])
@@ -340,6 +267,4 @@ REFERENCES [dbo].[LoaiSanPham] ([idLoaiSanPham])
 GO
 ALTER TABLE [dbo].[TaiKhoan]  WITH CHECK ADD FOREIGN KEY([idNhanVien])
 REFERENCES [dbo].[NhanVien] ([idNhanVien])
-GO
-ALTER DATABASE [MiniMarket] SET  READ_WRITE 
 GO

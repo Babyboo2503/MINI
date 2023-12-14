@@ -19,6 +19,11 @@ namespace MINI.src.BUS
             int row = db.ExecuteReader(account);
             return row > 0;
         }
+        public DataTable layIDTK(string username)
+        {
+            string id = $"Select * from TaiKhoan where username='{username}'";
+            return db.Execute(id);
+        }
         public bool[] fillQuyen(string quyenTextBox)
         {
             bool[] result = new bool[12];
