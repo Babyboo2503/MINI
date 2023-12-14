@@ -68,5 +68,46 @@ namespace MINI.src.BUS
             DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
             return dt;
         }
+
+        public DataTable LayphanTramKM(string a)
+        {
+            string strSQL = "Select phanTram from KhuyenMai where idKhuyenMai = " + a;
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
+
+        public DataTable LayDiemKH(string a)
+        {
+            string strSQL = "Select diem from KhachHang Where idKhachHang = " + a;
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
+
+        public DataTable LayDSNhanVien()
+        {
+            string strSQL = "Select * from NhanVien";
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
+        public DataTable LayDSKhachHang()
+        {
+            string strSQL = "Select * from KhachHang";
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
+        public DataTable LayDSKhuyenMai()
+        {
+            string strSQL = "Select * from KhuyenMai";
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
+
+        public DataTable LayId_TenNV(string Username)
+        {
+            string strSQL = "Select nv.idNhanVien, nv.hoVaTen from NhanVien nv inner join TaiKhoan tk on " +
+                "nv.idNhanVien=tk.idNhanVien where tk.username= '" + Username + "'";
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
     }
 }

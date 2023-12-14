@@ -68,12 +68,12 @@ namespace MINI.BUS
                 MessageBox.Show("Phần trăm chỉ được nằm trong khoảng từ 0 - 50", "Báo lỗi");
                 return "phantram";
             }
-            else if(noidung == "")
+            else if (noidung == "")
             {
                 MessageBox.Show("Hãy nhập nội dung", "Báo lỗi");
                 return "noidung";
             }
-            else if(dieukien == "")
+            else if (dieukien == "")
             {
                 MessageBox.Show("Hãy nhập điều kiện", "Báo lỗi");
                 return "dieukien";

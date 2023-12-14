@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MINI.src.BUS
 {
@@ -47,6 +48,34 @@ namespace MINI.src.BUS
         {
             string id = $"Select idNhanVien from TaiKhoan where username='{txtUsername}' and password='{txtPassword}'";
             return db.ExecuteNonQuery(id);
+        }
+        public void UploadTK(string idtk, string idnv, string username, string password, CheckedListBox quyen)
+        {
+            string quyenTK = null;
+            for (int i = 1; i < 13; i++)
+            {
+                if (quyen.GetItemChecked(i-1) == true)
+                {
+                    quyenTK += i + ","; 
+                }
+            }
+            string newString = quyenTK.TrimEnd(',');
+            string acc = $"Update TaiKhoan set idNhanVien='{idnv}', username='{username}',password='{password}',quyen='{newString}' where idTaiKhoan='{idtk}'";
+            db.ExecuteNonQuery(acc);
+        }
+        public void InsertTK(string idtk, string idnv, string username, string password, CheckedListBox quyen)
+        {
+            string quyenTK = null;
+            for (int i = 1; i < 13; i++)
+            {
+                if (quyen.GetItemChecked(i - 1) == true)
+                {
+                    quyenTK += i + ",";
+                }
+            }
+            string newString = quyenTK.TrimEnd(',');
+            string acc = $"Insert into TaiKhoan (idNhanVien, username, password, quyen) values ('{idnv}','{username}','{password}','{newString}')";
+            db.ExecuteNonQuery(acc);
         }
 
     }

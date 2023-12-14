@@ -1,4 +1,4 @@
-﻿namespace MINI.src.GUI.ThongKe
+﻿namespace MINI.src.GUI
 {
     partial class frmChiTietHoaDon
     {

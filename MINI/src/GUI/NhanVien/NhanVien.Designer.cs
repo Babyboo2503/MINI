@@ -1,4 +1,4 @@
-namespace MINI.GUI
+namespace MINI.src.GUI
 {
     partial class NhanVien
     {
@@ -55,7 +55,6 @@ namespace MINI.GUI
             System.Windows.Forms.Label idTaiKhoanLabel2;
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
-            this.miniMarketDataSet = new MINI.MiniMarketDataSet();
             this.tabSuaThemNhanVien = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -86,6 +85,23 @@ namespace MINI.GUI
             this.btnLuu = new System.Windows.Forms.Button();
             this.lblNote = new System.Windows.Forms.Label();
             this.tabThongTinNhanVien = new System.Windows.Forms.TabPage();
+            this.groupBoxLocTheo = new System.Windows.Forms.GroupBox();
+            this.comboBoxLocTheo = new System.Windows.Forms.ComboBox();
+            this.groupBoxTimKiem = new System.Windows.Forms.GroupBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.groupBoxTheoDKLoc = new System.Windows.Forms.GroupBox();
+            this.cbbLocTheoDKLoc = new System.Windows.Forms.ComboBox();
+            this.panelTaiKhoan = new System.Windows.Forms.Panel();
+            this.txtHoVaTenNVTK = new System.Windows.Forms.TextBox();
+            this.lblChucVuNVTK = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtIDTaiKhoanNVTK = new System.Windows.Forms.TextBox();
+            this.txtIDNhanVienNVTK = new System.Windows.Forms.TextBox();
+            this.txtUsernameNVTK = new System.Windows.Forms.TextBox();
+            this.txtPasswordNVTK = new System.Windows.Forms.TextBox();
+            this.txtQuyenNVTK = new System.Windows.Forms.TextBox();
             this.listViewNhanVien = new System.Windows.Forms.ListView();
             this.IDNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HoVaTenNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -97,25 +113,13 @@ namespace MINI.GUI
             this.NgayNghiNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgaySinhNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiaChiNVCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
             this.btnReloadNV = new System.Windows.Forms.Button();
             this.btnThemNV = new System.Windows.Forms.Button();
-            this.lblTittleDanhSachNhanVien = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.panelTaiKhoan = new System.Windows.Forms.Panel();
-            this.btnSuaTKNV = new System.Windows.Forms.Button();
-            this.txtHoVaTenNVTK = new System.Windows.Forms.TextBox();
-            this.lblChucVuNVTK = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtIDTaiKhoanNV = new System.Windows.Forms.TextBox();
-            this.txtIDNhanVienNVTK = new System.Windows.Forms.TextBox();
-            this.txtUsernameNV = new System.Windows.Forms.TextBox();
-            this.txtPasswordNV = new System.Windows.Forms.TextBox();
-            this.txtQuyenNV = new System.Windows.Forms.TextBox();
             this.btnTaiKhoanNV = new System.Windows.Forms.Button();
             this.labelChucVu = new System.Windows.Forms.Label();
             this.lblNull = new System.Windows.Forms.Label();
+            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
             this.txtIDNhanVienNV = new System.Windows.Forms.TextBox();
             this.txtHoVaTenNV = new System.Windows.Forms.TextBox();
             this.txtSDTNV = new System.Windows.Forms.TextBox();
@@ -154,16 +158,18 @@ namespace MINI.GUI
             idNhanVienLabel3 = new System.Windows.Forms.Label();
             idTaiKhoanLabel2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).BeginInit();
             this.tabSuaThemNhanVien.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelThemThongTinNhanVien.SuspendLayout();
             this.tabThongTinNhanVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
-            this.panelInfo.SuspendLayout();
+            this.groupBoxLocTheo.SuspendLayout();
+            this.groupBoxTimKiem.SuspendLayout();
+            this.groupBoxTheoDKLoc.SuspendLayout();
             this.panelTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
             this.tabNhanVien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -270,7 +276,7 @@ namespace MINI.GUI
             // diaChiLabel
             // 
             diaChiLabel.AutoSize = true;
-            diaChiLabel.Location = new System.Drawing.Point(70, 255);
+            diaChiLabel.Location = new System.Drawing.Point(151, 212);
             diaChiLabel.Name = "diaChiLabel";
             diaChiLabel.Size = new System.Drawing.Size(69, 20);
             diaChiLabel.TabIndex = 21;
@@ -279,7 +285,7 @@ namespace MINI.GUI
             // ngaySinhLabel
             // 
             ngaySinhLabel.AutoSize = true;
-            ngaySinhLabel.Location = new System.Drawing.Point(421, 114);
+            ngaySinhLabel.Location = new System.Drawing.Point(502, 71);
             ngaySinhLabel.Name = "ngaySinhLabel";
             ngaySinhLabel.Size = new System.Drawing.Size(92, 20);
             ngaySinhLabel.TabIndex = 19;
@@ -288,7 +294,7 @@ namespace MINI.GUI
             // ngayNghiLabel
             // 
             ngayNghiLabel.AutoSize = true;
-            ngayNghiLabel.Location = new System.Drawing.Point(421, 189);
+            ngayNghiLabel.Location = new System.Drawing.Point(502, 146);
             ngayNghiLabel.Name = "ngayNghiLabel";
             ngayNghiLabel.Size = new System.Drawing.Size(93, 20);
             ngayNghiLabel.TabIndex = 17;
@@ -297,7 +303,7 @@ namespace MINI.GUI
             // trangThaiLabel
             // 
             trangThaiLabel.AutoSize = true;
-            trangThaiLabel.Location = new System.Drawing.Point(421, 150);
+            trangThaiLabel.Location = new System.Drawing.Point(502, 107);
             trangThaiLabel.Name = "trangThaiLabel";
             trangThaiLabel.Size = new System.Drawing.Size(95, 20);
             trangThaiLabel.TabIndex = 15;
@@ -306,7 +312,7 @@ namespace MINI.GUI
             // luongLabel
             // 
             luongLabel.AutoSize = true;
-            luongLabel.Location = new System.Drawing.Point(421, 78);
+            luongLabel.Location = new System.Drawing.Point(502, 35);
             luongLabel.Name = "luongLabel";
             luongLabel.Size = new System.Drawing.Size(64, 20);
             luongLabel.TabIndex = 13;
@@ -315,7 +321,7 @@ namespace MINI.GUI
             // idChucVuLabel
             // 
             idChucVuLabel.AutoSize = true;
-            idChucVuLabel.Location = new System.Drawing.Point(70, 220);
+            idChucVuLabel.Location = new System.Drawing.Point(151, 177);
             idChucVuLabel.Name = "idChucVuLabel";
             idChucVuLabel.Size = new System.Drawing.Size(102, 20);
             idChucVuLabel.TabIndex = 11;
@@ -324,7 +330,7 @@ namespace MINI.GUI
             // gioiTinhLabel
             // 
             gioiTinhLabel.AutoSize = true;
-            gioiTinhLabel.Location = new System.Drawing.Point(70, 185);
+            gioiTinhLabel.Location = new System.Drawing.Point(151, 142);
             gioiTinhLabel.Name = "gioiTinhLabel";
             gioiTinhLabel.Size = new System.Drawing.Size(81, 20);
             gioiTinhLabel.TabIndex = 9;
@@ -333,7 +339,7 @@ namespace MINI.GUI
             // soDienThoaiLabel
             // 
             soDienThoaiLabel.AutoSize = true;
-            soDienThoaiLabel.Location = new System.Drawing.Point(70, 150);
+            soDienThoaiLabel.Location = new System.Drawing.Point(151, 107);
             soDienThoaiLabel.Name = "soDienThoaiLabel";
             soDienThoaiLabel.Size = new System.Drawing.Size(120, 20);
             soDienThoaiLabel.TabIndex = 7;
@@ -342,7 +348,7 @@ namespace MINI.GUI
             // hoVaTenLabel
             // 
             hoVaTenLabel.AutoSize = true;
-            hoVaTenLabel.Location = new System.Drawing.Point(70, 115);
+            hoVaTenLabel.Location = new System.Drawing.Point(151, 72);
             hoVaTenLabel.Name = "hoVaTenLabel";
             hoVaTenLabel.Size = new System.Drawing.Size(91, 20);
             hoVaTenLabel.TabIndex = 5;
@@ -351,7 +357,7 @@ namespace MINI.GUI
             // idNhanVienLabel
             // 
             idNhanVienLabel.AutoSize = true;
-            idNhanVienLabel.Location = new System.Drawing.Point(70, 80);
+            idNhanVienLabel.Location = new System.Drawing.Point(151, 37);
             idNhanVienLabel.Name = "idNhanVienLabel";
             idNhanVienLabel.Size = new System.Drawing.Size(117, 20);
             idNhanVienLabel.TabIndex = 3;
@@ -410,11 +416,6 @@ namespace MINI.GUI
             label5.Size = new System.Drawing.Size(91, 20);
             label5.TabIndex = 29;
             label5.Text = "Họ và tên:";
-            // 
-            // miniMarketDataSet
-            // 
-            this.miniMarketDataSet.DataSetName = "MiniMarketDataSet";
-            this.miniMarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabSuaThemNhanVien
             // 
@@ -741,12 +742,13 @@ namespace MINI.GUI
             this.tabThongTinNhanVien.AutoScroll = true;
             this.tabThongTinNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabThongTinNhanVien.BackgroundImage")));
             this.tabThongTinNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabThongTinNhanVien.Controls.Add(this.groupBoxLocTheo);
+            this.tabThongTinNhanVien.Controls.Add(this.groupBoxTimKiem);
+            this.tabThongTinNhanVien.Controls.Add(this.groupBoxTheoDKLoc);
             this.tabThongTinNhanVien.Controls.Add(this.panelTaiKhoan);
             this.tabThongTinNhanVien.Controls.Add(this.listViewNhanVien);
-            this.tabThongTinNhanVien.Controls.Add(this.pictureBoxInfo);
             this.tabThongTinNhanVien.Controls.Add(this.btnReloadNV);
             this.tabThongTinNhanVien.Controls.Add(this.btnThemNV);
-            this.tabThongTinNhanVien.Controls.Add(this.lblTittleDanhSachNhanVien);
             this.tabThongTinNhanVien.Controls.Add(this.panelInfo);
             this.tabThongTinNhanVien.Location = new System.Drawing.Point(4, 54);
             this.tabThongTinNhanVien.Margin = new System.Windows.Forms.Padding(2);
@@ -755,6 +757,205 @@ namespace MINI.GUI
             this.tabThongTinNhanVien.TabIndex = 0;
             this.tabThongTinNhanVien.Text = "Thông tin nhân viên";
             this.tabThongTinNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxLocTheo
+            // 
+            this.groupBoxLocTheo.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLocTheo.Controls.Add(this.comboBoxLocTheo);
+            this.groupBoxLocTheo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxLocTheo.Location = new System.Drawing.Point(72, 379);
+            this.groupBoxLocTheo.Name = "groupBoxLocTheo";
+            this.groupBoxLocTheo.Size = new System.Drawing.Size(175, 77);
+            this.groupBoxLocTheo.TabIndex = 34;
+            this.groupBoxLocTheo.TabStop = false;
+            this.groupBoxLocTheo.Text = "Lọc theo";
+            // 
+            // comboBoxLocTheo
+            // 
+            this.comboBoxLocTheo.FormattingEnabled = true;
+            this.comboBoxLocTheo.Items.AddRange(new object[] {
+            "Giới tính",
+            "Chức vụ",
+            "Trạng thái"});
+            this.comboBoxLocTheo.Location = new System.Drawing.Point(9, 34);
+            this.comboBoxLocTheo.Name = "comboBoxLocTheo";
+            this.comboBoxLocTheo.Size = new System.Drawing.Size(137, 28);
+            this.comboBoxLocTheo.TabIndex = 0;
+            this.comboBoxLocTheo.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocTheo_SelectedIndexChanged);
+            // 
+            // groupBoxTimKiem
+            // 
+            this.groupBoxTimKiem.Controls.Add(this.btnTimKiem);
+            this.groupBoxTimKiem.Controls.Add(this.txtTimKiem);
+            this.groupBoxTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxTimKiem.Location = new System.Drawing.Point(492, 379);
+            this.groupBoxTimKiem.Name = "groupBoxTimKiem";
+            this.groupBoxTimKiem.Size = new System.Drawing.Size(515, 77);
+            this.groupBoxTimKiem.TabIndex = 34;
+            this.groupBoxTimKiem.TabStop = false;
+            this.groupBoxTimKiem.Text = "Tìm kiếm";
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.White;
+            this.btnTimKiem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.BackgroundImage")));
+            this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTimKiem.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnTimKiem.FlatAppearance.BorderSize = 3;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Location = new System.Drawing.Point(453, 25);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(45, 45);
+            this.btnTimKiem.TabIndex = 1;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
+            this.txtTimKiem.Location = new System.Drawing.Point(25, 35);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(412, 27);
+            this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
+            this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
+            // 
+            // groupBoxTheoDKLoc
+            // 
+            this.groupBoxTheoDKLoc.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxTheoDKLoc.Controls.Add(this.cbbLocTheoDKLoc);
+            this.groupBoxTheoDKLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxTheoDKLoc.Location = new System.Drawing.Point(273, 379);
+            this.groupBoxTheoDKLoc.Name = "groupBoxTheoDKLoc";
+            this.groupBoxTheoDKLoc.Size = new System.Drawing.Size(213, 77);
+            this.groupBoxTheoDKLoc.TabIndex = 33;
+            this.groupBoxTheoDKLoc.TabStop = false;
+            this.groupBoxTheoDKLoc.Text = "...";
+            // 
+            // cbbLocTheoDKLoc
+            // 
+            this.cbbLocTheoDKLoc.FormattingEnabled = true;
+            this.cbbLocTheoDKLoc.Location = new System.Drawing.Point(9, 34);
+            this.cbbLocTheoDKLoc.Name = "cbbLocTheoDKLoc";
+            this.cbbLocTheoDKLoc.Size = new System.Drawing.Size(173, 28);
+            this.cbbLocTheoDKLoc.TabIndex = 0;
+            this.cbbLocTheoDKLoc.SelectedIndexChanged += new System.EventHandler(this.cbbLocTheoDKLoc_SelectedIndexChanged);
+            // 
+            // panelTaiKhoan
+            // 
+            this.panelTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTaiKhoan.BackColor = System.Drawing.Color.Beige;
+            this.panelTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTaiKhoan.Controls.Add(label5);
+            this.panelTaiKhoan.Controls.Add(this.txtHoVaTenNVTK);
+            this.panelTaiKhoan.Controls.Add(this.lblChucVuNVTK);
+            this.panelTaiKhoan.Controls.Add(this.pictureBox3);
+            this.panelTaiKhoan.Controls.Add(this.button1);
+            this.panelTaiKhoan.Controls.Add(idTaiKhoanLabel2);
+            this.panelTaiKhoan.Controls.Add(this.txtIDTaiKhoanNVTK);
+            this.panelTaiKhoan.Controls.Add(idNhanVienLabel3);
+            this.panelTaiKhoan.Controls.Add(this.txtIDNhanVienNVTK);
+            this.panelTaiKhoan.Controls.Add(usernameLabel2);
+            this.panelTaiKhoan.Controls.Add(this.txtUsernameNVTK);
+            this.panelTaiKhoan.Controls.Add(passwordLabel2);
+            this.panelTaiKhoan.Controls.Add(this.txtPasswordNVTK);
+            this.panelTaiKhoan.Controls.Add(quyenLabel2);
+            this.panelTaiKhoan.Controls.Add(this.txtQuyenNVTK);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(348, 46);
+            this.panelTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.panelTaiKhoan.Name = "panelTaiKhoan";
+            this.panelTaiKhoan.Size = new System.Drawing.Size(518, 259);
+            this.panelTaiKhoan.TabIndex = 26;
+            this.panelTaiKhoan.Visible = false;
+            // 
+            // txtHoVaTenNVTK
+            // 
+            this.txtHoVaTenNVTK.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoVaTenNVTK.Location = new System.Drawing.Point(264, 117);
+            this.txtHoVaTenNVTK.Name = "txtHoVaTenNVTK";
+            this.txtHoVaTenNVTK.ReadOnly = true;
+            this.txtHoVaTenNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtHoVaTenNVTK.TabIndex = 30;
+            // 
+            // lblChucVuNVTK
+            // 
+            this.lblChucVuNVTK.AutoSize = true;
+            this.lblChucVuNVTK.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVuNVTK.Location = new System.Drawing.Point(23, 187);
+            this.lblChucVuNVTK.Name = "lblChucVuNVTK";
+            this.lblChucVuNVTK.Size = new System.Drawing.Size(22, 21);
+            this.lblChucVuNVTK.TabIndex = 28;
+            this.lblChucVuNVTK.Text = "...";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 60);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(115, 129);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(461, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtIDTaiKhoanNVTK
+            // 
+            this.txtIDTaiKhoanNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDTaiKhoanNVTK.Location = new System.Drawing.Point(264, 47);
+            this.txtIDTaiKhoanNVTK.Name = "txtIDTaiKhoanNVTK";
+            this.txtIDTaiKhoanNVTK.ReadOnly = true;
+            this.txtIDTaiKhoanNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtIDTaiKhoanNVTK.TabIndex = 1;
+            // 
+            // txtIDNhanVienNVTK
+            // 
+            this.txtIDNhanVienNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDNhanVienNVTK.Location = new System.Drawing.Point(264, 82);
+            this.txtIDNhanVienNVTK.Name = "txtIDNhanVienNVTK";
+            this.txtIDNhanVienNVTK.ReadOnly = true;
+            this.txtIDNhanVienNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtIDNhanVienNVTK.TabIndex = 3;
+            // 
+            // txtUsernameNVTK
+            // 
+            this.txtUsernameNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtUsernameNVTK.Location = new System.Drawing.Point(264, 152);
+            this.txtUsernameNVTK.Name = "txtUsernameNVTK";
+            this.txtUsernameNVTK.ReadOnly = true;
+            this.txtUsernameNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtUsernameNVTK.TabIndex = 5;
+            // 
+            // txtPasswordNVTK
+            // 
+            this.txtPasswordNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtPasswordNVTK.Location = new System.Drawing.Point(264, 187);
+            this.txtPasswordNVTK.Name = "txtPasswordNVTK";
+            this.txtPasswordNVTK.ReadOnly = true;
+            this.txtPasswordNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtPasswordNVTK.TabIndex = 7;
+            // 
+            // txtQuyenNVTK
+            // 
+            this.txtQuyenNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtQuyenNVTK.Location = new System.Drawing.Point(264, 222);
+            this.txtQuyenNVTK.Name = "txtQuyenNVTK";
+            this.txtQuyenNVTK.ReadOnly = true;
+            this.txtQuyenNVTK.Size = new System.Drawing.Size(185, 26);
+            this.txtQuyenNVTK.TabIndex = 9;
             // 
             // listViewNhanVien
             // 
@@ -844,17 +1045,6 @@ namespace MINI.GUI
             this.DiaChiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DiaChiNVCol.Width = 93;
             // 
-            // pictureBoxInfo
-            // 
-            this.pictureBoxInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.BackgroundImage")));
-            this.pictureBoxInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.Image")));
-            this.pictureBoxInfo.Location = new System.Drawing.Point(225, 34);
-            this.pictureBoxInfo.Name = "pictureBoxInfo";
-            this.pictureBoxInfo.Size = new System.Drawing.Size(111, 113);
-            this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInfo.TabIndex = 24;
-            this.pictureBoxInfo.TabStop = false;
-            // 
             // btnReloadNV
             // 
             this.btnReloadNV.BackColor = System.Drawing.Color.White;
@@ -887,17 +1077,6 @@ namespace MINI.GUI
             this.btnThemNV.UseVisualStyleBackColor = false;
             this.btnThemNV.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblTittleDanhSachNhanVien
-            // 
-            this.lblTittleDanhSachNhanVien.AutoSize = true;
-            this.lblTittleDanhSachNhanVien.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTittleDanhSachNhanVien.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblTittleDanhSachNhanVien.Location = new System.Drawing.Point(454, 417);
-            this.lblTittleDanhSachNhanVien.Name = "lblTittleDanhSachNhanVien";
-            this.lblTittleDanhSachNhanVien.Size = new System.Drawing.Size(317, 31);
-            this.lblTittleDanhSachNhanVien.TabIndex = 7;
-            this.lblTittleDanhSachNhanVien.Text = "DANH SÁCH NHÂN VIÊN";
-            // 
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.Honeydew;
@@ -906,6 +1085,7 @@ namespace MINI.GUI
             this.panelInfo.Controls.Add(this.labelChucVu);
             this.panelInfo.Controls.Add(this.lblNull);
             this.panelInfo.Controls.Add(idNhanVienLabel);
+            this.panelInfo.Controls.Add(this.pictureBoxInfo);
             this.panelInfo.Controls.Add(this.txtIDNhanVienNV);
             this.panelInfo.Controls.Add(hoVaTenLabel);
             this.panelInfo.Controls.Add(this.txtHoVaTenNV);
@@ -926,143 +1106,11 @@ namespace MINI.GUI
             this.panelInfo.Controls.Add(diaChiLabel);
             this.panelInfo.Controls.Add(this.txtDiaChiNV);
             this.panelInfo.Controls.Add(this.btnSuaNV);
-            this.panelInfo.Location = new System.Drawing.Point(207, 95);
+            this.panelInfo.Location = new System.Drawing.Point(140, 59);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(772, 315);
+            this.panelInfo.Size = new System.Drawing.Size(911, 252);
             this.panelInfo.TabIndex = 2;
-            // 
-            // panelTaiKhoan
-            // 
-            this.panelTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTaiKhoan.BackColor = System.Drawing.Color.Beige;
-            this.panelTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTaiKhoan.Controls.Add(this.btnSuaTKNV);
-            this.panelTaiKhoan.Controls.Add(label5);
-            this.panelTaiKhoan.Controls.Add(this.txtHoVaTenNVTK);
-            this.panelTaiKhoan.Controls.Add(this.lblChucVuNVTK);
-            this.panelTaiKhoan.Controls.Add(this.pictureBox3);
-            this.panelTaiKhoan.Controls.Add(this.button1);
-            this.panelTaiKhoan.Controls.Add(idTaiKhoanLabel2);
-            this.panelTaiKhoan.Controls.Add(this.txtIDTaiKhoanNV);
-            this.panelTaiKhoan.Controls.Add(idNhanVienLabel3);
-            this.panelTaiKhoan.Controls.Add(this.txtIDNhanVienNVTK);
-            this.panelTaiKhoan.Controls.Add(usernameLabel2);
-            this.panelTaiKhoan.Controls.Add(this.txtUsernameNV);
-            this.panelTaiKhoan.Controls.Add(passwordLabel2);
-            this.panelTaiKhoan.Controls.Add(this.txtPasswordNV);
-            this.panelTaiKhoan.Controls.Add(quyenLabel2);
-            this.panelTaiKhoan.Controls.Add(this.txtQuyenNV);
-            this.panelTaiKhoan.Location = new System.Drawing.Point(364, 60);
-            this.panelTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
-            this.panelTaiKhoan.Name = "panelTaiKhoan";
-            this.panelTaiKhoan.Size = new System.Drawing.Size(509, 276);
-            this.panelTaiKhoan.TabIndex = 26;
-            this.panelTaiKhoan.Visible = false;
-            // 
-            // btnSuaTKNV
-            // 
-            this.btnSuaTKNV.BackColor = System.Drawing.Color.White;
-            this.btnSuaTKNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSuaTKNV.BackgroundImage")));
-            this.btnSuaTKNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSuaTKNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(50)))), ((int)(((byte)(31)))));
-            this.btnSuaTKNV.FlatAppearance.BorderSize = 3;
-            this.btnSuaTKNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaTKNV.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaTKNV.Location = new System.Drawing.Point(463, 49);
-            this.btnSuaTKNV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSuaTKNV.Name = "btnSuaTKNV";
-            this.btnSuaTKNV.Size = new System.Drawing.Size(41, 41);
-            this.btnSuaTKNV.TabIndex = 31;
-            this.btnSuaTKNV.UseVisualStyleBackColor = false;
-            this.btnSuaTKNV.Click += new System.EventHandler(this.btnSuaTKNV_Click);
-            // 
-            // txtHoVaTenNVTK
-            // 
-            this.txtHoVaTenNVTK.BackColor = System.Drawing.SystemColors.Window;
-            this.txtHoVaTenNVTK.Location = new System.Drawing.Point(264, 117);
-            this.txtHoVaTenNVTK.Name = "txtHoVaTenNVTK";
-            this.txtHoVaTenNVTK.ReadOnly = true;
-            this.txtHoVaTenNVTK.Size = new System.Drawing.Size(185, 26);
-            this.txtHoVaTenNVTK.TabIndex = 30;
-            // 
-            // lblChucVuNVTK
-            // 
-            this.lblChucVuNVTK.AutoSize = true;
-            this.lblChucVuNVTK.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChucVuNVTK.Location = new System.Drawing.Point(23, 187);
-            this.lblChucVuNVTK.Name = "lblChucVuNVTK";
-            this.lblChucVuNVTK.Size = new System.Drawing.Size(22, 21);
-            this.lblChucVuNVTK.TabIndex = 28;
-            this.lblChucVuNVTK.Text = "...";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(115, 129);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(461, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtIDTaiKhoanNV
-            // 
-            this.txtIDTaiKhoanNV.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtIDTaiKhoanNV.Location = new System.Drawing.Point(264, 47);
-            this.txtIDTaiKhoanNV.Name = "txtIDTaiKhoanNV";
-            this.txtIDTaiKhoanNV.ReadOnly = true;
-            this.txtIDTaiKhoanNV.Size = new System.Drawing.Size(185, 26);
-            this.txtIDTaiKhoanNV.TabIndex = 1;
-            // 
-            // txtIDNhanVienNVTK
-            // 
-            this.txtIDNhanVienNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtIDNhanVienNVTK.Location = new System.Drawing.Point(264, 82);
-            this.txtIDNhanVienNVTK.Name = "txtIDNhanVienNVTK";
-            this.txtIDNhanVienNVTK.ReadOnly = true;
-            this.txtIDNhanVienNVTK.Size = new System.Drawing.Size(185, 26);
-            this.txtIDNhanVienNVTK.TabIndex = 3;
-            // 
-            // txtUsernameNV
-            // 
-            this.txtUsernameNV.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtUsernameNV.Location = new System.Drawing.Point(264, 152);
-            this.txtUsernameNV.Name = "txtUsernameNV";
-            this.txtUsernameNV.ReadOnly = true;
-            this.txtUsernameNV.Size = new System.Drawing.Size(185, 26);
-            this.txtUsernameNV.TabIndex = 5;
-            // 
-            // txtPasswordNV
-            // 
-            this.txtPasswordNV.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtPasswordNV.Location = new System.Drawing.Point(264, 187);
-            this.txtPasswordNV.Name = "txtPasswordNV";
-            this.txtPasswordNV.ReadOnly = true;
-            this.txtPasswordNV.Size = new System.Drawing.Size(185, 26);
-            this.txtPasswordNV.TabIndex = 7;
-            // 
-            // txtQuyenNV
-            // 
-            this.txtQuyenNV.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtQuyenNV.Location = new System.Drawing.Point(264, 222);
-            this.txtQuyenNV.Name = "txtQuyenNV";
-            this.txtQuyenNV.ReadOnly = true;
-            this.txtQuyenNV.Size = new System.Drawing.Size(185, 26);
-            this.txtQuyenNV.TabIndex = 9;
             // 
             // btnTaiKhoanNV
             // 
@@ -1070,11 +1118,12 @@ namespace MINI.GUI
             this.btnTaiKhoanNV.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
             this.btnTaiKhoanNV.FlatAppearance.BorderSize = 3;
             this.btnTaiKhoanNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoanNV.Location = new System.Drawing.Point(632, 224);
+            this.btnTaiKhoanNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaiKhoanNV.Location = new System.Drawing.Point(703, 177);
             this.btnTaiKhoanNV.Name = "btnTaiKhoanNV";
-            this.btnTaiKhoanNV.Size = new System.Drawing.Size(121, 38);
+            this.btnTaiKhoanNV.Size = new System.Drawing.Size(131, 30);
             this.btnTaiKhoanNV.TabIndex = 25;
-            this.btnTaiKhoanNV.Text = "Tài khoản";
+            this.btnTaiKhoanNV.Text = "Xem tài khoản";
             this.btnTaiKhoanNV.UseVisualStyleBackColor = false;
             this.btnTaiKhoanNV.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
@@ -1082,7 +1131,7 @@ namespace MINI.GUI
             // 
             this.labelChucVu.AutoSize = true;
             this.labelChucVu.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChucVu.Location = new System.Drawing.Point(420, 224);
+            this.labelChucVu.Location = new System.Drawing.Point(26, 171);
             this.labelChucVu.Name = "labelChucVu";
             this.labelChucVu.Size = new System.Drawing.Size(22, 21);
             this.labelChucVu.TabIndex = 24;
@@ -1092,17 +1141,28 @@ namespace MINI.GUI
             // 
             this.lblNull.AutoSize = true;
             this.lblNull.Enabled = false;
-            this.lblNull.Location = new System.Drawing.Point(549, 189);
+            this.lblNull.Location = new System.Drawing.Point(630, 146);
             this.lblNull.Name = "lblNull";
             this.lblNull.Size = new System.Drawing.Size(24, 20);
             this.lblNull.TabIndex = 23;
             this.lblNull.Text = "///";
             this.lblNull.Visible = false;
             // 
+            // pictureBoxInfo
+            // 
+            this.pictureBoxInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.BackgroundImage")));
+            this.pictureBoxInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.Image")));
+            this.pictureBoxInfo.Location = new System.Drawing.Point(20, 67);
+            this.pictureBoxInfo.Name = "pictureBoxInfo";
+            this.pictureBoxInfo.Size = new System.Drawing.Size(111, 113);
+            this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInfo.TabIndex = 24;
+            this.pictureBoxInfo.TabStop = false;
+            // 
             // txtIDNhanVienNV
             // 
             this.txtIDNhanVienNV.BackColor = System.Drawing.Color.White;
-            this.txtIDNhanVienNV.Location = new System.Drawing.Point(202, 77);
+            this.txtIDNhanVienNV.Location = new System.Drawing.Point(283, 34);
             this.txtIDNhanVienNV.Name = "txtIDNhanVienNV";
             this.txtIDNhanVienNV.ReadOnly = true;
             this.txtIDNhanVienNV.Size = new System.Drawing.Size(200, 26);
@@ -1111,7 +1171,7 @@ namespace MINI.GUI
             // txtHoVaTenNV
             // 
             this.txtHoVaTenNV.BackColor = System.Drawing.Color.White;
-            this.txtHoVaTenNV.Location = new System.Drawing.Point(202, 112);
+            this.txtHoVaTenNV.Location = new System.Drawing.Point(283, 69);
             this.txtHoVaTenNV.Name = "txtHoVaTenNV";
             this.txtHoVaTenNV.ReadOnly = true;
             this.txtHoVaTenNV.Size = new System.Drawing.Size(200, 26);
@@ -1120,7 +1180,7 @@ namespace MINI.GUI
             // txtSDTNV
             // 
             this.txtSDTNV.BackColor = System.Drawing.Color.White;
-            this.txtSDTNV.Location = new System.Drawing.Point(202, 147);
+            this.txtSDTNV.Location = new System.Drawing.Point(283, 104);
             this.txtSDTNV.Name = "txtSDTNV";
             this.txtSDTNV.ReadOnly = true;
             this.txtSDTNV.Size = new System.Drawing.Size(200, 26);
@@ -1129,7 +1189,7 @@ namespace MINI.GUI
             // txtGioiTinhNV
             // 
             this.txtGioiTinhNV.BackColor = System.Drawing.Color.White;
-            this.txtGioiTinhNV.Location = new System.Drawing.Point(202, 182);
+            this.txtGioiTinhNV.Location = new System.Drawing.Point(283, 139);
             this.txtGioiTinhNV.Name = "txtGioiTinhNV";
             this.txtGioiTinhNV.ReadOnly = true;
             this.txtGioiTinhNV.Size = new System.Drawing.Size(200, 26);
@@ -1138,7 +1198,7 @@ namespace MINI.GUI
             // txtIDChucVuNV
             // 
             this.txtIDChucVuNV.BackColor = System.Drawing.Color.White;
-            this.txtIDChucVuNV.Location = new System.Drawing.Point(202, 217);
+            this.txtIDChucVuNV.Location = new System.Drawing.Point(283, 174);
             this.txtIDChucVuNV.Name = "txtIDChucVuNV";
             this.txtIDChucVuNV.ReadOnly = true;
             this.txtIDChucVuNV.Size = new System.Drawing.Size(200, 26);
@@ -1147,7 +1207,7 @@ namespace MINI.GUI
             // txtLuongNV
             // 
             this.txtLuongNV.BackColor = System.Drawing.Color.White;
-            this.txtLuongNV.Location = new System.Drawing.Point(553, 75);
+            this.txtLuongNV.Location = new System.Drawing.Point(634, 32);
             this.txtLuongNV.Name = "txtLuongNV";
             this.txtLuongNV.ReadOnly = true;
             this.txtLuongNV.Size = new System.Drawing.Size(200, 26);
@@ -1156,7 +1216,7 @@ namespace MINI.GUI
             // txtTrangThaiNV
             // 
             this.txtTrangThaiNV.BackColor = System.Drawing.Color.White;
-            this.txtTrangThaiNV.Location = new System.Drawing.Point(553, 147);
+            this.txtTrangThaiNV.Location = new System.Drawing.Point(634, 104);
             this.txtTrangThaiNV.Name = "txtTrangThaiNV";
             this.txtTrangThaiNV.ReadOnly = true;
             this.txtTrangThaiNV.Size = new System.Drawing.Size(200, 26);
@@ -1166,7 +1226,7 @@ namespace MINI.GUI
             // 
             this.DTPNgayNghiNV.Enabled = false;
             this.DTPNgayNghiNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPNgayNghiNV.Location = new System.Drawing.Point(553, 185);
+            this.DTPNgayNghiNV.Location = new System.Drawing.Point(634, 142);
             this.DTPNgayNghiNV.Name = "DTPNgayNghiNV";
             this.DTPNgayNghiNV.Size = new System.Drawing.Size(200, 26);
             this.DTPNgayNghiNV.TabIndex = 18;
@@ -1175,7 +1235,7 @@ namespace MINI.GUI
             // 
             this.DTPNgaySinhNV.Enabled = false;
             this.DTPNgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPNgaySinhNV.Location = new System.Drawing.Point(553, 110);
+            this.DTPNgaySinhNV.Location = new System.Drawing.Point(634, 67);
             this.DTPNgaySinhNV.Name = "DTPNgaySinhNV";
             this.DTPNgaySinhNV.Size = new System.Drawing.Size(200, 26);
             this.DTPNgaySinhNV.TabIndex = 20;
@@ -1183,7 +1243,7 @@ namespace MINI.GUI
             // txtDiaChiNV
             // 
             this.txtDiaChiNV.BackColor = System.Drawing.Color.White;
-            this.txtDiaChiNV.Location = new System.Drawing.Point(202, 252);
+            this.txtDiaChiNV.Location = new System.Drawing.Point(283, 209);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.ReadOnly = true;
             this.txtDiaChiNV.Size = new System.Drawing.Size(354, 26);
@@ -1198,7 +1258,7 @@ namespace MINI.GUI
             this.btnSuaNV.FlatAppearance.BorderSize = 4;
             this.btnSuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaNV.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaNV.Location = new System.Drawing.Point(713, 4);
+            this.btnSuaNV.Location = new System.Drawing.Point(848, 11);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(47, 47);
@@ -1211,7 +1271,7 @@ namespace MINI.GUI
             this.tabNhanVien.Controls.Add(this.tabThongTinNhanVien);
             this.tabNhanVien.Controls.Add(this.tabSuaThemNhanVien);
             this.tabNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNhanVien.ItemSize = new System.Drawing.Size(136, 50);
+            this.tabNhanVien.ItemSize = new System.Drawing.Size(130, 50);
             this.tabNhanVien.Location = new System.Drawing.Point(0, 0);
             this.tabNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.tabNhanVien.Name = "tabNhanVien";
@@ -1219,6 +1279,7 @@ namespace MINI.GUI
             this.tabNhanVien.Size = new System.Drawing.Size(1182, 761);
             this.tabNhanVien.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabNhanVien.TabIndex = 1;
+            this.tabNhanVien.SelectedIndexChanged += new System.EventHandler(this.tabNhanVien_SelectedIndexChanged);
             // 
             // NhanVien
             // 
@@ -1231,7 +1292,6 @@ namespace MINI.GUI
             this.Name = "NhanVien";
             this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.NhanVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.miniMarketDataSet)).EndInit();
             this.tabSuaThemNhanVien.ResumeLayout(false);
             this.tabSuaThemNhanVien.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1240,20 +1300,22 @@ namespace MINI.GUI
             this.panelThemThongTinNhanVien.ResumeLayout(false);
             this.panelThemThongTinNhanVien.PerformLayout();
             this.tabThongTinNhanVien.ResumeLayout(false);
-            this.tabThongTinNhanVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
-            this.panelInfo.ResumeLayout(false);
-            this.panelInfo.PerformLayout();
+            this.groupBoxLocTheo.ResumeLayout(false);
+            this.groupBoxTimKiem.ResumeLayout(false);
+            this.groupBoxTimKiem.PerformLayout();
+            this.groupBoxTheoDKLoc.ResumeLayout(false);
             this.panelTaiKhoan.ResumeLayout(false);
             this.panelTaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
             this.tabNhanVien.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MiniMarketDataSet miniMarketDataSet;
         private System.Windows.Forms.TabPage tabSuaThemNhanVien;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1298,19 +1360,17 @@ namespace MINI.GUI
         private System.Windows.Forms.PictureBox pictureBoxInfo;
         private System.Windows.Forms.Button btnReloadNV;
         private System.Windows.Forms.Button btnThemNV;
-        private System.Windows.Forms.Label lblTittleDanhSachNhanVien;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Panel panelTaiKhoan;
-        private System.Windows.Forms.Button btnSuaTKNV;
         private System.Windows.Forms.TextBox txtHoVaTenNVTK;
         private System.Windows.Forms.Label lblChucVuNVTK;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtIDTaiKhoanNV;
+        private System.Windows.Forms.TextBox txtIDTaiKhoanNVTK;
         private System.Windows.Forms.TextBox txtIDNhanVienNVTK;
-        private System.Windows.Forms.TextBox txtUsernameNV;
-        private System.Windows.Forms.TextBox txtPasswordNV;
-        private System.Windows.Forms.TextBox txtQuyenNV;
+        private System.Windows.Forms.TextBox txtUsernameNVTK;
+        private System.Windows.Forms.TextBox txtPasswordNVTK;
+        private System.Windows.Forms.TextBox txtQuyenNVTK;
         private System.Windows.Forms.Button btnTaiKhoanNV;
         private System.Windows.Forms.Label labelChucVu;
         private System.Windows.Forms.Label lblNull;
@@ -1326,5 +1386,12 @@ namespace MINI.GUI
         private System.Windows.Forms.TextBox txtDiaChiNV;
         private System.Windows.Forms.Button btnSuaNV;
         private System.Windows.Forms.TabControl tabNhanVien;
+        private System.Windows.Forms.GroupBox groupBoxTheoDKLoc;
+        private System.Windows.Forms.ComboBox cbbLocTheoDKLoc;
+        private System.Windows.Forms.GroupBox groupBoxTimKiem;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.GroupBox groupBoxLocTheo;
+        private System.Windows.Forms.ComboBox comboBoxLocTheo;
     }
 }

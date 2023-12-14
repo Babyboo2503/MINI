@@ -1,4 +1,4 @@
-﻿namespace MINI.GUI
+﻿namespace MINI.src.GUI
 {
     partial class Product
     {

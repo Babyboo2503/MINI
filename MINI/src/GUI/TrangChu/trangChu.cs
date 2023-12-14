@@ -1,5 +1,4 @@
-﻿using MINI.src.GUI.ThongKe;
-using MINI.src.GUI.TK;
+﻿using MINI.src.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MINI.GUI
+namespace MINI.src.GUI
 {
     public partial class trangChu : Form
     {
@@ -44,7 +43,7 @@ namespace MINI.GUI
         //
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
             {
@@ -78,36 +77,10 @@ namespace MINI.GUI
         {
             openChildForm(new NhanVien(Username,Password));
         }
-       
-        private void btnSanPham_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void btnKhachHang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBaoCao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPhieuNhap_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
+            openChildForm(new KhuyenMai());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -116,19 +89,53 @@ namespace MINI.GUI
             //..
         }
 
-        private void btnNhaCungCap_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            openChildForm(new TaiKhoan());
+            openChildForm(new TaiKhoan(Username,Password));
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BanHang());
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new NhapHangGUI());
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SanPham());
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HoaDon());
+        }
+        private void btnPhieuNhap_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PhieuNhapGUI());
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new KhachHang());
+        }
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BaoCao());
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThemNCC());
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

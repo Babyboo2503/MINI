@@ -1,5 +1,4 @@
-﻿using MINI.GUI;
-using MINI.src.GUI.ThongKe;
+﻿using MINI.src.GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MiniMarketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiniMarketDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="src\BUS\BaoCaoBUS.cs" />
     <Compile Include="src\BUS\ChucVuBUS.cs" />
     <Compile Include="src\BUS\CTHoaDonBUS.cs" />
@@ -54,7 +59,6 @@
     <Compile Include="src\BUS\KhuyenMaiBUS.cs" />
     <Compile Include="src\BUS\NhanVienBUS.cs" />
     <Compile Include="src\BUS\PhanQuyenBUS.cs" />
-    <Compile Include="src\GUI\NhapHang\NhapHangGUIHelpers.cs" />
     <Compile Include="src\BUS\PhieuNhapBUS.cs" />
     <Compile Include="src\BUS\SanPhamBUS.cs" />
     <Compile Include="src\BUS\TaiKhoanBUS.cs" />
@@ -88,11 +92,9 @@
     <Compile Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.Designer.cs" />
-    <Compile Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.cs">
-      <SubType>Form</SubType>
+    <Compile Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.designer.cs">
+      <DependentUpon>ChiTietPhieuNhapGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.Designer.cs" />
     <Compile Include="src\GUI\HoaDon\HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,12 +106,6 @@
     </Compile>
     <Compile Include="src\GUI\KhachHang\KhachHang.designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\GUI\KhuyenMai\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\GUI\KhuyenMai\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\KhuyenMai\KhuyenMai.cs">
       <SubType>Form</SubType>
@@ -123,8 +119,18 @@
     <Compile Include="src\GUI\Login\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\HoaDon\Class1.cs" />
-    <Compile Include="src\GUI\KhachHang\Class1.cs" />
+    <Compile Include="src\GUI\NhaCungCap\ChonNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\NhaCungCap\ChonNhaCungCap.Designer.cs">
+      <DependentUpon>ChonNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\NhaCungCap\ThemNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\NhaCungCap\ThemNCC.Designer.cs">
+      <DependentUpon>ThemNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\NhanVien\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +140,15 @@
     <Compile Include="src\GUI\NhapHang\NhapHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\NhapHang\NhapHangGUI.Designer.cs" />
+    <Compile Include="src\GUI\NhapHang\NhapHangGUI.designer.cs">
+      <DependentUpon>NhapHangGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.Designer.cs" />
+    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.designer.cs">
+      <DependentUpon>PhieuNhapGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\SanPham\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,7 +161,6 @@
     <Compile Include="src\GUI\SanPham\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\SanPham\Class1.cs" />
     <Compile Include="src\GUI\ThongKe\frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,10 +179,10 @@
     <Compile Include="src\GUI\ThongKe\frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\TK\TaiKhoan.cs">
+    <Compile Include="src\GUI\Account\TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\TK\TaiKhoan.Designer.cs">
+    <Compile Include="src\GUI\Account\TaiKhoan.Designer.cs">
       <DependentUpon>TaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\TrangChu\trangChu.cs">
@@ -181,11 +190,6 @@
     </Compile>
     <Compile Include="src\GUI\TrangChu\trangChu.Designer.cs">
       <DependentUpon>trangChu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MiniMarketDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiniMarketDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,8 +199,9 @@
     <EmbeddedResource Include="src\GUI\BaoCao\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.resx" />
-    <EmbeddedResource Include="src\GUI\ChonNhaCungCap\ChonNhaCungCap.resx" />
+    <EmbeddedResource Include="src\GUI\ChiTietPhieuNhap\ChiTietPhieuNhapGUI.resx">
+      <DependentUpon>ChiTietPhieuNhapGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\HoaDon\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,8 +218,12 @@
       <DependentUpon>NhanVien.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\NhapHang\NhapHangGUI.resx" />
-    <EmbeddedResource Include="src\GUI\PhieuNhap\PhieuNhapGUI.resx" />
+    <EmbeddedResource Include="src\GUI\NhapHang\NhapHangGUI.resx">
+      <DependentUpon>NhapHangGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\PhieuNhap\PhieuNhapGUI.resx">
+      <DependentUpon>PhieuNhapGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\SanPham\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,7 +239,7 @@
     <EmbeddedResource Include="src\GUI\ThongKe\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\TK\TaiKhoan.resx">
+    <EmbeddedResource Include="src\GUI\Account\TaiKhoan.resx">
       <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\TrangChu\trangChu.resx">

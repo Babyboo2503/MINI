@@ -9,15 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MINI.src.GUI.PhieuNhap
+namespace MINI.src.GUI
 {
     public partial class ChiTietPhieuNhapGUI : Form
     {
         PhieuNhapBUS ctpn = new PhieuNhapBUS();
-        public ChiTietPhieuNhapGUI()
+        public string maPhieuNhap;
+        public ChiTietPhieuNhapGUI(string maPhieuNhap)
         {
             InitializeComponent();
+            this.maPhieuNhap = maPhieuNhap;
+           /* TimKiemTheoMaPhieuNhap(maPhieuNhap);*/
         }
+
 
         void HienThiCTPhieuNhap()
         {
@@ -54,7 +58,7 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void ChiTietPhieuNhapGUI_Load(object sender, EventArgs e)
         {
-            HienThiCTPhieuNhap();
+            TimKiemTheoMaPhieuNhap(maPhieuNhap);
         }
 
         private void btnlammoictpn_Click(object sender, EventArgs e)
@@ -65,7 +69,28 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            TimKiemTheoMaPhieuNhap(txtsearchctpn.Text);
+            if (string.IsNullOrEmpty(txtsearchctpn.Text) || !txtsearchctpn.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                TimKiemTheoMaPhieuNhap(txtsearchctpn.Text);
+            }
+        }
+
+        private void txtsearchctpn_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtsearchctpn.Text))
+            {
+                txtsearchctpn.Text = "Tên Nhà Cung Cấp ";
+                txtsearchctpn.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtsearchctpn_Click(object sender, EventArgs e)
+        {
+            txtsearchctpn.Clear();
         }
     }
 }

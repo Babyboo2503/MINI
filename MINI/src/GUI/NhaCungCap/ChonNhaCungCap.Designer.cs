@@ -1,4 +1,4 @@
-﻿namespace MINI.src.GUI.PhieuNhap
+﻿namespace MINI.src.GUI
 {
     partial class ChonNhaCungCap
     {
@@ -39,14 +39,18 @@
             this.txtsearchncc = new System.Windows.Forms.TextBox();
             this.btnchon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnthemncc = new System.Windows.Forms.Button();
+            this.btnsuancc = new System.Windows.Forms.Button();
+            this.btnxoancc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btntimkiemncc
             // 
-            this.btntimkiemncc.Location = new System.Drawing.Point(403, 77);
+            this.btntimkiemncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntimkiemncc.Location = new System.Drawing.Point(264, 81);
             this.btntimkiemncc.Name = "btntimkiemncc";
-            this.btntimkiemncc.Size = new System.Drawing.Size(75, 23);
+            this.btntimkiemncc.Size = new System.Drawing.Size(100, 50);
             this.btntimkiemncc.TabIndex = 7;
             this.btntimkiemncc.Text = "Tìm Kiếm";
             this.btntimkiemncc.UseVisualStyleBackColor = true;
@@ -67,6 +71,7 @@
             this.lsvchonncc.TabIndex = 6;
             this.lsvchonncc.UseCompatibleStateImageBehavior = false;
             this.lsvchonncc.View = System.Windows.Forms.View.Details;
+            this.lsvchonncc.SelectedIndexChanged += new System.EventHandler(this.lsvchonncc_SelectedIndexChanged);
             // 
             // idphieunhap
             // 
@@ -90,9 +95,10 @@
             // 
             // btnlammoincc
             // 
-            this.btnlammoincc.Location = new System.Drawing.Point(524, 77);
+            this.btnlammoincc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlammoincc.Location = new System.Drawing.Point(370, 81);
             this.btnlammoincc.Name = "btnlammoincc";
-            this.btnlammoincc.Size = new System.Drawing.Size(75, 20);
+            this.btnlammoincc.Size = new System.Drawing.Size(100, 50);
             this.btnlammoincc.TabIndex = 5;
             this.btnlammoincc.Text = "Làm Mới";
             this.btnlammoincc.UseVisualStyleBackColor = true;
@@ -101,25 +107,32 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtsearchncc);
-            this.groupBox1.Location = new System.Drawing.Point(197, 63);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(58, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 40);
+            this.groupBox1.Size = new System.Drawing.Size(200, 50);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
             // 
             // txtsearchncc
             // 
-            this.txtsearchncc.Location = new System.Drawing.Point(6, 14);
+            this.txtsearchncc.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearchncc.ForeColor = System.Drawing.Color.Black;
+            this.txtsearchncc.Location = new System.Drawing.Point(6, 25);
             this.txtsearchncc.Name = "txtsearchncc";
             this.txtsearchncc.Size = new System.Drawing.Size(188, 20);
             this.txtsearchncc.TabIndex = 0;
+            this.txtsearchncc.Click += new System.EventHandler(this.txtsearchncc_Click);
+            this.txtsearchncc.TextChanged += new System.EventHandler(this.txtsearchncc_TextChanged);
+            this.txtsearchncc.Leave += new System.EventHandler(this.txtsearchncc_Leave);
             // 
             // btnchon
             // 
-            this.btnchon.Location = new System.Drawing.Point(316, 415);
+            this.btnchon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchon.Location = new System.Drawing.Point(527, 393);
             this.btnchon.Name = "btnchon";
-            this.btnchon.Size = new System.Drawing.Size(75, 23);
+            this.btnchon.Size = new System.Drawing.Size(100, 50);
             this.btnchon.TabIndex = 8;
             this.btnchon.Text = "Chọn";
             this.btnchon.UseVisualStyleBackColor = true;
@@ -127,19 +140,58 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(422, 415);
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(633, 393);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(100, 50);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // btnthemncc
+            // 
+            this.btnthemncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthemncc.Location = new System.Drawing.Point(479, 81);
+            this.btnthemncc.Name = "btnthemncc";
+            this.btnthemncc.Size = new System.Drawing.Size(100, 50);
+            this.btnthemncc.TabIndex = 10;
+            this.btnthemncc.Text = "Thêm ";
+            this.btnthemncc.UseVisualStyleBackColor = true;
+            this.btnthemncc.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnsuancc
+            // 
+            this.btnsuancc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsuancc.Location = new System.Drawing.Point(585, 81);
+            this.btnsuancc.Name = "btnsuancc";
+            this.btnsuancc.Size = new System.Drawing.Size(100, 50);
+            this.btnsuancc.TabIndex = 11;
+            this.btnsuancc.Text = "Sửa ";
+            this.btnsuancc.UseVisualStyleBackColor = true;
+            this.btnsuancc.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnxoancc
+            // 
+            this.btnxoancc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoancc.Location = new System.Drawing.Point(691, 81);
+            this.btnxoancc.Name = "btnxoancc";
+            this.btnxoancc.Size = new System.Drawing.Size(100, 50);
+            this.btnxoancc.TabIndex = 12;
+            this.btnxoancc.Text = "Xóa";
+            this.btnxoancc.UseVisualStyleBackColor = true;
+            this.btnxoancc.Click += new System.EventHandler(this.button3_Click);
+            this.btnxoancc.Leave += new System.EventHandler(this.button3_Leave);
+            // 
             // ChonNhaCungCap
             // 
+            this.AcceptButton = this.btntimkiemncc;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnxoancc);
+            this.Controls.Add(this.btnsuancc);
+            this.Controls.Add(this.btnthemncc);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnchon);
             this.Controls.Add(this.btntimkiemncc);
@@ -148,6 +200,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ChonNhaCungCap";
             this.Text = "ChonNhaCungCap";
+            this.Activated += new System.EventHandler(this.ChonNhaCungCap_Activated);
             this.Load += new System.EventHandler(this.ChonNhaCungCap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -168,5 +221,8 @@
         private System.Windows.Forms.TextBox txtsearchncc;
         private System.Windows.Forms.Button btnchon;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnthemncc;
+        private System.Windows.Forms.Button btnsuancc;
+        private System.Windows.Forms.Button btnxoancc;
     }
 }

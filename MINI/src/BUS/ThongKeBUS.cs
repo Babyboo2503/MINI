@@ -1,4 +1,4 @@
-﻿using MINI.GUI;
+﻿using MINI.src.GUI;
 using MINI.src.DAO;
 using MINI.src.DTO;
 using System;
@@ -28,9 +28,39 @@ namespace MINI.src.BUS
         {
             db = new Database();
         }
-        public DataTable layDanhSachNhanVien()
+        public DataTable layDanhSachNhanVienTheoHoaDon()
         {
-            string strSQL = "SELECT idNhanVien, hoVaTen, soDienThoai, gioiTinh, luong, trangThai, ngaySinh, ngayNghi, diaChi, tenChucVu FROM NhanVien nv, ChucVu cv WHERE nv.idChucVu = cv.idChucVu";
+            string strSQL = "SELECT " +
+                "HD.idHoaDon, " +
+                "NV.idNhanVien, " +
+                "NV.hoVaTen, " +
+                "HD.ngayLap, " +
+                "HD.tongHoaDon, " +
+                "CV.tenChucVu, " +
+                "NV.ngayNghi " +
+                "FROM NhanVien NV " +
+                "JOIN HoaDon HD ON NV.idNhanVien = HD.idNhanVien " +
+                "JOIN ChucVu CV ON NV.idChucVu = CV.idChucVu " +
+                "ORDER BY HD.idHoaDon ASC;";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+
+
+        public DataTable layDanhSachNhanVienTheoPhieuNhap()
+        {
+            string strSQL = "SELECT " +
+                "PN.idPhieuNhap, " +
+                "NV.idNhanVien, " +
+                "NV.hoVaTen, " +
+                "PN.ngayNhap, " +
+                "PN.tongTien, " +
+                "CV.tenChucVu, " +
+                "NV.ngayNghi " +
+                "FROM NhanVien NV " +
+                "JOIN PhieuNhap PN ON NV.idNhanVien = PN.idNhanVien " +
+                "JOIN ChucVu CV ON NV.idChucVu = CV.idChucVu " +
+                "ORDER BY PN.idNhanVien ASC;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -61,9 +91,36 @@ namespace MINI.src.BUS
             return dsNhanVien;
         }
 
-        public DataTable layDanhSachSanPham()
+        public DataTable layDanhSachSanPhamTheoHoaDonBan()
         {
-            string strSQL = "SELECT idSanPham, tenSanPham, hinhAnh, donGia, soLuong, trangThai, chietKhau, tenLoaiSanPham FROM SanPham sp, LoaiSanPham lsp WHERE sp.idLoaiSanPham = lsp.idLoaiSanPham";
+            string strSQL = "SELECT " +
+                "CHD.idSanPham, " +
+                "SP.tenSanPham, " +
+                "SP.donGia, " +
+                "MAX(CHD.donGia) AS MaxDonGia, " +
+                "SUM(CHD.soLuong) AS TongSoLuong, " +
+                "SUM(CHD.tongTien) AS TongTien " +
+                "FROM ChiTietHoaDon CHD " +
+                "JOIN SanPham SP ON CHD.idSanPham = SP.idSanPham " +
+                "GROUP BY CHD.idSanPham, SP.tenSanPham, SP.donGia " +
+                "ORDER BY CHD.idSanPham ASC;";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+
+        public DataTable layDanhSachSanPhamTheoPhieuNhap()
+        {
+            string strSQL = "SELECT " +
+                "CTPN.idSanPham, " +
+                "SP.tenSanPham, " +
+                "SP.donGia, " +
+                "MAX(CTPN.donGia) AS MaxDonGia, " +
+                "SUM(CTPN.soLuong) AS TongSoLuong, " +
+                "SUM(CTPN.thanhTien) AS TongTien " +
+                "FROM ChiTietPhieuNhap CTPN " +
+                "JOIN SanPham SP ON CTPN.idSanPham = SP.idSanPham " +
+                "GROUP BY CTPN.idSanPham, SP.tenSanPham, SP.donGia " +
+                "ORDER BY CTPN.idSanPham ASC;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -85,13 +142,24 @@ namespace MINI.src.BUS
                 sp.tenSanPham = dr["tenSanPham"].ToString();
                 sp.hinhAnh = dr["hinhAnh"].ToString();
                 dsSanPham.Add(sp);
-            } 
+            }
             return dsSanPham;
         }
 
         public DataTable layDanhSachKhachHang()
         {
-            string strSQL = "SELECT * FROM KhachHang";
+            string strSQL = "SELECT " +
+                "HD.idHoaDon, " +
+                "KH.idKhachHang, " +
+                "KH.hoVaTen AS TenKhachHang, " +
+                "KH.soDienThoai, " +
+                "KH.diem, " +
+                "KM.tenKhuyenMai, " +
+                "HD.ngayLap, " +
+                "HD.tongHoaDon " +
+                "FROM HoaDon HD " +
+                "JOIN KhachHang KH ON HD.idKhachHang = KH.idKhachHang " +
+                "LEFT JOIN KhuyenMai KM ON HD.idKhuyenMai = KM.idKhuyenMai;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -101,7 +169,7 @@ namespace MINI.src.BUS
             string strSQL = "SELECT * FROM KhachHang";
             dsKhachHang = new List<KhachHangDTO>();
             DataTable dt = db.Execute(strSQL);
-            foreach(DataRow dr in dt.Rows )
+            foreach (DataRow dr in dt.Rows)
             {
                 KhachHangDTO kh = new KhachHangDTO();
                 kh.idKhachHang = Convert.ToInt32(dr["idKhachHang"]);
@@ -119,7 +187,17 @@ namespace MINI.src.BUS
 
         public DataTable layDanhSachNhaCungCap()
         {
-            string strSQL = "SELECT * FROM NhaCungCap";
+            string strSQL = "SELECT " +
+                "PN.idPhieuNhap, " +
+                "NCC.idNhaCungCap, " +
+                "NCC.tenNhaCungCap, " +
+                "NCC.diaChi, " +
+                "NCC.soDienThoai, " +
+                "PN.ngayNhap, " +
+                "PN.tongTien " +
+                "FROM PhieuNhap PN " +
+                "JOIN NhaCungCap NCC " +
+                "ON PN.idNhaCungCap = NCC.idNhaCungCap;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -139,7 +217,7 @@ namespace MINI.src.BUS
                 dsNhaCungCap.Add(ncc);
             }
             return dsNhaCungCap;
-        }        
+        }
 
         public DataTable layDanhSachBanHang()
         {
@@ -154,6 +232,24 @@ namespace MINI.src.BUS
                 JOIN NhanVien NV ON HD.idNhanVien = NV.idNhanVien
                 JOIN KhachHang KH ON HD.idKhachHang = KH.idKhachHang
                 LEFT JOIN KhuyenMai KM ON HD.idKhuyenMai = KM.idKhuyenMai";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+
+        public DataTable layDanhSachBanHangTheoNgayBatDauVaKetThuc(DateTime ngayBD, DateTime ngayKT)
+        {
+            string strSQL = @"
+                SELECT  HD.idHoaDon,
+                        NV.hoVaTen AS tenNhanVien,
+                        KH.hoVaTen AS tenKhachHang,
+                        HD.ngayLap,
+                        KM.tenKhuyenMai,
+                        tongHoaDon
+                        FROM HoaDon HD
+                        JOIN NhanVien NV ON HD.idNhanVien = NV.idNhanVien
+                        JOIN KhachHang KH ON HD.idKhachHang = KH.idKhachHang
+                        LEFT JOIN KhuyenMai KM ON HD.idKhuyenMai = KM.idKhuyenMai
+                        WHERE HD.ngayLap >= '" + ngayBD + "' AND HD.ngayLap <= '" + ngayKT + "'";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }
@@ -175,11 +271,11 @@ namespace MINI.src.BUS
         public List<HoaDonDTO> layDanhSachHoaDon()
         {
             string strSQL = "SELECT * FROM HoaDon";
-            dsHoaDon = new List<HoaDonDTO> ();
+            dsHoaDon = new List<HoaDonDTO>();
             DataTable dt = db.Execute(strSQL);
             foreach (DataRow dr in dt.Rows)
             {
-                HoaDonDTO hd = new HoaDonDTO ();
+                HoaDonDTO hd = new HoaDonDTO();
                 hd.idHoaDon = Convert.ToInt32(dr["idHoaDon"]);
                 hd.idNhanVien = Convert.ToInt32(dr["idNhanVien"]);
                 hd.idKhachHang = Convert.ToInt32(dr["idKhachHang"]);
@@ -194,11 +290,11 @@ namespace MINI.src.BUS
         public List<PhieuNhapDTO> layDanhSachNhapHang()
         {
             string strSQL = "SELECT * FROM PhieuNhap";
-            dsPhieuNhap = new List<PhieuNhapDTO> ();
+            dsPhieuNhap = new List<PhieuNhapDTO>();
             DataTable dt = db.Execute(strSQL);
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
-                PhieuNhapDTO pn = new PhieuNhapDTO ();
+                PhieuNhapDTO pn = new PhieuNhapDTO();
                 pn.idPhieuNhap = Convert.ToInt32(dr["idPhieuNhap"]);
                 pn.idNhanVien = Convert.ToInt32(dr["idNhanVien"]);
                 pn.idNhaCungCap = Convert.ToInt32(dr["idNhaCungCap"]);
@@ -209,20 +305,22 @@ namespace MINI.src.BUS
             return dsPhieuNhap;
         }
 
+
+
         public List<ChiTietHoaDonDTO> layDanhSachChiTietHoaDon(int idHoaDon)
         {
-            string SQL = "SELECT * FROM ChiTietHoaDon WHERE idHoaDon = " + idHoaDon.ToString();           
-            dsChiTietHoaDon = new List<ChiTietHoaDonDTO> ();
+            string SQL = "SELECT * FROM ChiTietHoaDon WHERE idHoaDon = " + idHoaDon.ToString();
+            dsChiTietHoaDon = new List<ChiTietHoaDonDTO>();
             DataTable dt = db.Execute(SQL);
             foreach (DataRow dr in dt.Rows)
             {
-                ChiTietHoaDonDTO cthd = new ChiTietHoaDonDTO ();
+                ChiTietHoaDonDTO cthd = new ChiTietHoaDonDTO();
                 cthd.idHoaDon = Convert.ToInt32(dr["idHoaDon"]);
                 cthd.idSanPham = Convert.ToInt32(dr["idSanPham"]);
                 cthd.soLuong = Convert.ToInt32(dr["soLuong"]);
                 cthd.donGia = decimal.Parse(dr["donGia"].ToString());
                 cthd.tongTien = decimal.Parse(dr["tongTien"].ToString());
-                dsChiTietHoaDon.Add(cthd); 
+                dsChiTietHoaDon.Add(cthd);
             }
             return dsChiTietHoaDon;
         }
@@ -238,6 +336,22 @@ namespace MINI.src.BUS
                 FROM PhieuNhap pn
                 JOIN NhanVien NV ON pn.idNhanVien = NV.idNhanVien
                 JOIN NhaCungCap NCC ON NCC.idNhaCungCap = pn.idNhaCungCap";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+
+        public DataTable layDanhSachPhieuNhapTheoNgayBatDauVaKetThuc(DateTime ngayBD, DateTime ngayKetThuc)
+        {
+            string strSQL = @"
+                SELECT pn.idPhieuNhap,
+                    NV.hoVaTen AS tenNhanVien,
+                    NCC.tenNhaCungCap AS tenNhaCungCap,
+                    pn.ngayNhap,
+	                pn.tongTien
+                FROM PhieuNhap pn
+                JOIN NhanVien NV ON pn.idNhanVien = NV.idNhanVien
+                JOIN NhaCungCap NCC ON NCC.idNhaCungCap = pn.idNhaCungCap
+                WHERE pn.ngayNhap <= '" + ngayBD + "' AND pn.ngayNhap >= '" + ngayKetThuc + "'";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }

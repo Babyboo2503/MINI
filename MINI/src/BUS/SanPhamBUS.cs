@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MINI.src.DAO;
-using MINI.src.DAO;
 
 namespace MINI.BUS
 {
@@ -217,7 +216,7 @@ namespace MINI.BUS
             return dt;
         }
 
-        public string GetImagePathForSelectedProduct(string productID)
+        /*public string GetImagePathForSelectedProduct(string productID)
         {
             string imagePath = null;
             // Kết nối đến cơ sở dữ liệu và thực hiện truy vấn để lấy đường dẫn ảnh sản phẩm
@@ -234,6 +233,12 @@ namespace MINI.BUS
                 }
             }
             return imagePath;
+        }*/
+        public DataTable layDanhSachSanPhamTheoTen(string tenSanPham)
+        {
+            string strSQL = "SELECT * FROM SanPham WHERE tenSanPham LIKE '%" + tenSanPham + "%'";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
         }
     }
 }

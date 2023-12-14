@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MINI.GUI
+namespace MINI.src.GUI
 {
     public partial class DangNhap : Form
     {
@@ -50,6 +50,7 @@ namespace MINI.GUI
                     MessageBox.Show("Đăng nhập thành công");
                     trangChu trangchu = new trangChu(PhanQuyenBUS.DangNhap(txtUsername.Text,txtPassword.Text), txtUsername.Text,txtPassword.Text);
                     trangchu.Show();
+/*                    this.Hide();*/
                 }
                 else
                 {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MINI.GUI
+namespace MINI.src.GUI
 {
     [DefaultEvent(nameof(TextChanged))]
     public partial class Product : UserControl

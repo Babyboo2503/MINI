@@ -12,11 +12,11 @@ using MINI.src.BUS;
 using MINI.src.DAO;
 
 
-namespace MINI.GUI.HoaDon
+namespace MINI.src.GUI
 {
     public partial class HoaDon : Form
     {
-        
+
         HoaDonBUS hd = new HoaDonBUS();
         CTHoaDonBUS cthd = new CTHoaDonBUS();
         public HoaDon()
@@ -45,11 +45,11 @@ namespace MINI.GUI.HoaDon
             lvHoaDon.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
         private void HoaDon_Load(object sender, EventArgs e)
-        {   
+        {
             HienthiHoaDon();
-            if(textBox1.Text!=null && textBox1.Text!="")
-            HienthiCTHoaDon();
-            
+            if (textBox1.Text != null && textBox1.Text != "")
+                HienthiCTHoaDon();
+
         }
 
         void HienthiCTHoaDon()
@@ -70,7 +70,7 @@ namespace MINI.GUI.HoaDon
             }
             lvCTHoaDon.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
-        
+
         private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvHoaDon.SelectedIndices.Count > 0)
@@ -102,7 +102,7 @@ namespace MINI.GUI.HoaDon
 
         private void lvHoaDon_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void setNullCTHoaDon()
@@ -113,7 +113,8 @@ namespace MINI.GUI.HoaDon
             textBox13.Text = null;
             textBox14.Text = null;
             textBox15.Text = null;
-            
+            textBoxTK.Text = string.Empty;
+            comboBox2.Text = "Tìm theo";
         }
 
         private void setNullHoaDon()
@@ -130,30 +131,115 @@ namespace MINI.GUI.HoaDon
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {   
+        {
             setNullCTHoaDon();
             if (textBox1.Text != null && textBox1.Text != "")
                 HienthiCTHoaDon();
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (lvHoaDon.SelectedIndices.Count > 0)
+
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            HienthiHoaDon();
+            if (comboBox1.Text == "Id hóa đơn")
             {
-                DialogResult dr = MessageBox.Show("Bạn có chắc xóa không?", "Xóa hóa đơn", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
+                foreach (ListViewItem item in lvHoaDon.Items)
                 {
-                    hd.XoaHoaDon(lvHoaDon.SelectedItems[0].SubItems[0].Text);
-                    lvHoaDon.Items.RemoveAt(
-                    lvHoaDon.SelectedIndices[0]);
-                    setNullHoaDon();
-                    MessageBox.Show("Thành Công");
+                    if (!item.SubItems[0].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
                 }
             }
-            else
-                MessageBox.Show("Bạn phải chọn mẩu tin cần xóa");
+            else if (comboBox1.Text == "Id nhân viên")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[3].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên nhân viên")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[4].Text.ToLower().Contains(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Id khách hàng")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[5].Text.ToLower().Equals(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox1.Text == "Tên khách hàng")
+            {
+                foreach (ListViewItem item in lvHoaDon.Items)
+                {
+                    if (!item.SubItems[6].Text.ToLower().Contains(txtTimKiem.Text.ToLower()))
+                    {
+                        lvHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            lammoiHD();
+        }
+        private void lammoiHD()
+        {
+            txtTimKiem.Text = string.Empty;
+            comboBox1.Text = "Tìm theo";
+            setNullHoaDon();
+            lvCTHoaDon.Items.Clear();
+            HienthiHoaDon();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HienthiCTHoaDon();
+            if (comboBox2.Text == "Id sản phẩm")
+            {
+                foreach (ListViewItem item in lvCTHoaDon.Items)
+                {
+                    if (!item.SubItems[1].Text.ToLower().Equals(textBoxTK.Text.ToLower()))
+                    {
+                        lvCTHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+            else if (comboBox2.Text == "Tên sản phẩm")
+            {
+                foreach (ListViewItem item in lvCTHoaDon.Items)
+                {
+                    if (!item.SubItems[2].Text.ToLower().Contains(textBoxTK.Text.ToLower()))
+                    {
+                        lvCTHoaDon.Items.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxTK.Text = string.Empty;
+            comboBox2.Text = "Tìm theo";
+            HienthiCTHoaDon();
         }
     }
 
-    
+
 }

@@ -1,4 +1,4 @@
-﻿namespace MINI.GUI
+﻿namespace MINI.src.GUI
 {
     partial class trangChu
     {
@@ -66,6 +66,7 @@
             // 
             // panelContent
             // 
+            this.panelContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContent.BackgroundImage")));
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(207, 0);
             this.panelContent.Name = "panelContent";
@@ -143,6 +144,7 @@
             this.btnBanHang.Text = "Bán hàng";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.UseVisualStyleBackColor = false;
+            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
             // btnNhapHang
             // 
@@ -160,6 +162,7 @@
             this.btnNhapHang.Text = "Nhập hàng";
             this.btnNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhapHang.UseVisualStyleBackColor = false;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // btnNhanVien
             // 
@@ -195,6 +198,7 @@
             this.btnSanPham.Text = "Sản Phẩm";
             this.btnSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSanPham.UseVisualStyleBackColor = false;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnHoaDon
             // 
@@ -212,6 +216,7 @@
             this.btnHoaDon.Text = "Hóa Đơn";
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnPhieuNhap
             // 
@@ -229,6 +234,7 @@
             this.btnPhieuNhap.Text = "Phiếu nhập";
             this.btnPhieuNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPhieuNhap.UseVisualStyleBackColor = false;
+            this.btnPhieuNhap.Click += new System.EventHandler(this.btnPhieuNhap_Click);
             // 
             // btnKhachHang
             // 
@@ -246,6 +252,7 @@
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHang.UseVisualStyleBackColor = false;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnBaoCao
             // 
@@ -263,6 +270,7 @@
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBaoCao.UseVisualStyleBackColor = false;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnNhaCungCap
             // 
@@ -280,6 +288,7 @@
             this.btnNhaCungCap.Text = "Nhà cung cấp";
             this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhaCungCap.UseVisualStyleBackColor = false;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // btnKhuyenMai
             // 
@@ -297,6 +306,7 @@
             this.btnKhuyenMai.Text = "Khuyến mãi";
             this.btnKhuyenMai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhuyenMai.UseVisualStyleBackColor = false;
+            this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click);
             // 
             // btnThongKe
             // 
@@ -314,6 +324,7 @@
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnTaiKhoan
             // 
@@ -350,6 +361,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(1389, 761);
             this.Controls.Add(this.panelTrangChu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(716, 495);
             this.Name = "trangChu";

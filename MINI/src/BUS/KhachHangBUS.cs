@@ -39,7 +39,7 @@ namespace MINI.BUS
         }
         public void XoaKhachHang(string index)
         {
-            string sql = "Delete from KhachHang where idKhachHang = " +index;
+            string sql = "Delete from KhachHang where idKhachHang = " + index;
             db.ExecuteNonQuery(sql);
         }
         public void ThemKhachHang(string hovaten, string diachi, string sdt, string gioitinh, string email, string ngaysinh)

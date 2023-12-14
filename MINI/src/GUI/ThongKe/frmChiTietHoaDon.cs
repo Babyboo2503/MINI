@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MINI.src.GUI.ThongKe
+namespace MINI.src.GUI
 {
     public partial class frmChiTietHoaDon : Form
     {

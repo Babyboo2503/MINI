@@ -26,13 +26,13 @@ namespace MINI.src.BUS
             DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
             return dt;
         }
-        
+
         public void XoaBaoCao(string idBaoCao)
         {
             string sql = "Delete from BaoCao where idBaoCao = " + idBaoCao;
             db.ExecuteNonQuery(sql);
         }
-        
+
         public void ThemBaoCao(BaoCaoDTO bc)
         {
             try
@@ -41,7 +41,7 @@ namespace MINI.src.BUS
                     "Values({0}, '{1}', {2}, {3},N'{4}')", bc.idNhanVien.ToString(), bc.ngayLap.ToString(), bc.idSanPham.ToString(), bc.soLuong.ToString(), bc.lyDo);
                 db.ExecuteNonQuery(sql);
             }
-            catch(Exception) { }
+            catch (Exception) { }
         }
 
 
@@ -61,6 +61,18 @@ namespace MINI.src.BUS
         {
             string sql = "Update SanPham set soLuong = soLuong - " + sl + " where idSanPham = " + idSanPham;
             db.ExecuteNonQuery(sql);
+        }
+
+        public void CapNhatLyDo(string a, string b)
+        {
+            try
+            {
+                //Chuẩn bị câu lẹnh truy vấn
+                string str = string.Format("Update BaoCao set lyDo = N'{0}' where idBaoCao = {1}",
+                    a, b);
+                db.ExecuteNonQuery(str);
+            }
+            catch (Exception) { }
         }
 
     }

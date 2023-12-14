@@ -44,9 +44,61 @@ namespace MINI.src.BUS
         }
         public bool checkButtonSave(string idnv)
         {
+            DataTable dt = new DataTable();
             string test = $"Select * from NhanVien where idNhanVien='{idnv}'";
-            int row= db.ExecuteNonQuery(test);
-            return row > 0;
+            dt = db.Execute(test);
+            if (dt.Rows.Count == 0)
+            {
+                return false;
+            }
+            return true;
         }
+        public DataTable layDSIDNhanVienChuaCoTK()
+        {
+            string nv = $"Select * from NhanVien where idNhanVien not in (Select idNhanVien from TaiKhoan)";
+            return db.Execute(nv);
+        }
+        public DataTable layNhanVienDuaVaoID(string idnv)
+        {
+            string nv = $"Select * from NhanVien where idNhanVien='{idnv}'";
+            return db.Execute(nv);
+        }
+        public DataTable locNVTheoGioiTinh(string gt)
+        {
+            string nv = $"Select * from NhanVien where gioiTinh=N'{gt}'";
+            return db.Execute(nv);
+        }
+        public DataTable locNVTheoChucVu(string cv)
+        {
+            string nv = null; 
+            if (cv == "Admin")
+            {
+                nv = $"Select * from NhanVien where idChucVu=1";
+            }
+            if(cv=="Quản lí")
+            {
+                nv = $"Select * from NhanVien where idChucVu=2";
+            }
+            if (cv == "Bán hàng")
+            {
+                nv = $"Select * from NhanVien where idChucVu=3";
+            }
+            if (cv == "Thủ kho")
+            {
+                nv = $"Select * from NhanVien where idChucVu=4";
+            }
+            return db.Execute(nv);
+        }
+        public DataTable locNVTheoTrangThai(string tt)
+        {
+            string nv = $"Select * from NhanVien where trangThai=N'{tt}'";
+            return db.Execute(nv);
+        }
+        public DataTable timKiemNV(string x)
+        {
+            string query = "SELECT * FROM NhanVien WHERE hoVaTen LIKE '%' + @x + '%'";
+            return db.Execute(query);
+        }
+
     }
 }
