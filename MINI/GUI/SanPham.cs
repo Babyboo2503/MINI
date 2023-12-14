@@ -64,6 +64,10 @@ namespace MINI.GUI
                     try
                     {
                         pro.BorderStyle = BorderStyle.FixedSingle;
+                        if(int.Parse(dt.Rows[i][3].ToString())<5)
+                        {
+                            pro.ForeColor = Color.Red;
+                        }
                         pro.Id_Pro = dt.Rows[i][0].ToString();
                         pro.Name_Pro = dt.Rows[i][6].ToString();
                         pro.Num_Pro = dt.Rows[i][3].ToString();
