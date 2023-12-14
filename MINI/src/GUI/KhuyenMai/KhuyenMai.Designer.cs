@@ -53,8 +53,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtDieuKien = new System.Windows.Forms.TextBox();
-            this.txtNoiDung = new System.Windows.Forms.TextBox();
             this.txtPhanTram = new System.Windows.Forms.TextBox();
             this.txtTenKM = new System.Windows.Forms.TextBox();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -74,6 +72,8 @@
             this.NoiDung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DieuKien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabKhuyenMai = new System.Windows.Forms.TabControl();
+            this.cbbNoiDung = new System.Windows.Forms.ComboBox();
+            this.cbbDieuKien = new System.Windows.Forms.ComboBox();
             this.tabApDungKM.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabDSKM.SuspendLayout();
@@ -346,8 +346,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtDieuKien);
-            this.groupBox2.Controls.Add(this.txtNoiDung);
+            this.groupBox2.Controls.Add(this.cbbDieuKien);
+            this.groupBox2.Controls.Add(this.cbbNoiDung);
             this.groupBox2.Controls.Add(this.txtPhanTram);
             this.groupBox2.Controls.Add(this.txtTenKM);
             this.groupBox2.Controls.Add(this.dtpNgayKetThuc);
@@ -364,20 +364,6 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết khuyến mãi";
-            // 
-            // txtDieuKien
-            // 
-            this.txtDieuKien.Location = new System.Drawing.Point(514, 125);
-            this.txtDieuKien.Name = "txtDieuKien";
-            this.txtDieuKien.Size = new System.Drawing.Size(227, 27);
-            this.txtDieuKien.TabIndex = 11;
-            // 
-            // txtNoiDung
-            // 
-            this.txtNoiDung.Location = new System.Drawing.Point(514, 76);
-            this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(227, 27);
-            this.txtNoiDung.TabIndex = 10;
             // 
             // txtPhanTram
             // 
@@ -535,6 +521,31 @@
             this.tabKhuyenMai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckValue_Key);
             this.tabKhuyenMai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckValue_Key);
             // 
+            // cbbNoiDung
+            // 
+            this.cbbNoiDung.FormattingEnabled = true;
+            this.cbbNoiDung.Items.AddRange(new object[] {
+            "Giảm trên tổng hóa đơn",
+            "Giảm trên từng sản phẩm"});
+            this.cbbNoiDung.Location = new System.Drawing.Point(514, 78);
+            this.cbbNoiDung.Name = "cbbNoiDung";
+            this.cbbNoiDung.Size = new System.Drawing.Size(227, 28);
+            this.cbbNoiDung.TabIndex = 12;
+            // 
+            // cbbDieuKien
+            // 
+            this.cbbDieuKien.FormattingEnabled = true;
+            this.cbbDieuKien.Items.AddRange(new object[] {
+            ">10",
+            ">15",
+            ">20",
+            ">25",
+            ">30"});
+            this.cbbDieuKien.Location = new System.Drawing.Point(514, 125);
+            this.cbbDieuKien.Name = "cbbDieuKien";
+            this.cbbDieuKien.Size = new System.Drawing.Size(227, 28);
+            this.cbbDieuKien.TabIndex = 13;
+            // 
             // KhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -578,9 +589,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNoiDung;
         private System.Windows.Forms.TextBox txtPhanTram;
-        private System.Windows.Forms.TextBox txtDieuKien;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
@@ -603,5 +612,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ComboBox cbbNoiDung;
+        private System.Windows.Forms.ComboBox cbbDieuKien;
     }
 }
