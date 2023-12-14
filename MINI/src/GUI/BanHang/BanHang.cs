@@ -10,11 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using MINI.GUI.BaoCao;
-using MINI.GUI.HoaDon;
 using MINI.src.DAO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace MINI.GUI.BanHang
+namespace MINI.GUI
 {
     
     public partial class BanHang : Form
@@ -23,10 +22,12 @@ namespace MINI.GUI.BanHang
         CTHoaDonBUS cthd = new CTHoaDonBUS();
         ChiTietHoaDonDTO cthdDTO;
         HoaDonDTO hdDTO;
-        public BanHang()
+        public string Username,PassWord;
+        public BanHang(string Username, string PassWord)
         {
             InitializeComponent();
-            
+            this.Username = Username;
+            this.PassWord =PassWord; 
         }
 
         private void BanHang_Load(object sender, EventArgs e)
@@ -37,12 +38,10 @@ namespace MINI.GUI.BanHang
             this.khachHangTableAdapter.Fill(this.miniMarketDataSet1.KhachHang);
             // TODO: This line of code loads data into the 'miniMarketDataSet1.KhuyenMai' table. You can move, or remove it, as needed.
             this.khuyenMaiTableAdapter.Fill(this.miniMarketDataSet1.KhuyenMai);*/
-
-            comboBox1.DataSource = hd.LayDSNhanVien();
-            comboBox1.DisplayMember = "hoVaTen";
-            comboBox1.ValueMember = "idNhanVien";
-            textBox2.Text = comboBox1.Items[0].ToString();
-
+            
+            DataTable dt = hd.LayId_TenNV(Username);
+            textBox2.Text = dt.Rows[0][0].ToString();
+            textBox5.Text = dt.Rows[0][1].ToString();
             comboBox2.DataSource = hd.LayDSKhachHang();
             comboBox2.DisplayMember = "hoVaTen";
             comboBox2.ValueMember = "idKhachHang";
@@ -52,7 +51,7 @@ namespace MINI.GUI.BanHang
             comboBox3.DisplayMember = "tenKhuyenMai";
             comboBox3.ValueMember = "idKhuyenMai";
             textBox4.Text = comboBox3.Items[0].ToString();
-            DataTable dt = hd.LayDSKhuyenMai();
+            DataTable dt1 = hd.LayDSKhuyenMai();
             textBox3.Text = dt.Rows[0][6].ToString();
 
             HienthiSanPham();
@@ -362,11 +361,7 @@ namespace MINI.GUI.BanHang
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox2.Text = comboBox1.SelectedValue.ToString();
-
-        }
+        
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -101,5 +101,13 @@ namespace MINI.src.BUS
             DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
             return dt;
         }
+
+        public DataTable LayId_TenNV(string Username)
+        {
+            string strSQL = "Select nv.idNhanVien, nv.hoVaTen from NhanVien nv inner join TaiKhoan tk on " +
+                "nv.idNhanVien=tk.idNhanVien where tk.username= '"+Username+"'";
+            DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
+            return dt;
+        }
     }
 }
