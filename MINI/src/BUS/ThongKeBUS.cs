@@ -64,18 +64,16 @@ namespace MINI.src.BUS
         public DataTable layDanhSachSanPham()
         {
             string strSQL = "SELECT " +
-                            "CHD.idSanPham, " +
-                            "SP.tenSanPham, " +
-                            "SP.donGia, " +
-                            "CHD.soLuong, " +
-                            "CHD.donGia AS donGiaChiTiet, " +
-                            "CHD.tongTien " +
-                            "FROM " +
-                            "ChiTietHoaDon CHD " +
-                            "JOIN " +
-                            "SanPham SP ON CHD.idSanPham = SP.idSanPham " +
-                            "ORDER BY " +
-                            "SP.idSanPham ASC;";
+                "CHD.idSanPham, " +
+                "SP.tenSanPham, " +
+                "SP.donGia, " +
+                "SUM(CHD.soLuong) AS TongSoLuong, " +
+                "MAX(CHD.donGia) AS MaxDonGia, " +
+                "SUM(CHD.tongTien) AS TongTien " +
+                "FROM ChiTietHoaDon CHD " +
+                "JOIN SanPham SP ON CHD.idSanPham = SP.idSanPham " +
+                "GROUP BY CHD.idSanPham, SP.tenSanPham, SP.donGia " +
+                "ORDER BY CHD.idSanPham ASC;";
             DataTable dt = db.Execute(strSQL);
             return dt;
         }

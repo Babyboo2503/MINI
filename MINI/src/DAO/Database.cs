@@ -15,7 +15,7 @@ namespace MINI.src.DAO
         DataSet ds; //Doi tuong chhua CSDL khi giao tiep
         public Database()
         {
-            string strCnn = "Data Source=LAPTOP-1OI04F38;Initial Catalog=MiniMarket;Integrated Security=True";
+            string strCnn = "Data Source=localhost;Database=MiniMarket;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
