@@ -255,19 +255,39 @@ namespace MINI.GUI
             }
             else
             {
-                lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
-                lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
-                lsvLoaiSanPham.Items.Clear();
-                DataTable dttk = sp.LayDSLoaiSanPham();
-
-                for (int i = 0; i < dttk.Rows.Count; i++)
+                int id;
+                if(!int.TryParse(txtTimKiemLoaiSanPham.Text, out id))
                 {
-                    if (dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                    lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                    lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                    lsvLoaiSanPham.Items.Clear();
+                    DataTable dttk = sp.LayDSLoaiSanPham();
+
+                    for (int i = 0; i < dttk.Rows.Count; i++)
                     {
-                        ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
-                        lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        if (dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                        {
+                            ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        }
                     }
                 }
+                else
+                {
+                    lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                    lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                    lsvLoaiSanPham.Items.Clear();
+                    DataTable dttk = sp.LayDSLoaiSanPham();
+
+                    for (int i = 0; i < dttk.Rows.Count; i++)
+                    {
+                        if (dttk.Rows[i][0].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                        {
+                            ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        }
+                    }
+                }    
             }
             if (lsvLoaiSanPham.Items.Count == 0)
             {
