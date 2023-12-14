@@ -79,13 +79,7 @@
             this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.tpTKSanPham = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbDSSP = new System.Windows.Forms.ComboBox();
             this.lsvProduct = new System.Windows.Forms.ListView();
             this.idProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -163,8 +157,6 @@
             this.groupBox1.SuspendLayout();
             this.tpTKSanPham.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tpNhanVien.SuspendLayout();
             this.panel9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -653,76 +645,24 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.btnSearch);
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Controls.Add(this.groupBox4);
-            this.panel8.Controls.Add(this.groupBox5);
-            this.panel8.Controls.Add(this.comboBox4);
+            this.panel8.Controls.Add(this.cbDSSP);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1081, 64);
             this.panel8.TabIndex = 2;
             // 
-            // btnSearch
+            // cbDSSP
             // 
-            this.btnSearch.Location = new System.Drawing.Point(856, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(62, 28);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(924, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 28);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dateTimePicker3);
-            this.groupBox4.Location = new System.Drawing.Point(589, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(255, 55);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Đến ngày";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(6, 21);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(242, 22);
-            this.dateTimePicker3.TabIndex = 0;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dateTimePicker4);
-            this.groupBox5.Location = new System.Drawing.Point(328, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(255, 55);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Từ ngày";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(7, 21);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(242, 22);
-            this.dateTimePicker4.TabIndex = 0;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(211, 22);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(111, 24);
-            this.comboBox4.TabIndex = 1;
+            this.cbDSSP.FormattingEnabled = true;
+            this.cbDSSP.Items.AddRange(new object[] {
+            "Hóa Đơn",
+            "Phiếu Nhập"});
+            this.cbDSSP.Location = new System.Drawing.Point(824, 22);
+            this.cbDSSP.Name = "cbDSSP";
+            this.cbDSSP.Size = new System.Drawing.Size(182, 24);
+            this.cbDSSP.TabIndex = 1;
+            this.cbDSSP.Text = "Thống Kê Sản Phẩm Theo";
             // 
             // lsvProduct
             // 
@@ -1200,8 +1140,6 @@
             this.groupBox1.PerformLayout();
             this.tpTKSanPham.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.tpNhanVien.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
@@ -1276,12 +1214,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker10;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbDSSP;
         private System.Windows.Forms.ListView lsvVendor;
         private System.Windows.Forms.ColumnHeader idNhanVien;
         private System.Windows.Forms.ColumnHeader name;
@@ -1334,6 +1267,5 @@
         private System.Windows.Forms.GroupBox groupBox14;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnSearch1;
-        private System.Windows.Forms.Button btnSearch;
     }
 }
