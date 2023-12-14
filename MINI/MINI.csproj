@@ -135,10 +135,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\GUI\NhapHang\NhapHangGUI.Designer.cs" />
-    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.Designer.cs" />
     <Compile Include="src\GUI\SanPham\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,7 +210,6 @@
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\NhapHang\NhapHangGUI.resx" />
-    <EmbeddedResource Include="src\GUI\PhieuNhap\PhieuNhapGUI.resx" />
     <EmbeddedResource Include="src\GUI\SanPham\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\product\" />
+    <Folder Include="src\GUI\PhieuNhap\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icons8-add-32.png" />
