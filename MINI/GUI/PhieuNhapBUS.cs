@@ -203,7 +203,7 @@ namespace MINI.src.BUS
                 connection.Open();
 
                 // Tạo câu truy vấn cập nhật
-                string query = "UPDATE SanPham SET tenNCC = @tenNCC, diaChi = @diaChi, soDienThoai = @SDT WHERE maNCC = @maNCC;";
+                string query = "UPDATE NhaCungCap SET tenNhaCungCap = @tenNCC, diaChi = @diaChi, soDienThoai = @SDT WHERE idNhaCungCap = @maNCC;";
 
                 // Tạo command và truyền tham số
                 using (SqlCommand command = new SqlCommand(query, connection))

@@ -197,6 +197,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ChonNhaCungCap";
             this.Text = "ChonNhaCungCap";
+            this.Activated += new System.EventHandler(this.ChonNhaCungCap_Activated);
             this.Load += new System.EventHandler(this.ChonNhaCungCap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

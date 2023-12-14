@@ -29,36 +29,79 @@ namespace MINI.src.GUI.PhieuNhap
             this.Close();
         }
 
+        public void UpdateButtonVisibility(bool isVisible)
+        {
+            btnThem.Visible = isVisible;
+        }
+
+        public void UpdateIdnccValue(string value)
+        {
+            txtidncc.Text = value;
+        }
+
+        public void UpdateTenNCCValue(string value)
+        {
+            txttenncc.Text = value;
+        }
+
+        public void UpdateDiaChiNCCValue(string value)
+        {
+            txtdiachincc.Text = value;
+        }
+
+        public void UpdateSDTNCCnccValue(string value)
+        {
+            txtsdtncc.Text = value;
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-            bool themThanhCong = ncc.ThemNCC(txttenncc.Text, txtdiachincc.Text, txtsdtncc.Text);
-            if (themThanhCong)
-            {
-                // Đóng form sau khi thêm thành công
-                this.Close();
+            if (!string.IsNullOrEmpty(txtdiachincc.Text) && !string.IsNullOrEmpty(txtsdtncc.Text) && !string.IsNullOrEmpty(txttenncc.Text) ){
+                bool themThanhCong = ncc.ThemNCC(txttenncc.Text, txtdiachincc.Text, txtsdtncc.Text);
+                if (themThanhCong)
+                {
+                    // Đóng form sau khi thêm thành công
+                    this.Close();
+                }
+                else
+                {
+                    // Hiển thị thông báo lỗi nếu cần thiết
+                    MessageBox.Show("Không thể thêm nhà cung cấp. Vui lòng thử lại.");
+                }
             }
             else
             {
-                // Hiển thị thông báo lỗi nếu cần thiết
-                MessageBox.Show("Không thể thêm nhà cung cấp. Vui lòng thử lại.");
+                MessageBox.Show("Vui lòng Nhập Đầy Đủ Thông Tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            bool suaThanhCong = ncc.SuaNCC(txttenncc.Text, txtdiachincc.Text, txtsdtncc.Text);
+            
+            bool suaThanhCong = ncc.SuaNCC(txtidncc.Text,txttenncc.Text, txtdiachincc.Text, txtsdtncc.Text);
+            
             if (suaThanhCong)
             {
                 // Đóng form sau khi thêm thành công
+                
                 this.Close();
+               
             }
             else
             {
                 // Hiển thị thông báo lỗi nếu cần thiết
                 MessageBox.Show("Không thể thêm nhà cung cấp. Vui lòng thử lại.");
             }
+
         }
+
+        private void txtidncc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
