@@ -34,7 +34,6 @@ namespace MINI.src.GUI
             this.lsvidsp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvidlsp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvtensp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lsvdonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvsoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -93,13 +92,13 @@ namespace MINI.src.GUI
             this.lsvidsp,
             this.lsvidlsp,
             this.lsvtensp,
-            this.lsvdonGia,
             this.lsvsoLuong});
             this.lsvdssp.FullRowSelect = true;
             this.lsvdssp.HideSelection = false;
-            this.lsvdssp.Location = new System.Drawing.Point(1, 57);
+            this.lsvdssp.Location = new System.Drawing.Point(1, 70);
+            this.lsvdssp.Margin = new System.Windows.Forms.Padding(4);
             this.lsvdssp.Name = "lsvdssp";
-            this.lsvdssp.Size = new System.Drawing.Size(600, 393);
+            this.lsvdssp.Size = new System.Drawing.Size(799, 483);
             this.lsvdssp.TabIndex = 0;
             this.lsvdssp.UseCompatibleStateImageBehavior = false;
             this.lsvdssp.View = System.Windows.Forms.View.Details;
@@ -120,11 +119,6 @@ namespace MINI.src.GUI
             this.lsvtensp.Text = "Tên Sản Phẩm";
             this.lsvtensp.Width = 200;
             // 
-            // lsvdonGia
-            // 
-            this.lsvdonGia.Text = "Đơn Giá";
-            this.lsvdonGia.Width = 100;
-            // 
             // lsvsoLuong
             // 
             this.lsvsoLuong.Text = "Số Lượng";
@@ -134,45 +128,53 @@ namespace MINI.src.GUI
             // 
             this.groupBox1.Controls.Add(this.txtidncc);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(607, 2);
+            this.groupBox1.Location = new System.Drawing.Point(809, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 50);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(267, 62);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Mã Nhà Cung Cấp";
             // 
             // txtidncc
             // 
-            this.txtidncc.Location = new System.Drawing.Point(6, 20);
+            this.txtidncc.Location = new System.Drawing.Point(8, 25);
+            this.txtidncc.Margin = new System.Windows.Forms.Padding(4);
             this.txtidncc.Name = "txtidncc";
-            this.txtidncc.Size = new System.Drawing.Size(188, 26);
+            this.txtidncc.Size = new System.Drawing.Size(249, 30);
             this.txtidncc.TabIndex = 4;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtidnhanvien);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(868, 2);
+            this.groupBox2.Location = new System.Drawing.Point(1157, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 50);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(267, 62);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mã Nhân Viên";
             // 
             // txtidnhanvien
             // 
-            this.txtidnhanvien.Location = new System.Drawing.Point(6, 20);
+            this.txtidnhanvien.Location = new System.Drawing.Point(8, 25);
+            this.txtidnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtidnhanvien.Name = "txtidnhanvien";
-            this.txtidnhanvien.Size = new System.Drawing.Size(188, 26);
+            this.txtidnhanvien.Size = new System.Drawing.Size(249, 30);
             this.txtidnhanvien.TabIndex = 3;
             // 
             // grbTimkiem
             // 
             this.grbTimkiem.Controls.Add(this.txtsearchsp);
             this.grbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbTimkiem.Location = new System.Drawing.Point(21, 2);
+            this.grbTimkiem.Location = new System.Drawing.Point(28, 2);
+            this.grbTimkiem.Margin = new System.Windows.Forms.Padding(4);
             this.grbTimkiem.Name = "grbTimkiem";
-            this.grbTimkiem.Size = new System.Drawing.Size(200, 50);
+            this.grbTimkiem.Padding = new System.Windows.Forms.Padding(4);
+            this.grbTimkiem.Size = new System.Drawing.Size(267, 62);
             this.grbTimkiem.TabIndex = 3;
             this.grbTimkiem.TabStop = false;
             this.grbTimkiem.Text = "Tìm Kiếm";
@@ -180,9 +182,10 @@ namespace MINI.src.GUI
             // 
             // txtsearchsp
             // 
-            this.txtsearchsp.Location = new System.Drawing.Point(6, 20);
+            this.txtsearchsp.Location = new System.Drawing.Point(8, 25);
+            this.txtsearchsp.Margin = new System.Windows.Forms.Padding(4);
             this.txtsearchsp.Name = "txtsearchsp";
-            this.txtsearchsp.Size = new System.Drawing.Size(188, 26);
+            this.txtsearchsp.Size = new System.Drawing.Size(249, 30);
             this.txtsearchsp.TabIndex = 2;
             this.txtsearchsp.Click += new System.EventHandler(this.txtsearchsp_Click);
             this.txtsearchsp.TextChanged += new System.EventHandler(this.txtsearchsp_TextChanged);
@@ -192,46 +195,53 @@ namespace MINI.src.GUI
             // 
             this.grbdongia.Controls.Add(this.txtdongia);
             this.grbdongia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbdongia.Location = new System.Drawing.Point(213, 608);
+            this.grbdongia.Location = new System.Drawing.Point(284, 748);
+            this.grbdongia.Margin = new System.Windows.Forms.Padding(4);
             this.grbdongia.Name = "grbdongia";
-            this.grbdongia.Size = new System.Drawing.Size(200, 50);
+            this.grbdongia.Padding = new System.Windows.Forms.Padding(4);
+            this.grbdongia.Size = new System.Drawing.Size(267, 62);
             this.grbdongia.TabIndex = 5;
             this.grbdongia.TabStop = false;
-            this.grbdongia.Text = "Đơn Giá";
+            this.grbdongia.Text = "Giá Nhập";
             // 
             // txtdongia
             // 
-            this.txtdongia.Location = new System.Drawing.Point(6, 21);
+            this.txtdongia.Location = new System.Drawing.Point(8, 24);
+            this.txtdongia.Margin = new System.Windows.Forms.Padding(4);
             this.txtdongia.Name = "txtdongia";
-            this.txtdongia.ReadOnly = true;
-            this.txtdongia.Size = new System.Drawing.Size(188, 26);
+            this.txtdongia.Size = new System.Drawing.Size(249, 30);
             this.txtdongia.TabIndex = 4;
             // 
             // grbsoluong
             // 
             this.grbsoluong.Controls.Add(this.txtsoluong);
             this.grbsoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbsoluong.Location = new System.Drawing.Point(213, 661);
+            this.grbsoluong.Location = new System.Drawing.Point(284, 814);
+            this.grbsoluong.Margin = new System.Windows.Forms.Padding(4);
             this.grbsoluong.Name = "grbsoluong";
-            this.grbsoluong.Size = new System.Drawing.Size(200, 50);
+            this.grbsoluong.Padding = new System.Windows.Forms.Padding(4);
+            this.grbsoluong.Size = new System.Drawing.Size(267, 62);
             this.grbsoluong.TabIndex = 7;
             this.grbsoluong.TabStop = false;
             this.grbsoluong.Text = "Số Lượng";
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(6, 18);
+            this.txtsoluong.Location = new System.Drawing.Point(8, 22);
+            this.txtsoluong.Margin = new System.Windows.Forms.Padding(4);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(188, 26);
+            this.txtsoluong.Size = new System.Drawing.Size(249, 30);
             this.txtsoluong.TabIndex = 3;
             // 
             // grbidsanpham
             // 
             this.grbidsanpham.Controls.Add(this.txtidsanpham);
             this.grbidsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbidsanpham.Location = new System.Drawing.Point(213, 456);
+            this.grbidsanpham.Location = new System.Drawing.Point(284, 561);
+            this.grbidsanpham.Margin = new System.Windows.Forms.Padding(4);
             this.grbidsanpham.Name = "grbidsanpham";
-            this.grbidsanpham.Size = new System.Drawing.Size(200, 50);
+            this.grbidsanpham.Padding = new System.Windows.Forms.Padding(4);
+            this.grbidsanpham.Size = new System.Drawing.Size(267, 62);
             this.grbidsanpham.TabIndex = 8;
             this.grbidsanpham.TabStop = false;
             this.grbidsanpham.Text = "Mã Sản Phẩm";
@@ -239,29 +249,33 @@ namespace MINI.src.GUI
             // txtidsanpham
             // 
             this.txtidsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidsanpham.Location = new System.Drawing.Point(6, 18);
+            this.txtidsanpham.Location = new System.Drawing.Point(8, 22);
+            this.txtidsanpham.Margin = new System.Windows.Forms.Padding(4);
             this.txtidsanpham.Name = "txtidsanpham";
             this.txtidsanpham.ReadOnly = true;
-            this.txtidsanpham.Size = new System.Drawing.Size(188, 26);
+            this.txtidsanpham.Size = new System.Drawing.Size(249, 30);
             this.txtidsanpham.TabIndex = 0;
             // 
             // grbidlsp
             // 
             this.grbidlsp.Controls.Add(this.txtidlsp);
             this.grbidlsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbidlsp.Location = new System.Drawing.Point(213, 558);
+            this.grbidlsp.Location = new System.Drawing.Point(284, 687);
+            this.grbidlsp.Margin = new System.Windows.Forms.Padding(4);
             this.grbidlsp.Name = "grbidlsp";
-            this.grbidlsp.Size = new System.Drawing.Size(200, 50);
+            this.grbidlsp.Padding = new System.Windows.Forms.Padding(4);
+            this.grbidlsp.Size = new System.Drawing.Size(267, 62);
             this.grbidlsp.TabIndex = 9;
             this.grbidlsp.TabStop = false;
             this.grbidlsp.Text = "Mã Loại Sản Phẩm";
             // 
             // txtidlsp
             // 
-            this.txtidlsp.Location = new System.Drawing.Point(6, 18);
+            this.txtidlsp.Location = new System.Drawing.Point(8, 22);
+            this.txtidlsp.Margin = new System.Windows.Forms.Padding(4);
             this.txtidlsp.Name = "txtidlsp";
             this.txtidlsp.ReadOnly = true;
-            this.txtidlsp.Size = new System.Drawing.Size(188, 26);
+            this.txtidlsp.Size = new System.Drawing.Size(249, 30);
             this.txtidlsp.TabIndex = 5;
             this.txtidlsp.TextChanged += new System.EventHandler(this.txtidlsp_TextChanged);
             // 
@@ -269,19 +283,22 @@ namespace MINI.src.GUI
             // 
             this.grbtensp.Controls.Add(this.txttensp);
             this.grbtensp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbtensp.Location = new System.Drawing.Point(213, 506);
+            this.grbtensp.Location = new System.Drawing.Point(284, 623);
+            this.grbtensp.Margin = new System.Windows.Forms.Padding(4);
             this.grbtensp.Name = "grbtensp";
-            this.grbtensp.Size = new System.Drawing.Size(200, 50);
+            this.grbtensp.Padding = new System.Windows.Forms.Padding(4);
+            this.grbtensp.Size = new System.Drawing.Size(267, 62);
             this.grbtensp.TabIndex = 4;
             this.grbtensp.TabStop = false;
             this.grbtensp.Text = "Tên Sản Phẩm";
             // 
             // txttensp
             // 
-            this.txttensp.Location = new System.Drawing.Point(6, 18);
+            this.txttensp.Location = new System.Drawing.Point(8, 22);
+            this.txttensp.Margin = new System.Windows.Forms.Padding(4);
             this.txttensp.Name = "txttensp";
             this.txttensp.ReadOnly = true;
-            this.txttensp.Size = new System.Drawing.Size(188, 26);
+            this.txttensp.Size = new System.Drawing.Size(249, 30);
             this.txttensp.TabIndex = 6;
             // 
             // lsvdsspnhap
@@ -295,9 +312,10 @@ namespace MINI.src.GUI
             this.thanhtien});
             this.lsvdsspnhap.FullRowSelect = true;
             this.lsvdsspnhap.HideSelection = false;
-            this.lsvdsspnhap.Location = new System.Drawing.Point(607, 128);
+            this.lsvdsspnhap.Location = new System.Drawing.Point(809, 158);
+            this.lsvdsspnhap.Margin = new System.Windows.Forms.Padding(4);
             this.lsvdsspnhap.Name = "lsvdsspnhap";
-            this.lsvdsspnhap.Size = new System.Drawing.Size(570, 392);
+            this.lsvdsspnhap.Size = new System.Drawing.Size(759, 482);
             this.lsvdsspnhap.TabIndex = 10;
             this.lsvdsspnhap.UseCompatibleStateImageBehavior = false;
             this.lsvdsspnhap.View = System.Windows.Forms.View.Details;
@@ -335,9 +353,10 @@ namespace MINI.src.GUI
             // btnxoathanhtoan
             // 
             this.btnxoathanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoathanhtoan.Location = new System.Drawing.Point(630, 524);
+            this.btnxoathanhtoan.Location = new System.Drawing.Point(840, 645);
+            this.btnxoathanhtoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoathanhtoan.Name = "btnxoathanhtoan";
-            this.btnxoathanhtoan.Size = new System.Drawing.Size(100, 50);
+            this.btnxoathanhtoan.Size = new System.Drawing.Size(133, 62);
             this.btnxoathanhtoan.TabIndex = 11;
             this.btnxoathanhtoan.Text = "Xóa";
             this.btnxoathanhtoan.UseVisualStyleBackColor = true;
@@ -346,10 +365,11 @@ namespace MINI.src.GUI
             // btnchonncc
             // 
             this.btnchonncc.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnchonncc.Location = new System.Drawing.Point(813, 20);
+            this.btnchonncc.Location = new System.Drawing.Point(1084, 25);
+            this.btnchonncc.Margin = new System.Windows.Forms.Padding(4);
             this.btnchonncc.Name = "btnchonncc";
             this.btnchonncc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnchonncc.Size = new System.Drawing.Size(35, 28);
+            this.btnchonncc.Size = new System.Drawing.Size(47, 34);
             this.btnchonncc.TabIndex = 12;
             this.btnchonncc.Text = "...";
             this.btnchonncc.UseVisualStyleBackColor = true;
@@ -358,9 +378,10 @@ namespace MINI.src.GUI
             // btnlammoisp
             // 
             this.btnlammoisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlammoisp.Location = new System.Drawing.Point(333, 2);
+            this.btnlammoisp.Location = new System.Drawing.Point(444, 2);
+            this.btnlammoisp.Margin = new System.Windows.Forms.Padding(4);
             this.btnlammoisp.Name = "btnlammoisp";
-            this.btnlammoisp.Size = new System.Drawing.Size(100, 50);
+            this.btnlammoisp.Size = new System.Drawing.Size(133, 62);
             this.btnlammoisp.TabIndex = 13;
             this.btnlammoisp.Text = "Làm Mới";
             this.btnlammoisp.UseVisualStyleBackColor = true;
@@ -369,9 +390,10 @@ namespace MINI.src.GUI
             // btnthemsp
             // 
             this.btnthemsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthemsp.Location = new System.Drawing.Point(451, 490);
+            this.btnthemsp.Location = new System.Drawing.Point(601, 603);
+            this.btnthemsp.Margin = new System.Windows.Forms.Padding(4);
             this.btnthemsp.Name = "btnthemsp";
-            this.btnthemsp.Size = new System.Drawing.Size(100, 50);
+            this.btnthemsp.Size = new System.Drawing.Size(133, 62);
             this.btnthemsp.TabIndex = 14;
             this.btnthemsp.Text = "Thêm";
             this.btnthemsp.UseVisualStyleBackColor = true;
@@ -380,9 +402,10 @@ namespace MINI.src.GUI
             // btnlmthanhtoan
             // 
             this.btnlmthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlmthanhtoan.Location = new System.Drawing.Point(842, 524);
+            this.btnlmthanhtoan.Location = new System.Drawing.Point(1123, 645);
+            this.btnlmthanhtoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnlmthanhtoan.Name = "btnlmthanhtoan";
-            this.btnlmthanhtoan.Size = new System.Drawing.Size(100, 50);
+            this.btnlmthanhtoan.Size = new System.Drawing.Size(133, 62);
             this.btnlmthanhtoan.TabIndex = 15;
             this.btnlmthanhtoan.Text = "Làm Mới";
             this.btnlmthanhtoan.UseVisualStyleBackColor = true;
@@ -391,9 +414,10 @@ namespace MINI.src.GUI
             // btnthanhtoan
             // 
             this.btnthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthanhtoan.Location = new System.Drawing.Point(1054, 524);
+            this.btnthanhtoan.Location = new System.Drawing.Point(1405, 645);
+            this.btnthanhtoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnthanhtoan.Name = "btnthanhtoan";
-            this.btnthanhtoan.Size = new System.Drawing.Size(100, 50);
+            this.btnthanhtoan.Size = new System.Drawing.Size(133, 62);
             this.btnthanhtoan.TabIndex = 16;
             this.btnthanhtoan.Text = "Thanh Toán";
             this.btnthanhtoan.UseVisualStyleBackColor = true;
@@ -402,9 +426,10 @@ namespace MINI.src.GUI
             // btnxoatatca
             // 
             this.btnxoatatca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoatatca.Location = new System.Drawing.Point(948, 524);
+            this.btnxoatatca.Location = new System.Drawing.Point(1264, 645);
+            this.btnxoatatca.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoatatca.Name = "btnxoatatca";
-            this.btnxoatatca.Size = new System.Drawing.Size(100, 50);
+            this.btnxoatatca.Size = new System.Drawing.Size(133, 62);
             this.btnxoatatca.TabIndex = 17;
             this.btnxoatatca.Text = "Xóa Tất Cả";
             this.btnxoatatca.UseVisualStyleBackColor = true;
@@ -413,9 +438,10 @@ namespace MINI.src.GUI
             // btnsua
             // 
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsua.Location = new System.Drawing.Point(736, 524);
+            this.btnsua.Location = new System.Drawing.Point(981, 645);
+            this.btnsua.Margin = new System.Windows.Forms.Padding(4);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(100, 50);
+            this.btnsua.Size = new System.Drawing.Size(133, 62);
             this.btnsua.TabIndex = 18;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
@@ -424,9 +450,10 @@ namespace MINI.src.GUI
             // btnchonnv
             // 
             this.btnchonnv.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnchonnv.Location = new System.Drawing.Point(1074, 20);
+            this.btnchonnv.Location = new System.Drawing.Point(1432, 25);
+            this.btnchonnv.Margin = new System.Windows.Forms.Padding(4);
             this.btnchonnv.Name = "btnchonnv";
-            this.btnchonnv.Size = new System.Drawing.Size(35, 28);
+            this.btnchonnv.Size = new System.Drawing.Size(47, 34);
             this.btnchonnv.TabIndex = 19;
             this.btnchonnv.Text = "...";
             this.btnchonnv.UseVisualStyleBackColor = true;
@@ -434,18 +461,22 @@ namespace MINI.src.GUI
             // 
             // ptbsanpham
             // 
-            this.ptbsanpham.Location = new System.Drawing.Point(7, 458);
+            this.ptbsanpham.ImageLocation = "";
+            this.ptbsanpham.Location = new System.Drawing.Point(9, 564);
+            this.ptbsanpham.Margin = new System.Windows.Forms.Padding(4);
             this.ptbsanpham.Name = "ptbsanpham";
-            this.ptbsanpham.Size = new System.Drawing.Size(200, 200);
+            this.ptbsanpham.Size = new System.Drawing.Size(267, 246);
+            this.ptbsanpham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbsanpham.TabIndex = 20;
             this.ptbsanpham.TabStop = false;
             // 
             // btntimkiemsp
             // 
             this.btntimkiemsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntimkiemsp.Location = new System.Drawing.Point(227, 2);
+            this.btntimkiemsp.Location = new System.Drawing.Point(303, 2);
+            this.btntimkiemsp.Margin = new System.Windows.Forms.Padding(4);
             this.btntimkiemsp.Name = "btntimkiemsp";
-            this.btntimkiemsp.Size = new System.Drawing.Size(100, 50);
+            this.btntimkiemsp.Size = new System.Drawing.Size(133, 62);
             this.btntimkiemsp.TabIndex = 21;
             this.btntimkiemsp.Text = "Tìm Kiếm";
             this.btntimkiemsp.UseVisualStyleBackColor = true;
@@ -456,9 +487,10 @@ namespace MINI.src.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(765, 588);
+            this.label1.Location = new System.Drawing.Point(1020, 724);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(108, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "Tổng Tiền:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -466,18 +498,21 @@ namespace MINI.src.GUI
             // txttongtien
             // 
             this.txttongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttongtien.Location = new System.Drawing.Point(854, 582);
+            this.txttongtien.Location = new System.Drawing.Point(1139, 716);
+            this.txttongtien.Margin = new System.Windows.Forms.Padding(4);
             this.txttongtien.Name = "txttongtien";
-            this.txttongtien.Size = new System.Drawing.Size(185, 26);
+            this.txttongtien.Size = new System.Drawing.Size(245, 30);
             this.txttongtien.TabIndex = 23;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtngaylap);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(607, 58);
+            this.groupBox3.Location = new System.Drawing.Point(809, 71);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 50);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(267, 62);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ngày Nhập";
@@ -485,17 +520,18 @@ namespace MINI.src.GUI
             // txtngaylap
             // 
             this.txtngaylap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtngaylap.Location = new System.Drawing.Point(6, 21);
+            this.txtngaylap.Location = new System.Drawing.Point(8, 26);
+            this.txtngaylap.Margin = new System.Windows.Forms.Padding(4);
             this.txtngaylap.Name = "txtngaylap";
-            this.txtngaylap.Size = new System.Drawing.Size(188, 26);
+            this.txtngaylap.Size = new System.Drawing.Size(249, 30);
             this.txtngaylap.TabIndex = 25;
             // 
             // NhapHangGUI
             // 
             this.AcceptButton = this.btntimkiemsp;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 722);
+            this.ClientSize = new System.Drawing.Size(1555, 889);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txttongtien);
             this.Controls.Add(this.label1);
@@ -520,6 +556,7 @@ namespace MINI.src.GUI
             this.Controls.Add(this.grbTimkiem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lsvdssp);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhapHangGUI";
             this.Text = "NhapHangGUI";
             this.Load += new System.EventHandler(this.NhapHangGUI_Load);
@@ -553,7 +590,6 @@ namespace MINI.src.GUI
         private System.Windows.Forms.ColumnHeader lsvidsp;
         private System.Windows.Forms.ColumnHeader lsvidlsp;
         private System.Windows.Forms.ColumnHeader lsvtensp;
-        private System.Windows.Forms.ColumnHeader lsvdonGia;
         private System.Windows.Forms.ColumnHeader lsvsoLuong;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -581,7 +617,6 @@ namespace MINI.src.GUI
         private System.Windows.Forms.ColumnHeader dongia;
         private System.Windows.Forms.TextBox txtidncc;
         private System.Windows.Forms.TextBox txtidnhanvien;
-        private System.Windows.Forms.TextBox txtdongia;
         private System.Windows.Forms.TextBox txtsoluong;
         private System.Windows.Forms.TextBox txtidsanpham;
         private System.Windows.Forms.TextBox txtidlsp;
@@ -595,5 +630,6 @@ namespace MINI.src.GUI
         private ColumnHeader thanhtien;
         private GroupBox groupBox3;
         private TextBox txtngaylap;
+        private TextBox txtdongia;
     }
 }
