@@ -118,6 +118,8 @@ namespace MINI.src.GUI.ThongKe
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
                 lvi.SubItems.Add(dt.Rows[i][4].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
+                lvi.SubItems.Add(dt.Rows[i][6].ToString());
+                lvi.SubItems.Add(dt.Rows[i][7].ToString());
             }
         }
 
@@ -228,8 +230,10 @@ namespace MINI.src.GUI.ThongKe
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            dtpNgayBD.Value = DateTime.Now;
-            dtpNgayKT.Value = DateTime.Now;
+            ngayBD = DateTime.Now;
+            dtpNgayBD.Text = DateTime.Now.ToString();
+            ngayKT = DateTime.Now;
+            dtpNgayKT.Text = DateTime.Now.ToString();
             hienThiHoaDon();
             hienThiPhieuNhap();
             float totalInvoice = tinhTongHoaDonBanHang();
@@ -289,6 +293,10 @@ namespace MINI.src.GUI.ThongKe
         private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
             messageCBNhanVien = cbNhanVien.SelectedItem.ToString();
+            ngayBD = DateTime.Now;
+            dtpBDNV.Text = DateTime.Now.ToString();
+            ngayKT = DateTime.Now;
+            dtpKTNV.Text = DateTime.Now.ToString();
             if (messageCBNhanVien.Equals("Hóa Đơn Bán"))
             {
                 hienThiNhanVienTheoHoaDon();
@@ -301,7 +309,7 @@ namespace MINI.src.GUI.ThongKe
 
         private void btnSearchNV_Click(object sender, EventArgs e)
         {
-            ngayBD = DateTime.Parse(dtpBDNV.Text);
+            ngayBD = DateTime.Parse(dtpBDNV.Text);            
             ngayKT = DateTime.Parse(dtpKTNV.Text);
             if (checkDate())
             {
@@ -318,8 +326,10 @@ namespace MINI.src.GUI.ThongKe
 
         private void btnClearNV_Click(object sender, EventArgs e)
         {
-            ngayBD = DateTime.Now; 
+            ngayBD = DateTime.Now;
+            dtpBDNV.Text = DateTime.Now.ToString();
             ngayKT = DateTime.Now;
+            dtpKTNV.Text = DateTime.Now.ToString();
             cbNhanVien.Text = "Thống Kê Nhân Viên Theo";
             hienThiNhanVienTheoHoaDon();
         }
@@ -358,8 +368,10 @@ namespace MINI.src.GUI.ThongKe
 
         private void btnClearCustomer_Click(object sender, EventArgs e)
         {
-            ngayBD = DateTime.Now; 
+            ngayBD = DateTime.Now;
+            dtpBDKH.Text = DateTime.Now.ToString();
             ngayKT = DateTime.Now;
+            dtpKHKT.Text = DateTime.Now.ToString();
             hienThiKhachHang();
         }
 
@@ -401,7 +413,9 @@ namespace MINI.src.GUI.ThongKe
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             ngayBD = DateTime.Now;
+            dtpNgayBD.Text = DateTime.Now.ToString();
             ngayKT = DateTime.Now;
+            dtpNgayKT.Text = DateTime.Now.ToString();
             hienThiNhaCungCap();
         }
 
