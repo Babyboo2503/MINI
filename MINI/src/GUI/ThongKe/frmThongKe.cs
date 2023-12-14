@@ -19,6 +19,8 @@ namespace MINI.src.GUI.ThongKe
         List<HoaDonDTO> dsHoaDon = null;
         List<ChiTietHoaDonDTO> dsChiTietHoaDon = null;
         List<PhieuNhapDTO> dsPhieuNhap = null;
+        DateTime ngayLapHD;
+        String messageCBNhanVien = "Hóa Đơn Bán";
         public frmThongKe()
         {
             thongKeBus = new ThongKeBUS();
@@ -27,28 +29,26 @@ namespace MINI.src.GUI.ThongKe
 
         private void frmThongKe_Load(object sender, EventArgs e)
         {
-            if (checkDate())
-            {
-                float totalInvoice = tinhTongHoaDonBanHang();
-                float totalReciept = tinhTongHoaDonNhapHang();
-                lblTotalProduct.Text = thongKeBus.layDSSanPham().Count().ToString();
-                lblTotalEmployee.Text = thongKeBus.layDSNhanVien().Count().ToString();
-                lblTotalCustomer.Text = thongKeBus.layDSKhachHang().Count().ToString();
-                lblTotalVendor.Text = thongKeBus.layDSNhaCungCap().Count().ToString();
-                lblTotalInvoice.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalInvoice);
-                lblTotalReceipt.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalReciept);
-                hienThiSanPham();
-                hienThiNhanVien();
-                hienThiKhachHang();
-                hienThiNhaCungCap();
-                hienThiHoaDon();
-                hienThiPhieuNhap();
-            }
+            float totalInvoice = tinhTongHoaDonBanHang();
+            float totalReciept = tinhTongHoaDonNhapHang();
+            lblTotalProduct.Text = thongKeBus.layDSSanPham().Count().ToString();
+            lblTotalEmployee.Text = thongKeBus.layDSNhanVien().Count().ToString();
+            lblTotalCustomer.Text = thongKeBus.layDSKhachHang().Count().ToString();
+            lblTotalVendor.Text = thongKeBus.layDSNhaCungCap().Count().ToString();
+            lblTotalInvoice.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalInvoice);
+            lblTotalReceipt.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalReciept);
+            hienThiSanPhamTheoHoaDonBan();
+            hienThiNhanVienTheoHoaDon();
+            hienThiKhachHang();
+            hienThiNhaCungCap();
+            hienThiHoaDon();
+            hienThiPhieuNhap();
         }
 
-        void hienThiNhanVien()
+        void hienThiNhanVienTheoHoaDon()
         {
-            DataTable dt = thongKeBus.layDanhSachNhanVien();
+            lsvEmpolyee.Items.Clear();
+            DataTable dt = thongKeBus.layDanhSachNhanVienTheoHoaDon();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ListViewItem lvi = lsvEmpolyee.Items.Add(dt.Rows[i][0].ToString());
@@ -58,15 +58,29 @@ namespace MINI.src.GUI.ThongKe
                 lvi.SubItems.Add(dt.Rows[i][4].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
                 lvi.SubItems.Add(dt.Rows[i][6].ToString());
-                lvi.SubItems.Add(dt.Rows[i][7].ToString());
-                lvi.SubItems.Add(dt.Rows[i][8].ToString());
-                lvi.SubItems.Add(dt.Rows[i][9].ToString());
             }
         }
 
-        void hienThiSanPham()
+        void hienThiNhanVienTheoPhieuNhap()
         {
-            DataTable dt = thongKeBus.layDanhSachSanPham();
+            lsvEmpolyee.Items.Clear();
+            DataTable dt = thongKeBus.layDanhSachNhanVienTheoPhieuNhap();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ListViewItem lvi = lsvEmpolyee.Items.Add(dt.Rows[i][0].ToString());
+                lvi.SubItems.Add(dt.Rows[i][1].ToString());
+                lvi.SubItems.Add(dt.Rows[i][2].ToString());
+                lvi.SubItems.Add(dt.Rows[i][3].ToString());
+                lvi.SubItems.Add(dt.Rows[i][4].ToString());
+                lvi.SubItems.Add(dt.Rows[i][5].ToString());
+                lvi.SubItems.Add(dt.Rows[i][6].ToString());
+            }
+        }
+
+        void hienThiSanPhamTheoHoaDonBan()
+        {
+            lsvProduct.Items.Clear();
+            DataTable dt = thongKeBus.layDanhSachSanPhamTheoHoaDonBan();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ListViewItem lvi = lsvProduct.Items.Add(dt.Rows[i][0].ToString());
@@ -75,8 +89,21 @@ namespace MINI.src.GUI.ThongKe
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
                 lvi.SubItems.Add(dt.Rows[i][4].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
-                lvi.SubItems.Add(dt.Rows[i][6].ToString());
-                lvi.SubItems.Add(dt.Rows[i][7].ToString());
+            }
+        }
+
+        void hienThiSanPhamTheoPhieuNhap()
+        {
+            lsvProduct.Items.Clear();
+            DataTable dt = thongKeBus.layDanhSachSanPhamTheoPhieuNhap();
+            for (int i = 0;i < dt.Rows.Count; i++)
+            {
+                ListViewItem lvi = lsvProduct.Items.Add(dt.Rows[i][0].ToString());
+                lvi.SubItems.Add(dt.Rows[i][1].ToString());
+                lvi.SubItems.Add(dt.Rows[i][2].ToString());
+                lvi.SubItems.Add(dt.Rows[i][3].ToString());
+                lvi.SubItems.Add(dt.Rows[i][4].ToString());
+                lvi.SubItems.Add(dt.Rows[i][5].ToString());
             }
         }
 
@@ -91,8 +118,6 @@ namespace MINI.src.GUI.ThongKe
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
                 lvi.SubItems.Add(dt.Rows[i][4].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
-                lvi.SubItems.Add(dt.Rows[i][6].ToString());
-                lvi.SubItems.Add(dt.Rows[i][7].ToString());
             }
         }
 
@@ -105,34 +130,24 @@ namespace MINI.src.GUI.ThongKe
                 lvi.SubItems.Add(dt.Rows[i][1].ToString());
                 lvi.SubItems.Add(dt.Rows[i][2].ToString());
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
+                lvi.SubItems.Add(dt.Rows[i][4].ToString());
+                lvi.SubItems.Add(dt.Rows[i][5].ToString());
+                lvi.SubItems.Add(dt.Rows[i][6].ToString());
             }
         }
 
         void hienThiHoaDon()
         {
             lsvInvoice.Items.Clear();
-            if (ngayBD < DateTime.Now && ngayKT > ngayBD)
+            DataTable dt = thongKeBus.layDanhSachBanHang();
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                DataTable dt = thongKeBus.layDanhSachBanHangTheoNgayBatDauVaKetThuc(ngayBD, ngayKT);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ListViewItem lvi = lsvReceipt.Items.Add(dt.Rows[i][0].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][1].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][2].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][3].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][4].ToString());
-                }
-            } else {
-                DataTable dt = thongKeBus.layDanhSachBanHang();
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ListViewItem lvi = lsvInvoice.Items.Add(dt.Rows[i][0].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][1].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][2].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][3].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][4].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][5].ToString());
-                }
+                ListViewItem lvi = lsvInvoice.Items.Add(dt.Rows[i][0].ToString());
+                lvi.SubItems.Add(dt.Rows[i][1].ToString());
+                lvi.SubItems.Add(dt.Rows[i][2].ToString());
+                lvi.SubItems.Add(dt.Rows[i][3].ToString());
+                lvi.SubItems.Add(dt.Rows[i][4].ToString());
+                lvi.SubItems.Add(dt.Rows[i][5].ToString());
             }
         }
 
@@ -146,7 +161,7 @@ namespace MINI.src.GUI.ThongKe
             }
             return total;
         }
-        
+
         float tinhTongHoaDonNhapHang()
         {
             float total = 0;
@@ -184,29 +199,14 @@ namespace MINI.src.GUI.ThongKe
         void hienThiPhieuNhap()
         {
             lsvReceipt.Items.Clear();
-            if (ngayBD < DateTime.Now && ngayKT > ngayBD)
+            DataTable dt = thongKeBus.layDanhSachPhieuNhap();
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                DataTable dt = thongKeBus.layDanhSachPhieuNhapTheoNgayBatDauVaKetThuc(ngayBD, ngayKT);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ListViewItem lvi = lsvReceipt.Items.Add(dt.Rows[i][0].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][1].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][2].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][3].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][4].ToString());
-                }
-            }
-            else
-            {
-                DataTable dt = thongKeBus.layDanhSachPhieuNhap();
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ListViewItem lvi = lsvReceipt.Items.Add(dt.Rows[i][0].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][1].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][2].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][3].ToString());
-                    lvi.SubItems.Add(dt.Rows[i][4].ToString());
-                }
+                ListViewItem lvi = lsvReceipt.Items.Add(dt.Rows[i][0].ToString());
+                lvi.SubItems.Add(dt.Rows[i][1].ToString());
+                lvi.SubItems.Add(dt.Rows[i][2].ToString());
+                lvi.SubItems.Add(dt.Rows[i][3].ToString());
+                lvi.SubItems.Add(dt.Rows[i][4].ToString());
             }
         }
 
@@ -230,12 +230,183 @@ namespace MINI.src.GUI.ThongKe
         {
             dtpNgayBD.Value = DateTime.Now;
             dtpNgayKT.Value = DateTime.Now;
+            hienThiHoaDon();
+            hienThiPhieuNhap();
+            float totalInvoice = tinhTongHoaDonBanHang();
+            float totalReciept = tinhTongHoaDonNhapHang();
+            lblTotalInvoice.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalInvoice);
+            lblTotalReceipt.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalReciept);
+        }
+
+        private void btnSearch1_Click(object sender, EventArgs e)
+        {
+            float totalInvoice = 0;
+            float totalReciept = 0;
+            ngayBD = DateTime.Parse(dtpNgayBD.Text);
+            ngayKT = DateTime.Parse(dtpNgayKT.Text);
+            if (checkDate()) {
+                foreach (ListViewItem lvt in lsvInvoice.Items)
+                {
+                    ngayLapHD = DateTime.Parse(lvt.SubItems[3].Text);
+                    if (ngayBD > ngayLapHD || ngayKT < ngayLapHD)
+                    {
+                        lsvInvoice.Items.Remove(lvt);
+                    }
+                    else
+                    {
+                        totalInvoice += float.Parse(lvt.SubItems[5].Text);
+                    }
+                }
+                foreach (ListViewItem lvt in lsvReceipt.Items)
+                {
+                    ngayLapHD = DateTime.Parse(lvt.SubItems[3].Text);
+                    if (ngayBD > ngayLapHD || ngayKT < ngayLapHD)
+                    {
+                        lsvReceipt.Items.Remove(lvt);
+                    }
+                    else
+                    {
+                        totalReciept += float.Parse(lvt.SubItems[4].Text);
+                    }
+                }
+            }
+            lblTotalInvoice.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalInvoice);
+            lblTotalReceipt.Text = chuyenDoiGiaTriThanhChuoiTienTe(totalReciept);
+        }
+
+        private void cbDSSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string message = cbDSSP.SelectedItem.ToString();
+            if (message.Equals("Hóa Đơn"))
+            {
+                hienThiSanPhamTheoHoaDonBan();
+            } else
+            {
+                hienThiSanPhamTheoPhieuNhap();
+            }
+        }
+
+        private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            messageCBNhanVien = cbNhanVien.SelectedItem.ToString();
+            if (messageCBNhanVien.Equals("Hóa Đơn Bán"))
+            {
+                hienThiNhanVienTheoHoaDon();
+            }
+            else
+            {
+                hienThiNhanVienTheoPhieuNhap();
+            }
+        }
+
+        private void btnSearchNV_Click(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Parse(dtpBDNV.Text);
+            ngayKT = DateTime.Parse(dtpKTNV.Text);
+            if (checkDate())
+            {
+                foreach (ListViewItem lvt in lsvEmpolyee.Items)
+                {
+                    ngayLapHD = DateTime.Parse(lvt.SubItems[3].Text);
+                    if (ngayBD > ngayLapHD || ngayKT < ngayLapHD)
+                    {
+                        lsvEmpolyee.Items.Remove(lvt);
+                    }
+                }
+            }
+        }
+
+        private void btnClearNV_Click(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Now; 
+            ngayKT = DateTime.Now;
+            cbNhanVien.Text = "Thống Kê Nhân Viên Theo";
+            hienThiNhanVienTheoHoaDon();
+        }
+
+        private void lsvEmpolyee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvEmpolyee.SelectedItems.Count > 0)
+            {
+                int selectdReceptId = Convert.ToInt32(lsvEmpolyee.SelectedItems[0].Text);
+                if (messageCBNhanVien.Equals("Hóa Đơn Bán"))
+                {
+                    hienThiChiTietHoaDon(selectdReceptId);
+                } else
+                {
+                    hienThiChiTietPhieuNhap(selectdReceptId);
+                }
+            }
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Parse(dtpBDKH.Text);
+            ngayKT = DateTime.Parse(dtpKHKT.Text);
+            if (checkDate())
+            {
+                foreach (ListViewItem lvt in lsvCustomer.Items)
+                {
+                    ngayLapHD = DateTime.Parse(lvt.SubItems[6].Text);
+                    if (ngayBD > ngayLapHD || ngayKT < ngayLapHD)
+                    {
+                        lsvCustomer.Items.Remove(lvt);
+                    }
+                }
+            }
+        }
+
+        private void btnClearCustomer_Click(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Now; 
+            ngayKT = DateTime.Now;
+            hienThiKhachHang();
+        }
+
+        private void lsvCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvCustomer.SelectedItems.Count > 0)
+            {
+                int selectdReceptId = Convert.ToInt32(lsvCustomer.SelectedItems[0].Text);
+                hienThiChiTietHoaDon(selectdReceptId);
+            }
+        }
+
+        private void lsvVendor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvVendor.SelectedItems.Count > 0)
+            {
+                int selectdReceptId = Convert.ToInt32(lsvVendor.SelectedItems[0].Text);
+                hienThiChiTietHoaDon(selectdReceptId);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Parse(dtpBDNCC.Text);
+            ngayKT = DateTime.Parse(dtpKTNCC.Text);
+            if (checkDate())
+            {
+                foreach (ListViewItem lvt in lsvVendor.Items)
+                {
+                    ngayLapHD = DateTime.Parse(lvt.SubItems[5].Text);
+                    if (ngayBD > ngayLapHD || ngayKT < ngayLapHD)
+                    {
+                        lsvVendor.Items.Remove(lvt);
+                    }
+                }
+            }
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            ngayBD = DateTime.Now;
+            ngayKT = DateTime.Now;
+            hienThiNhaCungCap();
         }
 
         bool checkDate()
         {
-            ngayBD = dtpNgayBD.Value;
-            ngayKT = dtpNgayKT.Value;
             if (ngayBD > DateTime.Now)
             {
                 MessageBox.Show("Ngày bắt đầu phải trước ngày hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

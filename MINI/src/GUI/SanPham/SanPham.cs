@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using MINI.src.BUS;
 
 namespace MINI.GUI
 {
@@ -19,7 +18,7 @@ namespace MINI.GUI
     {
         private bool themloaisp = false;
         private bool themsp = false;
-        SanPhamBUS sp = new SanPhamBUS();
+        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
         public SanPham()
         {
             InitializeComponent();
@@ -65,6 +64,10 @@ namespace MINI.GUI
                     try
                     {
                         pro.BorderStyle = BorderStyle.FixedSingle;
+                        if(int.Parse(dt.Rows[i][3].ToString())<5)
+                        {
+                            pro.ForeColor = Color.Red;
+                        }
                         pro.Id_Pro = dt.Rows[i][0].ToString();
                         pro.Name_Pro = dt.Rows[i][6].ToString();
                         pro.Num_Pro = dt.Rows[i][3].ToString();
