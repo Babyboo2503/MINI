@@ -148,7 +148,6 @@
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\SanPham\Class1.cs" />
-    <Compile Include="src\GUI\TaiKhoan\Class1.cs" />
     <Compile Include="src\GUI\TaiKhoan\TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
