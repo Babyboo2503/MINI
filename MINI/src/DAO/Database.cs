@@ -21,7 +21,8 @@ namespace MINI.src.DAO
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
         public DataTable Execute(string sqlStr)
         {
-            da = new SqlDataAdapter(sqlStr, sqlConn); ds = new DataSet();
+            da = new SqlDataAdapter(sqlStr, sqlConn); 
+            ds = new DataSet();
             da.Fill(ds);
             return ds.Tables[0];
         }
