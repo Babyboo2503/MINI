@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MINI.BUS;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace MINI.GUI
     {
         private bool themloaisp = false;
         private bool themsp = false;
-        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
+        SanPhamBUS sp = new SanPhamBUS();
         public SanPham()
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace MINI.GUI
                     try
                     {
                         pro.BorderStyle = BorderStyle.FixedSingle;
-                        if(int.Parse(dt.Rows[i][3].ToString())<5)
+                        if (int.Parse(dt.Rows[i][3].ToString()) < 5)
                         {
                             pro.ForeColor = Color.Red;
                         }
@@ -110,7 +111,7 @@ namespace MINI.GUI
             txtTimKiemSanPham.Text = "";
             cbbPhanLoai.SelectedItem = null;
         }
-        
+
         private void tabSanPham_Load(object sender, EventArgs e)
         {
             setNull();
@@ -123,12 +124,12 @@ namespace MINI.GUI
         {
             if (tabSanPham.SelectedTab == tabLoaiSanPham && themloaisp)
             {
-                if(txtIdLoaiSanPham.Text != "")
+                if (txtIdLoaiSanPham.Text != "")
                 {
                     MessageBox.Show("Id đã tồn tại", "Báo lỗi");
                     return false;
                 }
-                else if(!sp.checkValue_LoaiSanPham("id", txtTenLoaiSanPham.Text))
+                else if (!sp.checkValue_LoaiSanPham("id", txtTenLoaiSanPham.Text))
                 {
                     txtTenLoaiSanPham.Text = "";
                     txtTenLoaiSanPham.Focus();
@@ -144,7 +145,7 @@ namespace MINI.GUI
                     return false;
                 }
             }
-            else if(tabSanPham.SelectedTab == tabThemSanPham && themsp)
+            else if (tabSanPham.SelectedTab == tabThemSanPham && themsp)
             {
                 if (txtIdSanPham.Text != "")
                 {
@@ -181,7 +182,7 @@ namespace MINI.GUI
             else if (tabSanPham.SelectedTab == tabThemSanPham && !themsp)
             {
                 string check = sp.checkValue_SanPham(txtIdSanPham.Text, cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text, txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString());
-                if(check.Equals("id"))
+                if (check.Equals("id"))
                 {
                     tabSanPham.SelectedTab = tabDSSP;
                     rdList.Checked = true;
@@ -226,7 +227,7 @@ namespace MINI.GUI
         private void btnThemLoaiHang_Click(object sender, EventArgs e)
         {
             themloaisp = true;
-            if(checkValue_SanPham())
+            if (checkValue_SanPham())
             {
                 sp.ThemLoaiSanPham(txtTenLoaiSanPham.Text); MessageBox.Show("Thêm mới thành công");
             }
@@ -237,7 +238,7 @@ namespace MINI.GUI
 
         private void btnSuaLoaiHang_Click(object sender, EventArgs e)
         {
-            if(checkValue_SanPham())
+            if (checkValue_SanPham())
             {
                 sp.CapNhatLoaiSanPham(txtTenLoaiSanPham.Text, txtIdLoaiSanPham.Text); MessageBox.Show("Sửa thành công");
             }
@@ -254,17 +255,37 @@ namespace MINI.GUI
             }
             else
             {
-                lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
-                lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
-                lsvLoaiSanPham.Items.Clear();
-                DataTable dttk = sp.LayDSLoaiSanPham();
-
-                for (int i = 0; i < dttk.Rows.Count; i++)
+                int id;
+                if (!int.TryParse(txtTimKiemLoaiSanPham.Text, out id))
                 {
-                    if (dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                    lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                    lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                    lsvLoaiSanPham.Items.Clear();
+                    DataTable dttk = sp.LayDSLoaiSanPham();
+
+                    for (int i = 0; i < dttk.Rows.Count; i++)
                     {
-                        ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
-                        lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        if (dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                        {
+                            ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        }
+                    }
+                }
+                else
+                {
+                    lsvLoaiSanPham.FullRowSelect = true; //cho phép chọn 1 dòng
+                    lsvLoaiSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
+                    lsvLoaiSanPham.Items.Clear();
+                    DataTable dttk = sp.LayDSLoaiSanPham();
+
+                    for (int i = 0; i < dttk.Rows.Count; i++)
+                    {
+                        if (dttk.Rows[i][0].ToString().ToLower().Contains(txtTimKiemLoaiSanPham.Text.ToLower()))
+                        {
+                            ListViewItem lvi = lsvLoaiSanPham.Items.Add(dttk.Rows[i][0].ToString());
+                            lvi.SubItems.Add(dttk.Rows[i][1].ToString());
+                        }
                     }
                 }
             }
@@ -312,7 +333,7 @@ namespace MINI.GUI
             themsp = true;
             if (checkValue_SanPham())
             {
-                sp.ThemSanPham(cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text,txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString()); MessageBox.Show("Thêm mới thành công");
+                sp.ThemSanPham(cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text, txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString()); MessageBox.Show("Thêm mới thành công");
                 setNull();
                 HienthiSanPham();
             }
@@ -323,7 +344,7 @@ namespace MINI.GUI
         {
             if (checkValue_SanPham())
             {
-                sp.CapNhatSanPham(cbbLoaiSanPham.SelectedValue.ToString(),txtTenSanPham.Text, txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString(), txtIdSanPham.Text); MessageBox.Show("Sửa thành công");
+                sp.CapNhatSanPham(cbbLoaiSanPham.SelectedValue.ToString(), txtTenSanPham.Text, txtDonGia.Text, txtSoLuong.Text, txtHinhAnh.Text, cbbTrangThai.SelectedItem.ToString(), txtIdSanPham.Text); MessageBox.Show("Sửa thành công");
                 setNull();
                 tabSanPham.SelectedTab = tabDSSP;
                 rdList.Checked = true;
@@ -356,7 +377,7 @@ namespace MINI.GUI
             else
             {
                 int id;
-                if(!int.TryParse(txtTimKiemSanPham.Text, out id))
+                if (!int.TryParse(txtTimKiemSanPham.Text, out id))
                 {
                     DataTable dttk = sp.LayDSSanPham();
                     if (rdPic.Checked)
@@ -493,7 +514,7 @@ namespace MINI.GUI
                 {
                     txtHinhAnh.Text = dlg.FileName;
                 }
-                else if(Path.GetExtension(dlg.FileName).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase))
+                else if (Path.GetExtension(dlg.FileName).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase))
                 {
                     txtHinhAnh.Text = dlg.FileName;
                 }
