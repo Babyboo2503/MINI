@@ -146,7 +146,7 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void btnlammoi_Click(object sender, EventArgs e)
         {
-            HienThiPhieuNhap();
+            
             txttimkiem.Text = "";
             txtidphieunhap.Text = "";
             txtngaynhap.Text = "";
@@ -155,7 +155,7 @@ namespace MINI.src.GUI.PhieuNhap
             txttongtien.Text = "";
             txttongtien1.Text = "0";
             txttongtien2.Text = "0";
-
+            HienThiPhieuNhap();
         }
 
         private void txttimkiempn_Click(object sender, EventArgs e)
@@ -234,6 +234,11 @@ namespace MINI.src.GUI.PhieuNhap
         private void txttimkiem_Click(object sender, EventArgs e)
         {
             txttimkiem.Clear();
+        }
+
+        private void txtidncc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

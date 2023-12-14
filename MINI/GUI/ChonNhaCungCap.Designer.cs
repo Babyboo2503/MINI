@@ -39,16 +39,16 @@
             this.txtsearchncc = new System.Windows.Forms.TextBox();
             this.btnchon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnthemncc = new System.Windows.Forms.Button();
+            this.btnsuancc = new System.Windows.Forms.Button();
+            this.btnxoancc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btntimkiemncc
             // 
             this.btntimkiemncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntimkiemncc.Location = new System.Drawing.Point(230, 81);
+            this.btntimkiemncc.Location = new System.Drawing.Point(264, 81);
             this.btntimkiemncc.Name = "btntimkiemncc";
             this.btntimkiemncc.Size = new System.Drawing.Size(100, 50);
             this.btntimkiemncc.TabIndex = 7;
@@ -96,7 +96,7 @@
             // btnlammoincc
             // 
             this.btnlammoincc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlammoincc.Location = new System.Drawing.Point(654, 85);
+            this.btnlammoincc.Location = new System.Drawing.Point(370, 81);
             this.btnlammoincc.Name = "btnlammoincc";
             this.btnlammoincc.Size = new System.Drawing.Size(100, 50);
             this.btnlammoincc.TabIndex = 5;
@@ -107,10 +107,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtsearchncc);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(24, 82);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(58, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 40);
+            this.groupBox1.Size = new System.Drawing.Size(200, 50);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
@@ -119,7 +119,7 @@
             // 
             this.txtsearchncc.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearchncc.ForeColor = System.Drawing.Color.Black;
-            this.txtsearchncc.Location = new System.Drawing.Point(6, 18);
+            this.txtsearchncc.Location = new System.Drawing.Point(6, 25);
             this.txtsearchncc.Name = "txtsearchncc";
             this.txtsearchncc.Size = new System.Drawing.Size(188, 20);
             this.txtsearchncc.TabIndex = 0;
@@ -129,9 +129,10 @@
             // 
             // btnchon
             // 
-            this.btnchon.Location = new System.Drawing.Point(594, 393);
+            this.btnchon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchon.Location = new System.Drawing.Point(527, 393);
             this.btnchon.Name = "btnchon";
-            this.btnchon.Size = new System.Drawing.Size(75, 23);
+            this.btnchon.Size = new System.Drawing.Size(100, 50);
             this.btnchon.TabIndex = 8;
             this.btnchon.Text = "Chọn";
             this.btnchon.UseVisualStyleBackColor = true;
@@ -139,56 +140,58 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(675, 393);
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(633, 393);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(100, 50);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // button1
+            // btnthemncc
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(336, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Thêm ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnthemncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthemncc.Location = new System.Drawing.Point(479, 81);
+            this.btnthemncc.Name = "btnthemncc";
+            this.btnthemncc.Size = new System.Drawing.Size(100, 50);
+            this.btnthemncc.TabIndex = 10;
+            this.btnthemncc.Text = "Thêm ";
+            this.btnthemncc.UseVisualStyleBackColor = true;
+            this.btnthemncc.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnsuancc
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(442, 82);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 50);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Sửa ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnsuancc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsuancc.Location = new System.Drawing.Point(585, 81);
+            this.btnsuancc.Name = "btnsuancc";
+            this.btnsuancc.Size = new System.Drawing.Size(100, 50);
+            this.btnsuancc.TabIndex = 11;
+            this.btnsuancc.Text = "Sửa ";
+            this.btnsuancc.UseVisualStyleBackColor = true;
+            this.btnsuancc.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnxoancc
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(548, 82);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 50);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.Leave += new System.EventHandler(this.button3_Leave);
+            this.btnxoancc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoancc.Location = new System.Drawing.Point(691, 81);
+            this.btnxoancc.Name = "btnxoancc";
+            this.btnxoancc.Size = new System.Drawing.Size(100, 50);
+            this.btnxoancc.TabIndex = 12;
+            this.btnxoancc.Text = "Xóa";
+            this.btnxoancc.UseVisualStyleBackColor = true;
+            this.btnxoancc.Click += new System.EventHandler(this.button3_Click);
+            this.btnxoancc.Leave += new System.EventHandler(this.button3_Leave);
             // 
             // ChonNhaCungCap
             // 
+            this.AcceptButton = this.btntimkiemncc;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnxoancc);
+            this.Controls.Add(this.btnsuancc);
+            this.Controls.Add(this.btnthemncc);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnchon);
             this.Controls.Add(this.btntimkiemncc);
@@ -218,8 +221,8 @@
         private System.Windows.Forms.TextBox txtsearchncc;
         private System.Windows.Forms.Button btnchon;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnthemncc;
+        private System.Windows.Forms.Button btnsuancc;
+        private System.Windows.Forms.Button btnxoancc;
     }
 }

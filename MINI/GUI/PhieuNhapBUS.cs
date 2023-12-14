@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using MINI.src.DAO;
 using MINI.src.GUI;
+using MINI.src.DTO;
 
 namespace MINI.src.BUS
 {
@@ -250,5 +251,35 @@ namespace MINI.src.BUS
                 }
             }
         }
+
+        public void ThemPhieuNhap(string maNCC, string maNV,DateTime ngayNhap,decimal tongTien)
+        {
+            string connectionString = "Data Source=.; Database=MiniMarket;Integrated Security = True"; // Thay thế bằng connection string của bạn
+
+            // Thiết lập kết nối đến cơ sở dữ liệu
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Mở kết nối
+                connection.Open();
+
+                // Tạo câu truy vấn cập nhật
+                string query = " INSERT INTO PhieuNhap(idNhanVien, idNhaCungCap, ngayNhap, tongTien) VALUES(@maNV,@maNCC,@ngayNhap,@tongTien)";
+
+                // Tạo command và truyền tham số
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@maNCC", maNCC);
+                    command.Parameters.AddWithValue("@maNV", maNV);
+                    command.Parameters.AddWithValue("@ngayNhap", ngayNhap);
+                    command.Parameters.AddWithValue("@tongTien", tongTien);
+
+                    // Thực thi truy vấn cập nhật
+                    int rowsAffected = command.ExecuteNonQuery();
+
+
+                }
+            }
+        }
+       
     }
 }

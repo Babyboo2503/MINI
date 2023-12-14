@@ -52,6 +52,13 @@ namespace MINI.src.GUI.PhieuNhap
             }
         }
 
+        public void UpdateButtonVisibility(bool isVisible)
+        {
+            btnthemncc.Visible = isVisible;
+            btnsuancc.Visible = isVisible;
+            btnxoancc.Visible = isVisible;
+        }
+
         private void ChonNhaCungCap_Load(object sender, EventArgs e)
         {
             txtsearchncc_Leave(sender, e);
