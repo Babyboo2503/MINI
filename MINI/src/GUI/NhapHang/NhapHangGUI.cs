@@ -19,9 +19,12 @@ namespace MINI.src.GUI
         public bool Themmoi = false;
         SanPhamBUS sp = new SanPhamBUS();
         PhieuNhapBUS pn = new PhieuNhapBUS();
-        public NhapHangGUI()
+        string user, pass;
+        public NhapHangGUI(string Username, string Password)
         {
             InitializeComponent();
+            this.user = Username;
+            this.pass = Password;
         }
 
         void HienThiSanPham()
