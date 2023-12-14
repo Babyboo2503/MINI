@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MINI.src.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace MINI.GUI
     public partial class KhuyenMai : Form
     {
         BUS.KhuyenMaiBUS km = new BUS.KhuyenMaiBUS();
-        BUS.SanPhamBUS sp = new BUS.SanPhamBUS();
+        SanPhamBUS sp = new SanPhamBUS();
         public bool themmoi = false;
         public KhuyenMai()
         {
