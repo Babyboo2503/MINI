@@ -292,6 +292,7 @@ namespace MINI.GUI
             if (lsvLoaiSanPham.Items.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy loại sản phẩm", "Tìm kiếm");
+                HienthiLoaiSanPham();
             }
             setNull_LoaiSanPham();
         }
@@ -408,6 +409,7 @@ namespace MINI.GUI
                         if (flowLayoutPanel1.Controls.Count == 0)
                         {
                             MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                            HienthiSanPham();
                         }
                         setNull();
                     }
@@ -434,6 +436,7 @@ namespace MINI.GUI
                         if (lsvSanPham.Items.Count == 0)
                         {
                             MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                            HienthiSanPham();
                         }
                         setNull();
                     }
@@ -469,6 +472,7 @@ namespace MINI.GUI
                         if (flowLayoutPanel1.Controls.Count == 0)
                         {
                             MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                            HienthiSanPham();
                         }
                         setNull();
                     }
@@ -495,6 +499,7 @@ namespace MINI.GUI
                         if (lsvSanPham.Items.Count == 0)
                         {
                             MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                            HienthiSanPham();
                         }
                         setNull();
                     }
@@ -587,6 +592,7 @@ namespace MINI.GUI
                     if (flowLayoutPanel1.Controls.Count == 0)
                     {
                         MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        HienthiSanPham();
                     }
                 }
                 else
@@ -612,6 +618,7 @@ namespace MINI.GUI
                     if (lsvSanPham.Items.Count == 0)
                     {
                         MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                        HienthiSanPham();
                     }
                 }
                 setNull();

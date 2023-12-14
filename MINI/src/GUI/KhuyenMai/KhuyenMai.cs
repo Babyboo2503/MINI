@@ -46,6 +46,8 @@ namespace MINI.GUI
             txtPhanTram.Text = "";
             cbbDieuKien.SelectedIndex = 0;
             cbbNoiDung.SelectedIndex = 0;
+            cbbKhuyenMai.SelectedIndex = 0;
+            cbbSanPham.SelectedIndex = 0;
         }
         void setButton(bool val)
         {
@@ -318,6 +320,12 @@ namespace MINI.GUI
                     }
                 }
             }
+            if(lsvKMSanPham.Items.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm", "Tìm kiếm");
+                HienthiKMSanPham();
+            }
+            setNull();
         }
     }
 }

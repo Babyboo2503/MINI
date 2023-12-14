@@ -290,6 +290,7 @@ namespace MINI.GUI
                 if(lsvKhachHang.Items.Count == 0)
                 {
                     MessageBox.Show("Không tìm thấy khách hàng", "Tìm kiếm");
+                    HienthiKhachHang();
                 }
                 setNull();
             }
