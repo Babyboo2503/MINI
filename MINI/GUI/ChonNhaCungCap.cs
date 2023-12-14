@@ -21,7 +21,7 @@ namespace MINI.src.GUI.PhieuNhap
             InitializeComponent();
         }
 
-        void HienThiNCC()
+        public void HienThiNCC()
         {
             lsvchonncc.Items.Clear();
             DataTable dt = ncc.LayDSNCC();
@@ -50,6 +50,13 @@ namespace MINI.src.GUI.PhieuNhap
                 lvi.SubItems.Add(dt.Rows[i][1].ToString());
                 lvi.SubItems.Add(dt.Rows[i][2].ToString());
             }
+        }
+
+        public void UpdateButtonVisibility(bool isVisible)
+        {
+            btnthemncc.Visible = isVisible;
+            btnsuancc.Visible = isVisible;
+            btnxoancc.Visible = isVisible;
         }
 
         private void ChonNhaCungCap_Load(object sender, EventArgs e)
@@ -94,12 +101,25 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ThemNCC themncc = new ThemNCC();
-            themncc.Controls["btnThem"].Visible = false;
-            themncc.Controls["txttenncc"].Text = lsvchonncc.SelectedItems[0].SubItems[2].Text;
-            themncc.Controls["txtdiachincc"].Text = lsvchonncc.SelectedItems[0].SubItems[1].Text;
-            themncc.Controls["txtsdtncc"].Text = lsvchonncc.SelectedItems[0].SubItems[3].Text;
-            themncc.Show();
+            if(lsvchonncc.SelectedItems.Count > 0)
+            {
+                string idncc = lsvchonncc.SelectedItems[0].SubItems[0].Text;
+                string tenNCC = lsvchonncc.SelectedItems[0].SubItems[1].Text;
+                string diaChi = lsvchonncc.SelectedItems[0].SubItems[2].Text;
+                string SDT = lsvchonncc.SelectedItems[0].SubItems[3].Text;
+                ThemNCC themncc = new ThemNCC();
+                themncc.UpdateButtonVisibility(false);
+                themncc.UpdateIdnccValue(idncc);
+                themncc.UpdateDiaChiNCCValue(diaChi);
+                themncc.UpdateTenNCCValue(tenNCC);
+                themncc.UpdateSDTNCCnccValue(SDT);
+                themncc.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Nhà Cung Cấp cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,15 +155,24 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string maNCC = lsvchonncc.SelectedItems[0].SubItems[0].Text;
-            ncc.XoaNCC(maNCC);
-            lsvchonncc.Clear();
-            HienThiNCC();
+            if (lsvchonncc.SelectedItems.Count > 0)
+            {
+                string maNCC = lsvchonncc.SelectedItems[0].SubItems[0].Text;
+                ncc.XoaNCC(maNCC);
+
+                // Xóa mục đã chọn từ ListView
+                lsvchonncc.SelectedItems[0].Remove();
+            }
         }
 
         private void txttenncc_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ChonNhaCungCap_Activated(object sender, EventArgs e)
+        {
+            HienThiNCC();
         }
     }
 }

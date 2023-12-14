@@ -155,6 +155,7 @@ namespace MINI.src.GUI.PhieuNhap
         private void OpenformChonNCC()
         {
             ChonNhaCungCap chonNhaCungCap = new ChonNhaCungCap();
+            chonNhaCungCap.UpdateButtonVisibility(false);
             DialogResult result = chonNhaCungCap.ShowDialog();  // Hiển thị form ChonNhaCungCap dưới dạng dialog
 
             if (result == DialogResult.OK)  // Nếu người dùng click nút "Chon" trong form ChonNhaCungCap
@@ -167,6 +168,14 @@ namespace MINI.src.GUI.PhieuNhap
             }
         }
 
+        void LayNgayHienTai()
+        {
+            // Lấy ngày hiện tại
+            DateTime currentDate = DateTime.Now;
+
+            // Đặt ngày hiện tại vào TextBox
+            txtngaylap.Text = currentDate.ToShortDateString();
+        }
         /*void ThanhToanButton_Click(object sender, EventArgs e)
         {
             // Duyệt qua tất cả sản phẩm trong ListView
@@ -189,8 +198,10 @@ namespace MINI.src.GUI.PhieuNhap
         private void NhapHangGUI_Load(object sender, EventArgs e)
         {
             txtsearchsp_Leave(sender, e);
-            HienThiSanPham();
+            LayNgayHienTai();
+            txtidnhanvien.Text = "1";
             txttongtien.Text = "0";
+            HienThiSanPham();
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -306,8 +317,8 @@ namespace MINI.src.GUI.PhieuNhap
 
         private void btnthanhtoan_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(txtidncc.Text))
+            
+            if (string.IsNullOrEmpty(txtidncc.Text) && string.IsNullOrEmpty(txtngaylap.Text))
             {
                 MessageBox.Show("Vui lòng Chọn nhà cung cấp trước khi thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -328,6 +339,17 @@ namespace MINI.src.GUI.PhieuNhap
                     // Ví dụ: gọi lại hàm HienThiSanPham() để refresh danh sách sản phẩm
                     HienThiSanPham();
                 }
+                DateTime ngaylap;
+                decimal tongtien;
+                if (DateTime.TryParse(txtngaylap.Text, out ngaylap) && decimal.TryParse(txttongtien.Text, out tongtien))
+                {
+                    pn.ThemPhieuNhap(txtidncc.Text, txtidnhanvien.Text, ngaylap, tongtien);
+
+                    // Hiển thị thông báo khi thêm phiếu nhập thành công
+                    MessageBox.Show("Thêm phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
                 lsvdsspnhap.Items.Clear();
                 txttongtien.Text = "0";
             }
@@ -356,6 +378,16 @@ namespace MINI.src.GUI.PhieuNhap
                 txtsearchsp.Text = "Tên Sản Phẩm ";
                 txtsearchsp.ForeColor = Color.DimGray;
             }
+        }
+
+        private void txtsearchsp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtidlsp_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

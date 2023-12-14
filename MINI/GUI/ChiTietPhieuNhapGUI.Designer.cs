@@ -44,27 +44,29 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtsearchctpn);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(191, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 40);
+            this.groupBox1.Size = new System.Drawing.Size(200, 50);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
             // 
             // txtsearchctpn
             // 
-            this.txtsearchctpn.Location = new System.Drawing.Point(6, 14);
+            this.txtsearchctpn.Location = new System.Drawing.Point(6, 22);
             this.txtsearchctpn.Name = "txtsearchctpn";
-            this.txtsearchctpn.Size = new System.Drawing.Size(188, 20);
+            this.txtsearchctpn.Size = new System.Drawing.Size(188, 26);
             this.txtsearchctpn.TabIndex = 0;
             this.txtsearchctpn.Click += new System.EventHandler(this.txtsearchctpn_Click);
             this.txtsearchctpn.Leave += new System.EventHandler(this.txtsearchctpn_Leave);
             // 
             // btnlammoictpn
             // 
-            this.btnlammoictpn.Location = new System.Drawing.Point(518, 39);
+            this.btnlammoictpn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlammoictpn.Location = new System.Drawing.Point(503, 25);
             this.btnlammoictpn.Name = "btnlammoictpn";
-            this.btnlammoictpn.Size = new System.Drawing.Size(75, 20);
+            this.btnlammoictpn.Size = new System.Drawing.Size(100, 50);
             this.btnlammoictpn.TabIndex = 1;
             this.btnlammoictpn.Text = "Làm Mới";
             this.btnlammoictpn.UseVisualStyleBackColor = true;
@@ -114,9 +116,10 @@
             // 
             // btntimkiemctpn
             // 
-            this.btntimkiemctpn.Location = new System.Drawing.Point(397, 39);
+            this.btntimkiemctpn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntimkiemctpn.Location = new System.Drawing.Point(397, 25);
             this.btntimkiemctpn.Name = "btntimkiemctpn";
-            this.btntimkiemctpn.Size = new System.Drawing.Size(75, 23);
+            this.btntimkiemctpn.Size = new System.Drawing.Size(100, 50);
             this.btntimkiemctpn.TabIndex = 3;
             this.btntimkiemctpn.Text = "Tìm Kiếm";
             this.btntimkiemctpn.UseVisualStyleBackColor = true;
@@ -124,6 +127,7 @@
             // 
             // ChiTietPhieuNhapGUI
             // 
+            this.AcceptButton = this.btntimkiemctpn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 361);

@@ -73,6 +73,8 @@ namespace MINI.src.GUI.PhieuNhap
             this.btntimkiemsp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txttongtien = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtngaylap = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grbTimkiem.SuspendLayout();
@@ -82,6 +84,7 @@ namespace MINI.src.GUI.PhieuNhap
             this.grbidlsp.SuspendLayout();
             this.grbtensp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbsanpham)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvdssp
@@ -96,7 +99,7 @@ namespace MINI.src.GUI.PhieuNhap
             this.lsvdssp.HideSelection = false;
             this.lsvdssp.Location = new System.Drawing.Point(1, 57);
             this.lsvdssp.Name = "lsvdssp";
-            this.lsvdssp.Size = new System.Drawing.Size(600, 418);
+            this.lsvdssp.Size = new System.Drawing.Size(600, 393);
             this.lsvdssp.TabIndex = 0;
             this.lsvdssp.UseCompatibleStateImageBehavior = false;
             this.lsvdssp.View = System.Windows.Forms.View.Details;
@@ -130,43 +133,46 @@ namespace MINI.src.GUI.PhieuNhap
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtidncc);
-            this.groupBox1.Location = new System.Drawing.Point(607, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(607, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 40);
+            this.groupBox1.Size = new System.Drawing.Size(200, 50);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Mã Nhà Cung Cấp";
             // 
             // txtidncc
             // 
-            this.txtidncc.Location = new System.Drawing.Point(6, 13);
+            this.txtidncc.Location = new System.Drawing.Point(6, 20);
             this.txtidncc.Name = "txtidncc";
-            this.txtidncc.Size = new System.Drawing.Size(188, 20);
+            this.txtidncc.Size = new System.Drawing.Size(188, 26);
             this.txtidncc.TabIndex = 4;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtidnhanvien);
-            this.groupBox2.Location = new System.Drawing.Point(868, 12);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(868, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 40);
+            this.groupBox2.Size = new System.Drawing.Size(200, 50);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mã Nhân Viên";
             // 
             // txtidnhanvien
             // 
-            this.txtidnhanvien.Location = new System.Drawing.Point(6, 19);
+            this.txtidnhanvien.Location = new System.Drawing.Point(6, 20);
             this.txtidnhanvien.Name = "txtidnhanvien";
-            this.txtidnhanvien.Size = new System.Drawing.Size(188, 20);
+            this.txtidnhanvien.Size = new System.Drawing.Size(188, 26);
             this.txtidnhanvien.TabIndex = 3;
             // 
             // grbTimkiem
             // 
             this.grbTimkiem.Controls.Add(this.txtsearchsp);
-            this.grbTimkiem.Location = new System.Drawing.Point(36, 11);
+            this.grbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbTimkiem.Location = new System.Drawing.Point(21, 2);
             this.grbTimkiem.Name = "grbTimkiem";
-            this.grbTimkiem.Size = new System.Drawing.Size(200, 40);
+            this.grbTimkiem.Size = new System.Drawing.Size(200, 50);
             this.grbTimkiem.TabIndex = 3;
             this.grbTimkiem.TabStop = false;
             this.grbTimkiem.Text = "Tìm Kiếm";
@@ -174,100 +180,108 @@ namespace MINI.src.GUI.PhieuNhap
             // 
             // txtsearchsp
             // 
-            this.txtsearchsp.Location = new System.Drawing.Point(6, 17);
+            this.txtsearchsp.Location = new System.Drawing.Point(6, 20);
             this.txtsearchsp.Name = "txtsearchsp";
-            this.txtsearchsp.Size = new System.Drawing.Size(188, 20);
+            this.txtsearchsp.Size = new System.Drawing.Size(188, 26);
             this.txtsearchsp.TabIndex = 2;
             this.txtsearchsp.Click += new System.EventHandler(this.txtsearchsp_Click);
+            this.txtsearchsp.TextChanged += new System.EventHandler(this.txtsearchsp_TextChanged);
             this.txtsearchsp.Leave += new System.EventHandler(this.txtsearchsp_Leave);
             // 
             // grbdongia
             // 
             this.grbdongia.Controls.Add(this.txtdongia);
-            this.grbdongia.Location = new System.Drawing.Point(213, 613);
+            this.grbdongia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbdongia.Location = new System.Drawing.Point(213, 608);
             this.grbdongia.Name = "grbdongia";
-            this.grbdongia.Size = new System.Drawing.Size(200, 40);
+            this.grbdongia.Size = new System.Drawing.Size(200, 50);
             this.grbdongia.TabIndex = 5;
             this.grbdongia.TabStop = false;
             this.grbdongia.Text = "Đơn Giá";
             // 
             // txtdongia
             // 
-            this.txtdongia.Location = new System.Drawing.Point(4, 14);
+            this.txtdongia.Location = new System.Drawing.Point(6, 21);
             this.txtdongia.Name = "txtdongia";
             this.txtdongia.ReadOnly = true;
-            this.txtdongia.Size = new System.Drawing.Size(188, 20);
+            this.txtdongia.Size = new System.Drawing.Size(188, 26);
             this.txtdongia.TabIndex = 4;
             // 
             // grbsoluong
             // 
             this.grbsoluong.Controls.Add(this.txtsoluong);
-            this.grbsoluong.Location = new System.Drawing.Point(213, 659);
+            this.grbsoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbsoluong.Location = new System.Drawing.Point(213, 661);
             this.grbsoluong.Name = "grbsoluong";
-            this.grbsoluong.Size = new System.Drawing.Size(200, 40);
+            this.grbsoluong.Size = new System.Drawing.Size(200, 50);
             this.grbsoluong.TabIndex = 7;
             this.grbsoluong.TabStop = false;
             this.grbsoluong.Text = "Số Lượng";
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(8, 14);
+            this.txtsoluong.Location = new System.Drawing.Point(6, 18);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(188, 20);
+            this.txtsoluong.Size = new System.Drawing.Size(188, 26);
             this.txtsoluong.TabIndex = 3;
             // 
             // grbidsanpham
             // 
             this.grbidsanpham.Controls.Add(this.txtidsanpham);
-            this.grbidsanpham.Location = new System.Drawing.Point(213, 481);
+            this.grbidsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbidsanpham.Location = new System.Drawing.Point(213, 456);
             this.grbidsanpham.Name = "grbidsanpham";
-            this.grbidsanpham.Size = new System.Drawing.Size(200, 40);
+            this.grbidsanpham.Size = new System.Drawing.Size(200, 50);
             this.grbidsanpham.TabIndex = 8;
             this.grbidsanpham.TabStop = false;
             this.grbidsanpham.Text = "Mã Sản Phẩm";
             // 
             // txtidsanpham
             // 
-            this.txtidsanpham.Location = new System.Drawing.Point(6, 14);
+            this.txtidsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtidsanpham.Location = new System.Drawing.Point(6, 18);
             this.txtidsanpham.Name = "txtidsanpham";
             this.txtidsanpham.ReadOnly = true;
-            this.txtidsanpham.Size = new System.Drawing.Size(188, 20);
+            this.txtidsanpham.Size = new System.Drawing.Size(188, 26);
             this.txtidsanpham.TabIndex = 0;
             // 
             // grbidlsp
             // 
             this.grbidlsp.Controls.Add(this.txtidlsp);
-            this.grbidlsp.Location = new System.Drawing.Point(213, 573);
+            this.grbidlsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbidlsp.Location = new System.Drawing.Point(213, 558);
             this.grbidlsp.Name = "grbidlsp";
-            this.grbidlsp.Size = new System.Drawing.Size(200, 40);
+            this.grbidlsp.Size = new System.Drawing.Size(200, 50);
             this.grbidlsp.TabIndex = 9;
             this.grbidlsp.TabStop = false;
             this.grbidlsp.Text = "Mã Loại Sản Phẩm";
             // 
             // txtidlsp
             // 
-            this.txtidlsp.Location = new System.Drawing.Point(2, 14);
+            this.txtidlsp.Location = new System.Drawing.Point(6, 18);
             this.txtidlsp.Name = "txtidlsp";
             this.txtidlsp.ReadOnly = true;
-            this.txtidlsp.Size = new System.Drawing.Size(188, 20);
+            this.txtidlsp.Size = new System.Drawing.Size(188, 26);
             this.txtidlsp.TabIndex = 5;
+            this.txtidlsp.TextChanged += new System.EventHandler(this.txtidlsp_TextChanged);
             // 
             // grbtensp
             // 
             this.grbtensp.Controls.Add(this.txttensp);
-            this.grbtensp.Location = new System.Drawing.Point(213, 527);
+            this.grbtensp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbtensp.Location = new System.Drawing.Point(213, 506);
             this.grbtensp.Name = "grbtensp";
-            this.grbtensp.Size = new System.Drawing.Size(200, 40);
+            this.grbtensp.Size = new System.Drawing.Size(200, 50);
             this.grbtensp.TabIndex = 4;
             this.grbtensp.TabStop = false;
             this.grbtensp.Text = "Tên Sản Phẩm";
             // 
             // txttensp
             // 
-            this.txttensp.Location = new System.Drawing.Point(6, 14);
+            this.txttensp.Location = new System.Drawing.Point(6, 18);
             this.txttensp.Name = "txttensp";
             this.txttensp.ReadOnly = true;
-            this.txttensp.Size = new System.Drawing.Size(188, 20);
+            this.txttensp.Size = new System.Drawing.Size(188, 26);
             this.txttensp.TabIndex = 6;
             // 
             // lsvdsspnhap
@@ -281,9 +295,9 @@ namespace MINI.src.GUI.PhieuNhap
             this.thanhtien});
             this.lsvdsspnhap.FullRowSelect = true;
             this.lsvdsspnhap.HideSelection = false;
-            this.lsvdsspnhap.Location = new System.Drawing.Point(607, 58);
+            this.lsvdsspnhap.Location = new System.Drawing.Point(607, 128);
             this.lsvdsspnhap.Name = "lsvdsspnhap";
-            this.lsvdsspnhap.Size = new System.Drawing.Size(570, 417);
+            this.lsvdsspnhap.Size = new System.Drawing.Size(570, 392);
             this.lsvdsspnhap.TabIndex = 10;
             this.lsvdsspnhap.UseCompatibleStateImageBehavior = false;
             this.lsvdsspnhap.View = System.Windows.Forms.View.Details;
@@ -321,7 +335,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnxoathanhtoan
             // 
             this.btnxoathanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoathanhtoan.Location = new System.Drawing.Point(630, 490);
+            this.btnxoathanhtoan.Location = new System.Drawing.Point(630, 524);
             this.btnxoathanhtoan.Name = "btnxoathanhtoan";
             this.btnxoathanhtoan.Size = new System.Drawing.Size(100, 50);
             this.btnxoathanhtoan.TabIndex = 11;
@@ -343,9 +357,10 @@ namespace MINI.src.GUI.PhieuNhap
             // 
             // btnlammoisp
             // 
-            this.btnlammoisp.Location = new System.Drawing.Point(362, 23);
+            this.btnlammoisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlammoisp.Location = new System.Drawing.Point(333, 2);
             this.btnlammoisp.Name = "btnlammoisp";
-            this.btnlammoisp.Size = new System.Drawing.Size(85, 28);
+            this.btnlammoisp.Size = new System.Drawing.Size(100, 50);
             this.btnlammoisp.TabIndex = 13;
             this.btnlammoisp.Text = "Làm Mới";
             this.btnlammoisp.UseVisualStyleBackColor = true;
@@ -365,7 +380,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnlmthanhtoan
             // 
             this.btnlmthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlmthanhtoan.Location = new System.Drawing.Point(842, 490);
+            this.btnlmthanhtoan.Location = new System.Drawing.Point(842, 524);
             this.btnlmthanhtoan.Name = "btnlmthanhtoan";
             this.btnlmthanhtoan.Size = new System.Drawing.Size(100, 50);
             this.btnlmthanhtoan.TabIndex = 15;
@@ -376,7 +391,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnthanhtoan
             // 
             this.btnthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthanhtoan.Location = new System.Drawing.Point(1054, 490);
+            this.btnthanhtoan.Location = new System.Drawing.Point(1054, 524);
             this.btnthanhtoan.Name = "btnthanhtoan";
             this.btnthanhtoan.Size = new System.Drawing.Size(100, 50);
             this.btnthanhtoan.TabIndex = 16;
@@ -387,7 +402,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnxoatatca
             // 
             this.btnxoatatca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoatatca.Location = new System.Drawing.Point(948, 490);
+            this.btnxoatatca.Location = new System.Drawing.Point(948, 524);
             this.btnxoatatca.Name = "btnxoatatca";
             this.btnxoatatca.Size = new System.Drawing.Size(100, 50);
             this.btnxoatatca.TabIndex = 17;
@@ -398,7 +413,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnsua
             // 
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsua.Location = new System.Drawing.Point(736, 490);
+            this.btnsua.Location = new System.Drawing.Point(736, 524);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(100, 50);
             this.btnsua.TabIndex = 18;
@@ -409,7 +424,7 @@ namespace MINI.src.GUI.PhieuNhap
             // btnchonnv
             // 
             this.btnchonnv.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnchonnv.Location = new System.Drawing.Point(1074, 23);
+            this.btnchonnv.Location = new System.Drawing.Point(1074, 20);
             this.btnchonnv.Name = "btnchonnv";
             this.btnchonnv.Size = new System.Drawing.Size(35, 28);
             this.btnchonnv.TabIndex = 19;
@@ -419,7 +434,7 @@ namespace MINI.src.GUI.PhieuNhap
             // 
             // ptbsanpham
             // 
-            this.ptbsanpham.Location = new System.Drawing.Point(7, 478);
+            this.ptbsanpham.Location = new System.Drawing.Point(7, 458);
             this.ptbsanpham.Name = "ptbsanpham";
             this.ptbsanpham.Size = new System.Drawing.Size(200, 200);
             this.ptbsanpham.TabIndex = 20;
@@ -427,9 +442,10 @@ namespace MINI.src.GUI.PhieuNhap
             // 
             // btntimkiemsp
             // 
-            this.btntimkiemsp.Location = new System.Drawing.Point(242, 25);
+            this.btntimkiemsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntimkiemsp.Location = new System.Drawing.Point(227, 2);
             this.btntimkiemsp.Name = "btntimkiemsp";
-            this.btntimkiemsp.Size = new System.Drawing.Size(75, 23);
+            this.btntimkiemsp.Size = new System.Drawing.Size(100, 50);
             this.btntimkiemsp.TabIndex = 21;
             this.btntimkiemsp.Text = "Tìm Kiếm";
             this.btntimkiemsp.UseVisualStyleBackColor = true;
@@ -439,19 +455,40 @@ namespace MINI.src.GUI.PhieuNhap
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(859, 564);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(765, 588);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "Tổng Tiền:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txttongtien
             // 
-            this.txttongtien.Location = new System.Drawing.Point(924, 561);
+            this.txttongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttongtien.Location = new System.Drawing.Point(854, 582);
             this.txttongtien.Name = "txttongtien";
-            this.txttongtien.Size = new System.Drawing.Size(185, 20);
+            this.txttongtien.Size = new System.Drawing.Size(185, 26);
             this.txttongtien.TabIndex = 23;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtngaylap);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(607, 58);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 50);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ngày Nhập";
+            // 
+            // txtngaylap
+            // 
+            this.txtngaylap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtngaylap.Location = new System.Drawing.Point(6, 21);
+            this.txtngaylap.Name = "txtngaylap";
+            this.txtngaylap.Size = new System.Drawing.Size(188, 26);
+            this.txtngaylap.TabIndex = 25;
             // 
             // NhapHangGUI
             // 
@@ -459,6 +496,7 @@ namespace MINI.src.GUI.PhieuNhap
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 722);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txttongtien);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btntimkiemsp);
@@ -502,6 +540,8 @@ namespace MINI.src.GUI.PhieuNhap
             this.grbtensp.ResumeLayout(false);
             this.grbtensp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbsanpham)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,5 +593,7 @@ namespace MINI.src.GUI.PhieuNhap
         private Label label1;
         private TextBox txttongtien;
         private ColumnHeader thanhtien;
+        private GroupBox groupBox3;
+        private TextBox txtngaylap;
     }
 }
