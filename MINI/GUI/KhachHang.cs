@@ -117,7 +117,7 @@ namespace MINI.GUI
                 {
                     rdNam_Sua.Checked = true;
                 }
-                else if(lblGioiTinh.Text.Equals("Nữ"))
+                else if (lblGioiTinh.Text.Equals("Nữ"))
                 {
                     rdNu_Sua.Checked = true;
                 }
@@ -146,10 +146,10 @@ namespace MINI.GUI
                     return false;
                 }
             }
-            else if(tabKhachHang.SelectedTab == tabSuaKH)
+            else if (tabKhachHang.SelectedTab == tabSuaKH)
             {
                 string check = kh.checkValue(txtId.Text, txtHoTen_Sua.Text, txtDienThoai_Sua.Text, txtEmail_Sua.Text, txtDiem.Text);
-                if(check.Equals("id"))
+                if (check.Equals("id"))
                 {
                     tabKhachHang.SelectedTab = tabDSKH;
                     return false;
@@ -193,7 +193,7 @@ namespace MINI.GUI
                 {
                     kh.ThemKhachHang(txtHoTen_Them.Text, txtDiaChi_Them.Text, txtDienThoai_Them.Text, rdNam_Them.Text, txtEmail_Them.Text, ngay); MessageBox.Show("Thêm mới thành công");
                 }
-                else if(rdNu_Them.Checked)
+                else if (rdNu_Them.Checked)
                 {
                     kh.ThemKhachHang(txtHoTen_Them.Text, txtDiaChi_Them.Text, txtDienThoai_Them.Text, rdNu_Them.Text, txtEmail_Them.Text, ngay); MessageBox.Show("Thêm mới thành công");
                 }
@@ -215,7 +215,7 @@ namespace MINI.GUI
                     kh.CapNhatKhachHang(txtHoTen_Sua.Text, txtDiaChi_Sua.Text, txtDienThoai_Sua.Text, rdNam_Sua.Text, txtEmail_Sua.Text, ngay, txtDiem.Text, txtId.Text); MessageBox.Show("Sửa thành công");
                     tabKhachHang.SelectedTab = tabDSKH;
                 }
-                else if(rdNu_Sua.Checked)
+                else if (rdNu_Sua.Checked)
                 {
                     kh.CapNhatKhachHang(txtHoTen_Sua.Text, txtDiaChi_Sua.Text, txtDienThoai_Sua.Text, rdNu_Sua.Text, txtEmail_Sua.Text, ngay, txtDiem.Text, txtId.Text); MessageBox.Show("Sửa thành công");
                     tabKhachHang.SelectedTab = tabDSKH;
@@ -236,7 +236,7 @@ namespace MINI.GUI
             {
                 MessageBox.Show("Hãy chọn tiêu chí tìm kiếm", "Tìm kiếm");
             }
-            else if(txtTimKiem.Text == "")
+            else if (txtTimKiem.Text == "")
             {
                 HienthiKhachHang();
                 MessageBox.Show("Hiển thị tất cả khách hàng", "Tìm kiếm");
@@ -252,7 +252,7 @@ namespace MINI.GUI
 
                     for (int i = 0; i < dttk.Rows.Count; i++)
                     {
-                        if(dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiem.Text.ToLower()))
+                        if (dttk.Rows[i][1].ToString().ToLower().Contains(txtTimKiem.Text.ToLower()))
                         {
                             ListViewItem lvi = lsvKhachHang.Items.Add(dttk.Rows[i][0].ToString());
                             lvi.SubItems.Add(dttk.Rows[i][1].ToString());
@@ -287,7 +287,7 @@ namespace MINI.GUI
                         }
                     }
                 }
-                if(lsvKhachHang.Items.Count == 0)
+                if (lsvKhachHang.Items.Count == 0)
                 {
                     MessageBox.Show("Không tìm thấy khách hàng", "Tìm kiếm");
                 }
@@ -297,27 +297,27 @@ namespace MINI.GUI
 
         private void btnSapXep_Click(object sender, EventArgs e)
         {
-            if(!rdId.Checked && !rdTen.Checked)
+            if (!rdId.Checked && !rdTen.Checked)
             {
                 MessageBox.Show("Hãy chọn tiêu chí sắp xếp", "Sắp xếp");
             }
-            else if(rdId.Checked)
+            else if (rdId.Checked)
             {
-                lsvKhachHang.ListViewItemSorter = new ListViewItemComparer(0);
+                lsvKhachHang.ListViewItemSorter = new ListViewItemComparerId(0);
                 lsvKhachHang.Sort();
             }
             else
             {
-                lsvKhachHang.ListViewItemSorter = new ListViewItemComparer(1);
+                lsvKhachHang.ListViewItemSorter = new ListViewItemComparerName(1);
                 lsvKhachHang.Sort();
             }
             setNull();
         }
     }
-    class ListViewItemComparer : IComparer
+    class ListViewItemComparerName : IComparer
     {
         private int col;
-        public ListViewItemComparer(int column)
+        public ListViewItemComparerName(int column)
         {
             col = column;
         }
@@ -333,6 +333,27 @@ namespace MINI.GUI
 
             }
             return 0;
+        }
+    }
+    class ListViewItemComparerId : IComparer
+    {
+        private int col;
+        public ListViewItemComparerId(int column)
+        {
+            col = column;
+        }
+        public int Compare(object x, object y)
+        {
+            try
+            {
+                return int.Parse(((ListViewItem)x).SubItems[0].Text).CompareTo
+                    (int.Parse(((ListViewItem)y).SubItems[0].Text));
+            }
+            catch(Exception)
+            {
+
+            }
+            return 0;     
         }
     }
 }
