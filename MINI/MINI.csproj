@@ -143,6 +143,12 @@
     <Compile Include="src\GUI\NhapHang\NhapHangGUI.designer.cs">
       <DependentUpon>NhapHangGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\GUI\NhapHang\xuatPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\NhapHang\xuatPhieu.Designer.cs">
+      <DependentUpon>xuatPhieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\PhieuNhap\PhieuNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\NhapHang\NhapHangGUI.resx">
       <DependentUpon>NhapHangGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\NhapHang\xuatPhieu.resx">
+      <DependentUpon>xuatPhieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\PhieuNhap\PhieuNhapGUI.resx">
       <DependentUpon>PhieuNhapGUI.cs</DependentUpon>

@@ -423,6 +423,7 @@ namespace MINI.src.GUI
 
                     // Hiển thị thông báo khi thêm phiếu nhập thành công
                     MessageBox.Show("Thêm phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    openChildForm(new NhapHang.xuatPhieu(txtidnhanvien.Text, txtidncc.Text, txttongtien.Text, txtngaylap.Text, lsvdsspnhap));
                 }
                 string id_pn = pn.LayDSPN().Rows.Count.ToString();
                 foreach (ListViewItem itemSpNhap in lsvdsspnhap.Items)
@@ -430,11 +431,24 @@ namespace MINI.src.GUI
                     pn.ThemCTPhieuNhap(id_pn, itemSpNhap.SubItems[1].Text, itemSpNhap.SubItems[3].Text,
                         itemSpNhap.SubItems[4].Text, itemSpNhap.SubItems[5].Text);
                 }
+                DataTable dt=new DataTable();
+                dt = pn.LayDSPN();
                 lsvdsspnhap.Items.Clear();
                 txttongtien.Text = "0";
+                
             }
 
+
         }
+        void openChildForm(Form childForm)
+        {
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
