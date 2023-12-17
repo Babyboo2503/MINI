@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapGUI));
             this.grbtimkiem = new System.Windows.Forms.GroupBox();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.grbktg = new System.Windows.Forms.GroupBox();
@@ -42,8 +43,6 @@
             this.txttongtien2 = new System.Windows.Forms.TextBox();
             this.txttongtien1 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnnhapexcel = new System.Windows.Forms.Button();
-            this.btnxuatexcel = new System.Windows.Forms.Button();
             this.btnchitietphieunhap = new System.Windows.Forms.Button();
             this.btnlammoi = new System.Windows.Forms.Button();
             this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -200,26 +199,6 @@
             this.txttongtien1.TabIndex = 0;
             this.txttongtien1.TextChanged += new System.EventHandler(this.txttongtien1_TextChanged);
             this.txttongtien1.Enter += new System.EventHandler(this.txttongtien1_Enter);
-            // 
-            // btnnhapexcel
-            // 
-            this.btnnhapexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnhapexcel.Location = new System.Drawing.Point(211, 44);
-            this.btnnhapexcel.Name = "btnnhapexcel";
-            this.btnnhapexcel.Size = new System.Drawing.Size(100, 40);
-            this.btnnhapexcel.TabIndex = 2;
-            this.btnnhapexcel.Text = "Nhập Excel";
-            this.btnnhapexcel.UseVisualStyleBackColor = true;
-            // 
-            // btnxuatexcel
-            // 
-            this.btnxuatexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxuatexcel.Location = new System.Drawing.Point(352, 44);
-            this.btnxuatexcel.Name = "btnxuatexcel";
-            this.btnxuatexcel.Size = new System.Drawing.Size(100, 40);
-            this.btnxuatexcel.TabIndex = 3;
-            this.btnxuatexcel.Text = "Xuất Excel";
-            this.btnxuatexcel.UseVisualStyleBackColor = true;
             // 
             // btnchitietphieunhap
             // 
@@ -415,6 +394,7 @@
             this.AcceptButton = this.btntimkiempn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.btntimkiempn);
             this.Controls.Add(this.lsvpn);
@@ -425,8 +405,6 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnlammoi);
             this.Controls.Add(this.btnchitietphieunhap);
-            this.Controls.Add(this.btnxuatexcel);
-            this.Controls.Add(this.btnnhapexcel);
             this.Controls.Add(this.grbktg);
             this.Controls.Add(this.grbtongtien);
             this.Controls.Add(this.grbtimkiem);
@@ -462,8 +440,6 @@
         private System.Windows.Forms.GroupBox grbktg;
         private System.Windows.Forms.GroupBox grbtongtien;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button btnnhapexcel;
-        private System.Windows.Forms.Button btnxuatexcel;
         private System.Windows.Forms.Button btnchitietphieunhap;
         private System.Windows.Forms.Button btnlammoi;
         private MiniMarketDataSet miniMarketDataSet;

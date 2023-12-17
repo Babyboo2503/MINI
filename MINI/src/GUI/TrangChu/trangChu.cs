@@ -23,7 +23,13 @@ namespace MINI.src.GUI
             this.Password = Password;
             show();
         }
+        private void ChangeButtonColor(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
 
+            // Thiết lập màu cho nút hiện tại
+            clickedButton.BackColor = Color.LightBlue;
+        }
         //
         private void show()
         {
@@ -102,17 +108,17 @@ namespace MINI.src.GUI
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new BanHang());
+            openChildForm(new BanHang(Username,Password));
         }
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new NhapHangGUI());
+            openChildForm(new NhapHangGUI(Username,Password));
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
-            openChildForm(new SanPham());
+            openChildForm(new SanPham(Username,Password));
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
@@ -130,12 +136,12 @@ namespace MINI.src.GUI
         }
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            openChildForm(new BaoCao());
+            openChildForm(new BaoCao(Username,Password));
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            openChildForm(new ThemNCC());
+            openChildForm(new ChonNhaCungCap());
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

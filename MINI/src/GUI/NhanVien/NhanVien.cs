@@ -98,9 +98,9 @@ namespace MINI.src.GUI
                 DTPNgayNghiCTNV.Enabled = false;
             }
             ///////////BUG
-            else if (cbbTrangThaiCTNV.SelectedText == "Thôi Việc")
+            else if (cbbTrangThaiCTNV.Text == "Thôi Việc")
             {
-                DTPNgayNghiCTNV.Visible = true;
+                DTPNgayNghiCTNV.Enabled = true;
             }
             //////////BUG
         }
@@ -110,7 +110,7 @@ namespace MINI.src.GUI
             txtIDNhanVienCTNV.Text = txtIDNhanVienNV.Text;
             txtHoVaTenCTNV.Text = txtHoVaTenNV.Text;
             txtSDTCTNV.Text = txtSDTNV.Text;
-            txtGioiTinhCTNV.Text = txtGioiTinhNV.Text;
+            cbbGioiTinhTSNV.Text = txtGioiTinhNV.Text;
             //CBB id chức vụ
             setCBBChucVu(cbbIDChucVuCTNV);
             cbbIDChucVuCTNV.Text = txtIDChucVuNV.Text;
@@ -139,7 +139,7 @@ namespace MINI.src.GUI
             {
                 try
                 {
-                    nv_bus.UpdateNV(txtIDNhanVienCTNV.Text, txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, txtGioiTinhCTNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, cbbTrangThaiCTNV.Text, DTPNgaySinhCTNV.Text, DTPNgayNghiCTNV.Text);
+                    nv_bus.UpdateNV(txtIDNhanVienCTNV.Text, txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, cbbGioiTinhTSNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, cbbTrangThaiCTNV.Text, DTPNgaySinhCTNV.Text, DTPNgayNghiCTNV.Text);
                     MessageBox.Show("Lưu thành công!");
                 }
                 catch (Exception)
@@ -151,7 +151,7 @@ namespace MINI.src.GUI
             {
                 try
                 {
-                    nv_bus.InsertNV(txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, txtGioiTinhCTNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, "Đang Làm", DTPNgaySinhCTNV.Text);
+                    nv_bus.InsertNV(txtHoVaTenCTNV.Text, txtDiaChiCTNV.Text, txtSDTCTNV.Text, cbbGioiTinhTSNV.Text, cbbIDChucVuCTNV.Text, txtLuongCTNV.Text, "Đang Làm", DTPNgaySinhCTNV.Text);
                     MessageBox.Show("Thêm thành công!");
                 }
                 catch (Exception)
@@ -174,6 +174,7 @@ namespace MINI.src.GUI
         private void btnAdd_Click(object sender, EventArgs e)
         {
             tabNhanVien.SelectedTab = tabSuaThemNhanVien;
+            lblChucVuNvThemSua.Text= string.Empty;
             setDataNhanVienMoi();
         }
         public void setDataNhanVienMoi()
@@ -182,7 +183,7 @@ namespace MINI.src.GUI
             txtIDNhanVienCTNV.Text = (dt.Rows.Count + 1).ToString();
             txtHoVaTenCTNV.Text=string.Empty;
             txtSDTCTNV.Text = string.Empty;
-            txtGioiTinhCTNV.Text= string.Empty;
+            cbbGioiTinhTSNV.Text= string.Empty;
             cbbIDChucVuCTNV.Text = String.Empty;
             setCBBChucVu(cbbIDChucVuCTNV);
             txtLuongCTNV.Text = string.Empty;
@@ -208,7 +209,8 @@ namespace MINI.src.GUI
             catch (Exception)
             {
                 ClearTK();
-                MessageBox.Show("Nhân viên chưa có tài khoản");
+                MessageBox.Show("Nhân viên chưa có tài khoản","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.None);
+                button1_Click(new object(),new EventArgs());
             }
         }
         /////////CHỨC VỤ//////////////////////
@@ -261,7 +263,9 @@ namespace MINI.src.GUI
         {
             try
             {
-                HienthiDanhSachNhanVien(nv_bus.timKiemNV(txtTimKiem.Text));
+                listViewNhanVien.Items.Clear();
+                HienthiDanhSachNhanVien(nv_bus.TimKiemNhanVien(txtTimKiem.Text));
+                
             }
             catch (Exception)
             {
@@ -305,7 +309,7 @@ namespace MINI.src.GUI
         {
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "ID nhân viên, Họ và tên";
+                txtTimKiem.Text = "Tên nhân viên";
                 txtTimKiem.ForeColor = Color.DarkGray;
             }
         }
@@ -341,6 +345,24 @@ namespace MINI.src.GUI
         private void tabNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            txtTimKiem.ForeColor = Color.Black;
+            
+        }
+
+        private void cbbTrangThaiCTNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTrangThaiCTNV.SelectedIndex == 0)
+            {
+                DTPNgayNghiCTNV.Enabled = false;
+            }
+            else
+            {
+                DTPNgayNghiCTNV.Enabled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

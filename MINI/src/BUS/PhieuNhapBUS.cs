@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using MINI.src.DAO;
 using MINI.src.GUI;
 using MINI.src.DTO;
+using System.Drawing;
 
 namespace MINI.src.BUS
 {
@@ -40,6 +41,26 @@ namespace MINI.src.BUS
             string strSQL = "Select * from NhaCungCap";
             DataTable dt = db.Execute(strSQL);
             return dt;
+        }
+        public DataTable LayDSSanPham()
+        {
+            string strSQL = "Select * from SanPham";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
+        }
+        public void CapNhatGiaSanPham(string id, string value)
+        {
+            string str = string.Format("Update SanPham set donGia = '{0}' where idSanPham = '{1}'",
+            value, id);
+            db.ExecuteNonQuery(str);
+        }
+
+        public void ThemCTPhieuNhap(string id_pn, string id_sp, string soluong, string dongia, string thanhtien)
+        {
+            string sql = string.Format("Insert Into ChiTietPhieuNhap " +
+                "Values('{0}', '{1}', '{2}', '{3}', {4})",
+                id_pn, id_sp, soluong, dongia, thanhtien);
+            db.ExecuteNonQuery(sql);
         }
 
         public DataTable LayDSCTPNTheoMaPhieuNhap(string maPhieuNhap)

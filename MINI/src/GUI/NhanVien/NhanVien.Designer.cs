@@ -56,18 +56,6 @@ namespace MINI.src.GUI
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.tabSuaThemNhanVien = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.lblTittleDemo1 = new System.Windows.Forms.Label();
             this.lblTittleThemNhanVien = new System.Windows.Forms.Label();
             this.panelThemThongTinNhanVien = new System.Windows.Forms.Panel();
             this.lblChucVuNvThemSua = new System.Windows.Forms.Label();
@@ -76,7 +64,6 @@ namespace MINI.src.GUI
             this.txtIDNhanVienCTNV = new System.Windows.Forms.TextBox();
             this.txtHoVaTenCTNV = new System.Windows.Forms.TextBox();
             this.txtSDTCTNV = new System.Windows.Forms.TextBox();
-            this.txtGioiTinhCTNV = new System.Windows.Forms.TextBox();
             this.txtLuongCTNV = new System.Windows.Forms.TextBox();
             this.DTPNgayNghiCTNV = new System.Windows.Forms.DateTimePicker();
             this.DTPNgaySinhCTNV = new System.Windows.Forms.DateTimePicker();
@@ -132,6 +119,7 @@ namespace MINI.src.GUI
             this.txtDiaChiNV = new System.Windows.Forms.TextBox();
             this.btnSuaNV = new System.Windows.Forms.Button();
             this.tabNhanVien = new System.Windows.Forms.TabControl();
+            this.cbbGioiTinhTSNV = new System.Windows.Forms.ComboBox();
             diaChiLabel1 = new System.Windows.Forms.Label();
             ngaySinhLabel1 = new System.Windows.Forms.Label();
             ngayNghiLabel1 = new System.Windows.Forms.Label();
@@ -159,8 +147,6 @@ namespace MINI.src.GUI
             idTaiKhoanLabel2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             this.tabSuaThemNhanVien.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelThemThongTinNhanVien.SuspendLayout();
             this.tabThongTinNhanVien.SuspendLayout();
             this.groupBoxLocTheo.SuspendLayout();
@@ -421,7 +407,6 @@ namespace MINI.src.GUI
             // 
             this.tabSuaThemNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSuaThemNhanVien.BackgroundImage")));
             this.tabSuaThemNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabSuaThemNhanVien.Controls.Add(this.panel3);
             this.tabSuaThemNhanVien.Controls.Add(this.lblTittleThemNhanVien);
             this.tabSuaThemNhanVien.Controls.Add(this.panelThemThongTinNhanVien);
             this.tabSuaThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -432,137 +417,6 @@ namespace MINI.src.GUI
             this.tabSuaThemNhanVien.TabIndex = 0;
             this.tabSuaThemNhanVien.Text = "Thêm, sửa nhân viên";
             this.tabSuaThemNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label30);
-            this.panel3.Controls.Add(this.label31);
-            this.panel3.Controls.Add(this.label32);
-            this.panel3.Controls.Add(this.label33);
-            this.panel3.Controls.Add(this.label34);
-            this.panel3.Controls.Add(this.label35);
-            this.panel3.Controls.Add(this.label36);
-            this.panel3.Controls.Add(this.label37);
-            this.panel3.Controls.Add(this.label38);
-            this.panel3.Controls.Add(this.lblTittleDemo1);
-            this.panel3.Location = new System.Drawing.Point(684, 125);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(412, 258);
-            this.panel3.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 79);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(104, 204);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(82, 19);
-            this.label30.TabIndex = 18;
-            this.label30.Text = "Trạng thái:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(104, 180);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(54, 19);
-            this.label31.TabIndex = 17;
-            this.label31.Text = "Lương:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(11, 184);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(25, 22);
-            this.label32.TabIndex = 16;
-            this.label32.Text = "...";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(104, 158);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(69, 19);
-            this.label33.TabIndex = 16;
-            this.label33.Text = "Giới tính:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(104, 62);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(78, 19);
-            this.label34.TabIndex = 11;
-            this.label34.Text = "Họ và tên:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(104, 38);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(102, 19);
-            this.label35.TabIndex = 15;
-            this.label35.Text = "Mã nhân viên:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(104, 86);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(77, 19);
-            this.label36.TabIndex = 12;
-            this.label36.Text = "Sinh ngày:";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(104, 134);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(58, 19);
-            this.label37.TabIndex = 14;
-            this.label37.Text = "Địa chỉ:";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(104, 110);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(103, 19);
-            this.label38.TabIndex = 13;
-            this.label38.Text = "Số điện thoại:";
-            // 
-            // lblTittleDemo1
-            // 
-            this.lblTittleDemo1.AutoSize = true;
-            this.lblTittleDemo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTittleDemo1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblTittleDemo1.Location = new System.Drawing.Point(143, 9);
-            this.lblTittleDemo1.Name = "lblTittleDemo1";
-            this.lblTittleDemo1.Size = new System.Drawing.Size(142, 18);
-            this.lblTittleDemo1.TabIndex = 0;
-            this.lblTittleDemo1.Text = "Thông tin cá nhân";
             // 
             // lblTittleThemNhanVien
             // 
@@ -578,6 +432,7 @@ namespace MINI.src.GUI
             // panelThemThongTinNhanVien
             // 
             this.panelThemThongTinNhanVien.BackColor = System.Drawing.Color.Honeydew;
+            this.panelThemThongTinNhanVien.Controls.Add(this.cbbGioiTinhTSNV);
             this.panelThemThongTinNhanVien.Controls.Add(this.lblChucVuNvThemSua);
             this.panelThemThongTinNhanVien.Controls.Add(idChucVuLabel1);
             this.panelThemThongTinNhanVien.Controls.Add(this.cbbIDChucVuCTNV);
@@ -590,7 +445,6 @@ namespace MINI.src.GUI
             this.panelThemThongTinNhanVien.Controls.Add(lbl3);
             this.panelThemThongTinNhanVien.Controls.Add(this.txtSDTCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(lbl4);
-            this.panelThemThongTinNhanVien.Controls.Add(this.txtGioiTinhCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(luongLabel1);
             this.panelThemThongTinNhanVien.Controls.Add(this.txtLuongCTNV);
             this.panelThemThongTinNhanVien.Controls.Add(ngayNghiLabel1);
@@ -602,7 +456,7 @@ namespace MINI.src.GUI
             this.panelThemThongTinNhanVien.Controls.Add(this.btnXoa);
             this.panelThemThongTinNhanVien.Controls.Add(this.btnLuu);
             this.panelThemThongTinNhanVien.Controls.Add(this.lblNote);
-            this.panelThemThongTinNhanVien.Location = new System.Drawing.Point(142, 90);
+            this.panelThemThongTinNhanVien.Location = new System.Drawing.Point(360, 88);
             this.panelThemThongTinNhanVien.Name = "panelThemThongTinNhanVien";
             this.panelThemThongTinNhanVien.Size = new System.Drawing.Size(474, 509);
             this.panelThemThongTinNhanVien.TabIndex = 5;
@@ -636,6 +490,7 @@ namespace MINI.src.GUI
             this.cbbTrangThaiCTNV.Name = "cbbTrangThaiCTNV";
             this.cbbTrangThaiCTNV.Size = new System.Drawing.Size(200, 25);
             this.cbbTrangThaiCTNV.TabIndex = 43;
+            this.cbbTrangThaiCTNV.SelectedIndexChanged += new System.EventHandler(this.cbbTrangThaiCTNV_SelectedIndexChanged);
             // 
             // txtIDNhanVienCTNV
             // 
@@ -659,13 +514,6 @@ namespace MINI.src.GUI
             this.txtSDTCTNV.Name = "txtSDTCTNV";
             this.txtSDTCTNV.Size = new System.Drawing.Size(200, 24);
             this.txtSDTCTNV.TabIndex = 19;
-            // 
-            // txtGioiTinhCTNV
-            // 
-            this.txtGioiTinhCTNV.Location = new System.Drawing.Point(182, 137);
-            this.txtGioiTinhCTNV.Name = "txtGioiTinhCTNV";
-            this.txtGioiTinhCTNV.Size = new System.Drawing.Size(200, 24);
-            this.txtGioiTinhCTNV.TabIndex = 21;
             // 
             // txtLuongCTNV
             // 
@@ -820,6 +668,7 @@ namespace MINI.src.GUI
             this.txtTimKiem.Size = new System.Drawing.Size(412, 27);
             this.txtTimKiem.TabIndex = 0;
             this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
             // 
             // groupBoxTheoDKLoc
@@ -865,7 +714,7 @@ namespace MINI.src.GUI
             this.panelTaiKhoan.Controls.Add(this.txtPasswordNVTK);
             this.panelTaiKhoan.Controls.Add(quyenLabel2);
             this.panelTaiKhoan.Controls.Add(this.txtQuyenNVTK);
-            this.panelTaiKhoan.Location = new System.Drawing.Point(348, 46);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(351, 36);
             this.panelTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.panelTaiKhoan.Name = "panelTaiKhoan";
             this.panelTaiKhoan.Size = new System.Drawing.Size(518, 259);
@@ -875,6 +724,7 @@ namespace MINI.src.GUI
             // txtHoVaTenNVTK
             // 
             this.txtHoVaTenNVTK.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoVaTenNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtHoVaTenNVTK.Location = new System.Drawing.Point(264, 117);
             this.txtHoVaTenNVTK.Name = "txtHoVaTenNVTK";
             this.txtHoVaTenNVTK.ReadOnly = true;
@@ -915,6 +765,7 @@ namespace MINI.src.GUI
             // txtIDTaiKhoanNVTK
             // 
             this.txtIDTaiKhoanNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDTaiKhoanNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtIDTaiKhoanNVTK.Location = new System.Drawing.Point(264, 47);
             this.txtIDTaiKhoanNVTK.Name = "txtIDTaiKhoanNVTK";
             this.txtIDTaiKhoanNVTK.ReadOnly = true;
@@ -924,6 +775,7 @@ namespace MINI.src.GUI
             // txtIDNhanVienNVTK
             // 
             this.txtIDNhanVienNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtIDNhanVienNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtIDNhanVienNVTK.Location = new System.Drawing.Point(264, 82);
             this.txtIDNhanVienNVTK.Name = "txtIDNhanVienNVTK";
             this.txtIDNhanVienNVTK.ReadOnly = true;
@@ -933,6 +785,7 @@ namespace MINI.src.GUI
             // txtUsernameNVTK
             // 
             this.txtUsernameNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtUsernameNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtUsernameNVTK.Location = new System.Drawing.Point(264, 152);
             this.txtUsernameNVTK.Name = "txtUsernameNVTK";
             this.txtUsernameNVTK.ReadOnly = true;
@@ -942,6 +795,7 @@ namespace MINI.src.GUI
             // txtPasswordNVTK
             // 
             this.txtPasswordNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtPasswordNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtPasswordNVTK.Location = new System.Drawing.Point(264, 187);
             this.txtPasswordNVTK.Name = "txtPasswordNVTK";
             this.txtPasswordNVTK.ReadOnly = true;
@@ -951,6 +805,7 @@ namespace MINI.src.GUI
             // txtQuyenNVTK
             // 
             this.txtQuyenNVTK.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtQuyenNVTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtQuyenNVTK.Location = new System.Drawing.Point(264, 222);
             this.txtQuyenNVTK.Name = "txtQuyenNVTK";
             this.txtQuyenNVTK.ReadOnly = true;
@@ -970,6 +825,7 @@ namespace MINI.src.GUI
             this.NgayNghiNVCol,
             this.NgaySinhNVCol,
             this.DiaChiNVCol});
+            this.listViewNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.listViewNhanVien.HideSelection = false;
             this.listViewNhanVien.Location = new System.Drawing.Point(8, 462);
             this.listViewNhanVien.Name = "listViewNhanVien";
@@ -987,62 +843,53 @@ namespace MINI.src.GUI
             // HoVaTenNVCol
             // 
             this.HoVaTenNVCol.Text = "Họ và tên";
-            this.HoVaTenNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.HoVaTenNVCol.Width = 205;
             // 
             // SDTNVCol
             // 
             this.SDTNVCol.DisplayIndex = 3;
             this.SDTNVCol.Text = "Số điện thoại";
-            this.SDTNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SDTNVCol.Width = 131;
             // 
             // GioiTinhNVCol
             // 
             this.GioiTinhNVCol.DisplayIndex = 4;
             this.GioiTinhNVCol.Text = "Giới tính";
-            this.GioiTinhNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GioiTinhNVCol.Width = 92;
             // 
             // IDChucVuNVCol
             // 
             this.IDChucVuNVCol.DisplayIndex = 5;
             this.IDChucVuNVCol.Text = "ID Chức vụ";
-            this.IDChucVuNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IDChucVuNVCol.Width = 109;
             // 
             // LuongNVCol
             // 
             this.LuongNVCol.DisplayIndex = 6;
             this.LuongNVCol.Text = "Lương";
-            this.LuongNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.LuongNVCol.Width = 75;
             // 
             // TrangThaiNVCol
             // 
             this.TrangThaiNVCol.DisplayIndex = 7;
             this.TrangThaiNVCol.Text = "Trạng thái";
-            this.TrangThaiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TrangThaiNVCol.Width = 104;
             // 
             // NgayNghiNVCol
             // 
             this.NgayNghiNVCol.DisplayIndex = 9;
             this.NgayNghiNVCol.Text = "Ngày nghỉ";
-            this.NgayNghiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NgayNghiNVCol.Width = 110;
             // 
             // NgaySinhNVCol
             // 
             this.NgaySinhNVCol.Text = "Ngày sinh";
-            this.NgaySinhNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NgaySinhNVCol.Width = 106;
             // 
             // DiaChiNVCol
             // 
             this.DiaChiNVCol.DisplayIndex = 2;
             this.DiaChiNVCol.Text = "Địa chỉ";
-            this.DiaChiNVCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DiaChiNVCol.Width = 93;
             // 
             // btnReloadNV
@@ -1162,6 +1009,7 @@ namespace MINI.src.GUI
             // txtIDNhanVienNV
             // 
             this.txtIDNhanVienNV.BackColor = System.Drawing.Color.White;
+            this.txtIDNhanVienNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtIDNhanVienNV.Location = new System.Drawing.Point(283, 34);
             this.txtIDNhanVienNV.Name = "txtIDNhanVienNV";
             this.txtIDNhanVienNV.ReadOnly = true;
@@ -1171,6 +1019,7 @@ namespace MINI.src.GUI
             // txtHoVaTenNV
             // 
             this.txtHoVaTenNV.BackColor = System.Drawing.Color.White;
+            this.txtHoVaTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtHoVaTenNV.Location = new System.Drawing.Point(283, 69);
             this.txtHoVaTenNV.Name = "txtHoVaTenNV";
             this.txtHoVaTenNV.ReadOnly = true;
@@ -1180,6 +1029,7 @@ namespace MINI.src.GUI
             // txtSDTNV
             // 
             this.txtSDTNV.BackColor = System.Drawing.Color.White;
+            this.txtSDTNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSDTNV.Location = new System.Drawing.Point(283, 104);
             this.txtSDTNV.Name = "txtSDTNV";
             this.txtSDTNV.ReadOnly = true;
@@ -1189,6 +1039,7 @@ namespace MINI.src.GUI
             // txtGioiTinhNV
             // 
             this.txtGioiTinhNV.BackColor = System.Drawing.Color.White;
+            this.txtGioiTinhNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtGioiTinhNV.Location = new System.Drawing.Point(283, 139);
             this.txtGioiTinhNV.Name = "txtGioiTinhNV";
             this.txtGioiTinhNV.ReadOnly = true;
@@ -1198,6 +1049,7 @@ namespace MINI.src.GUI
             // txtIDChucVuNV
             // 
             this.txtIDChucVuNV.BackColor = System.Drawing.Color.White;
+            this.txtIDChucVuNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtIDChucVuNV.Location = new System.Drawing.Point(283, 174);
             this.txtIDChucVuNV.Name = "txtIDChucVuNV";
             this.txtIDChucVuNV.ReadOnly = true;
@@ -1207,6 +1059,7 @@ namespace MINI.src.GUI
             // txtLuongNV
             // 
             this.txtLuongNV.BackColor = System.Drawing.Color.White;
+            this.txtLuongNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtLuongNV.Location = new System.Drawing.Point(634, 32);
             this.txtLuongNV.Name = "txtLuongNV";
             this.txtLuongNV.ReadOnly = true;
@@ -1216,6 +1069,7 @@ namespace MINI.src.GUI
             // txtTrangThaiNV
             // 
             this.txtTrangThaiNV.BackColor = System.Drawing.Color.White;
+            this.txtTrangThaiNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTrangThaiNV.Location = new System.Drawing.Point(634, 104);
             this.txtTrangThaiNV.Name = "txtTrangThaiNV";
             this.txtTrangThaiNV.ReadOnly = true;
@@ -1225,6 +1079,7 @@ namespace MINI.src.GUI
             // DTPNgayNghiNV
             // 
             this.DTPNgayNghiNV.Enabled = false;
+            this.DTPNgayNghiNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DTPNgayNghiNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPNgayNghiNV.Location = new System.Drawing.Point(634, 142);
             this.DTPNgayNghiNV.Name = "DTPNgayNghiNV";
@@ -1234,6 +1089,7 @@ namespace MINI.src.GUI
             // DTPNgaySinhNV
             // 
             this.DTPNgaySinhNV.Enabled = false;
+            this.DTPNgaySinhNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DTPNgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPNgaySinhNV.Location = new System.Drawing.Point(634, 67);
             this.DTPNgaySinhNV.Name = "DTPNgaySinhNV";
@@ -1243,6 +1099,7 @@ namespace MINI.src.GUI
             // txtDiaChiNV
             // 
             this.txtDiaChiNV.BackColor = System.Drawing.Color.White;
+            this.txtDiaChiNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDiaChiNV.Location = new System.Drawing.Point(283, 209);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.ReadOnly = true;
@@ -1281,6 +1138,17 @@ namespace MINI.src.GUI
             this.tabNhanVien.TabIndex = 1;
             this.tabNhanVien.SelectedIndexChanged += new System.EventHandler(this.tabNhanVien_SelectedIndexChanged);
             // 
+            // cbbGioiTinhTSNV
+            // 
+            this.cbbGioiTinhTSNV.FormattingEnabled = true;
+            this.cbbGioiTinhTSNV.Items.AddRange(new object[] {
+            "Nam ",
+            "Nữ"});
+            this.cbbGioiTinhTSNV.Location = new System.Drawing.Point(182, 137);
+            this.cbbGioiTinhTSNV.Name = "cbbGioiTinhTSNV";
+            this.cbbGioiTinhTSNV.Size = new System.Drawing.Size(200, 25);
+            this.cbbGioiTinhTSNV.TabIndex = 46;
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1294,9 +1162,6 @@ namespace MINI.src.GUI
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.tabSuaThemNhanVien.ResumeLayout(false);
             this.tabSuaThemNhanVien.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelThemThongTinNhanVien.ResumeLayout(false);
             this.panelThemThongTinNhanVien.PerformLayout();
             this.tabThongTinNhanVien.ResumeLayout(false);
@@ -1317,18 +1182,6 @@ namespace MINI.src.GUI
 
         #endregion
         private System.Windows.Forms.TabPage tabSuaThemNhanVien;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label lblTittleDemo1;
         private System.Windows.Forms.Label lblTittleThemNhanVien;
         private System.Windows.Forms.Panel panelThemThongTinNhanVien;
         private System.Windows.Forms.Label lblChucVuNvThemSua;
@@ -1337,7 +1190,6 @@ namespace MINI.src.GUI
         private System.Windows.Forms.TextBox txtIDNhanVienCTNV;
         private System.Windows.Forms.TextBox txtHoVaTenCTNV;
         private System.Windows.Forms.TextBox txtSDTCTNV;
-        private System.Windows.Forms.TextBox txtGioiTinhCTNV;
         private System.Windows.Forms.TextBox txtLuongCTNV;
         private System.Windows.Forms.DateTimePicker DTPNgayNghiCTNV;
         private System.Windows.Forms.DateTimePicker DTPNgaySinhCTNV;
@@ -1393,5 +1245,6 @@ namespace MINI.src.GUI
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBoxLocTheo;
         private System.Windows.Forms.ComboBox comboBoxLocTheo;
+        private System.Windows.Forms.ComboBox cbbGioiTinhTSNV;
     }
 }

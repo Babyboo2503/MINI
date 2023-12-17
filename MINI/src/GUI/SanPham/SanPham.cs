@@ -22,9 +22,15 @@ namespace MINI.src.GUI
         private bool themloaisp = false;
         private bool themsp = false;
         SanPhamBUS sp = new SanPhamBUS();
-        public SanPham()
+        TaiKhoanBUS tk_bus=new TaiKhoanBUS();
+        NhanVienBUS nv_bus=new NhanVienBUS();
+        string user, pass;
+        DataTable dt;
+        public SanPham(string Username, string Password)
         {
             InitializeComponent();
+            this.user = Username;
+            this.pass = Password;
         }
         void HienthiLoaiSanPham()
         {
@@ -113,13 +119,51 @@ namespace MINI.src.GUI
             txtTimKiemSanPham.Text = "";
             cbbPhanLoai.SelectedItem = null;
         }
+/*        private bool tabPageLocked = true; // Biến để kiểm soát trạng thái khóa/tab mặc định
 
+*//*        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Gắn sự kiện Selecting để kiểm tra trước khi chuyển đến Tab mới
+            tabControl1.Selecting += tabControl1_Selecting;
+        }*//*
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            LockUnlockTabPage(tabPageLocked);
+        }
+
+        // Hàm để khóa hoặc mở khóa tab
+        private void LockUnlockTabPage(bool lockTabPage)
+        {
+            tabPageLocked = lockTabPage;
+        }
+
+        // Ví dụ: Mở khóa tab
+        private void btnUnlockTab_Click(object sender, EventArgs e)
+        {
+            LockUnlockTabPage(false);
+        }*/
+        void setSale()
+        {
+            DataTable dt = tk_bus.layIDTK(user);
+            DataTable dt_2 = nv_bus.layNhanVienDuaVaoID(dt.Rows[0][1].ToString());
+            if (dt_2.Rows[0][4].ToString() == "3")
+            {
+/*                tabSanPham.Selecting += tabControl1_Selecting;*/
+                btnSua.Enabled = false;
+                btnThemLoaiSanPham.Enabled= false;
+                btnSuaLoaiSanPham.Enabled = false;
+                btnThem_SanPham.Enabled = false;
+                btnSua_SanPham.Enabled = false;
+            }
+        }
         private void tabSanPham_Load(object sender, EventArgs e)
         {
             setNull();
             setNull_LoaiSanPham();
             HienthiSanPham();
             HienthiLoaiSanPham();
+            setSale();
         }
 
         bool checkValue_SanPham()

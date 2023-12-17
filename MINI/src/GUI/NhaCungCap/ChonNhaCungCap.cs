@@ -20,7 +20,11 @@ namespace MINI.src.GUI
         {
             InitializeComponent();
         }
-
+        public void UpdateButtonChon(bool isVisible)
+        {
+            btnchon.Visible = isVisible;
+            btnThoat.Visible = isVisible;
+        }
         public void HienThiNCC()
         {
             lsvchonncc.Items.Clear();

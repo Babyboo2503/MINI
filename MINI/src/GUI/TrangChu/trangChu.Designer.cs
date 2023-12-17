@@ -66,11 +66,13 @@
             // 
             // panelContent
             // 
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContent.BackgroundImage")));
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(207, 0);
+            this.panelContent.Location = new System.Drawing.Point(219, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1182, 761);
+            this.panelContent.Size = new System.Drawing.Size(1170, 761);
             this.panelContent.TabIndex = 9;
             // 
             // panelLeft
@@ -81,7 +83,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(207, 761);
+            this.panelLeft.Size = new System.Drawing.Size(219, 761);
             this.panelLeft.TabIndex = 8;
             // 
             // panel1
@@ -90,7 +92,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 703);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 126);
+            this.panel1.Size = new System.Drawing.Size(219, 126);
             this.panel1.TabIndex = 11;
             // 
             // btnDangXuat
@@ -98,7 +100,7 @@
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDangXuat.Location = new System.Drawing.Point(0, 0);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(207, 58);
+            this.btnDangXuat.Size = new System.Drawing.Size(219, 58);
             this.btnDangXuat.TabIndex = 3;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
@@ -125,7 +127,7 @@
             this.flowPanelMenuLeft.Location = new System.Drawing.Point(0, 207);
             this.flowPanelMenuLeft.Margin = new System.Windows.Forms.Padding(0);
             this.flowPanelMenuLeft.Name = "flowPanelMenuLeft";
-            this.flowPanelMenuLeft.Size = new System.Drawing.Size(207, 496);
+            this.flowPanelMenuLeft.Size = new System.Drawing.Size(219, 496);
             this.flowPanelMenuLeft.TabIndex = 8;
             // 
             // btnBanHang
@@ -351,7 +353,7 @@
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(207, 207);
+            this.panelInfo.Size = new System.Drawing.Size(219, 207);
             this.panelInfo.TabIndex = 13;
             // 
             // trangChu
@@ -361,6 +363,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(1389, 761);
             this.Controls.Add(this.panelTrangChu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(716, 495);

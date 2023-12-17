@@ -89,8 +89,6 @@
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnClearNV = new System.Windows.Forms.Button();
-            this.btnSearchNV = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpKTNV = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -106,32 +104,21 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpKhachHang = new System.Windows.Forms.TabPage();
             this.lsvCustomer = new System.Windows.Forms.ListView();
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnClearCustomer = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dtpKHKT = new System.Windows.Forms.DateTimePicker();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dtpBDKH = new System.Windows.Forms.DateTimePicker();
             this.tpNhaCungCap = new System.Windows.Forms.TabPage();
             this.lsvVendor = new System.Windows.Forms.ListView();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.dtpKTNCC = new System.Windows.Forms.DateTimePicker();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.dtpBDNCC = new System.Windows.Forms.DateTimePicker();
-            this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSearchCustomer = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSearch = new System.Windows.Forms.Button();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -139,6 +126,19 @@
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.dtpKTNCC = new System.Windows.Forms.DateTimePicker();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.dtpBDNCC = new System.Windows.Forms.DateTimePicker();
+            this.baoCaoTableAdapter1 = new MINI.MiniMarketDataSetTableAdapters.BaoCaoTableAdapter();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnSearchNV = new System.Windows.Forms.Button();
+            this.btnClearNV = new System.Windows.Forms.Button();
+            this.btnClearCustomer = new System.Windows.Forms.Button();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpAll.SuspendLayout();
@@ -177,7 +177,7 @@
             this.panel1.Controls.Add(this.tabControl);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1095, 613);
+            this.panel1.Size = new System.Drawing.Size(1182, 761);
             this.panel1.TabIndex = 0;
             // 
             // tabControl
@@ -187,37 +187,41 @@
             this.tabControl.Controls.Add(this.tpNhanVien);
             this.tabControl.Controls.Add(this.tpKhachHang);
             this.tabControl.Controls.Add(this.tpNhaCungCap);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tabControl.ItemSize = new System.Drawing.Size(90, 50);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1095, 613);
+            this.tabControl.Size = new System.Drawing.Size(1182, 761);
             this.tabControl.TabIndex = 0;
             // 
             // tpAll
             // 
+            this.tpAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tpAll.BackgroundImage")));
             this.tpAll.Controls.Add(this.tbcManager);
             this.tpAll.Controls.Add(this.panel2);
-            this.tpAll.Location = new System.Drawing.Point(4, 25);
+            this.tpAll.Location = new System.Drawing.Point(4, 54);
             this.tpAll.Name = "tpAll";
             this.tpAll.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAll.Size = new System.Drawing.Size(1087, 584);
+            this.tpAll.Size = new System.Drawing.Size(1174, 703);
             this.tpAll.TabIndex = 0;
             this.tpAll.Text = "Tổng Quát";
             this.tpAll.UseVisualStyleBackColor = true;
             // 
             // tbcManager
             // 
-            this.tbcManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tbcManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcManager.Controls.Add(this.tabSum);
             this.tbcManager.Controls.Add(this.tpSell);
             this.tbcManager.Controls.Add(this.tpNhanHang);
+            this.tbcManager.ItemSize = new System.Drawing.Size(60, 30);
             this.tbcManager.Location = new System.Drawing.Point(8, 97);
             this.tbcManager.Name = "tbcManager";
             this.tbcManager.SelectedIndex = 0;
-            this.tbcManager.Size = new System.Drawing.Size(1071, 479);
+            this.tbcManager.Size = new System.Drawing.Size(1158, 598);
             this.tbcManager.TabIndex = 1;
             // 
             // tabSum
@@ -226,10 +230,10 @@
             this.tabSum.Controls.Add(this.groupBox14);
             this.tabSum.Controls.Add(this.groupBox13);
             this.tabSum.Controls.Add(this.groupBox12);
-            this.tabSum.Location = new System.Drawing.Point(4, 25);
+            this.tabSum.Location = new System.Drawing.Point(4, 27);
             this.tabSum.Name = "tabSum";
             this.tabSum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSum.Size = new System.Drawing.Size(1063, 450);
+            this.tabSum.Size = new System.Drawing.Size(1063, 419);
             this.tabSum.TabIndex = 0;
             this.tabSum.Text = "Tổng";
             this.tabSum.UseVisualStyleBackColor = true;
@@ -403,10 +407,10 @@
             this.tpSell.Controls.Add(this.lblTotalInvoice);
             this.tpSell.Controls.Add(this.label6);
             this.tpSell.Controls.Add(this.lsvInvoice);
-            this.tpSell.Location = new System.Drawing.Point(4, 25);
+            this.tpSell.Location = new System.Drawing.Point(4, 27);
             this.tpSell.Name = "tpSell";
             this.tpSell.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSell.Size = new System.Drawing.Size(1063, 450);
+            this.tpSell.Size = new System.Drawing.Size(1063, 419);
             this.tpSell.TabIndex = 1;
             this.tpSell.Text = "Bán Hàng";
             this.tpSell.UseVisualStyleBackColor = true;
@@ -439,6 +443,7 @@
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15});
+            this.lsvInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvInvoice.HideSelection = false;
             this.lsvInvoice.Location = new System.Drawing.Point(7, 6);
             this.lsvInvoice.Name = "lsvInvoice";
@@ -483,10 +488,10 @@
             this.tpNhanHang.Controls.Add(this.lblTotalReceipt);
             this.tpNhanHang.Controls.Add(this.label7);
             this.tpNhanHang.Controls.Add(this.lsvReceipt);
-            this.tpNhanHang.Location = new System.Drawing.Point(4, 25);
+            this.tpNhanHang.Location = new System.Drawing.Point(4, 34);
             this.tpNhanHang.Name = "tpNhanHang";
             this.tpNhanHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanHang.Size = new System.Drawing.Size(1063, 450);
+            this.tpNhanHang.Size = new System.Drawing.Size(1150, 560);
             this.tpNhanHang.TabIndex = 2;
             this.tpNhanHang.Text = "Nhập Hàng";
             this.tpNhanHang.UseVisualStyleBackColor = true;
@@ -518,10 +523,11 @@
             this.columnHeader18,
             this.columnHeader19,
             this.columnHeader20});
+            this.lsvReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvReceipt.HideSelection = false;
             this.lsvReceipt.Location = new System.Drawing.Point(7, 7);
             this.lsvReceipt.Name = "lsvReceipt";
-            this.lsvReceipt.Size = new System.Drawing.Size(1050, 404);
+            this.lsvReceipt.Size = new System.Drawing.Size(1137, 404);
             this.lsvReceipt.TabIndex = 0;
             this.lsvReceipt.UseCompatibleStateImageBehavior = false;
             this.lsvReceipt.View = System.Windows.Forms.View.Details;
@@ -554,35 +560,45 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnSearch1);
             this.panel2.Controls.Add(this.btnClear1);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1081, 62);
+            this.panel2.Size = new System.Drawing.Size(1168, 216);
             this.panel2.TabIndex = 0;
             // 
             // btnSearch1
             // 
-            this.btnSearch1.Location = new System.Drawing.Point(822, 16);
+            this.btnSearch1.BackColor = System.Drawing.Color.White;
+            this.btnSearch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch1.BackgroundImage")));
+            this.btnSearch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch1.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnSearch1.FlatAppearance.BorderSize = 3;
+            this.btnSearch1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch1.Location = new System.Drawing.Point(822, 11);
             this.btnSearch1.Name = "btnSearch1";
-            this.btnSearch1.Size = new System.Drawing.Size(62, 37);
+            this.btnSearch1.Size = new System.Drawing.Size(45, 45);
             this.btnSearch1.TabIndex = 4;
-            this.btnSearch1.Text = "Search";
-            this.btnSearch1.UseVisualStyleBackColor = true;
+            this.btnSearch1.UseVisualStyleBackColor = false;
             this.btnSearch1.Click += new System.EventHandler(this.btnSearch1_Click);
             // 
             // btnClear1
             // 
-            this.btnClear1.Location = new System.Drawing.Point(902, 16);
+            this.btnClear1.BackColor = System.Drawing.Color.White;
+            this.btnClear1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear1.BackgroundImage")));
+            this.btnClear1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClear1.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnClear1.FlatAppearance.BorderSize = 3;
+            this.btnClear1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear1.Location = new System.Drawing.Point(894, 11);
             this.btnClear1.Name = "btnClear1";
-            this.btnClear1.Size = new System.Drawing.Size(62, 37);
+            this.btnClear1.Size = new System.Drawing.Size(45, 45);
             this.btnClear1.TabIndex = 3;
-            this.btnClear1.Text = "Clear";
-            this.btnClear1.UseVisualStyleBackColor = true;
+            this.btnClear1.UseVisualStyleBackColor = false;
             this.btnClear1.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // groupBox1
@@ -603,7 +619,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(280, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Đến ngày";
             // 
@@ -612,34 +628,37 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(67, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Từ ngày";
             // 
             // dtpNgayBD
             // 
             this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayBD.Location = new System.Drawing.Point(69, 21);
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBD.Location = new System.Drawing.Point(80, 21);
             this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(196, 20);
+            this.dtpNgayBD.Size = new System.Drawing.Size(185, 20);
             this.dtpNgayBD.TabIndex = 0;
             // 
             // dtpNgayKT
             // 
             this.dtpNgayKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayKT.Location = new System.Drawing.Point(350, 21);
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKT.Location = new System.Drawing.Point(364, 21);
             this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(196, 20);
+            this.dtpNgayKT.Size = new System.Drawing.Size(182, 20);
             this.dtpNgayKT.TabIndex = 2;
             // 
             // tpTKSanPham
             // 
+            this.tpTKSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tpTKSanPham.BackgroundImage")));
             this.tpTKSanPham.Controls.Add(this.panel8);
             this.tpTKSanPham.Controls.Add(this.lsvProduct);
-            this.tpTKSanPham.Location = new System.Drawing.Point(4, 25);
+            this.tpTKSanPham.Location = new System.Drawing.Point(4, 54);
             this.tpTKSanPham.Name = "tpTKSanPham";
             this.tpTKSanPham.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTKSanPham.Size = new System.Drawing.Size(1087, 584);
+            this.tpTKSanPham.Size = new System.Drawing.Size(1174, 703);
             this.tpTKSanPham.TabIndex = 1;
             this.tpTKSanPham.Text = "Sản Phẩm";
             this.tpTKSanPham.UseVisualStyleBackColor = true;
@@ -650,18 +669,19 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1081, 64);
+            this.panel8.Size = new System.Drawing.Size(1168, 64);
             this.panel8.TabIndex = 2;
             // 
             // cbDSSP
             // 
+            this.cbDSSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbDSSP.FormattingEnabled = true;
             this.cbDSSP.Items.AddRange(new object[] {
             "Hóa Đơn",
             "Phiếu Nhập"});
             this.cbDSSP.Location = new System.Drawing.Point(824, 22);
             this.cbDSSP.Name = "cbDSSP";
-            this.cbDSSP.Size = new System.Drawing.Size(182, 24);
+            this.cbDSSP.Size = new System.Drawing.Size(182, 26);
             this.cbDSSP.TabIndex = 1;
             this.cbDSSP.Text = "Thống Kê Sản Phẩm Theo";
             this.cbDSSP.SelectedIndexChanged += new System.EventHandler(this.cbDSSP_SelectedIndexChanged);
@@ -675,10 +695,11 @@
             this.price,
             this.soLuong,
             this.total});
+            this.lsvProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvProduct.HideSelection = false;
             this.lsvProduct.Location = new System.Drawing.Point(6, 73);
             this.lsvProduct.Name = "lsvProduct";
-            this.lsvProduct.Size = new System.Drawing.Size(1075, 505);
+            this.lsvProduct.Size = new System.Drawing.Size(1162, 505);
             this.lsvProduct.TabIndex = 1;
             this.lsvProduct.UseCompatibleStateImageBehavior = false;
             this.lsvProduct.View = System.Windows.Forms.View.Details;
@@ -717,12 +738,13 @@
             // 
             // tpNhanVien
             // 
+            this.tpNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tpNhanVien.BackgroundImage")));
             this.tpNhanVien.Controls.Add(this.panel3);
             this.tpNhanVien.Controls.Add(this.lsvEmpolyee);
-            this.tpNhanVien.Location = new System.Drawing.Point(4, 25);
+            this.tpNhanVien.Location = new System.Drawing.Point(4, 54);
             this.tpNhanVien.Name = "tpNhanVien";
             this.tpNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanVien.Size = new System.Drawing.Size(1087, 584);
+            this.tpNhanVien.Size = new System.Drawing.Size(1174, 703);
             this.tpNhanVien.TabIndex = 2;
             this.tpNhanVien.Text = "Nhân Viên";
             this.tpNhanVien.UseVisualStyleBackColor = true;
@@ -737,28 +759,8 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1081, 64);
+            this.panel3.Size = new System.Drawing.Size(1168, 64);
             this.panel3.TabIndex = 3;
-            // 
-            // btnClearNV
-            // 
-            this.btnClearNV.Location = new System.Drawing.Point(894, 18);
-            this.btnClearNV.Name = "btnClearNV";
-            this.btnClearNV.Size = new System.Drawing.Size(62, 37);
-            this.btnClearNV.TabIndex = 6;
-            this.btnClearNV.Text = "Clear";
-            this.btnClearNV.UseVisualStyleBackColor = true;
-            this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
-            // 
-            // btnSearchNV
-            // 
-            this.btnSearchNV.Location = new System.Drawing.Point(826, 18);
-            this.btnSearchNV.Name = "btnSearchNV";
-            this.btnSearchNV.Size = new System.Drawing.Size(62, 37);
-            this.btnSearchNV.TabIndex = 5;
-            this.btnSearchNV.Text = "Search";
-            this.btnSearchNV.UseVisualStyleBackColor = true;
-            this.btnSearchNV.Click += new System.EventHandler(this.btnSearchNV_Click);
             // 
             // groupBox3
             // 
@@ -772,9 +774,11 @@
             // 
             // dtpKTNV
             // 
+            this.dtpKTNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpKTNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpKTNV.Location = new System.Drawing.Point(6, 21);
             this.dtpKTNV.Name = "dtpKTNV";
-            this.dtpKTNV.Size = new System.Drawing.Size(242, 22);
+            this.dtpKTNV.Size = new System.Drawing.Size(242, 24);
             this.dtpKTNV.TabIndex = 0;
             // 
             // groupBox2
@@ -789,20 +793,23 @@
             // 
             // dtpBDNV
             // 
+            this.dtpBDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBDNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBDNV.Location = new System.Drawing.Point(7, 21);
             this.dtpBDNV.Name = "dtpBDNV";
-            this.dtpBDNV.Size = new System.Drawing.Size(242, 22);
+            this.dtpBDNV.Size = new System.Drawing.Size(242, 24);
             this.dtpBDNV.TabIndex = 0;
             // 
             // cbNhanVien
             // 
+            this.cbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Items.AddRange(new object[] {
             "Hóa Đơn Bán",
             "Hóa Đơn Nhập"});
             this.cbNhanVien.Location = new System.Drawing.Point(116, 25);
             this.cbNhanVien.Name = "cbNhanVien";
-            this.cbNhanVien.Size = new System.Drawing.Size(182, 24);
+            this.cbNhanVien.Size = new System.Drawing.Size(182, 26);
             this.cbNhanVien.TabIndex = 1;
             this.cbNhanVien.Text = "Thống Kê Nhân Viên Theo";
             this.cbNhanVien.SelectedIndexChanged += new System.EventHandler(this.cbNhanVien_SelectedIndexChanged);
@@ -817,10 +824,11 @@
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader27});
+            this.lsvEmpolyee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvEmpolyee.HideSelection = false;
             this.lsvEmpolyee.Location = new System.Drawing.Point(9, 70);
             this.lsvEmpolyee.Name = "lsvEmpolyee";
-            this.lsvEmpolyee.Size = new System.Drawing.Size(1070, 506);
+            this.lsvEmpolyee.Size = new System.Drawing.Size(1157, 506);
             this.lsvEmpolyee.TabIndex = 1;
             this.lsvEmpolyee.UseCompatibleStateImageBehavior = false;
             this.lsvEmpolyee.View = System.Windows.Forms.View.Details;
@@ -863,12 +871,13 @@
             // 
             // tpKhachHang
             // 
+            this.tpKhachHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tpKhachHang.BackgroundImage")));
             this.tpKhachHang.Controls.Add(this.lsvCustomer);
             this.tpKhachHang.Controls.Add(this.panel10);
-            this.tpKhachHang.Location = new System.Drawing.Point(4, 25);
+            this.tpKhachHang.Location = new System.Drawing.Point(4, 54);
             this.tpKhachHang.Name = "tpKhachHang";
             this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tpKhachHang.Size = new System.Drawing.Size(1087, 584);
+            this.tpKhachHang.Size = new System.Drawing.Size(1174, 703);
             this.tpKhachHang.TabIndex = 3;
             this.tpKhachHang.Text = "Khách Hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -884,161 +893,15 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lsvCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lsvCustomer.HideSelection = false;
             this.lsvCustomer.Location = new System.Drawing.Point(6, 73);
             this.lsvCustomer.Name = "lsvCustomer";
-            this.lsvCustomer.Size = new System.Drawing.Size(1070, 502);
+            this.lsvCustomer.Size = new System.Drawing.Size(1160, 502);
             this.lsvCustomer.TabIndex = 2;
             this.lsvCustomer.UseCompatibleStateImageBehavior = false;
             this.lsvCustomer.View = System.Windows.Forms.View.Details;
             this.lsvCustomer.SelectedIndexChanged += new System.EventHandler(this.lsvCustomer_SelectedIndexChanged);
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.btnSearchCustomer);
-            this.panel10.Controls.Add(this.btnClearCustomer);
-            this.panel10.Controls.Add(this.groupBox8);
-            this.panel10.Controls.Add(this.groupBox9);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1081, 64);
-            this.panel10.TabIndex = 1;
-            // 
-            // btnClearCustomer
-            // 
-            this.btnClearCustomer.Location = new System.Drawing.Point(931, 23);
-            this.btnClearCustomer.Name = "btnClearCustomer";
-            this.btnClearCustomer.Size = new System.Drawing.Size(62, 28);
-            this.btnClearCustomer.TabIndex = 5;
-            this.btnClearCustomer.Text = "Clear";
-            this.btnClearCustomer.UseVisualStyleBackColor = true;
-            this.btnClearCustomer.Click += new System.EventHandler(this.btnClearCustomer_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.dtpKHKT);
-            this.groupBox8.Location = new System.Drawing.Point(589, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(255, 55);
-            this.groupBox8.TabIndex = 3;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Đến ngày";
-            // 
-            // dtpKHKT
-            // 
-            this.dtpKHKT.Location = new System.Drawing.Point(6, 21);
-            this.dtpKHKT.Name = "dtpKHKT";
-            this.dtpKHKT.Size = new System.Drawing.Size(242, 22);
-            this.dtpKHKT.TabIndex = 0;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.dtpBDKH);
-            this.groupBox9.Location = new System.Drawing.Point(328, 3);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(255, 55);
-            this.groupBox9.TabIndex = 2;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Từ ngày";
-            // 
-            // dtpBDKH
-            // 
-            this.dtpBDKH.Location = new System.Drawing.Point(7, 21);
-            this.dtpBDKH.Name = "dtpBDKH";
-            this.dtpBDKH.Size = new System.Drawing.Size(242, 22);
-            this.dtpBDKH.TabIndex = 0;
-            // 
-            // tpNhaCungCap
-            // 
-            this.tpNhaCungCap.Controls.Add(this.lsvVendor);
-            this.tpNhaCungCap.Controls.Add(this.panel11);
-            this.tpNhaCungCap.Location = new System.Drawing.Point(4, 25);
-            this.tpNhaCungCap.Name = "tpNhaCungCap";
-            this.tpNhaCungCap.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhaCungCap.Size = new System.Drawing.Size(1087, 584);
-            this.tpNhaCungCap.TabIndex = 4;
-            this.tpNhaCungCap.Text = "Nhà Cung Cấp";
-            this.tpNhaCungCap.UseVisualStyleBackColor = true;
-            // 
-            // lsvVendor
-            // 
-            this.lsvVendor.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader32,
-            this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37});
-            this.lsvVendor.HideSelection = false;
-            this.lsvVendor.Location = new System.Drawing.Point(7, 74);
-            this.lsvVendor.Name = "lsvVendor";
-            this.lsvVendor.Size = new System.Drawing.Size(1072, 502);
-            this.lsvVendor.TabIndex = 3;
-            this.lsvVendor.UseCompatibleStateImageBehavior = false;
-            this.lsvVendor.View = System.Windows.Forms.View.Details;
-            this.lsvVendor.SelectedIndexChanged += new System.EventHandler(this.lsvVendor_SelectedIndexChanged);
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.btnSearch);
-            this.panel11.Controls.Add(this.btnClear);
-            this.panel11.Controls.Add(this.groupBox10);
-            this.panel11.Controls.Add(this.groupBox11);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(3, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1081, 64);
-            this.panel11.TabIndex = 2;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(930, 24);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(62, 28);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.dtpKTNCC);
-            this.groupBox10.Location = new System.Drawing.Point(589, 3);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(255, 55);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Đến ngày";
-            // 
-            // dtpKTNCC
-            // 
-            this.dtpKTNCC.Location = new System.Drawing.Point(6, 21);
-            this.dtpKTNCC.Name = "dtpKTNCC";
-            this.dtpKTNCC.Size = new System.Drawing.Size(242, 22);
-            this.dtpKTNCC.TabIndex = 0;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.dtpBDNCC);
-            this.groupBox11.Location = new System.Drawing.Point(328, 3);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(255, 55);
-            this.groupBox11.TabIndex = 2;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Từ ngày";
-            // 
-            // dtpBDNCC
-            // 
-            this.dtpBDNCC.Location = new System.Drawing.Point(7, 21);
-            this.dtpBDNCC.Name = "dtpBDNCC";
-            this.dtpBDNCC.Size = new System.Drawing.Size(242, 22);
-            this.dtpBDNCC.TabIndex = 0;
-            // 
-            // baoCaoTableAdapter1
-            // 
-            this.baoCaoTableAdapter1.ClearBeforeFill = true;
             // 
             // columnHeader28
             // 
@@ -1060,16 +923,6 @@
             this.columnHeader31.Text = "Số Điện Thoại";
             this.columnHeader31.Width = 100;
             // 
-            // btnSearchCustomer
-            // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(863, 24);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(62, 28);
-            this.btnSearchCustomer.TabIndex = 6;
-            this.btnSearchCustomer.Text = "Search";
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
-            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Điểm";
@@ -1090,15 +943,88 @@
             this.columnHeader4.Text = "Tổng Tiền";
             this.columnHeader4.Width = 180;
             // 
-            // btnSearch
+            // panel10
             // 
-            this.btnSearch.Location = new System.Drawing.Point(862, 24);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(62, 28);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.panel10.Controls.Add(this.btnClearCustomer);
+            this.panel10.Controls.Add(this.btnSearchCustomer);
+            this.panel10.Controls.Add(this.groupBox8);
+            this.panel10.Controls.Add(this.groupBox9);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1168, 64);
+            this.panel10.TabIndex = 1;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.dtpKHKT);
+            this.groupBox8.Location = new System.Drawing.Point(589, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(255, 55);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Đến ngày";
+            // 
+            // dtpKHKT
+            // 
+            this.dtpKHKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpKHKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpKHKT.Location = new System.Drawing.Point(6, 21);
+            this.dtpKHKT.Name = "dtpKHKT";
+            this.dtpKHKT.Size = new System.Drawing.Size(242, 24);
+            this.dtpKHKT.TabIndex = 0;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.dtpBDKH);
+            this.groupBox9.Location = new System.Drawing.Point(328, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(255, 55);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Từ ngày";
+            // 
+            // dtpBDKH
+            // 
+            this.dtpBDKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBDKH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBDKH.Location = new System.Drawing.Point(7, 21);
+            this.dtpBDKH.Name = "dtpBDKH";
+            this.dtpBDKH.Size = new System.Drawing.Size(242, 24);
+            this.dtpBDKH.TabIndex = 0;
+            // 
+            // tpNhaCungCap
+            // 
+            this.tpNhaCungCap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tpNhaCungCap.BackgroundImage")));
+            this.tpNhaCungCap.Controls.Add(this.lsvVendor);
+            this.tpNhaCungCap.Controls.Add(this.panel11);
+            this.tpNhaCungCap.Location = new System.Drawing.Point(4, 54);
+            this.tpNhaCungCap.Name = "tpNhaCungCap";
+            this.tpNhaCungCap.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNhaCungCap.Size = new System.Drawing.Size(1174, 703);
+            this.tpNhaCungCap.TabIndex = 4;
+            this.tpNhaCungCap.Text = "Nhà Cung Cấp";
+            this.tpNhaCungCap.UseVisualStyleBackColor = true;
+            // 
+            // lsvVendor
+            // 
+            this.lsvVendor.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader32,
+            this.columnHeader33,
+            this.columnHeader34,
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37});
+            this.lsvVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lsvVendor.HideSelection = false;
+            this.lsvVendor.Location = new System.Drawing.Point(7, 74);
+            this.lsvVendor.Name = "lsvVendor";
+            this.lsvVendor.Size = new System.Drawing.Size(1159, 502);
+            this.lsvVendor.TabIndex = 3;
+            this.lsvVendor.UseCompatibleStateImageBehavior = false;
+            this.lsvVendor.View = System.Windows.Forms.View.Details;
+            this.lsvVendor.SelectedIndexChanged += new System.EventHandler(this.lsvVendor_SelectedIndexChanged);
             // 
             // columnHeader5
             // 
@@ -1135,12 +1061,157 @@
             this.columnHeader37.Text = "Tổng Tiền";
             this.columnHeader37.Width = 150;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnClear);
+            this.panel11.Controls.Add(this.btnSearch);
+            this.panel11.Controls.Add(this.groupBox10);
+            this.panel11.Controls.Add(this.groupBox11);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1168, 64);
+            this.panel11.TabIndex = 2;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.dtpKTNCC);
+            this.groupBox10.Location = new System.Drawing.Point(589, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(255, 55);
+            this.groupBox10.TabIndex = 3;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Đến ngày";
+            // 
+            // dtpKTNCC
+            // 
+            this.dtpKTNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpKTNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpKTNCC.Location = new System.Drawing.Point(6, 21);
+            this.dtpKTNCC.Name = "dtpKTNCC";
+            this.dtpKTNCC.Size = new System.Drawing.Size(242, 24);
+            this.dtpKTNCC.TabIndex = 0;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.dtpBDNCC);
+            this.groupBox11.Location = new System.Drawing.Point(328, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(255, 55);
+            this.groupBox11.TabIndex = 2;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Từ ngày";
+            // 
+            // dtpBDNCC
+            // 
+            this.dtpBDNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpBDNCC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBDNCC.Location = new System.Drawing.Point(7, 21);
+            this.dtpBDNCC.Name = "dtpBDNCC";
+            this.dtpBDNCC.Size = new System.Drawing.Size(242, 24);
+            this.dtpBDNCC.TabIndex = 0;
+            // 
+            // baoCaoTableAdapter1
+            // 
+            this.baoCaoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnSearchNV
+            // 
+            this.btnSearchNV.BackColor = System.Drawing.Color.White;
+            this.btnSearchNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchNV.BackgroundImage")));
+            this.btnSearchNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchNV.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnSearchNV.FlatAppearance.BorderSize = 3;
+            this.btnSearchNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchNV.Location = new System.Drawing.Point(846, 16);
+            this.btnSearchNV.Name = "btnSearchNV";
+            this.btnSearchNV.Size = new System.Drawing.Size(45, 45);
+            this.btnSearchNV.TabIndex = 6;
+            this.btnSearchNV.UseVisualStyleBackColor = false;
+            this.btnSearchNV.Click += new System.EventHandler(this.btnSearchNV_Click);
+            // 
+            // btnClearNV
+            // 
+            this.btnClearNV.BackColor = System.Drawing.Color.White;
+            this.btnClearNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearNV.BackgroundImage")));
+            this.btnClearNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearNV.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnClearNV.FlatAppearance.BorderSize = 3;
+            this.btnClearNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearNV.Location = new System.Drawing.Point(917, 15);
+            this.btnClearNV.Name = "btnClearNV";
+            this.btnClearNV.Size = new System.Drawing.Size(45, 45);
+            this.btnClearNV.TabIndex = 5;
+            this.btnClearNV.UseVisualStyleBackColor = false;
+            this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
+            // 
+            // btnClearCustomer
+            // 
+            this.btnClearCustomer.BackColor = System.Drawing.Color.White;
+            this.btnClearCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearCustomer.BackgroundImage")));
+            this.btnClearCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearCustomer.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnClearCustomer.FlatAppearance.BorderSize = 3;
+            this.btnClearCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearCustomer.Location = new System.Drawing.Point(935, 13);
+            this.btnClearCustomer.Name = "btnClearCustomer";
+            this.btnClearCustomer.Size = new System.Drawing.Size(45, 45);
+            this.btnClearCustomer.TabIndex = 7;
+            this.btnClearCustomer.UseVisualStyleBackColor = false;
+            this.btnClearCustomer.Click += new System.EventHandler(this.btnClearCustomer_Click);
+            // 
+            // btnSearchCustomer
+            // 
+            this.btnSearchCustomer.BackColor = System.Drawing.Color.White;
+            this.btnSearchCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.BackgroundImage")));
+            this.btnSearchCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchCustomer.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnSearchCustomer.FlatAppearance.BorderSize = 3;
+            this.btnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCustomer.Location = new System.Drawing.Point(864, 14);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(45, 45);
+            this.btnSearchCustomer.TabIndex = 8;
+            this.btnSearchCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnClear.FlatAppearance.BorderSize = 3;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Location = new System.Drawing.Point(931, 13);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(45, 45);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnSearch.FlatAppearance.BorderSize = 3;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(860, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(45, 45);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 613);
+            this.ClientSize = new System.Drawing.Size(1182, 761);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
@@ -1222,14 +1293,12 @@
         private System.Windows.Forms.ListView lsvProduct;
         private System.Windows.Forms.ListView lsvEmpolyee;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnClearCustomer;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.DateTimePicker dtpKHKT;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DateTimePicker dtpBDKH;
         private System.Windows.Forms.ListView lsvCustomer;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.DateTimePicker dtpKTNCC;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -1279,18 +1348,14 @@
         private System.Windows.Forms.DateTimePicker dtpBDNV;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dtpKTNV;
-        private System.Windows.Forms.Button btnSearchNV;
-        private System.Windows.Forms.Button btnClearNV;
         private System.Windows.Forms.ColumnHeader columnHeader28;
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.ColumnHeader columnHeader31;
-        private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ColumnHeader columnHeader33;
@@ -1298,5 +1363,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader35;
         private System.Windows.Forms.ColumnHeader columnHeader36;
         private System.Windows.Forms.ColumnHeader columnHeader37;
+        private System.Windows.Forms.Button btnSearchNV;
+        private System.Windows.Forms.Button btnClearNV;
+        private System.Windows.Forms.Button btnClearCustomer;
+        private System.Windows.Forms.Button btnSearchCustomer;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

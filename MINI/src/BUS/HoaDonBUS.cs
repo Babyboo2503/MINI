@@ -57,7 +57,7 @@ namespace MINI.src.BUS
         }
         public DataTable LayDSSanPham()
         {
-            string strSQL = "Select idSanPham,idLoaiSanPham, donGia, soLuong, trangThai, tenSanPham from SanPham where trangThai = 'Còn bán'";
+            string strSQL = "Select * from SanPham where trangThai= N'Còn bán'";
             DataTable dt = db.Execute(strSQL); //Goi phuong thuc truy xuat du lieu
             return dt;
         }

@@ -214,6 +214,9 @@
     <EmbeddedResource Include="src\GUI\Login\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\NhaCungCap\ChonNhaCungCap.resx">
+      <DependentUpon>ChonNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\NhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
       <SubType>Designer</SubType>

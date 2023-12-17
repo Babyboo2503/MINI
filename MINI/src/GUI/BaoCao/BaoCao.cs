@@ -17,9 +17,14 @@ namespace MINI.src.GUI
     {
         BaoCaoBUS bc = new BaoCaoBUS();
         BaoCaoDTO bcDTO;
-        public BaoCao()
+        TaiKhoanBUS tk_bus=new TaiKhoanBUS();
+        NhanVienBUS nv_bus=new NhanVienBUS();
+        string user, pass;
+        public BaoCao(string username,string password)
         {
             InitializeComponent();
+            this.user= username;
+            this.pass= password;
         }
         void HienthiBaoCao()
         {
@@ -56,7 +61,17 @@ namespace MINI.src.GUI
             }
 
         }
-
+        void setSale()
+        {
+            DataTable dt = tk_bus.layIDTK(user);
+            DataTable dt_2 = nv_bus.layNhanVienDuaVaoID(dt.Rows[0][1].ToString());
+            if (dt_2.Rows[0][4].ToString() == "3" || dt_2.Rows[0][4].ToString() == "4")
+            {
+                /*                tabSanPham.Selecting += tabControl1_Selecting;*/
+                btnXoa.Enabled = false;
+                btnXoa.Visible = false;
+            }
+        }
         private void BaoCao_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'miniMarketDataSet1.SanPham' table. You can move, or remove it, as needed.
@@ -64,6 +79,7 @@ namespace MINI.src.GUI
             // TODO: This line of code loads data into the 'miniMarketDataSet1.NhanVien' table. You can move, or remove it, as needed.
             this.nhanVienTableAdapter.Fill(this.miniMarketDataSet1.NhanVien);
             HienthiBaoCao();
+            setSale();
         }
 
         private void setNull()

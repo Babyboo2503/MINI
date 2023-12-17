@@ -39,7 +39,7 @@ namespace MINI.src.GUI
                 ListViewItem lvi =
                 lsvdssp.Items.Add(dt.Rows[i][0].ToString()); lvi.SubItems.Add(dt.Rows[i][1].ToString());
                 lvi.SubItems.Add(dt.Rows[i][6].ToString());
-                lvi.SubItems.Add(donGiaGiam10PhanTram.ToString());
+                //lvi.SubItems.Add(donGiaGiam10PhanTram.ToString());
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
             }
@@ -52,7 +52,7 @@ namespace MINI.src.GUI
         {
             lsvdssp.Items.Clear();
             DataTable dt = sp.LayDSCTPNTheoTenSP(tenSP); // Giả sử có một phương thức để lấy chi tiết nhập hàng dựa trên mã
-                                                                       // Điền dữ liệu vào ListView
+                                                         // Điền dữ liệu vào ListView
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 // Thêm dữ liệu vào ListView
@@ -64,13 +64,13 @@ namespace MINI.src.GUI
             }
         }
 
-       
+
         void ThemSanPhamVaoListView(string maSanPham, string tenSanPham, string soLuong, string donGia)
         {
             bool sanPhamDaTonTai = false;
             int Soluong = int.Parse(soLuong);
             decimal DonGia = decimal.Parse(donGia);
-            if(int.TryParse(soLuong, out int number) && number > 0)
+            if (int.TryParse(soLuong, out int number) && number > 0)
             {
                 // Duyệt qua các mục trong List View để tìm sản phẩm trùng nhau
                 foreach (ListViewItem item in lsvdsspnhap.Items)
@@ -82,7 +82,7 @@ namespace MINI.src.GUI
                         soLuongHienTai += Soluong;
 
                         item.SubItems[3].Text = soLuongHienTai.ToString(); // Cập nhật số lượng trong List View
-
+                        item.SubItems[4].Text = donGia.ToString();
                         decimal thanhTien = soLuongHienTai * DonGia;
                         item.SubItems[5].Text = thanhTien.ToString(); // Cập nhật thành tiền trong List View
 
@@ -160,6 +160,7 @@ namespace MINI.src.GUI
         {
             ChonNhaCungCap chonNhaCungCap = new ChonNhaCungCap();
             chonNhaCungCap.UpdateButtonVisibility(false);
+            chonNhaCungCap.UpdateButtonChon(true);
             DialogResult result = chonNhaCungCap.ShowDialog();  // Hiển thị form ChonNhaCungCap dưới dạng dialog
 
             if (result == DialogResult.OK)  // Nếu người dùng click nút "Chon" trong form ChonNhaCungCap
@@ -236,34 +237,42 @@ namespace MINI.src.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenformChonNCC();  
+            OpenformChonNCC();
         }
 
         private void lsvdssp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
+
+
             if (lsvdssp.SelectedIndices.Count > 0)
             {
-               txtidsanpham.Text = lsvdssp.SelectedItems[0].SubItems[0].Text;
+                txtidsanpham.Text = lsvdssp.SelectedItems[0].SubItems[0].Text;
                 txtidlsp.Text = lsvdssp.SelectedItems[0].SubItems[1].Text;
                 txttensp.Text = lsvdssp.SelectedItems[0].SubItems[2].Text;
-                txtdongia.Text = lsvdssp.SelectedItems[0].SubItems[3].Text;
+                txtdongia.Text = "10000";
                 txtsoluong.Text = "1";
 
-                // Lấy đường dẫn ảnh từ cơ sở dữ liệu hoặc từ đối tượng sản phẩm
-               /* string imagePath = sp.GetImagePathForSelectedProduct(lsvdssp.SelectedItems[0].SubItems[0].Text); // Thay thế bằng cách lấy đường dẫn ảnh tương ứng với sản phẩm được chọn
-
-                if (!string.IsNullOrEmpty(imagePath))
+                DataTable dt = pn.LayDSSanPham();
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    // Hiển thị ảnh trong PictureBox
-                    ptbsanpham.Image = Image.FromFile(imagePath);
+                    if (dt.Rows[i][0].ToString().Equals(txtidsanpham.Text))
+                    {
+                        ptbsanpham.ImageLocation = dt.Rows[i][7].ToString(); break;
+                    }
                 }
-                else
-                {
-                    // Nếu không có ảnh tương ứng, hiển thị ảnh mặc định hoặc ẩn PictureBox
-                    ptbsanpham.Image = null;
-                }*/
+                // Lấy đường dẫn ảnh từ cơ sở dữ liệu hoặc từ đối tượng sản phẩm
+                /* string imagePath = sp.GetImagePathForSelectedProduct(lsvdssp.SelectedItems[0].SubItems[0].Text); // Thay thế bằng cách lấy đường dẫn ảnh tương ứng với sản phẩm được chọn
+
+                 if (!string.IsNullOrEmpty(imagePath))
+                 {
+                     // Hiển thị ảnh trong PictureBox
+                     ptbsanpham.Image = Image.FromFile(imagePath);
+                 }
+                 else
+                 {
+                     // Nếu không có ảnh tương ứng, hiển thị ảnh mặc định hoặc ẩn PictureBox
+                     ptbsanpham.Image = null;
+                 }*/
             }
 
         }
@@ -282,11 +291,56 @@ namespace MINI.src.GUI
             txttensp.Text = "";
             txtsoluong.Text = "";
             txtdongia.Text = "";
+            ptbsanpham.ImageLocation = "";
+        }
+        bool CheckValue()
+        {
+            int valueDonGia, valueSoLuong;
+            if (txtdongia.Text == "")
+            {
+                MessageBox.Show("Hãy nhập đơn giá", "Báo lỗi");
+                txtdongia.Focus();
+                return false;
+            }
+            else if (!int.TryParse(txtdongia.Text, out valueDonGia))
+            {
+                MessageBox.Show("Đơn giá phải là số", "Báo lỗi");
+                txtdongia.Focus();
+                return false;
+            }
+            else if (valueDonGia < 1000)
+            {
+                MessageBox.Show("Đơn giá không được nhỏ hơn 1000", "Báo lỗi");
+                txtdongia.Focus();
+                return false;
+            }
+            else if (txtsoluong.Text == "")
+            {
+                MessageBox.Show("Hãy nhập số lượng", "Báo lỗi");
+                txtsoluong.Focus();
+                return false;
+            }
+            else if (!int.TryParse(txtsoluong.Text, out valueSoLuong))
+            {
+                MessageBox.Show("Số lượng phải là số", "Báo lỗi");
+                txtsoluong.Focus();
+                return false;
+            }
+            else if (valueSoLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải lớn hơn 0", "Báo lỗi");
+                txtsoluong.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void btnthemsp_Click(object sender, EventArgs e)
         {
-            ThemSanPhamVaoListView(txtidsanpham.Text, txttensp.Text, txtsoluong.Text, txtdongia.Text);
+            if (CheckValue())
+            {
+                ThemSanPhamVaoListView(txtidsanpham.Text, txttensp.Text, txtsoluong.Text, txtdongia.Text);
+            }
         }
 
         private void btnhuy_Click(object sender, EventArgs e)
@@ -309,8 +363,9 @@ namespace MINI.src.GUI
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            if (lsvdsspnhap.SelectedIndices.Count > 0) { 
-            SuaMucListView();
+            if (lsvdsspnhap.SelectedIndices.Count > 0)
+            {
+                SuaMucListView();
             }
             else
             {
@@ -321,10 +376,23 @@ namespace MINI.src.GUI
 
         private void btnthanhtoan_Click(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrEmpty(txtidncc.Text) && string.IsNullOrEmpty(txtngaylap.Text))
+            DateTime ngaylap;
+            decimal tongtien;
+            if (string.IsNullOrEmpty(txtidncc.Text))
             {
                 MessageBox.Show("Vui lòng Chọn nhà cung cấp trước khi thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (string.IsNullOrEmpty(txtngaylap.Text))
+            {
+                MessageBox.Show("Vui lòng Chọn ngày lập trước khi thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!DateTime.TryParse(txtngaylap.Text, out ngaylap))
+            {
+                MessageBox.Show("Ngày lập không chính xác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!decimal.TryParse(txttongtien.Text, out tongtien))
+            {
+                MessageBox.Show("Tổng tiền không chính xác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -336,6 +404,12 @@ namespace MINI.src.GUI
 
                     // Cập nhật số lượng sản phẩm trong cơ sở dữ liệu
                     pn.CapNhatSoLuongSanPhamTrongDatabase(maSanPham, soLuongBan);
+                    foreach (ListViewItem itemSpNhap in lsvdsspnhap.Items)
+                    {
+                        int dongia = 0;
+                        dongia = int.Parse(itemSpNhap.SubItems[4].Text) + (int.Parse(itemSpNhap.SubItems[4].Text) * 20 / 100);
+                        pn.CapNhatGiaSanPham(itemSpNhap.SubItems[1].Text, dongia.ToString());
+                    }
 
                     // Cập nhật lại danh sách sản phẩm (dssp)
                     // Đây là nơi bạn cần cập nhật lại danh sách sản phẩm trong ứng dụng của mình
@@ -343,8 +417,6 @@ namespace MINI.src.GUI
                     // Ví dụ: gọi lại hàm HienThiSanPham() để refresh danh sách sản phẩm
                     HienThiSanPham();
                 }
-                DateTime ngaylap;
-                decimal tongtien;
                 if (DateTime.TryParse(txtngaylap.Text, out ngaylap) && decimal.TryParse(txttongtien.Text, out tongtien))
                 {
                     pn.ThemPhieuNhap(txtidncc.Text, txtidnhanvien.Text, ngaylap, tongtien);
@@ -352,12 +424,16 @@ namespace MINI.src.GUI
                     // Hiển thị thông báo khi thêm phiếu nhập thành công
                     MessageBox.Show("Thêm phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
+                string id_pn = pn.LayDSPN().Rows.Count.ToString();
+                foreach (ListViewItem itemSpNhap in lsvdsspnhap.Items)
+                {
+                    pn.ThemCTPhieuNhap(id_pn, itemSpNhap.SubItems[1].Text, itemSpNhap.SubItems[3].Text,
+                        itemSpNhap.SubItems[4].Text, itemSpNhap.SubItems[5].Text);
+                }
                 lsvdsspnhap.Items.Clear();
                 txttongtien.Text = "0";
             }
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)

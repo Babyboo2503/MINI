@@ -94,10 +94,11 @@ namespace MINI.src.BUS
             string nv = $"Select * from NhanVien where trangThai=N'{tt}'";
             return db.Execute(nv);
         }
-        public DataTable timKiemNV(string x)
+        public DataTable TimKiemNhanVien(string value)
         {
-            string query = "SELECT * FROM NhanVien WHERE hoVaTen LIKE '%' + @x + '%'";
-            return db.Execute(query);
+            string strSQL = "SELECT * FROM NhanVien WHERE hoVaTen LIKE '%" + value + "%'";
+            DataTable dt = db.Execute(strSQL);
+            return dt;
         }
 
     }

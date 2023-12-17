@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MINI.src.DAO;
+using MINI.BUS;
 
 namespace MINI.src.GUI
 {
@@ -20,11 +21,16 @@ namespace MINI.src.GUI
         HoaDonBUS hd = new HoaDonBUS();
         CTHoaDonBUS cthd = new CTHoaDonBUS();
         ChiTietHoaDonDTO cthdDTO;
+        NhanVienBUS nv_bus=new NhanVienBUS();
+        TaiKhoanBUS tk_bus=new TaiKhoanBUS();
+        KhuyenMaiBUS km_bus = new KhuyenMaiBUS();
         HoaDonDTO hdDTO;
-        public BanHang()
+        string User, Pass;
+        public BanHang(string Username, string Password)
         {
             InitializeComponent();
-
+            this.User = Username;
+            this.Pass = Password;
         }
 
         private void BanHang_Load(object sender, EventArgs e)
@@ -36,22 +42,21 @@ namespace MINI.src.GUI
             // TODO: This line of code loads data into the 'miniMarketDataSet1.KhuyenMai' table. You can move, or remove it, as needed.
             this.khuyenMaiTableAdapter.Fill(this.miniMarketDataSet1.KhuyenMai);*/
 
-            comboBox1.DataSource = hd.LayDSNhanVien();
-            comboBox1.DisplayMember = "hoVaTen";
-            comboBox1.ValueMember = "idNhanVien";
-            textBox2.Text = comboBox1.Items[0].ToString();
-
-            comboBox2.DataSource = hd.LayDSKhachHang();
-            comboBox2.DisplayMember = "hoVaTen";
-            comboBox2.ValueMember = "idKhachHang";
-            textBox4.Text = comboBox2.Items[0].ToString();
+            DataTable dt_1 = tk_bus.layIDTK(User);
+            DataTable dt = nv_bus.layNhanVienDuaVaoID(dt_1.Rows[0][0].ToString());
+            textBox2.Text = dt_1.Rows[0][1].ToString();
+            txtTenNV.Text= dt.Rows[0][1].ToString();
+            txtTenKH.DataSource = hd.LayDSKhachHang();
+            txtTenKH.DisplayMember = "hoVaTen";
+            txtTenKH.ValueMember = "idKhachHang";
+            textBox4.Text = txtTenKH.Items[0].ToString();
 
             comboBox3.DataSource = hd.LayDSKhuyenMai();
             comboBox3.DisplayMember = "tenKhuyenMai";
             comboBox3.ValueMember = "idKhuyenMai";
             textBox4.Text = comboBox3.Items[0].ToString();
-            DataTable dt = hd.LayDSKhuyenMai();
-            textBox3.Text = dt.Rows[0][6].ToString();
+            DataTable dt_2 = hd.LayDSKhuyenMai();
+            textBox3.Text = dt_2.Rows[0][6].ToString();
 
             HienthiSanPham();
         }
@@ -64,6 +69,7 @@ namespace MINI.src.GUI
             lvSanPham.View = View.Details; //cho phép hiển thị thông tin chi tiết dạng bảng
             lvSanPham.Items.Clear();
             DataTable dt = hd.LayDSSanPham();
+            DataTable dtkm = km_bus.LayDSKhuyenMai();
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -72,7 +78,19 @@ namespace MINI.src.GUI
                 lvi.SubItems.Add(dt.Rows[i][2].ToString());
                 lvi.SubItems.Add(dt.Rows[i][3].ToString());
                 lvi.SubItems.Add(dt.Rows[i][4].ToString());
+                lvi.SubItems.Add(dt.Rows[i][6].ToString());
                 lvi.SubItems.Add(dt.Rows[i][5].ToString());
+                for (int j = 0; j < dtkm.Rows.Count; j++)
+                {
+                    if (dt.Rows[i][5].ToString().Equals(dtkm.Rows[j][0].ToString()))
+                    {
+                        lvi.SubItems.Add(dtkm.Rows[j][4].ToString() + "%");
+                    }
+                    else
+                        lvi.SubItems.Add("0%");
+                }
+
+
 
             }
             lvSanPham.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -360,16 +378,11 @@ namespace MINI.src.GUI
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox2.Text = comboBox1.SelectedValue.ToString();
-
-        }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            textBox4.Text = comboBox2.SelectedValue.ToString();
+            textBox4.Text = txtTenKH.SelectedValue.ToString();
 
         }
 
